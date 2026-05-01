@@ -148,8 +148,8 @@ const VENTAJAS = [
   },
   {
     icon: Clock,
-    titulo: 'Operativo en días, no meses',
-    desc: 'Fabricación en planta + armado en sitio. Sin obra civil, sin tiempos de fraguado. Listo para usar desde el primer día de instalación.',
+    titulo: 'Instalación el mismo día',
+    desc: 'Módulos hasta 18 m² instalados en el día. Hasta 72 m² en un máximo de 5 días. Disponemos de stock para coordinar entrega e instalación inmediata — pago contado.',
   },
 ]
 
@@ -167,8 +167,8 @@ const FAQ = [
     r: 'Sí. Trabajamos con empresas constructoras, pymes industriales, municipios del interior y organismos del Estado. Podemos emitir factura A, B o a cooperativas, y acompañar con documentación técnica para licitaciones.',
   },
   {
-    q: '¿Cuánto tarda la fabricación y el armado?',
-    r: 'La fabricación en nuestra planta de Zárate toma entre 15 y 45 días hábiles según el tamaño y la demanda. El armado en sitio demora entre 3 y 10 días hábiles. Consulte disponibilidad para plazos urgentes.',
+    q: '¿Cuánto tarda la instalación?',
+    r: 'Para módulos de hasta 18 m², la instalación se realiza en el día. Módulos de mayor metraje demoran entre 2 y 5 días de armado en sitio, según el tamaño. Disponemos de stock para entrega e instalación inmediata en compras al contado. Para proyectos financiados, los plazos de fabricación se coordinan al momento de la confirmación del pedido.',
   },
   {
     q: '¿Qué base o cimiento necesitan los módulos?',
@@ -226,9 +226,13 @@ export default async function ModulosPage() {
           <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-4">
             Viviendas, quinchos, obradores, campamentos, oficinas de campo y más. Líderes en fabricación de módulos NCE en Argentina. Logística propia en todo el país.
           </p>
-          <p className="text-eco-text-muted text-sm max-w-2xl mx-auto mb-8">
+          <p className="text-eco-text-muted text-sm max-w-2xl mx-auto mb-4">
             Practicidad · Prolijidad · Rapidez · Eficiencia energética · Sin obra civil
           </p>
+          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-4 py-2 rounded-full mb-8">
+            <CheckCircle className="w-3.5 h-3.5" />
+            Stock disponible — instalación inmediata al contado
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={waLink}
@@ -315,7 +319,7 @@ export default async function ModulosPage() {
       <section className="py-16 max-w-7xl mx-auto px-4">
         <SectionTitle
           titulo="Catálogo de módulos"
-          subtitulo="Precios de contado. Consultá planes de financiación para proyectos corporativos o particulares."
+          subtitulo="Precios de contado con entrega inmediata desde stock. Para compras financiadas, coordinar plazo de fabricación."
           centrado={false}
         />
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

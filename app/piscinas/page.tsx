@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/piscinas' },
   openGraph: {
     title: 'Piscinas de Fibra de Vidrio | Eco Módulos & Piscinas',
-    description: '16 modelos de piscinas de fibra de vidrio. Instalación en días, financiación hasta 120 cuotas sin banco.',
+    description: '16 modelos de piscinas de fibra de vidrio. Stock disponible — instalación el mismo día al contado. Financiación hasta 120 cuotas sin banco ni garante.',
     url: 'https://ecomodulosypiscinas.com.ar/piscinas',
   },
 }
@@ -41,7 +41,8 @@ const FAQ = [
   { q: '¿Qué garantía tienen las piscinas?', r: 'Las piscinas de fibra de vidrio tienen garantía de 10 años sobre el casco. El gel coat (color/terminación) tiene garantía de 3 años.' },
   { q: '¿Puedo instalar una piscina en un departamento o piso alto?', r: 'Los modelos autoportantes y Minideck están diseñados para esos espacios, siempre que la losa soporte el peso del agua. Consultar con nuestros asesores.' },
   { q: '¿Incluyen sistema de filtrado?', r: 'Las piscinas se entregan con el casco terminado. El sistema de filtrado (bomba, filtro) se cotiza y puede incluirse en el plan de financiación.' },
-  { q: '¿Hacen instalación en todo el país?', r: 'Sí. Trabajamos con logística propia y de terceros para llegar a todo el territorio argentino. El costo de flete varía según la distancia.' },
+  { q: '¿Cuánto tarda la instalación?', r: 'La instalación de una piscina de fibra se realiza en el día. Disponemos de stock para coordinar entrega e instalación inmediata en compras al contado. Para compras financiadas, el plazo se coordina al confirmar el pedido.' },
+  { q: '¿Hacen instalación en todo el país?', r: 'Sí. Contamos con logística propia para llegar a todo el territorio argentino. El costo de flete se calcula según la distancia desde nuestra planta en Zárate, Buenos Aires.' },
 ]
 
 const faqJsonLd = {
@@ -74,11 +75,14 @@ export default async function PiscinasPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <span className="inline-block bg-eco-teal/10 text-eco-teal text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Catálogo de piscinas</span>
           <h1 className="text-5xl sm:text-7xl font-extrabold text-white uppercase mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Instalada en días.<br />Tuya de por vida.
+            Instalada en el día.<br />Tuya de por vida.
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            16 modelos de piscinas de fibra de vidrio. Desde la Miniportante (sin excavación) hasta modelos de 9 m. Financiación directa hasta 120 cuotas.
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-4">
+            16 modelos de fibra de vidrio. Desde la Miniportante (sin excavación) hasta modelos de 9 m. Stock disponible para entrega e instalación inmediata.
           </p>
+          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-4 py-2 rounded-full mb-8">
+            Stock disponible — instalación el mismo día al contado
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
               <MessageCircle className="w-5 h-5" />Consultar al equipo de piscinas

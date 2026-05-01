@@ -108,8 +108,8 @@ export default async function HomePage() {
         <SectionTitle titulo="Nuestros productos" subtitulo="Fabricamos todo en planta propia. Sin intermediarios. Financiación directa." badge="Catálogo" />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { titulo: 'Módulos NCE', sub: 'Llave en mano · Líderes en Argentina', desde: 'Desde $2.990.000', cuota: 'Cuotas desde $28.650/mes', href: '/modulos', desc: 'Viviendas, quinchos, obradores, campamentos y más. Terminados y operativos en días. Logística propia en todo el país.' },
-            { titulo: 'Piscinas de Fibra', sub: 'Fibra de vidrio premium', desde: 'Desde $2.000.000', cuota: 'Cuotas desde $19.200/mes', href: '/piscinas', desc: 'Sin excavación con la Miniportante. Instalada en 3 días. Para toda la vida.' },
+            { titulo: 'Módulos NCE', sub: 'Llave en mano · Instalación el mismo día', desde: 'Desde $2.990.000', cuota: 'Cuotas desde $28.650/mes', href: '/modulos', desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible — instalación inmediata al contado. Logística propia en todo el país.' },
+            { titulo: 'Piscinas de Fibra', sub: 'Stock disponible · Instalación en el día', desde: 'Desde $2.000.000', cuota: 'Cuotas desde $19.200/mes', href: '/piscinas', desc: 'Sin excavación con la Miniportante. Instalación el mismo día al contado. Financiación hasta 120 cuotas.' },
             { titulo: 'Combo Especial', sub: '25% de descuento', desde: 'Módulo + Piscina', cuota: '60 cuotas fijas', href: '/combo', desc: 'Combiná tu módulo con una piscina y ahorrá 25% sobre el precio total.', badge: '25% OFF' },
           ].map((prod) => (
             <Link key={prod.href} href={prod.href} className="group bg-eco-bg-card border border-eco-border hover:border-eco-green/40 rounded-2xl p-8 flex flex-col gap-4 transition-all hover:shadow-lg hover:shadow-eco-green/5">
@@ -137,7 +137,7 @@ export default async function HomePage() {
             {[
               { n: '01', titulo: 'Elegís tu modelo', desc: 'Explorá nuestro catálogo de módulos y piscinas. Simulá tu cuota en segundos sin comprometerte a nada.' },
               { n: '02', titulo: 'Agendamos una videollamada', desc: 'Un asesor del equipo te explica todo: financiación, plazos, transporte e instalación. Sin costo.' },
-              { n: '03', titulo: 'Lo instalamos en tu terreno', desc: 'Fabricamos en nuestra planta de Zárate y lo instalamos en todo el país. En días, no meses.' },
+              { n: '03', titulo: 'Lo instalamos en tu terreno', desc: 'Contado: coordinamos entrega e instalación de inmediato — módulos hasta 18 m² y piscinas se instalan en el día. Financiado: se acuerda el plazo de fabricación al confirmar el pedido.' },
             ].map((paso) => (
               <div key={paso.n} className="flex gap-4">
                 <span className="text-5xl font-extrabold text-eco-green/20 leading-none flex-shrink-0" style={{ fontFamily: 'var(--font-display)' }}>{paso.n}</span>
@@ -209,7 +209,7 @@ export default async function HomePage() {
             {[
               { icon: Wrench, titulo: 'Fabricación propia', desc: 'Planta de 7.000 m² en Zárate. Controlamos todo el proceso productivo.' },
               { icon: Shield, titulo: 'Financiación directa', desc: 'Sin banco, sin garante. Hasta 120 cuotas con aprobación simple.' },
-              { icon: Truck, titulo: 'Instalación incluida', desc: 'Llegamos a todo el país. Instalación en días, no meses.' },
+              { icon: Truck, titulo: 'Instalación inmediata', desc: 'Stock disponible. Módulos y piscinas instalados en el día — pago contado. Logística propia en todo el país.' },
               { icon: Award, titulo: 'Garantía cooperativa', desc: 'Cooperativa INAES con +15 años. Solidez y transparencia garantizadas.' },
             ].map(({ icon: Icon, titulo, desc }) => (
               <div key={titulo} className="flex flex-col items-center text-center gap-3">

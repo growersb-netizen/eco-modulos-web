@@ -32,7 +32,8 @@ const FAQ = [
   { q: '¿Las cuotas son fijas o variables?', r: 'Las cuotas son fijas en pesos desde el inicio del contrato. No se ajustan por inflación ni por ningún índice. Lo que firmás, pagás.' },
   { q: '¿Hay descuento por pago contado?', r: 'Sí. El precio de lista tiene un descuento del 30% para pago contado. Este es el precio que se muestra en el catálogo.' },
   { q: '¿Puedo cancelar anticipadamente?', r: 'Sí, podés cancelar el saldo en cualquier momento sin penalidad. Si cancelás dentro de los primeros 6 meses, te hacemos un descuento adicional sobre el saldo restante.' },
-  { q: '¿El flete y la instalación están incluidos en el precio?', r: 'El precio de catálogo no incluye flete ni instalación. Estos costos se calculan en función de la distancia desde Zárate (provincia de Buenos Aires) y se incluyen en el plan de financiación si lo preferís.' },
+  { q: '¿La financiación tiene entrega inmediata?', r: 'No. La entrega e instalación inmediata desde stock es exclusiva para compras al contado. Para compras financiadas, los plazos de fabricación se coordinan al momento de confirmar el pedido y suscribir el plan.' },
+  { q: '¿El flete y la instalación están incluidos en el precio?', r: 'El precio de catálogo no incluye flete ni instalación. Estos costos se calculan según la distancia desde nuestra planta en Zárate y se pueden incluir en el plan de financiación.' },
   { q: '¿Puedo financiar el combo módulo + piscina?', r: 'Sí. El combo tiene financiación hasta 60 cuotas y un descuento del 25% sobre el precio total de ambos productos.' },
 ]
 
@@ -97,8 +98,9 @@ export default async function FinanciacionPage() {
             {[
               { icon: Shield, text: 'Sin banco ni garante' },
               { icon: CheckCircle, text: 'Solo DNI argentino' },
-              { icon: Clock, text: 'Aprobación en 24hs' },
+              { icon: Clock, text: 'Aprobación en 24 hs' },
               { icon: CheckCircle, text: 'Cuotas fijas en pesos' },
+              { icon: Clock, text: 'Entrega inmediata: solo al contado' },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-2 text-eco-text-muted text-sm">
                 <Icon className="w-4 h-4 text-eco-green flex-shrink-0" />
