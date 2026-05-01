@@ -142,15 +142,30 @@ export default function NosotrosPage() {
               </div>
             </div>
           </div>
-          <div className="sm:w-48 bg-eco-bg-surface rounded-xl flex items-center justify-center p-4">
-            <a
-              href="https://maps.google.com/?q=Zárate+Buenos+Aires+Argentina"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-eco-green text-sm font-semibold hover:underline flex items-center gap-1"
-            >
-              <MapPin className="w-4 h-4" />Ver en Maps
-            </a>
+          {/* Placeholder foto planta — reemplazar con imagen real */}
+          <div className="sm:w-64 h-40 bg-gradient-to-br from-[#0d1f0d] to-eco-bg-surface rounded-xl overflow-hidden relative flex-shrink-0">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <svg viewBox="0 0 120 80" className="w-28 h-20 opacity-30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="25" width="50" height="50" rx="1" stroke="#2d9e4f" strokeWidth="1.5" fill="#2d9e4f" fillOpacity="0.07"/>
+                <rect x="55" y="15" width="60" height="60" rx="1" stroke="#2d9e4f" strokeWidth="1.5" fill="#2d9e4f" fillOpacity="0.07"/>
+                <rect x="65" y="50" width="15" height="25" stroke="#00b8a9" strokeWidth="1" fill="#00b8a9" fillOpacity="0.1"/>
+                <rect x="85" y="50" width="15" height="25" stroke="#00b8a9" strokeWidth="1" fill="#00b8a9" fillOpacity="0.1"/>
+                <rect x="10" y="40" width="35" height="20" stroke="#00b8a9" strokeWidth="1" fill="#00b8a9" fillOpacity="0.1"/>
+                <line x1="5" y1="75" x2="115" y2="75" stroke="#2d9e4f" strokeWidth="1.5" opacity="0.5"/>
+                <rect x="0" y="20" width="120" height="5" rx="2" fill="#2d9e4f" fillOpacity="0.15"/>
+              </svg>
+              <p className="text-eco-green text-[10px] font-semibold uppercase tracking-widest opacity-50">Planta Zárate · 7.000 m²</p>
+            </div>
+            <div className="absolute bottom-2 right-2">
+              <a
+                href="https://maps.google.com/?q=Zárate+Buenos+Aires+Argentina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-eco-green text-xs font-semibold hover:underline flex items-center gap-1 bg-eco-bg-card/80 px-2 py-1 rounded-lg"
+              >
+                <MapPin className="w-3 h-3" />Ver en Maps
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -162,8 +177,12 @@ export default function NosotrosPage() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {EQUIPO.map((p) => (
               <div key={p.nombre} className="bg-eco-bg-surface rounded-2xl p-6 flex flex-col items-center text-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-eco-green/20 flex items-center justify-center">
-                  <span className="text-2xl font-extrabold text-eco-green" style={{ fontFamily: 'var(--font-display)' }}>{p.nombre[0]}</span>
+                {/* Placeholder foto equipo — reemplazar con foto real */}
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-eco-green-dark to-eco-bg-surface border border-eco-green/20 flex items-center justify-center overflow-hidden">
+                  <svg viewBox="0 0 48 48" className="w-12 h-12 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="18" r="9" stroke="#2d9e4f" strokeWidth="2" fill="#2d9e4f" fillOpacity="0.15"/>
+                    <path d="M6 42c0-9.94 8.06-18 18-18s18 8.06 18 18" stroke="#2d9e4f" strokeWidth="2" fill="#2d9e4f" fillOpacity="0.15"/>
+                  </svg>
                 </div>
                 <div>
                   <p className="font-bold text-eco-text text-lg" style={{ fontFamily: 'var(--font-display)' }}>{p.nombre}</p>

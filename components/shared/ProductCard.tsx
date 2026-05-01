@@ -54,8 +54,31 @@ export default function ProductCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-eco-text-muted text-sm">
-            Sin imagen
+          <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-[#0d1f0d] to-eco-bg-surface">
+            {tipo === 'modulo' ? (
+              <svg viewBox="0 0 120 80" className="w-24 h-16 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="30" width="100" height="45" rx="2" stroke="#2d9e4f" strokeWidth="2" fill="#2d9e4f" fillOpacity="0.08"/>
+                <polygon points="60,5 5,32 115,32" fill="#2d9e4f" fillOpacity="0.15" stroke="#2d9e4f" strokeWidth="2" strokeLinejoin="round"/>
+                <rect x="48" y="48" width="24" height="27" rx="1" stroke="#2d9e4f" strokeWidth="1.5" fill="#2d9e4f" fillOpacity="0.1"/>
+                <rect x="18" y="42" width="18" height="14" rx="1" stroke="#00b8a9" strokeWidth="1.5" fill="#00b8a9" fillOpacity="0.1"/>
+                <rect x="84" y="42" width="18" height="14" rx="1" stroke="#00b8a9" strokeWidth="1.5" fill="#00b8a9" fillOpacity="0.1"/>
+                <line x1="10" y1="75" x2="110" y2="75" stroke="#2d9e4f" strokeWidth="1" strokeDasharray="4,3" opacity="0.4"/>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 120 80" className="w-24 h-16 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="60" cy="52" rx="46" ry="22" stroke="#00b8a9" strokeWidth="2" fill="#00b8a9" fillOpacity="0.08"/>
+                <path d="M14 52 Q20 20 60 18 Q100 20 106 52" stroke="#00b8a9" strokeWidth="2" fill="#00b8a9" fillOpacity="0.12"/>
+                <ellipse cx="60" cy="52" rx="30" ry="14" stroke="#2d9e4f" strokeWidth="1.5" fill="#2d9e4f" fillOpacity="0.08" strokeDasharray="4,3"/>
+                <line x1="60" y1="18" x2="60" y2="66" stroke="#00b8a9" strokeWidth="1" opacity="0.3" strokeDasharray="3,3"/>
+                <line x1="14" y1="52" x2="106" y2="52" stroke="#00b8a9" strokeWidth="1" opacity="0.3" strokeDasharray="3,3"/>
+              </svg>
+            )}
+            <div className="text-center">
+              <p className="text-eco-green text-xs font-semibold uppercase tracking-widest opacity-70">
+                {tipo === 'modulo' ? 'Módulo NCE' : 'Piscina Fibra'}
+              </p>
+              <p className="text-eco-text-muted text-[10px] opacity-50 mt-0.5">{medida}</p>
+            </div>
           </div>
         )}
         {destacada && (
