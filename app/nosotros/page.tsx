@@ -32,9 +32,9 @@ const HITOS = [
 ]
 
 const EQUIPO = [
-  { sector: 'Módulos habitacionales', icono: '🏠', rol: 'Asesoramiento en módulos NCE, medidas, instalación y financiación', wa: 'https://wa.me/5491171825835?text=' + encodeURIComponent('Hola, quiero consultar por módulos habitacionales') },
-  { sector: 'Piscinas de fibra', icono: '🏊', rol: 'Asesoramiento en modelos, instalación y planes de pago', wa: 'https://wa.me/5491125582328?text=' + encodeURIComponent('Hola, quiero consultar por piscinas de fibra de vidrio') },
-  { sector: 'Atención general', icono: '📋', rol: 'Consultas generales, combos y coordinación de proyectos integrales', wa: 'https://wa.me/5491144498854?text=' + encodeURIComponent('Hola, quisiera consultar sobre Eco Módulos & Piscinas') },
+  { area: 'Módulos y soluciones constructivas', icono: '🏗️', rol: 'Consultas técnicas y comerciales sobre módulos NCE, campamentos, obradores y unidades habitacionales.', wa: 'https://wa.me/5491171825835?text=' + encodeURIComponent('Hola, necesito información sobre módulos y soluciones constructivas.') },
+  { area: 'Piscinas de fibra de vidrio', icono: '🏊', rol: 'Consultas sobre modelos, dimensiones, instalación y planes de financiación para piscinas.', wa: 'https://wa.me/5491125582328?text=' + encodeURIComponent('Hola, quiero consultar por piscinas de fibra de vidrio.') },
+  { area: 'Consultas generales y proyectos', icono: '📋', rol: 'Proyectos integrales, combos módulo+piscina, cotizaciones para empresas y organismos públicos.', wa: 'https://wa.me/5491144498854?text=' + encodeURIComponent('Hola, quisiera consultar sobre Eco Módulos & Piscinas.') },
 ]
 
 export default function NosotrosPage() {
@@ -47,7 +47,7 @@ export default function NosotrosPage() {
             Cooperativa INAES
           </span>
           <h1 className="text-5xl sm:text-7xl font-extrabold text-white uppercase mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Más de 15 años<br />construyendo sueños
+            Más de 15 años<br />construyendo soluciones
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Somos una cooperativa de trabajo registrada en INAES. Fabricamos en planta propia, financiamos con recursos propios y llegamos a todo el país.
@@ -78,10 +78,10 @@ export default function NosotrosPage() {
       <section className="py-16 max-w-4xl mx-auto px-4">
         <SectionTitle titulo="Nuestra historia" centrado={false} />
         <p className="mt-6 text-eco-text-muted leading-relaxed">
-          Eco Módulos & Piscinas nació en 2008 como una cooperativa de trabajo en Zárate, provincia de Buenos Aires. Desde entonces, crecimos con un solo objetivo: hacer que más familias argentinas puedan acceder a su vivienda o su espacio de recreación sin depender de los bancos.
+          Eco Módulos & Piscinas nació en 2008 como una cooperativa de trabajo en Zárate, provincia de Buenos Aires. Desde entonces, crecimos con un objetivo concreto: resolver necesidades de infraestructura y espacio funcional con rapidez, sin obra civil y sin depender del sistema bancario.
         </p>
         <p className="mt-4 text-eco-text-muted leading-relaxed">
-          Fabricamos módulos habitacionales con tecnología NCE (No Convencional de Eficiencia energética) y piscinas de fibra de vidrio premium. Todo en planta propia. Sin intermediarios. Con financiación directa que generamos con nuestros propios recursos.
+          Fabricamos módulos constructivos con tecnología NCE (No Convencional de Eficiencia energética) para obradores, campamentos, unidades habitacionales, oficinas de campo y más — y piscinas de fibra de vidrio. Todo en planta propia, en Zárate. Sin intermediarios. Con financiación directa propia.
         </p>
         <p className="mt-4 text-eco-text-muted leading-relaxed">
           Ser cooperativa no es solo una forma jurídica para nosotros: es una forma de hacer negocios. Cada peso que entra se reinvierte en mejores productos, mejores condiciones de trabajo y mayor alcance geográfico.
@@ -173,15 +173,15 @@ export default function NosotrosPage() {
       {/* Equipo */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
-          <SectionTitle titulo="Nuestros sectores" subtitulo="Respuesta directa de quien conoce el producto. Sin bots ni call centers." />
+          <SectionTitle titulo="Canales de atención directa" subtitulo="Respuesta de quien conoce el producto. Sin bots ni intermediarios." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {EQUIPO.map((p) => (
-              <div key={p.sector} className="bg-eco-bg-surface rounded-2xl p-6 flex flex-col items-center text-center gap-4">
+              <div key={p.area} className="bg-eco-bg-surface rounded-2xl p-6 flex flex-col items-center text-center gap-4">
                 <div className="w-16 h-16 rounded-2xl bg-eco-green/10 border border-eco-green/20 flex items-center justify-center text-3xl">
                   {p.icono}
                 </div>
                 <div>
-                  <p className="font-bold text-eco-text text-lg" style={{ fontFamily: 'var(--font-display)' }}>{p.sector}</p>
+                  <p className="font-bold text-eco-text text-lg" style={{ fontFamily: 'var(--font-display)' }}>{p.area}</p>
                   <p className="text-eco-text-muted text-sm mt-1">{p.rol}</p>
                 </div>
                 <a

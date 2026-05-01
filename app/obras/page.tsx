@@ -111,7 +111,7 @@ export default async function ObrasPage({
       {/* CTA */}
       <section className="py-16 bg-eco-bg-card border-t border-eco-border">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <SectionTitle titulo="¿Querés ver tu casa acá?" subtitulo="Miles de familias ya eligieron Eco Módulos & Piscinas. La próxima podés ser vos." />
+          <SectionTitle titulo="¿Querés ver tu proyecto acá?" subtitulo="Más de 2.000 instalaciones en todo el país. El siguiente puede ser el tuyo." />
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/modulos" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
               Ver módulos

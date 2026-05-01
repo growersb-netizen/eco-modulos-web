@@ -41,8 +41,8 @@ export default async function HomePage() {
   const cfg: Record<string, string> = {}
   for (const c of configs) cfg[c.clave] = c.valor
 
-  const heroTitulo = cfg.hero_titulo || 'TU VIVIENDA O PISCINA. SIN BANCO. HASTA 120 CUOTAS.'
-  const heroSubtitulo = cfg.hero_subtitulo || 'Fabricación directa. Financiación propia. Todo el país.'
+  const heroTitulo = cfg.hero_titulo || 'SOLUCIONES MODULARES Y PISCINAS. FABRICACIÓN DIRECTA.'
+  const heroSubtitulo = cfg.hero_subtitulo || 'Obradores, campamentos, unidades habitacionales y piscinas de fibra. Sin obra civil. Sin banco. Todo el país.'
   const waLink = 'https://wa.me/5491144498854?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
 
   return (
@@ -108,7 +108,7 @@ export default async function HomePage() {
         <SectionTitle titulo="Nuestros productos" subtitulo="Fabricamos todo en planta propia. Sin intermediarios. Financiación directa." badge="Catálogo" />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { titulo: 'Módulos Habitacionales', sub: 'Tecnología NCE', desde: 'Desde $2.990.000', cuota: 'Cuotas desde $28.650/mes', href: '/modulos', desc: 'Viviendas, ampliaciones, oficinas, quinchos y glamping. Instalación en días.' },
+            { titulo: 'Soluciones Modulares NCE', sub: 'Construcción industrializada', desde: 'Desde $2.990.000', cuota: 'Cuotas desde $28.650/mes', href: '/modulos', desc: 'Obradores, campamentos, oficinas de campo, unidades habitacionales y más. Sin obra civil. Operativos en días.' },
             { titulo: 'Piscinas de Fibra', sub: 'Fibra de vidrio premium', desde: 'Desde $2.000.000', cuota: 'Cuotas desde $19.200/mes', href: '/piscinas', desc: 'Sin excavación con la Miniportante. Instalada en 3 días. Para toda la vida.' },
             { titulo: 'Combo Especial', sub: '25% de descuento', desde: 'Módulo + Piscina', cuota: '60 cuotas fijas', href: '/combo', desc: 'Combiná tu módulo con una piscina y ahorrá 25% sobre el precio total.', badge: '25% OFF' },
           ].map((prod) => (
@@ -132,7 +132,7 @@ export default async function HomePage() {
       {/* CÓMO FUNCIONA */}
       <section className="py-20 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionTitle titulo="Cómo funciona" subtitulo="El proceso más simple para tener tu vivienda o piscina" />
+          <SectionTitle titulo="Cómo funciona" subtitulo="El proceso más directo para tener tu solución modular o piscina instalada" />
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { n: '01', titulo: 'Elegís tu modelo', desc: 'Explorá nuestro catálogo de módulos y piscinas. Simulá tu cuota en segundos sin comprometerte a nada.' },
