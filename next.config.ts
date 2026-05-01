@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
     // Next.js build-time checker fails on generated .next/types which differ by environment
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
     remotePatterns: [
       {
@@ -27,7 +24,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     serverActions: {
-      allowedOrigins: ['localhost:3000', 'ecomodulosypiscinas.com.ar'],
+      allowedOrigins: ['localhost:3000', 'ecomodulosypiscinas.com.ar', 'eco-modulos-web.vercel.app', '*.vercel.app'],
     },
   },
 }
