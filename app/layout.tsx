@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppFAB from '@/components/layout/WhatsAppFAB'
+import ChatWidget from '@/components/layout/ChatWidget'
 import Providers from '@/components/Providers'
 import Script from 'next/script'
 
@@ -178,6 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFAB />
+          <ChatWidget />
         </Providers>
       </body>
     </html>
