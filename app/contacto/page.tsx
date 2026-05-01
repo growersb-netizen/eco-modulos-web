@@ -1,18 +1,49 @@
 import SectionTitle from '@/components/shared/SectionTitle'
 import ContactForm from '@/components/shared/ContactForm'
-import CalendlyButton from '@/components/shared/CalendlyButton'
+import VideoCallButton from '@/components/shared/VideoCallButton'
 import { MessageCircle, MapPin, Clock, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contacto | Eco Módulos & Piscinas',
-  description: 'Contactanos por WhatsApp, email o agendá una videollamada. Respondemos en menos de 2 horas de lunes a sábado.',
+  title: 'Contacto | WhatsApp y Videollamada | Eco Módulos & Piscinas',
+  description: 'Contactanos por WhatsApp, email o agendá una videollamada gratuita. Asesores especializados en módulos habitacionales y piscinas de fibra de vidrio. Respondemos en menos de 2 horas.',
+  keywords: [
+    'contacto eco módulos piscinas',
+    'WhatsApp módulos habitacionales',
+    'asesoramiento piscinas fibra vidrio',
+    'videollamada gratuita módulos',
+    'consulta viviendas modulares',
+  ],
+  alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/contacto' },
+  openGraph: {
+    title: 'Contacto | Eco Módulos & Piscinas',
+    description: 'Escribinos por WhatsApp o agendá una videollamada gratuita con nuestros asesores.',
+    url: 'https://ecomodulosypiscinas.com.ar/contacto',
+  },
 }
 
-const VENDEDORES = [
-  { nombre: 'Stefanía', rol: 'Atención general y consultas', tel: '5491144498854', text: 'Hola Stefanía, quiero consultar sobre Eco Módulos & Piscinas' },
-  { nombre: 'Daniel', rol: 'Módulos habitacionales', tel: '5491171825835', text: 'Hola Daniel, quiero consultar por módulos habitacionales' },
-  { nombre: 'Hernán', rol: 'Piscinas de fibra de vidrio', tel: '5491125582328', text: 'Hola Hernán, quiero consultar por piscinas de fibra de vidrio' },
+const WA_LINKS = [
+  {
+    icono: '🏠',
+    titulo: 'Módulos habitacionales',
+    desc: 'Consultas sobre viviendas modulares, medidas, precios y financiación',
+    tel: '5491171825835',
+    text: 'Hola, quiero consultar por módulos habitacionales',
+  },
+  {
+    icono: '🏊',
+    titulo: 'Piscinas de fibra de vidrio',
+    desc: 'Modelos, instalación, garantía y planes de financiación de piscinas',
+    tel: '5491125582328',
+    text: 'Hola, quiero consultar por piscinas de fibra de vidrio',
+  },
+  {
+    icono: '📋',
+    titulo: 'Consulta general',
+    desc: 'Cualquier consulta, combo módulo + piscina o información general',
+    tel: '5491144498854',
+    text: 'Hola, quiero consultar sobre Eco Módulos & Piscinas',
+  },
 ]
 
 export default function ContactoPage() {
@@ -72,25 +103,25 @@ export default function ContactoPage() {
           {/* Contacto directo */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>O escribinos directo</h2>
-              <p className="text-eco-text-muted text-sm mb-6">Cada vendedor es especialista en su producto. Escribile al que más te conviene.</p>
+              <h2 className="text-2xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>O escribinos por WhatsApp</h2>
+              <p className="text-eco-text-muted text-sm mb-6">Elegí el tema de tu consulta y te responde un asesor especializado.</p>
               <div className="space-y-4">
-                {VENDEDORES.map((v) => (
+                {WA_LINKS.map((v) => (
                   <a
-                    key={v.nombre}
+                    key={v.titulo}
                     href={`https://wa.me/${v.tel}?text=${encodeURIComponent(v.text)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 bg-eco-bg-card border border-eco-border hover:border-eco-green rounded-xl p-4 transition-colors group"
                   >
-                    <div className="w-10 h-10 rounded-full bg-eco-green/20 flex items-center justify-center flex-shrink-0">
-                      <span className="text-lg font-extrabold text-eco-green" style={{ fontFamily: 'var(--font-display)' }}>{v.nombre[0]}</span>
+                    <div className="w-10 h-10 rounded-xl bg-eco-green/10 flex items-center justify-center flex-shrink-0 text-xl">
+                      {v.icono}
                     </div>
                     <div className="flex-1">
-                      <p className="text-eco-text font-semibold">{v.nombre}</p>
-                      <p className="text-eco-text-muted text-xs">{v.rol}</p>
+                      <p className="text-eco-text font-semibold text-sm">{v.titulo}</p>
+                      <p className="text-eco-text-muted text-xs">{v.desc}</p>
                     </div>
-                    <MessageCircle className="w-5 h-5 text-eco-green opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <MessageCircle className="w-5 h-5 text-eco-green opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                   </a>
                 ))}
               </div>
@@ -100,7 +131,7 @@ export default function ContactoPage() {
             <div className="bg-eco-bg-card border border-eco-border rounded-xl p-6">
               <h3 className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Videollamada gratuita</h3>
               <p className="text-eco-text-muted text-sm mb-4">Agendá 30 minutos con nuestro equipo para ver catálogos, hacer preguntas y obtener una cotización personalizada.</p>
-              <CalendlyButton label="Agendar videollamada" />
+              <VideoCallButton label="Agendar videollamada" />
             </div>
 
             {/* Mapa embed */}

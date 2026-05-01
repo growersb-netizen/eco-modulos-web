@@ -1,15 +1,31 @@
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
-import CalendlyButton from '@/components/shared/CalendlyButton'
+import VideoCallButton from '@/components/shared/VideoCallButton'
 import { MessageCircle, Home, Plus, Building2, Coffee, Trees, TrendingUp } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Módulos Habitacionales | Viviendas Modulares NCE',
-  description: 'Catálogo completo de módulos habitacionales con tecnología NCE. De 6 a 72 m². Financiación directa hasta 120 cuotas sin banco. Instalación en días.',
+  title: 'Módulos Habitacionales | Viviendas Modulares NCE | Eco Módulos & Piscinas',
+  description: 'Catálogo de módulos habitacionales con tecnología NCE: desde 6 hasta 72 m². Financiación directa hasta 120 cuotas sin banco ni garante. Fabricante directo, planta en Zárate. Instalación en todo el país.',
+  keywords: [
+    'módulos habitacionales',
+    'viviendas modulares NCE',
+    'casas modulares argentina precio',
+    'módulos prefabricados',
+    'viviendas prefabricadas argentina',
+    'ampliaciones modulares',
+    'oficinas modulares',
+    'módulos para glamping',
+  ],
+  alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/modulos' },
+  openGraph: {
+    title: 'Módulos Habitacionales NCE | Eco Módulos & Piscinas',
+    description: 'Fabricante directo de módulos habitacionales. De 6 a 72 m², financiación hasta 120 cuotas sin banco.',
+    url: 'https://ecomodulosypiscinas.com.ar/modulos',
+  },
 }
 
 const USOS = [
@@ -29,6 +45,16 @@ const FAQ = [
   { q: '¿Qué garantía tienen los módulos?', r: 'Otorgamos garantía de 5 años sobre la estructura metálica y 2 años sobre terminaciones. Al ser fabricantes directos, cualquier problema se resuelve con nosotros directamente.' },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ.map(({ q, r }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: r },
+  })),
+}
+
 export default async function ModulosPage() {
   const [modulos, coeficientes] = await Promise.all([
     prisma.modulo.findMany({ where: { activo: true }, orderBy: { orden: 'asc' } }),
@@ -40,6 +66,10 @@ export default async function ModulosPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="pt-28 pb-16 bg-gradient-to-b from-eco-green-dark to-eco-bg">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -54,7 +84,7 @@ export default async function ModulosPage() {
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
               <MessageCircle className="w-5 h-5" />Consultar a Daniel
             </a>
-            <CalendlyButton variant="outline" label="Agendar videollamada" />
+            <VideoCallButton variant="outline" label="Agendar videollamada" productoDefault="modulo" />
           </div>
         </div>
       </section>
@@ -144,7 +174,7 @@ export default async function ModulosPage() {
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
             <MessageCircle className="w-5 h-5" />WhatsApp — Daniel
           </a>
-          <CalendlyButton variant="outline" />
+          <VideoCallButton variant="outline" productoDefault="modulo" />
         </div>
       </section>
     </>

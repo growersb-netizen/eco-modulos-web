@@ -1,15 +1,30 @@
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import LoanSimulator from '@/components/shared/LoanSimulator'
-import CalendlyButton from '@/components/shared/CalendlyButton'
+import VideoCallButton from '@/components/shared/VideoCallButton'
 import { MessageCircle, CheckCircle, Shield, Clock } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Financiación Directa Hasta 120 Cuotas | Eco Módulos & Piscinas',
-  description: 'Financiación propia sin banco, sin garante. Módulos y piscinas en hasta 120 cuotas fijas. Aprobación simple. Todo el país.',
+  title: 'Financiación Directa Hasta 120 Cuotas Sin Banco | Eco Módulos & Piscinas',
+  description: 'Financiación propia sin banco, sin garante y sin VERAZ. Módulos habitacionales y piscinas de fibra en hasta 120 cuotas fijas. Aprobación simple, cuota accesible. Todo el país.',
+  keywords: [
+    'financiación sin banco módulos',
+    'cuotas sin garante vivienda modular',
+    'financiamiento piscinas argentina',
+    'módulos hasta 120 cuotas',
+    'piscina en cuotas sin banco',
+    'crédito vivienda sin VERAZ',
+    'financiación directa cooperativa',
+  ],
+  alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/financiacion' },
+  openGraph: {
+    title: 'Financiación Hasta 120 Cuotas Sin Banco | Eco Módulos & Piscinas',
+    description: 'Módulos y piscinas en cuotas fijas sin banco ni garante. Aprobación simple en todo el país.',
+    url: 'https://ecomodulosypiscinas.com.ar/financiacion',
+  },
 }
 
 const FAQ = [
@@ -70,7 +85,7 @@ export default async function FinanciacionPage() {
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
               <MessageCircle className="w-5 h-5" />Consultar financiación
             </a>
-            <CalendlyButton variant="outline" label="Agendar videollamada" />
+            <VideoCallButton variant="outline" label="Agendar videollamada" />
           </div>
         </div>
       </section>
@@ -185,7 +200,7 @@ export default async function FinanciacionPage() {
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
             <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
           </a>
-          <CalendlyButton variant="outline" />
+          <VideoCallButton variant="outline" />
         </div>
       </section>
     </>

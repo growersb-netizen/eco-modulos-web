@@ -8,8 +8,21 @@ import type { Metadata } from 'next'
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Blog | Módulos, Piscinas y Construcción Modular',
-  description: 'Artículos sobre módulos habitacionales, piscinas de fibra de vidrio, financiación y construcción eficiente en Argentina.',
+  title: 'Blog | Módulos Habitacionales y Piscinas de Fibra | Eco Módulos & Piscinas',
+  description: 'Artículos y guías sobre viviendas modulares NCE, piscinas de fibra de vidrio, financiación sin banco y construcción eficiente en Argentina. Consejos de expertos.',
+  keywords: [
+    'blog viviendas modulares argentina',
+    'artículos piscinas fibra vidrio',
+    'guía financiamiento sin banco',
+    'construcción modular tips',
+    'módulos NCE información',
+  ],
+  alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/blog' },
+  openGraph: {
+    title: 'Blog | Eco Módulos & Piscinas',
+    description: 'Guías y consejos sobre módulos habitacionales, piscinas de fibra y financiación directa en Argentina.',
+    url: 'https://ecomodulosypiscinas.com.ar/blog',
+  },
 }
 
 const CATEGORIAS = ['todos', 'modulos', 'piscinas', 'financiacion', 'construccion']

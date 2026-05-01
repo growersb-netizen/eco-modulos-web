@@ -74,26 +74,32 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': 'https://ecomodulosypiscinas.com.ar/#business',
   name: 'Eco Módulos & Piscinas',
+  alternateName: 'Eco Modulos Piscinas',
   description:
-    'Fabricamos viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas.',
+    'Fabricante directo de viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco. Cooperativa de trabajo INAES con más de 15 años de trayectoria.',
   url: 'https://ecomodulosypiscinas.com.ar',
   telephone: '+54-9-11-4449-8854',
   email: 'info@ecomodulosypiscinas.com.ar',
-  address: [
-    {
-      '@type': 'PostalAddress',
-      streetAddress: 'Av. Paseo Colón 1013',
-      addressLocality: 'Buenos Aires',
-      addressRegion: 'CABA',
-      addressCountry: 'AR',
-    },
-  ],
+  priceRange: '$$',
+  currenciesAccepted: 'ARS',
+  paymentAccepted: 'Cash, Bank Transfer, Financing',
+  areaServed: { '@type': 'Country', name: 'Argentina' },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Av. Paseo Colón 1013',
+    addressLocality: 'Buenos Aires',
+    addressRegion: 'CABA',
+    postalCode: 'C1063',
+    addressCountry: 'AR',
+  },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: -34.6176,
     longitude: -58.3756,
   },
+  hasMap: 'https://maps.google.com/?q=-34.6176,-58.3756',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -109,6 +115,30 @@ const jsonLd = {
     },
   ],
   sameAs: ['https://instagram.com/ecomodulosypiscinas'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Módulos habitacionales y piscinas de fibra',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: 'Módulos Habitacionales NCE',
+          description: 'Viviendas modulares prefabricadas de 6 a 72 m² con tecnología NCE',
+          url: 'https://ecomodulosypiscinas.com.ar/modulos',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Product',
+          name: 'Piscinas de Fibra de Vidrio',
+          description: '16 modelos de piscinas de fibra de vidrio, desde 2x3m hasta 4x8m',
+          url: 'https://ecomodulosypiscinas.com.ar/piscinas',
+        },
+      },
+    ],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

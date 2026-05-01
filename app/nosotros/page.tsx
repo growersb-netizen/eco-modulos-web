@@ -1,12 +1,25 @@
 import SectionTitle from '@/components/shared/SectionTitle'
-import CalendlyButton from '@/components/shared/CalendlyButton'
+import VideoCallButton from '@/components/shared/VideoCallButton'
 import { MessageCircle, Award, Users, MapPin, Factory, Shield } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Nosotros | Cooperativa Eco Módulos & Piscinas',
-  description: 'Somos una cooperativa de trabajo INAES con más de 15 años fabricando módulos habitacionales y piscinas de fibra de vidrio en Zárate, Buenos Aires.',
+  title: 'Quiénes Somos | Cooperativa INAES Eco Módulos & Piscinas',
+  description: 'Cooperativa de trabajo registrada ante INAES. Más de 15 años fabricando módulos habitacionales NCE y piscinas de fibra de vidrio en Zárate, Buenos Aires. Fabricante directo, sin intermediarios.',
+  keywords: [
+    'cooperativa INAES viviendas modulares',
+    'fabricante módulos habitacionales Zárate',
+    'empresa piscinas fibra Buenos Aires',
+    'eco módulos piscinas quiénes somos',
+    'cooperativa construcción argentina',
+  ],
+  alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/nosotros' },
+  openGraph: {
+    title: 'Quiénes Somos | Eco Módulos & Piscinas',
+    description: 'Cooperativa INAES con +15 años fabricando viviendas modulares y piscinas de fibra de vidrio en Zárate, BA.',
+    url: 'https://ecomodulosypiscinas.com.ar/nosotros',
+  },
 }
 
 const HITOS = [
@@ -178,7 +191,7 @@ export default function NosotrosPage() {
           <Link href="/contacto" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
             Ir a contacto
           </Link>
-          <CalendlyButton variant="outline" label="Agendar videollamada" />
+          <VideoCallButton variant="outline" label="Agendar videollamada" />
         </div>
       </section>
     </>

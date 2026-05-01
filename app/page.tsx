@@ -1,12 +1,35 @@
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import LoanSimulator from '@/components/shared/LoanSimulator'
-import CalendlyButton from '@/components/shared/CalendlyButton'
+import VideoCallButton from '@/components/shared/VideoCallButton'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle, Shield, Truck, Wrench, Award, CheckCircle, Star } from 'lucide-react'
+import type { Metadata } from 'next'
 
 export const revalidate = 0
+
+export const metadata: Metadata = {
+  title: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra en Argentina',
+  description: 'Fabricamos viviendas modulares NCE y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco ni garante. Cooperativa INAES. Planta en Zárate, showroom en Buenos Aires.',
+  keywords: [
+    'viviendas modulares argentina',
+    'casas modulares precio',
+    'módulos habitacionales',
+    'piscinas fibra de vidrio argentina',
+    'piscinas prefabricadas precio',
+    'financiación sin banco modulos',
+    'eco módulos piscinas',
+    'cooperativa viviendas modulares',
+  ],
+  alternates: { canonical: 'https://ecomodulosypiscinas.com.ar' },
+  openGraph: {
+    title: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra',
+    description: 'Módulos habitacionales y piscinas de fibra con financiación directa hasta 120 cuotas. Sin banco ni garante. Todo el país.',
+    url: 'https://ecomodulosypiscinas.com.ar',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+  },
+}
 
 export default async function HomePage() {
   const [configs, obras, testimonios] = await Promise.all([
@@ -212,7 +235,7 @@ export default async function HomePage() {
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors">
               <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
             </a>
-            <CalendlyButton variant="outline" />
+            <VideoCallButton variant="outline" />
           </div>
         </div>
       </section>

@@ -1,15 +1,31 @@
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
-import CalendlyButton from '@/components/shared/CalendlyButton'
+import VideoCallButton from '@/components/shared/VideoCallButton'
 import { MessageCircle, CheckCircle, X } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Piscinas de Fibra de Vidrio | Catálogo y Precios',
-  description: 'Catálogo completo de piscinas de fibra de vidrio. 16 modelos disponibles. Instalación en días. Financiación directa hasta 120 cuotas sin banco.',
+  title: 'Piscinas de Fibra de Vidrio | Catálogo y Precios | Eco Módulos & Piscinas',
+  description: 'Catálogo de piscinas de fibra de vidrio: 16 modelos desde 2×3 m hasta 4×8 m. Instalación en 3-5 días. Financiación directa hasta 120 cuotas sin banco. Modelo autoportante sin obra ni excavación.',
+  keywords: [
+    'piscinas fibra de vidrio argentina',
+    'piscinas prefabricadas precio',
+    'piscina autoportante sin obra',
+    'piscinas financiación sin banco',
+    'piscinas fibra vidrio buenos aires',
+    'Miniportante piscina',
+    'piscinas para casas',
+    'instalar piscina fibra vidrio',
+  ],
+  alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/piscinas' },
+  openGraph: {
+    title: 'Piscinas de Fibra de Vidrio | Eco Módulos & Piscinas',
+    description: '16 modelos de piscinas de fibra de vidrio. Instalación en días, financiación hasta 120 cuotas sin banco.',
+    url: 'https://ecomodulosypiscinas.com.ar/piscinas',
+  },
 }
 
 const COMPARATIVA = [
@@ -28,6 +44,16 @@ const FAQ = [
   { q: '¿Hacen instalación en todo el país?', r: 'Sí. Trabajamos con logística propia y de terceros para llegar a todo el territorio argentino. El costo de flete varía según la distancia.' },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ.map(({ q, r }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: r },
+  })),
+}
+
 export default async function PiscinasPage() {
   const [piscinas, coeficientes] = await Promise.all([
     prisma.piscina.findMany({ where: { activo: true }, orderBy: [{ destacada: 'desc' }, { orden: 'asc' }] }),
@@ -39,6 +65,10 @@ export default async function PiscinasPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Hero */}
       <section className="pt-28 pb-16 bg-gradient-to-b from-[#001a1a] to-eco-bg">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -53,7 +83,7 @@ export default async function PiscinasPage() {
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
               <MessageCircle className="w-5 h-5" />Consultar a Hernán
             </a>
-            <CalendlyButton variant="outline" label="Agendar videollamada" />
+            <VideoCallButton variant="outline" label="Agendar videollamada" productoDefault="piscina" />
           </div>
         </div>
       </section>
@@ -148,7 +178,7 @@ export default async function PiscinasPage() {
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
               <MessageCircle className="w-5 h-5" />WhatsApp — Hernán
             </a>
-            <CalendlyButton variant="outline" />
+            <VideoCallButton variant="outline" productoDefault="piscina" />
           </div>
         </div>
       </section>
