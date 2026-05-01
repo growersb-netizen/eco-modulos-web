@@ -23,7 +23,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://ecomodulosypiscinas.com.ar'
+    (process.env.NEXT_PUBLIC_SITE_URL || 'https://ecomodulosypiscinas.com.ar').replace(/^﻿/, '')
   ),
   title: {
     default: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra en Argentina',
