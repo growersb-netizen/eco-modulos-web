@@ -82,7 +82,7 @@ export default async function ModulosPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-              <MessageCircle className="w-5 h-5" />Consultar a Daniel
+              <MessageCircle className="w-5 h-5" />Consultar al sector de módulos
             </a>
             <VideoCallButton variant="outline" label="Agendar videollamada" productoDefault="modulo" />
           </div>
@@ -169,10 +169,10 @@ export default async function ModulosPage() {
       {/* CTA */}
       <section className="py-16 max-w-3xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>¿Querés saber más?</h2>
-        <p className="text-eco-text-muted mb-8">Consultá con Daniel, nuestro especialista en módulos habitacionales.</p>
+        <p className="text-eco-text-muted mb-8">Nuestro sector de módulos te asesora sin costo y sin compromiso.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-            <MessageCircle className="w-5 h-5" />WhatsApp — Daniel
+            <MessageCircle className="w-5 h-5" />WhatsApp — Módulos
           </a>
           <VideoCallButton variant="outline" productoDefault="modulo" />
         </div>

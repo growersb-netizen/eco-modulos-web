@@ -166,7 +166,7 @@ export default function ComboPageClient() {
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-6 py-3 rounded-xl transition-colors"
               >
-                <MessageCircle className="w-5 h-5" />Consultar con Daniel
+                <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
               </a>
               <p className="text-eco-text-muted text-xs text-center">Precios de referencia. La cotización final incluye flete e instalación.</p>
             </div>
@@ -197,10 +197,10 @@ export default function ComboPageClient() {
       {/* CTA */}
       <section className="py-16 max-w-3xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>¿Querés saber más?</h2>
-        <p className="text-eco-text-muted mb-8">Daniel te asesora en el armado del combo ideal para tu terreno y presupuesto.</p>
+        <p className="text-eco-text-muted mb-8">Nuestro equipo comercial te arma el combo ideal según tu terreno y presupuesto.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-            <MessageCircle className="w-5 h-5" />WhatsApp — Daniel
+            <MessageCircle className="w-5 h-5" />WhatsApp — Combos
           </a>
           <VideoCallButton productoDefault="combo" variant="outline" />
         </div>

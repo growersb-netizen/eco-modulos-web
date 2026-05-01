@@ -81,7 +81,7 @@ export default async function PiscinasPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-              <MessageCircle className="w-5 h-5" />Consultar a Hernán
+              <MessageCircle className="w-5 h-5" />Consultar al sector de piscinas
             </a>
             <VideoCallButton variant="outline" label="Agendar videollamada" productoDefault="piscina" />
           </div>
@@ -172,11 +172,11 @@ export default async function PiscinasPage() {
       {/* CTA */}
       <section className="py-16 bg-eco-bg-card border-t border-eco-border">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>Hablemos con Hernán</h2>
-          <p className="text-eco-text-muted mb-8">Especialista en piscinas de fibra. Sin costo, sin compromiso.</p>
+          <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>¿Querés saber más?</h2>
+          <p className="text-eco-text-muted mb-8">Nuestro sector de piscinas te asesora sin costo y sin compromiso.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-              <MessageCircle className="w-5 h-5" />WhatsApp — Hernán
+              <MessageCircle className="w-5 h-5" />WhatsApp — Piscinas
             </a>
             <VideoCallButton variant="outline" productoDefault="piscina" />
           </div>

@@ -32,9 +32,9 @@ const HITOS = [
 ]
 
 const EQUIPO = [
-  { nombre: 'Daniel', rol: 'Especialista en módulos', wa: 'https://wa.me/5491171825835?text=' + encodeURIComponent('Hola Daniel, quiero consultar por módulos habitacionales') },
-  { nombre: 'Hernán', rol: 'Especialista en piscinas', wa: 'https://wa.me/5491125582328?text=' + encodeURIComponent('Hola Hernán, quiero consultar por piscinas de fibra de vidrio') },
-  { nombre: 'Stefanía', rol: 'Atención al cliente', wa: 'https://wa.me/5491144498854?text=' + encodeURIComponent('Hola, quisiera consultar sobre Eco Módulos & Piscinas') },
+  { sector: 'Módulos habitacionales', icono: '🏠', rol: 'Asesoramiento en módulos NCE, medidas, instalación y financiación', wa: 'https://wa.me/5491171825835?text=' + encodeURIComponent('Hola, quiero consultar por módulos habitacionales') },
+  { sector: 'Piscinas de fibra', icono: '🏊', rol: 'Asesoramiento en modelos, instalación y planes de pago', wa: 'https://wa.me/5491125582328?text=' + encodeURIComponent('Hola, quiero consultar por piscinas de fibra de vidrio') },
+  { sector: 'Atención general', icono: '📋', rol: 'Consultas generales, combos y coordinación de proyectos integrales', wa: 'https://wa.me/5491144498854?text=' + encodeURIComponent('Hola, quisiera consultar sobre Eco Módulos & Piscinas') },
 ]
 
 export default function NosotrosPage() {
@@ -173,20 +173,16 @@ export default function NosotrosPage() {
       {/* Equipo */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
-          <SectionTitle titulo="El equipo" subtitulo="Personas reales. Respuesta directa. Sin bots ni call centers." />
+          <SectionTitle titulo="Nuestros sectores" subtitulo="Respuesta directa de quien conoce el producto. Sin bots ni call centers." />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {EQUIPO.map((p) => (
-              <div key={p.nombre} className="bg-eco-bg-surface rounded-2xl p-6 flex flex-col items-center text-center gap-4">
-                {/* Placeholder foto equipo — reemplazar con foto real */}
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-eco-green-dark to-eco-bg-surface border border-eco-green/20 flex items-center justify-center overflow-hidden">
-                  <svg viewBox="0 0 48 48" className="w-12 h-12 opacity-40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="18" r="9" stroke="#2d9e4f" strokeWidth="2" fill="#2d9e4f" fillOpacity="0.15"/>
-                    <path d="M6 42c0-9.94 8.06-18 18-18s18 8.06 18 18" stroke="#2d9e4f" strokeWidth="2" fill="#2d9e4f" fillOpacity="0.15"/>
-                  </svg>
+              <div key={p.sector} className="bg-eco-bg-surface rounded-2xl p-6 flex flex-col items-center text-center gap-4">
+                <div className="w-16 h-16 rounded-2xl bg-eco-green/10 border border-eco-green/20 flex items-center justify-center text-3xl">
+                  {p.icono}
                 </div>
                 <div>
-                  <p className="font-bold text-eco-text text-lg" style={{ fontFamily: 'var(--font-display)' }}>{p.nombre}</p>
-                  <p className="text-eco-text-muted text-sm">{p.rol}</p>
+                  <p className="font-bold text-eco-text text-lg" style={{ fontFamily: 'var(--font-display)' }}>{p.sector}</p>
+                  <p className="text-eco-text-muted text-sm mt-1">{p.rol}</p>
                 </div>
                 <a
                   href={p.wa}
@@ -194,7 +190,7 @@ export default function NosotrosPage() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-eco-green/10 hover:bg-eco-green text-eco-green hover:text-white text-sm font-semibold px-4 py-2 rounded-xl transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4" />WhatsApp
+                  <MessageCircle className="w-4 h-4" />Escribir por WhatsApp
                 </a>
               </div>
             ))}
