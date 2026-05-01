@@ -149,7 +149,7 @@ const VENTAJAS = [
   {
     icon: Clock,
     titulo: 'Instalación el mismo día',
-    desc: 'Módulos hasta 18 m² instalados en el día. Hasta 72 m² en un máximo de 5 días. Disponemos de stock para coordinar entrega e instalación inmediata — pago contado.',
+    desc: 'Módulos hasta 18 m² instalados en el día. Hasta 72 m² en un máximo de 5 días. Disponemos de stock para coordinar entrega e instalación inmediata.',
   },
 ]
 
@@ -168,7 +168,7 @@ const FAQ = [
   },
   {
     q: '¿Cuánto tarda la instalación?',
-    r: 'Para módulos de hasta 18 m², la instalación se realiza en el día. Módulos de mayor metraje demoran entre 2 y 5 días de armado en sitio, según el tamaño. Disponemos de stock para entrega e instalación inmediata en compras al contado. Para proyectos financiados, los plazos de fabricación se coordinan al momento de la confirmación del pedido.',
+    r: 'Para módulos de hasta 18 m², la instalación se realiza en el día. Módulos de mayor metraje demoran entre 2 y 5 días de armado en sitio, según el tamaño. Disponemos de stock para entrega e instalación inmediata. Para proyectos financiados, los plazos de fabricación se coordinan al momento de la confirmación del pedido.',
   },
   {
     q: '¿Qué base o cimiento necesitan los módulos?',
@@ -231,7 +231,7 @@ export default async function ModulosPage() {
           </p>
           <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-4 py-2 rounded-full mb-8">
             <CheckCircle className="w-3.5 h-3.5" />
-            Stock disponible — instalación inmediata al contado
+            Stock disponible — entrega e instalación inmediata
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
