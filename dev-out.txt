@@ -1,0 +1,17 @@
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.10.181:3000
+- Environments: .env.local, .env
+✓ Ready in 2.0s
+○ Compiling proxy ...
+- Experiments (use with caution):
+  · serverActions
+
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.10.181:3000
+- Environments: .env.local, .env
+✓ Ready in 1693ms
+- Experiments (use with caution):
+  · serverActions
+
