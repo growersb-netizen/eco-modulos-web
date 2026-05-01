@@ -1,0 +1,134 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Usuario {
+  id       String   @id @default(cuid())
+  email    String   @unique
+  password String
+  nombre   String
+  rol      String   @default("editor")
+  activo   Boolean  @default(true)
+  creadoEn DateTime @default(now())
+
+  @@map("usuarios")
+}
+
+model Modulo {
+  id             String   @id @default(cuid())
+  nombre         String
+  medida         String
+  descripcion    String   @default("")
+  usos           String   @default("[]")
+  precio_contado Int
+  precio_lista   Int
+  imagen         String?
+  activo         Boolean  @default(true)
+  orden          Int      @default(0)
+  actualizadoEn  DateTime @updatedAt
+
+  @@map("modulos")
+}
+
+model Piscina {
+  id             String   @id @default(cuid())
+  nombre         String
+  medida         String
+  descripcion    String   @default("")
+  usos           String   @default("[]")
+  precio_contado Int
+  precio_lista   Int
+  imagen         String?
+  destacada      Boolean  @default(false)
+  activo         Boolean  @default(true)
+  orden          Int      @default(0)
+  actualizadoEn  DateTime @updatedAt
+
+  @@map("piscinas")
+}
+
+model CoeficienteCuota {
+  id     String  @id @default(cuid())
+  cuotas Int     @unique
+  coef   Float
+  label  String
+  activo Boolean @default(true)
+
+  @@map("coeficientes_cuota")
+}
+
+model Obra {
+  id          String   @id @default(cuid())
+  titulo      String
+  localidad   String
+  provincia   String
+  tipo        String   @default("modulo")
+  imagen      String?
+  descripcion String?
+  activo      Boolean  @default(true)
+  creadoEn    DateTime @default(now())
+
+  @@map("obras")
+}
+
+model Lead {
+  id                String   @id @default(cuid())
+  nombre            String?
+  telefono          String?
+  email             String?
+  localidad         String?
+  producto_interes  String
+  plan_pago         String?
+  cuotas_simuladas  Int?
+  mensaje           String?
+  fuente            String
+  vendedor_asignado String
+  estado            String   @default("nuevo")
+  notas             String?
+  creadoEn          DateTime @default(now())
+  actualizadoEn     DateTime @updatedAt
+
+  @@map("leads")
+}
+
+model Testimonio {
+  id        String   @id @default(cuid())
+  nombre    String
+  localidad String
+  producto  String
+  texto     String
+  estrellas Int      @default(5)
+  imagen    String?
+  activo    Boolean  @default(true)
+  orden     Int      @default(0)
+  creadoEn  DateTime @default(now())
+
+  @@map("testimonios")
+}
+
+model ArticuloBlog {
+  id            String   @id @default(cuid())
+  titulo        String
+  slug          String   @unique
+  resumen       String?
+  contenido     String
+  imagen        String?
+  categoria     String?
+  publicado     Boolean  @default(false)
+  creadoEn      DateTime @default(now())
+  actualizadoEn DateTime @updatedAt
+
+  @@map("articulos_blog")
+}
+
+model ConfigSitio {
+  id    String @id @default(cuid())
+  clave String @unique
+  valor String
+
+  @@map("config_sitio")
+}
