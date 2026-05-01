@@ -4,32 +4,32 @@ import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
 import {
   MessageCircle, HardHat, Flame, Mountain, Wheat, Building2,
-  Clock, RotateCcw, Zap, Shield, Wrench, CheckCircle, ChevronRight,
-  Boxes, Users, MapPin, Hammer
+  Clock, RotateCcw, Zap, Shield, Wrench, CheckCircle,
+  Boxes, Users, MapPin, Hammer, Home, Coffee, Truck, Star
 } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Módulos Industrializados NCE | Obradores, Campamentos y Unidades Habitacionales',
-  description: 'Módulos NCE para obradores, comedores de obra, campamentos industriales, unidades habitacionales rurales, oficinas de campo y más. Fabricante directo en Zárate. Entrega en todo el país. Soluciones para empresas, municipios, minería, Oil & Gas y agro.',
+  title: 'Módulos NCE | Viviendas, Quinchos, Obradores y Campamentos | Eco Módulos & Piscinas',
+  description: 'Fabricantes líderes de módulos NCE en Argentina. Viviendas, quinchos, obradores, campamentos, oficinas rurales y unidades habitacionales. Llave en mano. Logística propia en todo el país. Financiación directa hasta 120 cuotas sin banco.',
   keywords: [
-    'módulos habitacionales argentina',
+    'módulos habitacionales argentina líderes',
+    'viviendas modulares NCE',
+    'quinchos modulares prefabricados',
     'obradores modulares',
     'campamentos modulares oil gas',
     'módulos para minería argentina',
-    'comedores de obra modulares',
     'unidades habitacionales prefabricadas',
-    'módulos corporativos empresas',
+    'módulos llave en mano',
     'construcción modular industrializada NCE',
-    'módulos para municipios',
-    'campamentos vaca muerta modulares',
+    'módulos financiación 120 cuotas',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/modulos' },
   openGraph: {
-    title: 'Módulos Industrializados NCE | Obradores, Campamentos y Unidades Habitacionales',
-    description: 'Fabricante directo de módulos NCE. Obradores, campamentos, unidades habitacionales. Desplegados en días, sin obra civil, reubicables.',
+    title: 'Módulos NCE Llave en Mano | Eco Módulos & Piscinas',
+    description: 'Líderes en fabricación de módulos NCE. Viviendas, quinchos, obradores y campamentos. Logística propia en todo el país. Financiación hasta 120 cuotas.',
     url: 'https://ecomodulosypiscinas.com.ar/modulos',
   },
 }
@@ -83,6 +83,18 @@ const APLICACIONES = [
     desc: 'Baños y vestuarios autónomos con inodoro, ducha, lavabo y ventilación. Ideales como soporte en campamentos o en instalaciones existentes.',
     color: 'text-eco-green',
   },
+  {
+    icon: Home,
+    titulo: 'Vivienda particular',
+    desc: 'Unidad habitacional permanente o transitoria de 18 a 72 m². Llave en mano. Financiación directa hasta 120 cuotas sin banco ni garante.',
+    color: 'text-eco-green',
+  },
+  {
+    icon: Coffee,
+    titulo: 'Quincho y espacio de recreación',
+    desc: 'Módulos abiertos o semicerrados para entretenimiento, asados y reuniones. Con o sin cocina. Personalizable en dimensiones y aberturas.',
+    color: 'text-eco-green',
+  },
 ]
 
 const RUBROS = [
@@ -120,24 +132,24 @@ const RUBROS = [
 
 const VENTAJAS = [
   {
-    icon: Clock,
-    titulo: 'Desplegado en días',
-    desc: 'Fabricamos en planta y armamos en sitio. Un módulo de 36 m² puede estar operativo en menos de una semana desde la llegada al predio.',
+    icon: Star,
+    titulo: 'Líderes en módulos NCE',
+    desc: 'Más de 15 años de experiencia y +2.000 unidades instaladas en Argentina. Fabricación propia en 7.000 m² de planta en Zárate, Buenos Aires.',
   },
   {
-    icon: RotateCcw,
-    titulo: 'Reubicable y escalable',
-    desc: 'No requiere fundaciones permanentes. Al terminar el proyecto, el módulo se puede trasladar a otra locación o ampliar con unidades adicionales.',
+    icon: Truck,
+    titulo: 'Logística propia — todo el país',
+    desc: 'Transporte e instalación con recursos propios. Sin tercerización. Llegamos a todas las provincias con plazos y costos previsibles.',
   },
   {
     icon: Zap,
     titulo: 'Eficiencia energética NCE',
-    desc: 'Aislación térmica y acústica superior a la mampostería. Menor consumo de calefacción y refrigeración, crítico en zonas extremas.',
+    desc: 'Aislación térmica y acústica muy superior a la mampostería convencional. Menor consumo energético en cualquier clima del país.',
   },
   {
-    icon: Shield,
-    titulo: 'Sin obra civil',
-    desc: 'Mínima intervención en el terreno. Sin excavaciones, sin hormigonado extenso, sin plazos de fraguado. Ideal para zonas con restricciones de obra.',
+    icon: Clock,
+    titulo: 'Operativo en días, no meses',
+    desc: 'Fabricación en planta + armado en sitio. Sin obra civil, sin tiempos de fraguado. Listo para usar desde el primer día de instalación.',
   },
 ]
 
@@ -208,14 +220,14 @@ export default async function ModulosPage() {
             className="text-5xl sm:text-7xl font-extrabold text-white uppercase leading-none mb-6"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Infraestructura modular.<br />
-            <span className="text-eco-green">Operativa en días.</span>
+            Módulos NCE.<br />
+            <span className="text-eco-green">Llave en mano. En días.</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-4">
-            Obradores, comedores, campamentos, oficinas de campo y unidades habitacionales. Fabricación propia en Zárate. Sin obra civil. Sin plazos de construcción.
+            Viviendas, quinchos, obradores, campamentos, oficinas de campo y más. Líderes en fabricación de módulos NCE en Argentina. Logística propia en todo el país.
           </p>
           <p className="text-eco-text-muted text-sm max-w-2xl mx-auto mb-8">
-            También ofrecemos módulos para vivienda particular con financiación directa hasta 120 cuotas.
+            Practicidad · Prolijidad · Rapidez · Eficiencia energética · Sin obra civil
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -325,6 +337,44 @@ export default async function ModulosPage() {
         </div>
       </section>
 
+      {/* ── LLAVE EN MANO ── */}
+      <section className="py-14 max-w-5xl mx-auto px-4">
+        <div className="bg-eco-bg-card border border-eco-green/20 rounded-2xl p-8">
+          <div className="flex flex-col sm:flex-row gap-8 items-start">
+            <div className="flex-1">
+              <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+                Entrega llave en mano
+              </span>
+              <h2 className="text-3xl font-extrabold text-eco-text mb-3" style={{ fontFamily: 'var(--font-display)' }}>
+                Terminado. Listo para usar o personalizar.
+              </h2>
+              <p className="text-eco-text-muted text-sm leading-relaxed">
+                Cada módulo se entrega <strong className="text-eco-text">completamente terminado</strong> y habitable desde el primer día. No vendemos estructura: entregamos una unidad funcional.
+              </p>
+              <p className="text-eco-text-muted text-sm leading-relaxed mt-3">
+                No ofrecemos terminaciones de lujo ni detalles decorativos de obra fina — eso no es lo que hacemos. Lo que sí garantizamos es <strong className="text-eco-text">practicidad, prolijidad, solidez y eficiencia</strong>. El cliente tiene un módulo habitable y puede personalizarlo a gusto sin necesidad de obra adicional.
+              </p>
+            </div>
+            <div className="sm:w-72 flex-shrink-0 space-y-3">
+              {[
+                { label: 'Interior', detalle: 'Paredes y cielorraso fondeados en blanco. Piso fondeado en gris. Instalación eléctrica y sanitaria incluida.' },
+                { label: 'Exterior', detalle: 'Revestimiento plástico texturizado impermeabilizado. Resistente a la intemperie. Bajo mantenimiento.' },
+                { label: 'Aberturas', detalle: 'Puerta de acceso y ventanas según modelo. Incluidas en precio de catálogo.' },
+                { label: 'Personalización', detalle: 'El cliente elige colores, revestimientos, muebles y detalles. Sin obra adicional.' },
+              ].map(({ label, detalle }) => (
+                <div key={label} className="flex gap-3 bg-eco-bg-surface rounded-xl px-4 py-3">
+                  <CheckCircle className="w-4 h-4 text-eco-green flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-eco-text text-xs font-bold uppercase tracking-widest">{label}</p>
+                    <p className="text-eco-text-muted text-xs mt-0.5">{detalle}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── TECNOLOGÍA NCE ── */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-5xl mx-auto px-4">
@@ -341,7 +391,7 @@ export default async function ModulosPage() {
               { n: '02', titulo: 'Panel SIP con aislación de alto rendimiento', desc: 'Dos láminas de OSB estructural con núcleo de poliestireno expandido. Aislación térmica y acústica muy superior al ladrillo convencional. Crítico para minimizar consumo energético en climas extremos.' },
               { n: '03', titulo: 'Membrana hidrófuga perimetral', desc: 'Barrera contra el ingreso de humedad del exterior. Fundamental en entornos con alta pluviometría, humedad ambiental elevada o condensación nocturna.' },
               { n: '04', titulo: 'Revestimiento exterior funcional', desc: 'Chapa prepintada de alta duración como estándar. Disponible en símil piedra, madera compuesta u otros materiales según requerimiento. Resistente al clima y de bajo mantenimiento.' },
-              { n: '05', titulo: 'Terminaciones interiores funcionales', desc: 'Durlock con terminación lista para pintar. La propuesta no prioriza acabados de lujo: prioriza funcionalidad, durabilidad y velocidad de habilitación.' },
+              { n: '05', titulo: 'Terminaciones interiores funcionales', desc: 'Durlock fondeado listo para usar. Interior en blanco, piso gris fondeado, exterior con revestimiento plástico texturizado impermeabilizado. Terminación prolija, habitable desde el primer día. Sin detalles de lujo: el cliente personaliza a gusto.' },
             ].map((capa) => (
               <div key={capa.n} className="flex gap-4 bg-eco-bg-surface border border-eco-border rounded-xl p-5">
                 <span

@@ -40,24 +40,24 @@ const PLANES = [
   {
     nombre: 'Plan Corto',
     cuotas: '3 a 12',
-    desc: 'Para quienes quieren salir de deudas rápido. Las cuotas más accesibles en términos de costo total.',
+    desc: 'Menor costo financiero total. Ideal para proyectos corporativos, compras de reposición o quienes prefieren liquidar rápido.',
     color: 'eco-green',
-    beneficios: ['Menor costo financiero', 'Cuotas más altas', 'Ideal si tenés ingresos estables'],
+    beneficios: ['Menor costo financiero', 'Más apto para empresas', 'Ideal con ingresos estables o capital disponible'],
   },
   {
     nombre: 'Plan Estándar',
     cuotas: '24 a 60',
-    desc: 'El plan más elegido. Balance entre cuota mensual accesible y costo financiero razonable.',
+    desc: 'El plan más elegido para viviendas, quinchos y combos. Balance entre cuota accesible y costo financiero razonable.',
     color: 'eco-teal',
-    beneficios: ['Cuota mensual cómoda', 'Plazo equilibrado', 'El más solicitado'],
+    beneficios: ['Cuota mensual cómoda', 'Plazo equilibrado', 'El más solicitado para vivienda y quincho'],
     badge: 'Más elegido',
   },
   {
     nombre: 'Plan Extendido',
     cuotas: '72 a 120',
-    desc: 'Para proyectos grandes o cuando la prioridad es la cuota más baja posible.',
+    desc: 'Para acceder a más metros cuadrados con la cuota más baja posible. Pensado para vivienda particular y proyectos de mayor inversión.',
     color: 'yellow',
-    beneficios: ['Cuota mínima mensual', 'Ideal para módulos grandes', 'Acceso a más metros cuadrados'],
+    beneficios: ['Cuota mínima mensual', 'Acceso a módulos de mayor metraje', 'Ideal para vivienda en 120 cuotas'],
   },
 ]
 
@@ -107,6 +107,28 @@ export default async function FinanciacionPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Qué financiamos */}
+      <section className="py-14 max-w-5xl mx-auto px-4">
+        <SectionTitle titulo="¿Qué financiamos?" subtitulo="La financiación cubre el módulo o la piscina terminados llave en mano. Flete e instalación se pueden incluir en el plan." />
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[
+            { icono: '🏠', titulo: 'Viviendas modulares', detalle: 'De 18 a 72 m². Terminadas, habitables y financiadas hasta 120 cuotas.' },
+            { icono: '🔥', titulo: 'Quinchos y recreación', detalle: 'Módulos para esparcimiento. Financiación hasta 60 cuotas. Llave en mano.' },
+            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: '16 modelos instalados en 72 hs. Financiación hasta 120 cuotas sin banco.' },
+            { icono: '🔗', titulo: 'Combo módulo + piscina', detalle: '25% de descuento sobre el total. Financiación única hasta 60 cuotas.' },
+          ].map(({ icono, titulo, detalle }) => (
+            <div key={titulo} className="bg-eco-bg-card border border-eco-border rounded-xl p-5 flex flex-col gap-2">
+              <span className="text-2xl">{icono}</span>
+              <p className="font-bold text-eco-text text-sm" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</p>
+              <p className="text-eco-text-muted text-xs">{detalle}</p>
+            </div>
+          ))}
+        </div>
+        <p className="text-eco-text-muted text-xs mt-5 text-center">
+          Para proyectos corporativos (obradores, campamentos, etc.), consultá condiciones especiales de pago.
+        </p>
       </section>
 
       {/* Planes */}

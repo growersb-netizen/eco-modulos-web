@@ -60,10 +60,10 @@ export default function NosotrosPage() {
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
-              { valor: '+15', label: 'Años de experiencia' },
-              { valor: '+2.000', label: 'Proyectos instalados' },
-              { valor: '7.000 m²', label: 'Planta de fabricación' },
-              { valor: '23', label: 'Provincias alcanzadas' },
+              { valor: '+15', label: 'Años liderando la fabricación de módulos NCE' },
+              { valor: '+2.000', label: 'Unidades instaladas en todo el país' },
+              { valor: '7.000 m²', label: 'Planta propia de fabricación en Zárate' },
+              { valor: '23', label: 'Provincias con logística propia' },
             ].map((s) => (
               <div key={s.label}>
                 <p className="text-4xl font-extrabold text-eco-green mb-1" style={{ fontFamily: 'var(--font-display)' }}>{s.valor}</p>

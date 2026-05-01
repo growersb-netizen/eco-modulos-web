@@ -93,7 +93,7 @@ export default async function HomePage() {
       <section className="bg-eco-bg-card border-y border-eco-border py-5">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-6 lg:gap-10">
-            {['+15 Años de experiencia', '+7.000 m² de planta propia', 'Cooperativa INAES', 'Todo el país', 'Financiación directa sin banco'].map((item) => (
+            {['+15 Años de experiencia', 'Líderes en módulos NCE', 'Cooperativa INAES', 'Logística propia en todo el país', 'Financiación directa hasta 120 cuotas'].map((item) => (
               <div key={item} className="flex items-center gap-2 text-eco-text-muted text-sm">
                 <CheckCircle className="w-4 h-4 text-eco-green flex-shrink-0" />
                 <span>{item}</span>
@@ -108,7 +108,7 @@ export default async function HomePage() {
         <SectionTitle titulo="Nuestros productos" subtitulo="Fabricamos todo en planta propia. Sin intermediarios. Financiación directa." badge="Catálogo" />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { titulo: 'Soluciones Modulares NCE', sub: 'Construcción industrializada', desde: 'Desde $2.990.000', cuota: 'Cuotas desde $28.650/mes', href: '/modulos', desc: 'Obradores, campamentos, oficinas de campo, unidades habitacionales y más. Sin obra civil. Operativos en días.' },
+            { titulo: 'Módulos NCE', sub: 'Llave en mano · Líderes en Argentina', desde: 'Desde $2.990.000', cuota: 'Cuotas desde $28.650/mes', href: '/modulos', desc: 'Viviendas, quinchos, obradores, campamentos y más. Terminados y operativos en días. Logística propia en todo el país.' },
             { titulo: 'Piscinas de Fibra', sub: 'Fibra de vidrio premium', desde: 'Desde $2.000.000', cuota: 'Cuotas desde $19.200/mes', href: '/piscinas', desc: 'Sin excavación con la Miniportante. Instalada en 3 días. Para toda la vida.' },
             { titulo: 'Combo Especial', sub: '25% de descuento', desde: 'Módulo + Piscina', cuota: '60 cuotas fijas', href: '/combo', desc: 'Combiná tu módulo con una piscina y ahorrá 25% sobre el precio total.', badge: '25% OFF' },
           ].map((prod) => (
