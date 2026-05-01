@@ -1,13 +1,20 @@
 import { prisma } from '@/lib/db'
 import type { MetadataRoute } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://ecomodulosypiscinas.com.ar'
 
-  const articulos = await prisma.articuloBlog.findMany({
-    where: { publicado: true },
-    select: { slug: true, actualizadoEn: true },
-  })
+  let articulos: { slug: string; actualizadoEn: Date }[] = []
+  try {
+    articulos = await prisma.articuloBlog.findMany({
+      where: { publicado: true },
+      select: { slug: true, actualizadoEn: true },
+    })
+  } catch {
+    // If DB is unreachable, return static routes only
+  }
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
