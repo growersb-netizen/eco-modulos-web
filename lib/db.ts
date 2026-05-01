@@ -1,4 +1,3 @@
-import { createClient } from '@libsql/client'
 import { PrismaClient } from '@prisma/client'
 import { PrismaLibSql } from '@prisma/adapter-libsql'
 
@@ -15,12 +14,11 @@ function createPrismaClient() {
     ? rawUrl.replace('libsql://', 'https://')
     : rawUrl
 
-  const libsql = createClient({
+  // PrismaLibSql (v7) takes a config object directly, not a pre-created client
+  const adapter = new PrismaLibSql({
     url,
     authToken: clean(process.env.TURSO_AUTH_TOKEN) || undefined,
   })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const adapter = new PrismaLibSql(libsql as any)
   return new PrismaClient({ adapter })
 }
 
