@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 
 export default function WhatsAppFAB() {
-  const numero = process.env.NEXT_PUBLIC_WA_STEFANIA || '5491144498854'
+  const numero = process.env.NEXT_PUBLIC_WA_STEFANIA || '5491168733406'
   const link = `https://wa.me/${numero}?text=${encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')}`
 
   return (

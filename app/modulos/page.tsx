@@ -201,7 +201,7 @@ export default async function ModulosPage() {
   ])
 
   const coef12 = coeficientes.find((c) => c.cuotas === 12)?.coef ?? 1.15
-  const waLink = 'https://wa.me/5491171825835?text=' + encodeURIComponent('Hola, necesito información sobre módulos. Quiero consultar disponibilidad y precios.')
+  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, necesito información sobre módulos. Quiero consultar disponibilidad y precios.')
 
   return (
     <>
@@ -384,18 +384,18 @@ export default async function ModulosPage() {
         <div className="max-w-5xl mx-auto px-4">
           <SectionTitle
             titulo="Tecnología NCE"
-            subtitulo="No Convencional de Eficiencia energética — 5 capas de prestaciones técnicas"
+            subtitulo="No Convencional de Eficiencia energética — proceso de fabricación propio"
           />
           <p className="mt-4 text-eco-text-muted text-sm max-w-2xl mx-auto text-center">
-            Diseñada para rendir en zonas con amplitud térmica extrema: Patagonia, NOA, Cuyo y el corredor andino minero.
+            Fabricado íntegramente en nuestra planta de Zárate. Cada panel sale terminado, con anclajes incorporados, listo para armado en seco sin agua ni desperdicios.
           </p>
           <div className="mt-10 space-y-4">
             {[
-              { n: '01', titulo: 'Estructura metálica galvanizada', desc: 'Perfil de acero galvanizado de alta resistencia. No requiere mantenimiento, no se oxida, vida útil estructural mínima de 50 años. Cumple con las normas IRAM para perfiles de steel frame.' },
-              { n: '02', titulo: 'Panel SIP con aislación de alto rendimiento', desc: 'Dos láminas de OSB estructural con núcleo de poliestireno expandido. Aislación térmica y acústica muy superior al ladrillo convencional. Crítico para minimizar consumo energético en climas extremos.' },
-              { n: '03', titulo: 'Membrana hidrófuga perimetral', desc: 'Barrera contra el ingreso de humedad del exterior. Fundamental en entornos con alta pluviometría, humedad ambiental elevada o condensación nocturna.' },
-              { n: '04', titulo: 'Revestimiento exterior funcional', desc: 'Chapa prepintada de alta duración como estándar. Disponible en símil piedra, madera compuesta u otros materiales según requerimiento. Resistente al clima y de bajo mantenimiento.' },
-              { n: '05', titulo: 'Terminaciones interiores funcionales', desc: 'Durlock fondeado listo para usar. Interior en blanco, piso gris fondeado, exterior con revestimiento plástico texturizado impermeabilizado. Terminación prolija, habitable desde el primer día. Sin detalles de lujo: el cliente personaliza a gusto.' },
+              { n: '01', titulo: 'Estructura Wood Frame', desc: 'Se utiliza tirante de primera calidad (2×6) que se cepilla y endereza mecánicamente hasta obtener tirantes de 2×2. Estructura liviana y extremadamente resistente. Sin perfiles metálicos expuestos ni corrosión.' },
+              { n: '02', titulo: 'Sistema de ensamble triple', desc: 'Los paneles se ensamblan con triple fijación: encolado industrial, pegado químico y atornillado estructural. Garantiza rigidez durante el transporte y a lo largo de toda la vida útil del módulo.' },
+              { n: '03', titulo: 'Emplacado NCE — Núcleo de Celulosa Encapsulada', desc: 'Los paneles se cubren con placas de NCE (Núcleo de Celulosa Encapsulada). Material aislante que ofrece eficiencia térmica y acústica superior a cualquier sistema de steel frame o construcción tradicional.' },
+              { n: '04', titulo: 'Blindaje con resina náutica', desc: 'Cada panel ingresa a la espresora donde se aplica fibra de vidrio combinada con resina náutica en vuelta completa. Otorga resistencia estructural excepcional y protección exterior absoluta contra la humedad, el clima y la intemperie.' },
+              { n: '05', titulo: 'Obra Blanca', desc: 'Tras el fibrado, cada panel pasa por perfilado, lijado y pintado. Se entrega en Obra Blanca: interior fondeado en blanco, piso gris fondeado, exterior con revestimiento plástico texturizado impermeabilizado. Terminación prolija, habitable desde el primer día. El cliente personaliza a gusto.' },
             ].map((capa) => (
               <div key={capa.n} className="flex gap-4 bg-eco-bg-surface border border-eco-border rounded-xl p-5">
                 <span
@@ -412,6 +412,14 @@ export default async function ModulosPage() {
                 </div>
               </div>
             ))}
+          </div>
+          {/* Montaje en seco */}
+          <div className="mt-8 bg-eco-green/5 border border-eco-green/20 rounded-2xl p-6 flex flex-col sm:flex-row gap-4 items-start">
+            <span className="text-3xl flex-shrink-0">🔩</span>
+            <div>
+              <h3 className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Montaje en seco — sin obra en el terreno</h3>
+              <p className="text-eco-text-muted text-sm">Los tabiques salen de nuestra planta con todos los anclajes ya incorporados. El armado en sitio no requiere agua, no genera escombros y no depende de obra civil previa. Un equipo especializado instala el módulo completo en el día — y en módulos de mayor metraje, en pocos días de trabajo limpio y eficiente.</p>
+            </div>
           </div>
         </div>
       </section>

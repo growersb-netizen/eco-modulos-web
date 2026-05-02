@@ -83,7 +83,7 @@ export default function VideoCallModal({ isOpen, onClose, productoDefault }: Vid
     }
   }
 
-  const waLink = `https://wa.me/5491144498854?text=${encodeURIComponent('Hola, quiero agendar una videollamada gratuita para evaluar ' + (PRODUCTOS.find((p) => p.value === form.producto)?.label || 'un producto') + '.')}`
+  const waLink = `https://wa.me/5491168733406?text=${encodeURIComponent('Hola, quiero agendar una videollamada gratuita para evaluar ' + (PRODUCTOS.find((p) => p.value === form.producto)?.label || 'un producto') + '.')}`
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">

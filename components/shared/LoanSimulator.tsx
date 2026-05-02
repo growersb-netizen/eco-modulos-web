@@ -72,7 +72,7 @@ export default function LoanSimulator() {
   const productoSeleccionado = productos.find((p) => p.id === productoId)
   const vendedor = tipo === 'piscina' ? 'hernan' : 'daniel'
   const waLink = result && productoSeleccionado
-    ? `https://wa.me/${tipo === 'piscina' ? process.env.NEXT_PUBLIC_WA_HERNAN || '5491125582328' : process.env.NEXT_PUBLIC_WA_DANIEL || '5491171825835'}?text=${encodeURIComponent(
+    ? `https://wa.me/${tipo === 'piscina' ? process.env.NEXT_PUBLIC_WA_HERNAN || '5491168733406' : process.env.NEXT_PUBLIC_WA_DANIEL || '5491168733406'}?text=${encodeURIComponent(
         `Hola, simulé ${productoSeleccionado.nombre} en ${cuotas} cuotas (${result.label}). Me quedan $${result.cuota.toLocaleString('es-AR')}/mes. Quiero asesorarme.`
       )}`
     : '#'

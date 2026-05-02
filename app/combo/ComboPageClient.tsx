@@ -48,7 +48,7 @@ export default function ComboPageClient() {
   const cuotaMensual = precioCombo * coef / cuotas
 
   const waLink = modulo && piscina
-    ? 'https://wa.me/5491171825835?text=' + encodeURIComponent(
+    ? 'https://wa.me/5491168733406?text=' + encodeURIComponent(
         `Hola, me interesa el Combo Especial:\n• Módulo: ${modulo.nombre} (${modulo.medida})\n• Piscina: ${piscina.nombre} (${piscina.medida})\n• Plan: ${cuotas} cuotas\nTotal combo: ${formatPeso(precioCombo)}\n¿Me podés dar más info?`
       )
     : '#'

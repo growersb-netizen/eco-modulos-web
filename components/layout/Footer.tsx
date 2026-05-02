@@ -33,7 +33,7 @@ export default function Footer() {
                 className="text-eco-text-muted hover:text-eco-green transition-colors text-xs font-medium border border-eco-border hover:border-eco-green px-2 py-1 rounded-lg">
                 Instagram
               </a>
-              <a href="https://wa.me/5491144498854" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/5491168733406" target="_blank" rel="noopener noreferrer"
                 className="text-eco-text-muted hover:text-eco-green transition-colors text-xs font-medium border border-eco-border hover:border-eco-green px-2 py-1 rounded-lg">
                 WhatsApp
               </a>
@@ -60,7 +60,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-eco-text-muted text-sm">
                 <Phone className="w-4 h-4 text-eco-green mt-0.5 flex-shrink-0" />
-                <a href="https://wa.me/5491144498854" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/5491168733406" target="_blank" rel="noopener noreferrer"
                   className="hover:text-eco-green transition-colors">
                   +54 9 11 4449-8854
                 </a>

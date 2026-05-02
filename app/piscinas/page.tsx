@@ -62,7 +62,7 @@ export default async function PiscinasPage() {
   ])
 
   const coef12 = coeficientes.find((c) => c.cuotas === 12)?.coef ?? 1.15
-  const waLink = 'https://wa.me/5491125582328?text=' + encodeURIComponent('Hola, me interesa consultar por piscinas de fibra de vidrio')
+  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa consultar por piscinas de fibra de vidrio')
 
   return (
     <>

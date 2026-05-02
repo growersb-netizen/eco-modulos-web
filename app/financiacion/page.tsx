@@ -68,7 +68,7 @@ export default async function FinanciacionPage() {
     orderBy: { cuotas: 'asc' },
   })
 
-  const waLink = 'https://wa.me/5491144498854?text=' + encodeURIComponent('Hola, me interesa conocer los planes de financiación')
+  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa conocer los planes de financiación')
 
   return (
     <>

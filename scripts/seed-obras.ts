@@ -35,7 +35,7 @@ const OBRAS = [
     localidad: 'Pilar',
     provincia: 'Buenos Aires',
     tipo: 'modulo',
-    descripcion: 'Instalación en lote propio. Terminación exterior con chapa prepintada color champagne. Entrega en 21 días desde el pedido.',
+    descripcion: 'Instalación en lote propio. Terminación exterior con revestimiento plástico texturizado impermeabilizado. Obra Blanca interior fondeado en blanco y piso gris fondeado.',
     imagen: 'https://picsum.photos/id/164/800/600',
   },
   {
@@ -59,7 +59,7 @@ const OBRAS = [
     localidad: 'Rosario',
     provincia: 'Santa Fe',
     tipo: 'modulo',
-    descripcion: 'Ampliación de vivienda existente. Módulo de 18 m² con baño integrado. Terminación interior en durlock pintado.',
+    descripcion: 'Ampliación de vivienda existente. Módulo de 18 m² con baño integrado. Obra Blanca: interior fondeado en blanco, piso gris fondeado, exterior con revestimiento plástico texturizado.',
     imagen: 'https://picsum.photos/id/1078/800/600',
   },
   {

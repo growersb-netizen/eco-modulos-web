@@ -56,7 +56,7 @@ async function main() {
   ]
 
   const usosModulo = JSON.stringify(['Vivienda', 'Ampliación', 'Oficina', 'Quincho', 'Glamping', 'Inversión'])
-  const descripcionModulo = 'Módulo habitacional de tecnología NCE (No Convencional de Eficiencia energética). Estructura metálica galvanizada, aislación térmica y acústica superior, terminaciones premium. Llave en mano.'
+  const descripcionModulo = 'Módulo habitacional de tecnología NCE (No Convencional de Eficiencia energética). Estructura Wood Frame, blindaje de fibra de vidrio con resina náutica, emplacado de Núcleo de Celulosa Encapsulada. Eficiencia térmica y acústica superior. Llave en mano en Obra Blanca.'
 
   for (let i = 0; i < modulos.length; i++) {
     const m = modulos[i]
@@ -203,7 +203,7 @@ async function main() {
 <p>Pero hay factores que la gente suele ignorar al calcular el costo del ladrillo: el tiempo de tu propia supervisión (si es autogestionada), las demasías de material (estimadas en un 15-20%), el costo de los imprevistos, y el costo financiero de tener el dinero inmovilizado por más de un año durante la construcción.</p>
 
 <h3>Calidad constructiva</h3>
-<p>La tecnología NCE (No Convencional de Eficiencia energética) utiliza estructura metálica galvanizada de alta resistencia, con aislación termoacústica de poliuretano expandido de alta densidad. El resultado es una vivienda que en muchos aspectos supera a la construcción de ladrillo convencional en eficiencia energética y resistencia sísmica.</p>
+<p>La tecnología NCE (No Convencional de Eficiencia energética) utiliza estructura Wood Frame procesada mecánicamente, emplacado con Núcleo de Celulosa Encapsulada y blindaje exterior de fibra de vidrio con resina náutica. El resultado es una vivienda que supera a la construcción de ladrillo convencional en eficiencia energética, resistencia a la humedad y durabilidad estructural.</p>
 
 <h3>Financiación directa</h3>
 <p>Quizás la diferencia más importante en el contexto argentino actual es la financiación. En Eco Módulos ofrecemos planes propios de hasta 120 cuotas sin banco, sin garante y sin requisitos imposibles. Para la construcción de ladrillo, la financiación suele depender de créditos hipotecarios que son difíciles de acceder para gran parte de la población.</p>
@@ -268,15 +268,18 @@ async function main() {
       contenido: `<h2>¿Qué es la tecnología NCE y por qué es superior a la construcción convencional?</h2>
 <p>Cuando hablamos de tecnología NCE (No Convencional de Eficiencia energética), nos referimos al sistema constructivo que utilizamos en Eco Módulos & Piscinas para fabricar nuestros módulos habitacionales. En este artículo te explicamos en detalle en qué consiste y por qué representa una evolución respecto a la construcción tradicional.</p>
 
-<h3>Las 5 capas del sistema NCE</h3>
-<p><strong>1. Estructura metálica galvanizada:</strong> La base del módulo es un esqueleto de perfiles de acero galvanizado de alta resistencia. Este material no se oxida, no le entra la humedad, y tiene una vida útil mínima de 50 años sin mantenimiento especial.</p>
-<p><strong>2. Panel SIP (Structural Insulated Panel):</strong> Las paredes están compuestas por paneles SIP: dos láminas de OSB (madera estructural) que sandwichean un núcleo de poliestireno expandido de alta densidad. Este sistema ofrece aislación térmica y acústica muy superior al ladrillo convencional.</p>
-<p><strong>3. Membrana hidrófuga:</strong> Por fuera del panel SIP se coloca una membrana que impide el paso de la humedad hacia el interior, protegiéndolo de las inclemencias climáticas.</p>
-<p><strong>4. Revestimiento exterior:</strong> El exterior puede terminarse en chapa prepintada, revestimiento símil piedra, madera compuesta u otros materiales según la elección del cliente.</p>
-<p><strong>5. Terminaciones interiores:</strong> Por dentro, el módulo se termina con durlock o revestimiento de madera según el modelo elegido, listo para pintar o decorar a gusto.</p>
+<h3>El proceso constructivo NCE: 5 etapas</h3>
+<p><strong>1. Estructura Wood Frame:</strong> Se utiliza tirante de primera calidad (2×6) que se cepilla y endereza mecánicamente hasta obtener tirantes de 2×2. Estructura liviana y extremadamente resistente, sin perfiles metálicos ni riesgo de corrosión.</p>
+<p><strong>2. Ensamble triple:</strong> Los paneles se ensamblan con triple fijación: encolado industrial, pegado químico y atornillado estructural. Esta combinación garantiza la rigidez del módulo tanto durante el transporte como a lo largo de toda su vida útil.</p>
+<p><strong>3. Emplacado NCE — Núcleo de Celulosa Encapsulada:</strong> Los paneles se cubren con placas de NCE: un material aislante de Núcleo de Celulosa Encapsulada que ofrece eficiencia térmica y acústica superior a cualquier sistema de steel frame o construcción convencional.</p>
+<p><strong>4. Blindaje con resina náutica:</strong> Cada panel ingresa a la espresora, donde se aplica fibra de vidrio combinada con resina náutica en vuelta completa. Esto otorga resistencia estructural excepcional y protección exterior absoluta contra la humedad y el clima — sin membranas ni chapas adicionales.</p>
+<p><strong>5. Obra Blanca:</strong> Tras el fibrado, el panel pasa por perfilado, lijado y pintado. El módulo se entrega en Obra Blanca: interior fondeado en blanco, piso gris fondeado, exterior con revestimiento plástico texturizado impermeabilizado. Terminación prolija y profesional, habitable desde el primer día.</p>
+
+<h3>Montaje en seco: sin obra en el terreno</h3>
+<p>Los tabiques salen de nuestra planta de Zárate con todos los anclajes ya incorporados. El armado en sitio no requiere agua, no genera escombros y no depende de obra civil previa. Un equipo especializado instala el módulo completo en el día (modelos hasta 18 m²), con máximo 5 días para viviendas de mayor metraje.</p>
 
 <h3>¿Por qué es más eficiente energéticamente?</h3>
-<p>La aislación del sistema NCE reduce drásticamente la transferencia de calor entre el interior y el exterior. En la práctica, esto significa que en verano el módulo permanece más fresco sin aire acondicionado, y en invierno retiene el calor por más tiempo. Las familias que viven en módulos NCE reportan ahorros significativos en consumo energético respecto a casas de ladrillo del mismo tamaño.</p>`,
+<p>El Núcleo de Celulosa Encapsulada reduce drásticamente la transferencia de calor entre el interior y el exterior. En la práctica, en verano el módulo permanece más fresco y en invierno retiene el calor por más tiempo — con ahorros energéticos concretos respecto a casas de ladrillo del mismo tamaño.</p>`,
       publicado: true,
     },
     {

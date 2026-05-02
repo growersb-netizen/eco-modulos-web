@@ -16,7 +16,7 @@ async function run() {
   const hash = await bcrypt.hash(adminPassword, 12)
   const now = new Date().toISOString()
 
-  const descModulo = 'Módulo habitacional de tecnología NCE. Estructura metálica galvanizada, aislación térmica y acústica superior. Llave en mano.'
+  const descModulo = 'Módulo habitacional de tecnología NCE. Estructura Wood Frame, blindaje de fibra de vidrio con resina náutica, Núcleo de Celulosa Encapsulada. Eficiencia térmica y acústica superior. Llave en mano en Obra Blanca.'
   const usosModulo = JSON.stringify(['Vivienda', 'Ampliación', 'Oficina', 'Quincho', 'Glamping', 'Inversión'])
   const descPiscina = 'Piscina de fibra de vidrio de alta resistencia. Resistente a rayos UV, químicos y temperatura. Instalación rápida y limpia.'
   const usosPiscina = JSON.stringify(['Residencial', 'Comercial', 'Glamping', 'Hotel', 'Club'])
@@ -86,6 +86,13 @@ async function run() {
     ...([
       ['hero_titulo','TU VIVIENDA O PISCINA. SIN BANCO. HASTA 120 CUOTAS.'],
       ['hero_subtitulo','Fabricación directa. Financiación propia. Todo el país.'],
+      // Precios editables desde el hero de la home
+      ['hero_modulos_desde','Desde $2.990.000'],
+      ['hero_modulos_cuota','Cuotas desde $28.650/mes'],
+      ['hero_piscinas_desde','Desde $2.000.000'],
+      ['hero_piscinas_cuota','Cuotas desde $19.200/mes'],
+      ['hero_combo_desde','Módulo + Piscina'],
+      ['hero_combo_cuota','60 cuotas fijas'],
       ['empresa_telefono','+54 9 11 4449-8854'],
       ['empresa_email','info@ecomodulosypiscinas.com.ar'],
       ['empresa_direccion','Zárate, Provincia de Buenos Aires'],
@@ -104,13 +111,4 @@ async function run() {
     { sql: `INSERT OR IGNORE INTO articulos_blog (id, titulo, slug, resumen, contenido, categoria, publicado, creadoEn, actualizadoEn) VALUES (?,?,?,?,?,?,1,?,?)`,
       args: ['blog-2','¿Cuánto cuesta una piscina de fibra en Argentina?','costo-piscina-fibra-argentina','Precios actualizados de piscinas de fibra de vidrio. Modelos, tamaños y financiación.','<h2>Precios de piscinas de fibra en Argentina</h2><p>Desde $2.000.000 la Miniportante hasta $6.500.000 la Minimalista Grande. Instalación en 3-5 días.','piscinas',now,now] },
     { sql: `INSERT OR IGNORE INTO articulos_blog (id, titulo, slug, resumen, contenido, categoria, publicado, creadoEn, actualizadoEn) VALUES (?,?,?,?,?,?,1,?,?)`,
-      args: ['blog-3','Cómo financiar una vivienda sin crédito bancario','financiar-vivienda-sin-banco','Opciones de financiación directa para vivienda en Argentina sin banco ni garante.','<h2>Financiar tu vivienda sin banco</h2><p>Planes de 3 a 120 cuotas sin banco, sin garante, aprobación simple.','financiacion',now,now] },
-  ]
-
-  console.log(`Enviando ${statements.length} inserts en un batch...`)
-  await db.batch(statements, 'write')
-  console.log('🎉 Seed completado!')
-  process.exit(0)
-}
-
-run().catch((e) => { console.error(e); process.exit(1) })
+      args: ['blog-3','Cómo financiar una vivienda sin crédito bancario','financiar-vivienda-sin-banco','Opciones de financiación directa para vivienda en Argentina sin banco ni garante.','<h2>Financi

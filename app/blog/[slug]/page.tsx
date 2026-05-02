@@ -28,7 +28,7 @@ export default async function ArticuloPage({ params }: { params: Promise<{ slug:
   const articulo = await prisma.articuloBlog.findFirst({ where: { slug, publicado: true } })
   if (!articulo) notFound()
 
-  const waLink = 'https://wa.me/5491144498854?text=' + encodeURIComponent(`Hola, leí el artículo "${articulo.titulo}" y tengo una consulta`)
+  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent(`Hola, leí el artículo "${articulo.titulo}" y tengo una consulta`)
 
   return (
     <article className="pt-28 pb-20 max-w-3xl mx-auto px-4">

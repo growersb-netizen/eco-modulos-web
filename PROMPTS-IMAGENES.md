@@ -13,11 +13,13 @@
 
 **Estilo fotográfico:** Professional Argentine architectural photography, warm natural light, shallow depth of field, realistic textures.
 
-**Construcción NCE:** Fiber cement panel cladding (smooth or textured finish), painted exterior walls in warm neutral tones (off-white, champagne, beige, warm grey), concealed structure, NO visible metal beams, NO industrial look, NO steel frame aesthetic, NO exposed corrugated metal.
+**Construcción NCE:** Smooth or lightly textured painted exterior walls (plastic-textured waterproofed coating, off-white, champagne, beige, warm grey tones), concealed Wood Frame structure, NO visible metal beams, NO steel frame aesthetic, NO corrugated metal cladding, NO industrial look. Exterior finish is a textured waterproof plastic coating applied over fiberglass-resin cured panels.
 
-**Ambiente:** Argentine middle-class residential neighborhoods — grass lawn, mature trees, suburban setting, blue sky with soft clouds. Warm afternoon or golden hour lighting.
+**Ambient interior:** White-primed walls (Obra Blanca finish), grey-primed floor, clean and tidy without luxury decorations. The client personalizes at will — show it neutral.
 
-**NO incluir:** swimming pools next to luxury villas, ultra-modern European aesthetics, McMansion style, slum conditions, construction site debris, exposed rebar, rusty metal.
+**Ambiente exterior:** Argentine middle-class residential neighborhoods or rural/agricultural/industrial settings (as per prompt context) — grass lawn, mature trees, suburban or field setting, blue sky with soft clouds. Warm afternoon or golden hour lighting.
+
+**NO incluir:** fiber cement panel labels/textures, corrugated metal roofing as primary cladding, Durlock interiors, galvanized steel studs visible, swimming pools next to luxury villas, ultra-modern European aesthetics, McMansion style, slum conditions, construction site debris, exposed rebar, rusty metal.
 
 ---
 
@@ -40,7 +42,7 @@
 **Archivo:** `public/hero-home.jpg` (1920×1080)
 
 ```
-Wide establishing shot of a modern Argentine modular home (NCE non-conventional construction), single-story, 54 square meters, exterior clad in smooth off-white fiber cement panels with warm champagne-colored trim. The house sits on a well-maintained grass lawn with mature quebracho and jacaranda trees. Late afternoon golden hour light. Attached to the side of the house, a kidney-shaped fiberglass swimming pool (aquamarine blue water) is fully installed with its surrounding deck in light grey pavers. A happy Argentine family (parents and two children) relaxes beside the pool. The neighborhood feels suburban Buenos Aires — wide streets, neighboring houses in the background. Professional real estate photography, shot with 24mm lens, ultra-realistic, 8K resolution. Warm, inviting, aspirational but not luxury. NO visible metal structure, NO steel beams, NO industrial aesthetic. The modular home exterior looks like a conventional house exterior.
+Wide establishing shot of a modern Argentine modular home (NCE non-conventional construction), single-story, 54 square meters, exterior with smooth textured waterproofed walls painted in warm off-white with champagne-colored trim. The house sits on a well-maintained grass lawn with mature quebracho and jacaranda trees. Late afternoon golden hour light. Attached to the side of the house, a kidney-shaped fiberglass swimming pool (aquamarine blue water) is fully installed with its surrounding deck in light grey pavers. A happy Argentine family (parents and two children) relaxes beside the pool. The neighborhood feels suburban Buenos Aires — wide streets, neighboring houses in the background. Professional real estate photography, shot with 24mm lens, ultra-realistic, 8K resolution. Warm, inviting, aspirational but not luxury. NO visible metal structure, NO steel beams, NO industrial aesthetic. The modular home exterior looks like a conventional house exterior.
 ```
 
 **Texto a superponer (Canva):**
@@ -55,7 +57,7 @@ Wide establishing shot of a modern Argentine modular home (NCE non-conventional 
 **Archivo:** `public/hero-modulos.jpg` (1920×600)
 
 ```
-Architectural exterior photography of three different modular homes (NCE non-conventional construction) lined up in a grassy Argentine suburban setting. Left: a compact 18 sqm studio module in off-white with a small porch. Center: a larger 54 sqm family home in warm grey with two windows and a front door. Right: a 72 sqm home with a gabled roof extension. All modules have smooth fiber cement panel cladding, painted in neutral warm tones, surrounded by Argentine native vegetation. Overcast soft natural light. Ultra-realistic, no visible metal structure, no steel frame, no industrial aesthetic. Professional architectural photography, wide angle, 16:5 aspect ratio.
+Architectural exterior photography of three different modular homes (NCE non-conventional construction) lined up in a grassy Argentine suburban setting. Left: a compact 18 sqm studio module in off-white with a small porch. Center: a larger 54 sqm family home in warm grey with two windows and a front door. Right: a 72 sqm home with a gabled roof extension. All modules have smooth textured waterproofed exterior walls painted in neutral warm tones, surrounded by Argentine native vegetation. Overcast soft natural light. Ultra-realistic, no visible metal structure, no steel frame, no industrial aesthetic. Professional architectural photography, wide angle, 16:5 aspect ratio.
 ```
 
 **Texto a superponer:**
@@ -69,7 +71,7 @@ Architectural exterior photography of three different modular homes (NCE non-con
 **Archivo:** `public/hero-piscinas.jpg` (1920×600)
 
 ```
-Aerial drone photograph, 45-degree angle, of a fiberglass swimming pool (turquoise blue water) installed in a residential Argentine backyard. The pool is kidney-shaped, approximately 3x6 meters, with light grey pavers surrounding it. A wooden pergola with climbing plants is visible on one side. The house in the background has a fiber cement cladding exterior. Lush subtropical Argentine garden with palm trees, bird of paradise flowers, and a manicured lawn. Bright sunny day, soft natural light, ultra-realistic, professional real estate photography, 16:5 aspect ratio, no visible pool construction, pool looks fully installed and pristine.
+Aerial drone photograph, 45-degree angle, of a fiberglass swimming pool (turquoise blue water) installed in a residential Argentine backyard. The pool is kidney-shaped, approximately 3x6 meters, with light grey pavers surrounding it. A wooden pergola with climbing plants is visible on one side. The house in the background has a smooth textured waterproofed exterior cladding exterior. Lush subtropical Argentine garden with palm trees, bird of paradise flowers, and a manicured lawn. Bright sunny day, soft natural light, ultra-realistic, professional real estate photography, 16:5 aspect ratio, no visible pool construction, pool looks fully installed and pristine.
 ```
 
 **Texto a superponer:**
@@ -83,7 +85,7 @@ Aerial drone photograph, 45-degree angle, of a fiberglass swimming pool (turquoi
 **Archivo:** `public/hero-financiacion.jpg` (1920×600)
 
 ```
-Warm, professional photograph of an Argentine couple (30s-40s, casually dressed) sitting at a kitchen table in a modern modular home interior. They are reviewing documents and smiling. The interior shows fiber cement walls painted warm white, a simple kitchen, natural wood accents. Soft warm interior lighting, shallow depth of field. The atmosphere is reassuring, calm, professional but not corporate. Warm tones, ultra-realistic, 16:5 aspect ratio.
+Warm, professional photograph of an Argentine couple (30s-40s, casually dressed) sitting at a kitchen table in a modern modular home interior. They are reviewing documents and smiling. The interior shows smooth painted interior walls (white-primed Obra Blanca finish) warm white, a simple kitchen, natural wood accents. Soft warm interior lighting, shallow depth of field. The atmosphere is reassuring, calm, professional but not corporate. Warm tones, ultra-realistic, 16:5 aspect ratio.
 ```
 
 **Texto a superponer:**
@@ -125,7 +127,7 @@ Wide exterior photograph of a large Argentine manufacturing facility in Zárate,
 **Archivo:** `public/hero-combo.jpg` (1920×600)
 
 ```
-Aerial drone shot of a complete Argentine residential property featuring both a modular NCE home (54 sqm, off-white fiber cement cladding, gabled roof) AND a fiberglass swimming pool (4x8m, deep blue water) integrated into the landscaped backyard. The property has a well-manicured lawn, mature trees, and a wooden deck connecting the home to the pool. Warm golden hour lighting, residential Buenos Aires suburb. Professional real estate aerial photography, 16:5 aspect ratio, ultra-realistic, no visible structural metal, warm and inviting atmosphere.
+Aerial drone shot of a complete Argentine residential property featuring both a modular NCE home (54 sqm, off-white smooth textured waterproofed exterior cladding, gabled roof) AND a fiberglass swimming pool (4x8m, deep blue water) integrated into the landscaped backyard. The property has a well-manicured lawn, mature trees, and a wooden deck connecting the home to the pool. Warm golden hour lighting, residential Buenos Aires suburb. Professional real estate aerial photography, 16:5 aspect ratio, ultra-realistic, no visible structural metal, warm and inviting atmosphere.
 ```
 
 **Texto a superponer:**
@@ -140,7 +142,7 @@ Aerial drone shot of a complete Argentine residential property featuring both a 
 **Archivo:** `public/og-image.jpg` (1200×630)
 
 ```
-Professional brand image for Eco Módulos & Piscinas Argentine company. Left half: a beautiful modular NCE home exterior in off-white, fiber cement cladding, well-lit by warm afternoon sun. Right half: a fiberglass swimming pool (turquoise blue water) in a green garden. The image is divided diagonally with a thin dark green (#2d9e4f) line. The overall mood is warm, professional, trustworthy, aspirational middle-class. Ultra-realistic photography composite, dark overlay gradient from bottom. 16:9 aspect ratio for social media.
+Professional brand image for Eco Módulos & Piscinas Argentine company. Left half: a beautiful modular NCE home exterior in off-white, smooth textured waterproofed exterior cladding, well-lit by warm afternoon sun. Right half: a fiberglass swimming pool (turquoise blue water) in a green garden. The image is divided diagonally with a thin dark green (#2d9e4f) line. The overall mood is warm, professional, trustworthy, aspirational middle-class. Ultra-realistic photography composite, dark overlay gradient from bottom. 16:9 aspect ratio for social media.
 ```
 
 **Texto a superponer en Canva (fondo oscuro semi-transparente):**
@@ -156,79 +158,79 @@ Professional brand image for Eco Módulos & Piscinas Argentine company. Left hal
 
 **Prompt base:**
 ```
-Exterior photograph of a modular NCE (Non-Conventional Construction) home, [DIMENSIONS], fiber cement panel cladding exterior painted in [COLOR], [ROOF_TYPE] roof with fiber cement roofing sheets. The module sits on a flat grass lawn in an Argentine suburban setting. A small wooden porch with two steps leads to the front door. [WINDOWS] windows with aluminum frames painted to match. Warm afternoon natural light casting soft shadows. Ultra-realistic architectural photography, 4:3 aspect ratio, NO visible metal structure, NO steel frame, looks like a conventional Argentine house.
+Exterior photograph of a modular NCE (Non-Conventional Construction) home, [DIMENSIONS], smooth textured waterproofed exterior walls painted in [COLOR], [ROOF_TYPE] roof. The module sits on a flat grass lawn in an Argentine suburban setting. A small wooden porch with two steps leads to the front door. [WINDOWS] windows with aluminum frames painted to match. Warm afternoon natural light casting soft shadows. Ultra-realistic architectural photography, 4:3 aspect ratio, NO visible metal structure, NO steel frame, looks like a conventional Argentine house.
 ```
 
 ### 9.1 Módulo Studio 3×6 m (18 m²)
 **Archivo:** `public/img/modulos/studio-18.jpg`
 ```
-Exterior photograph of a compact modular NCE studio home, 18 square meters (3x6 meters), fiber cement panel cladding painted in warm off-white (#F5F0E8), flat roof with parapet. One large window and one door on the front facade. Small decorative potted plant beside the entrance. Argentine suburban backyard setting, green lawn, late afternoon light. Ultra-realistic architectural photography, 4:3 ratio, no visible metal structure, intimate and cozy atmosphere.
+Exterior photograph of a compact modular NCE studio home, 18 square meters (3x6 meters), smooth textured waterproofed exterior walls painted in warm off-white (#F5F0E8), flat roof with parapet. One large window and one door on the front facade. Small decorative potted plant beside the entrance. Argentine suburban backyard setting, green lawn, late afternoon light. Ultra-realistic architectural photography, 4:3 ratio, no visible metal structure, intimate and cozy atmosphere.
 ```
 
 ### 9.2 Módulo 1 Dormitorio 3×6 m (18 m²)
 **Archivo:** `public/img/modulos/1dorm-18.jpg`
 ```
-Exterior photo of a modular NCE home (18 sqm, 3x6m) with one bedroom. Fiber cement cladding in champagne beige, gabled roof with grey corrugated fiber cement sheets. Front facade: one window bedroom, one main entrance door with small overhang shelter. Concrete stepping stones path to door. Mature leafy tree providing shade on one side. Warm mid-afternoon Argentine light, residential Pampa setting. Ultra-realistic, no visible metal, 4:3 aspect ratio.
+Exterior photo of a modular NCE home (18 sqm, 3x6m) with one bedroom. Smooth textured waterproofed exterior walls in champagne beige, gabled roof with grey painted finish. Front facade: one window bedroom, one main entrance door with small overhang shelter. Concrete stepping stones path to door. Mature leafy tree providing shade on one side. Warm mid-afternoon Argentine light, residential Pampa setting. Ultra-realistic, no visible metal, 4:3 aspect ratio.
 ```
 
 ### 9.3 Módulo 2 Dormitorios 6×6 m (36 m²)
 **Archivo:** `public/img/modulos/2dorm-36.jpg`
 ```
-Exterior photograph of a 36 sqm modular NCE home (6x6m), two bedrooms. L-shaped facade design, fiber cement panels painted warm grey (#C8C0B8), flat roof. Front: two bedroom windows and centered main door. Small garden with native Argentine plants (palo borracho, ornamental grasses). Wooden privacy fence on sides. Buenos Aires suburban neighborhood, afternoon golden hour, ultra-realistic, no visible metal structure, 4:3 aspect ratio.
+Exterior photograph of a 36 sqm modular NCE home (6x6m), two bedrooms. L-shaped facade design, smooth textured waterproofed exterior walls painted warm grey (#C8C0B8), flat roof. Front: two bedroom windows and centered main door. Small garden with native Argentine plants (palo borracho, ornamental grasses). Wooden privacy fence on sides. Buenos Aires suburban neighborhood, afternoon golden hour, ultra-realistic, no visible metal structure, 4:3 aspect ratio.
 ```
 
 ### 9.4 Módulo 2 Dormitorios 9×6 m (54 m²)
 **Archivo:** `public/img/modulos/2dorm-54.jpg`
 ```
-Exterior photograph of a family modular NCE home, 54 square meters (9x6m), two bedrooms plus living room. Fiber cement panel cladding painted in warm off-white with green window trim accents. Hip roof style with fiber cement sheets. Long front facade with three windows and wooden front door. Well-maintained front garden with short green grass, small ornamental rose bushes. Suburban Buenos Aires setting, bright daylight, realistic textures, no visible steel structure, 4:3 aspect ratio.
+Exterior photograph of a family modular NCE home, 54 square meters (9x6m), two bedrooms plus living room. Smooth textured waterproofed exterior walls painted in warm off-white with green window trim accents. Hip roof. Long front facade with three windows and wooden front door. Well-maintained front garden with short green grass, small ornamental rose bushes. Suburban Buenos Aires setting, bright daylight, realistic textures, no visible steel structure, 4:3 aspect ratio.
 ```
 
 ### 9.5 Módulo 3 Dormitorios 12×6 m (72 m²)
 **Archivo:** `public/img/modulos/3dorm-72.jpg`
 ```
-Exterior photograph of a spacious modular NCE family home, 72 square meters (12x6m), three bedrooms. Fiber cement cladding in warm white with terracotta-toned trim details. Pitched roof with matching fiber cement roofing. Long horizontal facade with four windows, a front door with small covered porch (concrete pillars, flat roof). Established Argentine suburban lot with mature tree, driveway on one side, green lawn. Professional architectural photo, warm light, ultra-realistic, 4:3 aspect ratio.
+Exterior photograph of a spacious modular NCE family home, 72 square meters (12x6m), three bedrooms. Smooth textured waterproofed exterior walls in warm white with terracotta-toned trim details. Pitched roof with painted finish. Long horizontal facade with four windows, a front door with small covered porch (concrete pillars, flat roof). Established Argentine suburban lot with mature tree, driveway on one side, green lawn. Professional architectural photo, warm light, ultra-realistic, 4:3 aspect ratio.
 ```
 
 ### 9.6 Módulo Oficina 6×3 m (18 m²)
 **Archivo:** `public/img/modulos/oficina-18.jpg`
 ```
-Exterior photo of a compact modular NCE office module (18 sqm, 6x3m). Smooth fiber cement panels painted in professional light grey, flat roof, two horizontal rectangular windows (frosted glass for privacy), lockable steel-clad door. Located in a commercial-residential Argentine property, concrete pathway, simple hedge border. Corporate-lite, clean, modern look without steel frame aesthetic. Bright overcast light, 4:3 aspect ratio, ultra-realistic.
+Exterior photo of a compact modular NCE office module (18 sqm, 6x3m). Smooth textured waterproofed exterior walls painted in professional light grey, flat roof, two horizontal rectangular windows (frosted glass for privacy), lockable steel-clad door. Located in a commercial-residential Argentine property, concrete pathway, simple hedge border. Corporate-lite, clean, modern look without steel frame aesthetic. Bright overcast light, 4:3 aspect ratio, ultra-realistic.
 ```
 
 ### 9.7 Módulo Quincho 6×6 m (36 m²)
 **Archivo:** `public/img/modulos/quincho-36.jpg`
 ```
-Exterior photograph of a modular NCE quincho (outdoor entertainment pavilion), 36 sqm (6x6m). One side is fully open to a backyard (no wall, supported by painted concrete columns), the other three sides have fiber cement cladding in natural wood texture (printed on fiber cement panels). Roof is pitched with fiber cement sheets. Inside partially visible: wooden BBQ grill, hanging lights, wooden bar counter. Argentine suburban backyard, late afternoon golden hour light, ultra-realistic, 4:3 aspect ratio.
+Exterior photograph of a modular NCE quincho (outdoor entertainment pavilion), 36 sqm (6x6m). One side is fully open to a backyard (no wall, supported by painted concrete columns), the other three sides have smooth textured waterproofed exterior cladding in natural wood texture (printed on fiber cement panels). Roof is pitched with fiber cement sheets. Inside partially visible: wooden BBQ grill, hanging lights, wooden bar counter. Argentine suburban backyard, late afternoon golden hour light, ultra-realistic, 4:3 aspect ratio.
 ```
 
 ### 9.8 Módulo Glamping 3×6 m
 **Archivo:** `public/img/modulos/glamping-18.jpg`
 ```
-Exterior photograph of a modular NCE glamping cabin (3x6m) in a semi-rural Argentine Pampa setting. Fiber cement cladding in warm earth tones (terracotta and cream), flat roof with a small skylight. One large picture window facing open countryside. Surrounded by native pampas grass (Cortaderia selloana), a wooden deck extends from the front. Early morning soft light, ultra-realistic photography, no visible metal frame, cozy and natural atmosphere, 4:3 aspect ratio.
+Exterior photograph of a modular NCE glamping cabin (3x6m) in a semi-rural Argentine Pampa setting. Smooth textured waterproofed exterior walls in warm earth tones (terracotta and cream), flat roof with a small skylight. One large picture window facing open countryside. Surrounded by native pampas grass (Cortaderia selloana), a wooden deck extends from the front. Early morning soft light, ultra-realistic photography, no visible metal frame, cozy and natural atmosphere, 4:3 aspect ratio.
 ```
 
 ### 9.9 Módulo Depósito / Guardado 6×3 m
 **Archivo:** `public/img/modulos/deposito-18.jpg`
 ```
-Exterior photo of a modular NCE storage unit (6x3m). Fiber cement panels in mid-grey, flat roof with parapet, large roller door (painted to match panels) centered on the main facade. Concrete floor apron visible. Located in a residential Argentine backyard corner, neatly integrated. Clean, functional appearance. Overcast natural light, ultra-realistic, no visible metal frame, 4:3 aspect ratio.
+Exterior photo of a modular NCE storage unit (6x3m). Smooth textured waterproofed walls in mid-grey, flat roof with parapet, large roller door (painted to match panels) centered on the main facade. Concrete floor apron visible. Located in a residential Argentine backyard corner, neatly integrated. Clean, functional appearance. Overcast natural light, ultra-realistic, no visible metal frame, 4:3 aspect ratio.
 ```
 
 ### 9.10 Módulo Sala de Estar 9×4 m
 **Archivo:** `public/img/modulos/estar-36.jpg`
 ```
-Exterior photo of a living room extension module (NCE construction, 9x4m) attached to an existing Argentine brick house. The module's fiber cement cladding is painted to match the existing house facade in off-white with red brick trim at base. Large picture window on front facade. Flat roof. Interior visible through large window: comfortable Argentine living room furniture, warm lighting. Backyard garden setting, realistic architectural photo, 4:3 aspect ratio, no visible metal structure.
+Exterior photo of a living room extension module (NCE construction, 9x4m) attached to an existing Argentine brick house. The module's smooth textured waterproofed exterior cladding is painted to match the existing house facade in off-white with red brick trim at base. Large picture window on front facade. Flat roof. Interior visible through large window: comfortable Argentine living room furniture, warm lighting. Backyard garden setting, realistic architectural photo, 4:3 aspect ratio, no visible metal structure.
 ```
 
 ### 9.11 Módulo Ampliación Dormitorio 3×3 m
 **Archivo:** `public/img/modulos/ampliacion-9.jpg`
 ```
-Exterior photograph of a small bedroom extension module (NCE, 3x3m) added to an existing Argentine single-story home. The module attaches seamlessly to the original house's exterior, fiber cement panels painted identical off-white. One window on the side, flat roof. Garden setting, Buenos Aires suburb, warm afternoon light. Shows the "expandable home" concept clearly — the new module looks architecturally cohesive with the existing structure. Ultra-realistic, 4:3 ratio.
+Exterior photograph of a small bedroom extension module (NCE, 3x3m) added to an existing Argentine single-story home. The module attaches seamlessly to the original house's exterior, smooth textured waterproofed exterior walls painted identical off-white. One window on the side, flat roof. Garden setting, Buenos Aires suburb, warm afternoon light. Shows the "expandable home" concept clearly — the new module looks architecturally cohesive with the existing structure. Ultra-realistic, 4:3 ratio.
 ```
 
 ### 9.12 Módulo Baño/Sanitario 2×3 m
 **Archivo:** `public/img/modulos/bano-6.jpg`
 ```
-Exterior photo of a compact bathroom/sanitary module (NCE, 2x3m) in a residential Argentine outdoor setting. Fiber cement cladding in clean white, flat roof, one small frosted-glass window for ventilation. Door with handle. The module is installed on a concrete pad in a backyard, surrounded by green grass. Clean and dignified appearance. Overcast daylight, ultra-realistic, no visible metal frame, 4:3 aspect ratio.
+Exterior photo of a compact bathroom/sanitary module (NCE, 2x3m) in a residential Argentine outdoor setting. Smooth textured waterproofed exterior walls in clean white, flat roof, one small frosted-glass window for ventilation. Door with handle. The module is installed on a concrete pad in a backyard, surrounded by green grass. Clean and dignified appearance. Overcast daylight, ultra-realistic, no visible metal frame, 4:3 aspect ratio.
 ```
 
 ---
@@ -343,7 +345,7 @@ Professional aerial drone photograph of a large rectangular fiberglass pool (5x1
 ### 11.1 Módulo Estudio en Pilar
 **Archivo:** `public/img/obras/obra-estudio-pilar.jpg`
 ```
-Exterior photograph of a recently installed modular NCE studio home (6x6m, 36 sqm) in Pilar, Buenos Aires Province. Fiber cement cladding painted warm champagne (#E8DCC8). Flat roof with simple parapet. Front porch with two wooden steps, potted plants at entrance. Well-maintained Argentine suburban lot, green Bermuda grass lawn, low hedge on property border. Late afternoon warm light, realistic architectural photography, no visible metal structure. The module looks integrated and permanent, like a conventional small Argentine house. 4:3 aspect ratio, ultra-realistic.
+Exterior photograph of a recently installed modular NCE studio home (6x6m, 36 sqm) in Pilar, Buenos Aires Province. Smooth textured waterproofed exterior walls painted in warm champagne (#E8DCC8). Flat roof with simple parapet. Front porch with two wooden steps, potted plants at entrance. Well-maintained Argentine suburban lot, green Bermuda grass lawn, low hedge on property border. Late afternoon warm light, realistic architectural photography, no visible metal structure. The module looks integrated and permanent, like a conventional small Argentine house. 4:3 aspect ratio, ultra-realistic.
 ```
 
 ### 11.2 Piscina Miniportante en Tigre
@@ -355,13 +357,13 @@ Exterior photograph of a self-supporting (miniportante) fiberglass pool (3x6m) i
 ### 11.3 Combo en Mar del Plata
 **Archivo:** `public/img/obras/obra-combo-mdp.jpg`
 ```
-Wide exterior photograph of a complete residential installation in Mar del Plata — a modular NCE home (54 sqm, 9x6m, off-white fiber cement, flat roof) with attached terrace and a rectangular fiberglass pool (4x8m, turquoise water) in the side yard. Grey paver surround around pool, green lawn in between. Atlantic Ocean or coastal pine trees visible in the background (typical Mar del Plata seaside suburb). Bright coastal Argentine daylight, crisp colors. Ultra-realistic, 4:3 aspect ratio.
+Wide exterior photograph of a complete residential installation in Mar del Plata — a modular NCE home (54 sqm, 9x6m, off-white textured exterior walls, flat roof) with attached terrace and a rectangular fiberglass pool (4x8m, turquoise water) in the side yard. Grey paver surround around pool, green lawn in between. Atlantic Ocean or coastal pine trees visible in the background (typical Mar del Plata seaside suburb). Bright coastal Argentine daylight, crisp colors. Ultra-realistic, 4:3 aspect ratio.
 ```
 
 ### 11.4 Módulo Dormitorio en Rosario
 **Archivo:** `public/img/obras/obra-modulo-rosario.jpg`
 ```
-Exterior photograph of a single-bedroom modular NCE extension (3x6m, 18 sqm) attached to an existing conventional Argentine brick house in Rosario, Santa Fe. The fiber cement cladding is painted to match the existing house (terracotta/sandy tones). The extension is clearly visible as a new addition but architecturally harmonious. Wide shot showing both original house and new module, connected, on a typical Rosario urban lot. Mature sycamore trees lining the street. Late afternoon light. Ultra-realistic, 4:3 aspect ratio.
+Exterior photograph of a single-bedroom modular NCE extension (3x6m, 18 sqm) attached to an existing conventional Argentine brick house in Rosario, Santa Fe. The smooth textured waterproofed exterior cladding is painted to match the existing house (terracotta/sandy tones). The extension is clearly visible as a new addition but architecturally harmonious. Wide shot showing both original house and new module, connected, on a typical Rosario urban lot. Mature sycamore trees lining the street. Late afternoon light. Ultra-realistic, 4:3 aspect ratio.
 ```
 
 ### 11.5 Piscina Recreativa en Mendoza
@@ -373,7 +375,7 @@ Exterior photograph of a rectangular fiberglass pool (3x5m, aquamarine/turquoise
 ### 11.6 Módulo Oficina en Córdoba
 **Archivo:** `public/img/obras/obra-oficina-cordoba.jpg`
 ```
-Exterior photograph of a modular NCE office unit (6x3m, 18 sqm) installed in a residential-commercial property in Córdoba city. Fiber cement cladding in professional light grey, flat roof, large frosted horizontal window, professional entrance with small canopy. Metal signage area visible but no text shown. Argentine urban setting — brick fence, concrete sidewalk, mature poplars. Clear afternoon Córdoba light. Ultra-realistic, 4:3 aspect ratio.
+Exterior photograph of a modular NCE office unit (6x3m, 18 sqm) installed in a residential-commercial property in Córdoba city. Smooth textured waterproofed exterior walls in professional light grey, flat roof, large frosted horizontal window, professional entrance with small canopy. Metal signage area visible but no text shown. Argentine urban setting — brick fence, concrete sidewalk, mature poplars. Clear afternoon Córdoba light. Ultra-realistic, 4:3 aspect ratio.
 ```
 
 ---
@@ -389,7 +391,7 @@ Wide exterior photograph of a medium-large Argentine manufacturing facility in Z
 ### 12.2 Interior de la Planta — fabricación de módulos
 **Archivo:** `public/img/empresa/planta-interior-modulos.jpg`
 ```
-Interior photograph of an Argentine manufacturing workshop where modular NCE homes are being assembled. Large covered industrial space with bright overhead LED lighting. Workers in safety vests and hard hats are assembling fiber cement panels onto a galvanized steel structural frame (the metal structure is visible during assembly at this stage only). Multiple modules in different stages of completion along the production floor. Fiber cement panels stacked nearby. Clean, organized workspace, safety signage on walls. Photorealistic documentary photography, warm industrial lighting. 3:2 aspect ratio.
+Interior photograph of an Argentine manufacturing workshop where modular NCE homes are being assembled. Large covered industrial space with bright overhead LED lighting. Workers in safety vests and hard hats are assembling NCE panels (Núcleo de Celulosa Encapsulada) onto a Wood Frame structure visible during assembly at this stage. Multiple modules in different stages of completion along the production floor. NCE panels and Wood Frame timbers stacked nearby. Clean, organized workspace, safety signage on walls. Photorealistic documentary photography, warm industrial lighting. 3:2 aspect ratio.
 ```
 
 ### 12.3 Interior de la Planta — fabricación de piscinas
@@ -407,7 +409,7 @@ Group portrait photograph of 10-12 Argentine cooperative workers (diverse ages 2
 ### 12.5 Showroom Buenos Aires (CABA)
 **Archivo:** `public/img/empresa/showroom-caba.jpg`
 ```
-Interior photograph of a modern showroom for modular homes and fiberglass pools, located in Buenos Aires City. The showroom features a display area with a 1:1 scale section of a modular NCE home interior (painted walls, flooring, kitchen corner visible), material sample boards on the walls (fiber cement panels in different colors and textures), and a small scale fiberglass pool model on display. The space is well-lit with warm recessed lighting, plants for ambiance. A reception desk visible in the background. Professional, inviting retail-like atmosphere. 3:2 aspect ratio, ultra-realistic.
+Interior photograph of a modern showroom for modular homes and fiberglass pools, located in Buenos Aires City. The showroom features a display area with a 1:1 scale section of a modular NCE home interior (white-primed Obra Blanca walls, grey flooring, kitchen corner visible), material sample boards on the walls (NCE panels, wood frame samples, resin-coated finish samples in different colors and textures), and a small scale fiberglass pool model on display. The space is well-lit with warm recessed lighting, plants for ambiance. A reception desk visible in the background. Professional, inviting retail-like atmosphere. 3:2 aspect ratio, ultra-realistic.
 ```
 
 ---
@@ -417,7 +419,7 @@ Interior photograph of a modern showroom for modular homes and fiberglass pools,
 ### 13.1 "¿Qué es la tecnología NCE?"
 **Archivo:** `public/img/blog/tecnologia-nce.jpg`
 ```
-Educational infographic-style photograph showing the cross-section anatomy of an NCE modular wall being assembled. Visible layers from interior to exterior: drywall interior finish, galvanized steel stud frame (center, clearly visible as the structural element), thermal and acoustic insulation (rock wool or polyurethane), exterior fiber cement panel. Argentine manufacturing workshop setting, clear overhead lighting, the wall section is mounted vertically for display. Professional documentary photography, 16:9 aspect ratio.
+Educational infographic-style photograph showing the cross-section anatomy of an NCE modular wall being assembled. Visible layers from interior to exterior: 1) white-primed Obra Blanca interior finish, 2) Wood Frame structural core (processed timber 2x2 studs, warm wood tone), 3) NCE panel — Núcleo de Celulosa Encapsulada (dense beige/sand layer), 4) fiberglass + nautical resin blindaje (amber/translucent protective wrap), 5) exterior textured waterproofed coating (light grey, slightly rough surface). Argentine manufacturing workshop setting, clear overhead lighting, the wall section is mounted vertically for display. Professional documentary photography, 16:9 aspect ratio.
 ```
 
 **Texto a superponer:**
@@ -447,7 +449,7 @@ Split-image comparison photograph: LEFT SIDE shows a pristine fiberglass pool (s
 ### 13.4 "Módulo habitacional: ¿en cuánto tiempo lo tengo?"
 **Archivo:** `public/img/blog/tiempo-entrega.jpg`
 ```
-Sequential four-panel composite photograph showing the installation timeline of a modular NCE home: Panel 1 — empty flat concrete foundation pad on Argentine lot (Day 1). Panel 2 — fiber cement panels being delivered by truck (Day 7). Panel 3 — module structure being assembled with workers (Day 14). Panel 4 — completed exterior of the modular home, paint fresh, family celebrating in front (Day 21). Clean grid layout, warm light progressively brightening through the sequence. 16:9 aspect ratio, ultra-realistic.
+Sequential four-panel composite photograph showing the installation timeline of a modular NCE home: Panel 1 — empty flat concrete foundation pad on Argentine lot (Day 1). Panel 2 — finished NCE panels arriving by truck from the Zárate plant (Day 1, same day). Panel 3 — dry assembly in progress: workers bolting prefabricated panels with pre-incorporated anchors, no water or debris (same day). Panel 4 — completed exterior of the modular home, textured waterproofed walls, family celebrating in front (Day 1 for 18m²). Clean grid layout, warm light progressively brightening through the sequence. 16:9 aspect ratio, ultra-realistic.
 ```
 
 **Texto a superponer:**
@@ -506,15 +508,16 @@ Professional headshot portrait of an Argentine woman named Valentina, 28-32 year
 **Archivo:** `public/img/tecnologia-nce-diagrama.jpg`
 
 ```
-Technical cutaway diagram illustration of NCE (Non-Conventional Construction Efficiency) modular wall construction. Clean white background. The wall cross-section shows from inside to outside: 1) Interior drywall panel (white), 2) Galvanized steel C-stud frame (shown in light grey, clearly labeled), 3) Thermal and acoustic insulation layer (yellow/gold color), 4) Exterior fiber cement panel (light grey with wood texture option shown). Each layer is labeled with clear Spanish text annotations using clean sans-serif typography. The style is semi-technical illustration, clean lines, professional engineering diagram aesthetic. 4:3 aspect ratio.
+Technical cutaway diagram illustration of NCE (Non-Conventional Construction Efficiency) modular wall panel construction. Clean white background. The wall cross-section shows 5 layers from inside to outside: 1) Interior Obra Blanca finish — white-primed smooth surface, 2) Wood Frame structural core — processed timber 2x2 studs (light warm wood tone, clearly labeled), 3) NCE encapsulated cellulose core panels — NCE = Núcleo de Celulosa Encapsulada (light beige/sand color, dense texture), 4) Fiberglass + nautical resin full-wrap blindaje layer (translucent amber/gold), 5) Exterior textured waterproofed plastic coating (light grey, slightly rough texture). Each layer labeled with clean Spanish sans-serif annotations. Semi-technical illustration style, clean lines, professional engineering diagram aesthetic, no visible galvanized steel, no corrugated metal. 4:3 aspect ratio.
 ```
 
 **Etiquetas en la imagen (Castellano argentino):**
-- `Panel de fibrocemento exterior`
-- `Aislación térmica y acústica`
-- `Estructura de steel frame galvanizado`
-- `Terminación interior en durlock`
-- Título: `TECNOLOGÍA NCE — Construcción No Convencional de Eficiencia`
+- `Obra Blanca — interior fondeado en blanco`
+- `Estructura Wood Frame — tirante 2×2 procesado mecánicamente`
+- `Emplacado NCE — Núcleo de Celulosa Encapsulada`
+- `Blindaje de fibra de vidrio + resina náutica (vuelta completa)`
+- `Revestimiento exterior — plástico texturizado impermeabilizado`
+- Título: `TECNOLOGÍA NCE — No Convencional de Eficiencia energética`
 
 ---
 

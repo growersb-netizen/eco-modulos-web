@@ -1,7 +1,7 @@
 const VENDEDORES = {
-  stefania: process.env.WA_STEFANIA || '5491144498854',
-  hernan: process.env.WA_HERNAN || '5491125582328',
-  daniel: process.env.WA_DANIEL || '5491171825835',
+  stefania: process.env.WA_STEFANIA || '5491168733406',
+  hernan: process.env.WA_HERNAN || '5491168733406',
+  daniel: process.env.WA_DANIEL || '5491168733406',
 }
 
 export function getVendedorPorProducto(producto: string): keyof typeof VENDEDORES {

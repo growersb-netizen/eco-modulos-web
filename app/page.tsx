@@ -33,7 +33,18 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const [configs, obras, testimonios] = await Promise.all([
-    prisma.configSitio.findMany({ where: { clave: { in: ['hero_titulo', 'hero_subtitulo'] } } }),
+    prisma.configSitio.findMany({
+      where: {
+        clave: {
+          in: [
+            'hero_titulo', 'hero_subtitulo',
+            'hero_modulos_desde', 'hero_modulos_cuota',
+            'hero_piscinas_desde', 'hero_piscinas_cuota',
+            'hero_combo_desde', 'hero_combo_cuota',
+          ],
+        },
+      },
+    }),
     prisma.obra.findMany({ where: { activo: true }, take: 6, orderBy: { creadoEn: 'desc' } }),
     prisma.testimonio.findMany({ where: { activo: true }, take: 3, orderBy: { orden: 'asc' } }),
   ])
@@ -41,9 +52,18 @@ export default async function HomePage() {
   const cfg: Record<string, string> = {}
   for (const c of configs) cfg[c.clave] = c.valor
 
-  const heroTitulo = cfg.hero_titulo || 'SOLUCIONES MODULARES Y PISCINAS. FABRICACIÓN DIRECTA.'
+  const heroTitulo    = cfg.hero_titulo    || 'SOLUCIONES MODULARES Y PISCINAS. FABRICACIÓN DIRECTA.'
   const heroSubtitulo = cfg.hero_subtitulo || 'Obradores, campamentos, unidades habitacionales y piscinas de fibra. Sin obra civil. Sin banco. Todo el país.'
-  const waLink = 'https://wa.me/5491144498854?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
+
+  // Precios de la sección Productos — editables desde el panel Admin › Configuración
+  const heroModulosDesde  = cfg.hero_modulos_desde  || 'Desde $2.990.000'
+  const heroModulosCuota  = cfg.hero_modulos_cuota  || 'Cuotas desde $28.650/mes'
+  const heroPiscinasDesde = cfg.hero_piscinas_desde || 'Desde $2.000.000'
+  const heroPiscinasCuota = cfg.hero_piscinas_cuota || 'Cuotas desde $19.200/mes'
+  const heroComboDesde    = cfg.hero_combo_desde    || 'Módulo + Piscina'
+  const heroComboCuota    = cfg.hero_combo_cuota    || '60 cuotas fijas'
+
+  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
 
   return (
     <>
@@ -108,9 +128,9 @@ export default async function HomePage() {
         <SectionTitle titulo="Nuestros productos" subtitulo="Fabricamos todo en planta propia. Sin intermediarios. Financiación directa." badge="Catálogo" />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { titulo: 'Módulos NCE', sub: 'Llave en mano · Instalación el mismo día', desde: 'Desde $2.990.000', cuota: 'Cuotas desde $28.650/mes', href: '/modulos', desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible — entrega e instalación inmediata. Logística propia en todo el país.' },
-            { titulo: 'Piscinas de Fibra', sub: 'Stock disponible · Instalación en el día', desde: 'Desde $2.000.000', cuota: 'Cuotas desde $19.200/mes', href: '/piscinas', desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Financiación hasta 120 cuotas.' },
-            { titulo: 'Combo Especial', sub: '25% de descuento', desde: 'Módulo + Piscina', cuota: '60 cuotas fijas', href: '/combo', desc: 'Combiná tu módulo con una piscina y ahorrá 25% sobre el precio total.', badge: '25% OFF' },
+            { titulo: 'Módulos NCE', sub: 'Llave en mano · Instalación el mismo día', desde: heroModulosDesde, cuota: heroModulosCuota, href: '/modulos', desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible — entrega e instalación inmediata. Logística propia en todo el país.' },
+            { titulo: 'Piscinas de Fibra', sub: 'Stock disponible · Instalación en el día', desde: heroPiscinasDesde, cuota: heroPiscinasCuota, href: '/piscinas', desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Financiación hasta 120 cuotas.' },
+            { titulo: 'Combo Especial', sub: '25% de descuento', desde: heroComboDesde, cuota: heroComboCuota, href: '/combo', desc: 'Combiná tu módulo con una piscina y ahorrá 25% sobre el precio total.', badge: '25% OFF' },
           ].map((prod) => (
             <Link key={prod.href} href={prod.href} className="group bg-eco-bg-card border border-eco-border hover:border-eco-green/40 rounded-2xl p-8 flex flex-col gap-4 transition-all hover:shadow-lg hover:shadow-eco-green/5">
               {prod.badge && <span className="self-start bg-yellow-400/10 text-yellow-400 text-xs font-bold px-2 py-1 rounded-full">{prod.badge}</span>}
@@ -227,18 +247,4 @@ export default async function HomePage() {
       {/* CTA FINAL */}
       <section className="py-24 bg-eco-green-dark">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
-            ¿Listo para empezar?
-          </h2>
-          <p className="text-gray-300 text-lg mb-10">Consultá ahora por WhatsApp o agendá una videollamada gratuita con nuestro equipo.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors">
-              <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
-            </a>
-            <VideoCallButton variant="outline" />
-          </div>
-        </div>
-      </section>
-    </>
-  )
-}
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-whi
