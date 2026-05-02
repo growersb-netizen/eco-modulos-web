@@ -247,4 +247,26 @@ export default async function HomePage() {
       {/* CTA FINAL */}
       <section className="py-24 bg-eco-green-dark">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-whi
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+            ¿Listo para tu próximo proyecto?
+          </h2>
+          <p className="text-xl text-green-200 mb-10">
+            Consultanos sin compromiso. Financiación directa, sin banco, hasta 120 cuotas.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold text-lg px-8 py-4 rounded-xl hover:bg-green-50 transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Consultar por WhatsApp
+            </a>
+            <VideoCallButton className="flex items-center justify-center gap-2 border-2 border-white/50 text-white font-bold text-lg px-8 py-4 rounded-xl hover:border-white transition-colors" />
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

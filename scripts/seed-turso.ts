@@ -111,4 +111,13 @@ async function run() {
     { sql: `INSERT OR IGNORE INTO articulos_blog (id, titulo, slug, resumen, contenido, categoria, publicado, creadoEn, actualizadoEn) VALUES (?,?,?,?,?,?,1,?,?)`,
       args: ['blog-2','¿Cuánto cuesta una piscina de fibra en Argentina?','costo-piscina-fibra-argentina','Precios actualizados de piscinas de fibra de vidrio. Modelos, tamaños y financiación.','<h2>Precios de piscinas de fibra en Argentina</h2><p>Desde $2.000.000 la Miniportante hasta $6.500.000 la Minimalista Grande. Instalación en 3-5 días.','piscinas',now,now] },
     { sql: `INSERT OR IGNORE INTO articulos_blog (id, titulo, slug, resumen, contenido, categoria, publicado, creadoEn, actualizadoEn) VALUES (?,?,?,?,?,?,1,?,?)`,
-      args: ['blog-3','Cómo financiar una vivienda sin crédito bancario','financiar-vivienda-sin-banco','Opciones de financiación directa para vivienda en Argentina sin banco ni garante.','<h2>Financi
+      args: ['blog-3','Cómo financiar una vivienda sin crédito bancario','financiar-vivienda-sin-banco','Opciones de financiación directa para vivienda en Argentina sin banco ni garante.','<h2>Financiar tu vivienda sin banco</h2><p>Planes de 3 a 120 cuotas sin banco, sin garante, aprobación simple.','financiacion',now,now] },
+  ]
+
+  console.log(`Enviando ${statements.length} inserts en un batch...`)
+  await db.batch(statements, 'write')
+  console.log('🎉 Seed completado!')
+  process.exit(0)
+}
+
+run().catch((e) => { console.error(e); process.exit(1) })

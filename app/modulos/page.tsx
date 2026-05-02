@@ -4,7 +4,7 @@ import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
 import {
   MessageCircle, HardHat, Flame, Mountain, Wheat, Building2,
-  Clock, RotateCcw, Zap, Shield, Wrench, CheckCircle,
+  Clock, Zap, Wrench, CheckCircle,
   Boxes, Users, MapPin, Hammer, Home, Coffee, Truck, Star
 } from 'lucide-react'
 import type { Metadata } from 'next'
