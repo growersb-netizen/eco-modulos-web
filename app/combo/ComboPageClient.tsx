@@ -6,10 +6,9 @@ import VideoCallButton from '@/components/shared/VideoCallButton'
 import { MessageCircle, CheckCircle, Tag } from 'lucide-react'
 import { formatPeso } from '@/lib/utils'
 
-interface Modulo { id: string; nombre: string; medida: string; precio_contado: number }
-interface Piscina { id: string; nombre: string; medida: string; precio_contado: number }
+interface Modulo { id: string; nombre: string; medida: string; precio_contado: number; precio_lista: number }
+interface Piscina { id: string; nombre: string; medida: string; precio_contado: number; precio_lista: number }
 
-const DESCUENTO = 0.25
 const CUOTAS = [12, 24, 36, 48, 60]
 
 export default function ComboPageClient() {
@@ -41,9 +40,12 @@ export default function ComboPageClient() {
   const modulo = modulos.find((m) => m.id === moduloId)
   const piscina = piscinas.find((p) => p.id === piscinaId)
 
-  const precioSinDescuento = (modulo?.precio_contado ?? 0) + (piscina?.precio_contado ?? 0)
-  const ahorro = precioSinDescuento * DESCUENTO
-  const precioCombo = precioSinDescuento - ahorro
+  // Precio de lista = suma de precios de referencia (tachado)
+  const precioListaTotal = (modulo?.precio_lista ?? 0) + (piscina?.precio_lista ?? 0)
+  // Precio combo contado = suma de precios contado individuales (nunca menor que esto)
+  const precioCombo = (modulo?.precio_contado ?? 0) + (piscina?.precio_contado ?? 0)
+  const ahorro = precioListaTotal - precioCombo
+  const pctDescuento = precioListaTotal > 0 ? Math.round((ahorro / precioListaTotal) * 100) : 0
   const coef = coeficientes[cuotas] ?? 1.5
   const cuotaMensual = precioCombo * coef / cuotas
 
@@ -62,10 +64,10 @@ export default function ComboPageClient() {
             Oferta exclusiva
           </span>
           <h1 className="text-5xl sm:text-7xl font-extrabold text-white uppercase mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Combo<br />25% OFF
+            Combo<br />con descuento
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            Combiná tu módulo habitacional con una piscina de fibra de vidrio y ahorrás 25% sobre el precio total. Un solo plan de financiación.
+            Combiná tu módulo habitacional con una piscina de fibra de vidrio y pagás el precio contado de cada producto. Un solo plan de financiación.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-xl transition-colors">
@@ -133,18 +135,18 @@ export default function ComboPageClient() {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between text-eco-text-muted">
                   <span>{modulo?.nombre ?? '—'}</span>
-                  <span>{modulo ? formatPeso(modulo.precio_contado) : '—'}</span>
+                  <span>{modulo ? <><span className="line-through text-xs mr-1">{formatPeso(modulo.precio_lista)}</span><span>{formatPeso(modulo.precio_contado)}</span></> : '—'}</span>
                 </div>
                 <div className="flex justify-between text-eco-text-muted">
                   <span>{piscina?.nombre ?? '—'}</span>
-                  <span>{piscina ? formatPeso(piscina.precio_contado) : '—'}</span>
+                  <span>{piscina ? <><span className="line-through text-xs mr-1">{formatPeso(piscina.precio_lista)}</span><span>{formatPeso(piscina.precio_contado)}</span></> : '—'}</span>
                 </div>
                 <div className="border-t border-eco-border pt-2 flex justify-between text-eco-text">
-                  <span>Subtotal</span>
-                  <span className="line-through text-eco-text-muted">{formatPeso(precioSinDescuento)}</span>
+                  <span>Precio de lista total</span>
+                  <span className="line-through text-eco-text-muted">{formatPeso(precioListaTotal)}</span>
                 </div>
                 <div className="flex justify-between text-yellow-400 font-semibold">
-                  <span className="flex items-center gap-1.5"><Tag className="w-4 h-4" />Descuento 25%</span>
+                  <span className="flex items-center gap-1.5"><Tag className="w-4 h-4" />Descuento combo ({pctDescuento}%)</span>
                   <span>— {formatPeso(ahorro)}</span>
                 </div>
               </div>
@@ -180,7 +182,7 @@ export default function ComboPageClient() {
           <SectionTitle titulo="¿Por qué el combo?" />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { icon: Tag, titulo: '25% de ahorro real', desc: 'El descuento se aplica sobre el precio total de ambos productos. No es un descuento de lista: son los precios reales de contado con 25% off.' },
+              { icon: Tag, titulo: 'Ahorro real en el combo', desc: 'Pagás el precio contado de cada producto: el precio más económico disponible. Sin recargos ni descuentos artificiales sobre lista.' },
               { icon: CheckCircle, titulo: 'Un solo plan de pago', desc: 'Todo en un único plan de financiación directa, sin banco, sin garante. Hasta 60 cuotas fijas con el combo.' },
               { icon: MessageCircle, titulo: 'Instalación coordinada', desc: 'Módulo y piscina se fabrican en paralelo y se instalan en la misma visita. Un solo viaje de logística.' },
             ].map(({ icon: Icon, titulo, desc }) => (
