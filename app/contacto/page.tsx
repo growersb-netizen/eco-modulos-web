@@ -49,15 +49,15 @@ const WA_LINKS = [
 export default function ContactoPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-28 pb-12 bg-gradient-to-b from-eco-green-dark to-eco-bg">
+      {/* Hero — premium light */}
+      <section className="pt-28 pb-12 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Contacto</span>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white uppercase mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-            Hablemos
+          <span className="badge-green mb-5 inline-flex">Contacto</span>
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-eco-text uppercase leading-[0.92] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+            Estamos a su disposición
           </h1>
-          <p className="text-gray-300 text-lg max-w-xl mx-auto">
-            Respondemos en menos de 2 horas de lunes a sábado de 9 a 18hs.
+          <p className="text-eco-text-muted text-lg max-w-xl mx-auto">
+            Tiempo de respuesta: menos de 2 horas. Atención de lunes a sábado de 9 a 18 h.
           </p>
         </div>
       </section>
@@ -95,16 +95,16 @@ export default function ContactoPage() {
 
           {/* Formulario */}
           <div>
-            <h2 className="text-2xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Dejanos tus datos</h2>
-            <p className="text-eco-text-muted text-sm mb-6">Te contactamos en menos de 2 horas para darte toda la información que necesitás.</p>
+            <h2 className="text-2xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Complete sus datos de contacto</h2>
+            <p className="text-eco-text-muted text-sm mb-6">Un asesor se comunicará en menos de 2 horas con información completa sobre su consulta.</p>
             <ContactForm />
           </div>
 
           {/* Contacto directo */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>O escribinos por WhatsApp</h2>
-              <p className="text-eco-text-muted text-sm mb-6">Elegí el tema de tu consulta y te responde un asesor especializado.</p>
+              <h2 className="text-2xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>También puede contactarnos por WhatsApp</h2>
+              <p className="text-eco-text-muted text-sm mb-6">Seleccione el área de su consulta. Un asesor especializado le dará respuesta.</p>
               <div className="space-y-4">
                 {WA_LINKS.map((v) => (
                   <a
@@ -112,7 +112,7 @@ export default function ContactoPage() {
                     href={`https://wa.me/${v.tel}?text=${encodeURIComponent(v.text)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 bg-eco-bg-card border border-eco-border hover:border-eco-green rounded-xl p-4 transition-colors group"
+                    className="flex items-center gap-4 card-info rounded-xl p-4 group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-eco-green/10 flex items-center justify-center flex-shrink-0 text-xl">
                       {v.icono}
@@ -128,9 +128,9 @@ export default function ContactoPage() {
             </div>
 
             {/* Calendly */}
-            <div className="bg-eco-bg-card border border-eco-border rounded-xl p-6">
+            <div className="card-premium p-6">
               <h3 className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Videollamada gratuita</h3>
-              <p className="text-eco-text-muted text-sm mb-4">Agendá 30 minutos con nuestro equipo para ver catálogos, hacer preguntas y obtener una cotización personalizada.</p>
+              <p className="text-eco-text-muted text-sm mb-4">Reserve 30 minutos con nuestro equipo para revisar el catálogo, realizar consultas y obtener una cotización personalizada.</p>
               <VideoCallButton label="Agendar videollamada" />
             </div>
 

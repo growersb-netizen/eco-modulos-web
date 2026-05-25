@@ -75,26 +75,6 @@ model Obra {
   @@map("obras")
 }
 
-model Lead {
-  id                String   @id @default(cuid())
-  nombre            String?
-  telefono          String?
-  email             String?
-  localidad         String?
-  producto_interes  String
-  plan_pago         String?
-  cuotas_simuladas  Int?
-  mensaje           String?
-  fuente            String
-  vendedor_asignado String
-  estado            String   @default("nuevo")
-  notas             String?
-  creadoEn          DateTime @default(now())
-  actualizadoEn     DateTime @updatedAt
-
-  @@map("leads")
-}
-
 model Testimonio {
   id        String   @id @default(cuid())
   nombre    String

@@ -1,19 +1,16 @@
 import { NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { prisma } from '@/lib/db'
+import { isAdminAuth } from '@/lib/admin-auth'
 import { slugify } from '@/lib/utils'
 
 export async function GET() {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+  if (!await isAdminAuth()) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
   const articulos = await prisma.articuloBlog.findMany({ orderBy: { creadoEn: 'desc' } })
   return NextResponse.json(articulos)
 }
 
 export async function POST(req: Request) {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+  if (!await isAdminAuth(req)) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
 
   const body = await req.json()
   const slug = body.slug || slugify(body.titulo)

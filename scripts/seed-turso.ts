@@ -93,7 +93,7 @@ async function run() {
       ['hero_piscinas_cuota','Cuotas desde $19.200/mes'],
       ['hero_combo_desde','Módulo + Piscina'],
       ['hero_combo_cuota','60 cuotas fijas'],
-      ['empresa_telefono','+54 9 11 4449-8854'],
+      ['empresa_telefono','+54 9 11 6873-3406'],
       ['empresa_email','info@ecomodulosypiscinas.com.ar'],
       ['empresa_direccion','Zárate, Provincia de Buenos Aires'],
       ['social_instagram','https://instagram.com/ecomodulosypiscinas'],

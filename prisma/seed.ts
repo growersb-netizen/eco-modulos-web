@@ -348,7 +348,7 @@ async function main() {
   const config = [
     { clave: 'hero_titulo',                  valor: 'TU VIVIENDA O PISCINA. SIN BANCO. HASTA 120 CUOTAS.' },
     { clave: 'hero_subtitulo',               valor: 'Fabricación directa. Financiación propia. Todo el país.' },
-    { clave: 'empresa_telefono',             valor: '+54 9 11 4449-8854' },
+    { clave: 'empresa_telefono',             valor: '+54 9 11 6873-3406' },
     { clave: 'empresa_email',                valor: 'info@ecomodulosypiscinas.com.ar' },
     { clave: 'empresa_direccion_planta',     valor: 'Zárate, Provincia de Buenos Aires' },
     { clave: 'empresa_direccion_showroom',   valor: 'Av. Paseo Colón 1013, CABA' },

@@ -2,6 +2,7 @@ import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
+import FaqAccordion from '@/components/shared/FaqAccordion'
 import { MessageCircle, CheckCircle, X } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -29,11 +30,12 @@ export const metadata: Metadata = {
 }
 
 const COMPARATIVA = [
-  { aspecto: 'Tiempo de instalación', fibra: '3-5 días', mamposteria: '30-60 días' },
-  { aspecto: 'Mantenimiento', fibra: 'Mínimo — superficie lisa', mamposteria: 'Alto — superficie porosa' },
-  { aspecto: 'Resistencia UV', fibra: 'Alta — gel coat protector', mamposteria: 'Se degrada con el tiempo' },
-  { aspecto: 'Personalización', fibra: 'Colores y modelos variados', mamposteria: 'Alta pero costosa' },
-  { aspecto: 'Limpieza', fibra: 'Fácil — no retiene algas', mamposteria: 'Difícil — porosa' },
+  { aspecto: 'Tiempo de instalación', fibra: 'Instalada en el día', hormigon: '60 a 120 días de obra civil' },
+  { aspecto: 'Costo total', fibra: 'Precio cerrado — sin sorpresas', hormigon: 'Presupuesto abierto — imprevistos constantes' },
+  { aspecto: 'Impacto en el patio', fibra: 'Sin escombros. Equipo entra y sale en el día', hormigon: 'Excavadora, barro, escombros y semanas de desastre' },
+  { aspecto: 'Mantenimiento', fibra: 'Mínimo — superficie lisa no porosa', hormigon: 'Alto — fisuras, algas y revoque periódico' },
+  { aspecto: 'Resistencia UV', fibra: 'Alta — gel coat protector de larga duración', hormigon: 'Se degrada — requiere revestimiento cada pocos años' },
+  { aspecto: 'Limpieza', fibra: 'Fácil — no retiene algas ni sarro', hormigon: 'Difícil — superficie rugosa y porosa' },
 ]
 
 const FAQ = [
@@ -70,21 +72,33 @@ export default async function PiscinasPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Hero */}
-      <section className="pt-28 pb-16 bg-gradient-to-b from-[#001a1a] to-eco-bg">
+      {/* Hero — premium light */}
+      <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-eco-teal/10 text-eco-teal text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Catálogo de piscinas</span>
-          <h1 className="text-5xl sm:text-7xl font-extrabold text-white uppercase mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Instalada en el día.<br />Tuya de por vida.
+          <span className="badge-green mb-5 inline-flex" style={{ color: '#1A6E65', background: 'rgba(26,110,101,0.08)', borderColor: 'rgba(26,110,101,0.20)' }}>
+            Catálogo de piscinas
+          </span>
+          <h1
+            className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Instalada en el día.<br />
+            <span className="text-eco-teal">Durabilidad garantizada.</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-4">
+          <p className="text-eco-text-muted text-lg max-w-2xl mx-auto mb-4 leading-relaxed">
             16 modelos de fibra de vidrio. Desde la Miniportante (sin excavación) hasta modelos de 9 m. Stock disponible para entrega e instalación inmediata.
           </p>
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-4 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-eco-teal/8 border border-eco-teal/20 text-eco-teal text-xs font-semibold px-4 py-2 rounded-full mb-8">
+            <CheckCircle className="w-3.5 h-3.5" />
             Stock disponible — instalación el mismo día
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_16px_rgba(26,110,101,0.25)] hover:shadow-[0_8px_24px_rgba(26,110,101,0.35)]"
+            >
               <MessageCircle className="w-5 h-5" />Consultar al equipo de piscinas
             </a>
             <VideoCallButton variant="outline" label="Agendar videollamada" productoDefault="piscina" />
@@ -102,7 +116,7 @@ export default async function PiscinasPage() {
             <h2 className="text-3xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>
               Piscina Miniportante
             </h2>
-            <p className="text-eco-text-muted mb-4">El modelo más vendido. Sin excavación, sin obras, instalada en 1 día. Ideal para patios pequeños, quinchos y departamentos con jardín.</p>
+            <p className="text-eco-text-muted mb-4">El modelo de mayor demanda. Sin excavación, sin obra civil, instalada en 1 día. Ideal para patios pequeños, quinchos y departamentos con jardín.</p>
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-6 py-3 rounded-xl transition-colors">
               <MessageCircle className="w-4 h-4" />Consultar precio y disponibilidad
             </a>
@@ -123,14 +137,17 @@ export default async function PiscinasPage() {
       {/* Comparativa */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-3xl mx-auto px-4">
-          <SectionTitle titulo="Fibra vs. Mampostería" subtitulo="¿Por qué elegir una piscina de fibra?" />
-          <div className="mt-10 overflow-hidden rounded-xl border border-eco-border">
+          <SectionTitle titulo="Fibra vs. Hormigón" subtitulo="La diferencia que nadie te cuenta antes de construir" />
+          <p className="mt-4 text-eco-text-muted text-sm text-center max-w-2xl mx-auto mb-10">
+            Una piscina de hormigón implica excavadora, semanas de obra, presupuesto abierto y tu patio convertido en un desastre. La fibra de vidrio es lo opuesto: llega en camión, se instala en el día y el equipo se va sin dejar rastro.
+          </p>
+          <div className="overflow-hidden rounded-xl border border-eco-border">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-eco-bg-surface border-b border-eco-border">
                   <th className="text-left px-4 py-3 text-eco-text-muted">Aspecto</th>
                   <th className="text-center px-4 py-3 text-eco-teal font-bold">Fibra de vidrio</th>
-                  <th className="text-center px-4 py-3 text-eco-text-muted">Mampostería</th>
+                  <th className="text-center px-4 py-3 text-eco-text-muted">Hormigón</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-eco-border">
@@ -138,15 +155,15 @@ export default async function PiscinasPage() {
                   <tr key={row.aspecto} className="hover:bg-eco-bg-surface/50">
                     <td className="px-4 py-3 text-eco-text font-medium">{row.aspecto}</td>
                     <td className="px-4 py-3 text-center">
-                      <div className="flex items-center justify-center gap-1.5 text-eco-green">
-                        <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                        <span className="text-eco-text text-xs">{row.fibra}</span>
+                      <div className="flex items-center justify-center gap-1.5">
+                        <CheckCircle className="w-4 h-4 flex-shrink-0 text-eco-teal" />
+                        <span className="text-eco-text text-xs font-medium">{row.fibra}</span>
                       </div>
                     </td>
                     <td className="px-4 py-3 text-center">
                       <div className="flex items-center justify-center gap-1.5 text-eco-text-muted">
-                        <X className="w-4 h-4 flex-shrink-0" />
-                        <span className="text-xs">{row.mamposteria}</span>
+                        <X className="w-4 h-4 flex-shrink-0 text-red-500/70" />
+                        <span className="text-xs">{row.hormigon}</span>
                       </div>
                     </td>
                   </tr>
@@ -154,32 +171,37 @@ export default async function PiscinasPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-5 text-center text-eco-text-muted text-xs">
+            Con la <strong className="text-eco-text">Miniportante</strong> ni siquiera hace falta excavar. Se apoya sobre el suelo nivelado — sin obra, sin permisos de demolición, sin sorpresas.
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 max-w-3xl mx-auto px-4">
-        <SectionTitle titulo="Preguntas frecuentes" />
-        <div className="mt-10 space-y-4">
-          {FAQ.map((f) => (
-            <details key={f.q} className="group bg-eco-bg-card border border-eco-border rounded-xl">
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer text-eco-text font-medium list-none">
-                {f.q}
-                <span className="text-eco-teal group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-              </summary>
-              <p className="px-5 pb-4 text-eco-text-muted text-sm">{f.r}</p>
-            </details>
-          ))}
+      <section className="py-20 bg-eco-bg">
+        <div className="max-w-3xl mx-auto px-4">
+          <SectionTitle titulo="Preguntas frecuentes" />
+          <div className="mt-10">
+            <FaqAccordion items={FAQ} />
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-eco-bg-card border-t border-eco-border">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>¿Querés saber más?</h2>
-          <p className="text-eco-text-muted mb-8">Nuestro equipo de piscinas te asesora sin costo y sin compromiso.</p>
+      {/* CTA final */}
+      <section className="py-24 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+            ¿Desea más información?
+          </h2>
+          <p className="text-white/60 mb-10 text-lg">Nuestro equipo de piscinas lo asesora sin costo ni compromiso.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+            >
               <MessageCircle className="w-5 h-5" />WhatsApp — Piscinas
             </a>
             <VideoCallButton variant="outline" productoDefault="piscina" />

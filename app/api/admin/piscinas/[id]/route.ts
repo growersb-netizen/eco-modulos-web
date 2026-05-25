@@ -1,11 +1,9 @@
 import { NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { prisma } from '@/lib/db'
+import { isAdminAuth } from '@/lib/admin-auth'
 
-export async function GET(_: Request, { params }: { params: Promise<{ id: string }> }) {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  if (!await isAdminAuth(req)) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
   const { id } = await params
   const piscina = await prisma.piscina.findUnique({ where: { id } })
   if (!piscina) return NextResponse.json({ error: 'No encontrado' }, { status: 404 })
@@ -13,8 +11,7 @@ export async function GET(_: Request, { params }: { params: Promise<{ id: string
 }
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+  if (!await isAdminAuth(req)) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
   const { id } = await params
   const body = await req.json()
   const piscina = await prisma.piscina.update({
@@ -35,9 +32,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
   return NextResponse.json(piscina)
 }
 
-export async function DELETE(_: Request, { params }: { params: Promise<{ id: string }> }) {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  if (!await isAdminAuth(req)) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
   const { id } = await params
   await prisma.piscina.delete({ where: { id } })
   return NextResponse.json({ ok: true })

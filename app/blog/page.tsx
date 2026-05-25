@@ -43,15 +43,15 @@ export default async function BlogPage({
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-28 pb-12 bg-gradient-to-b from-eco-green-dark to-eco-bg">
+      {/* Hero — premium light */}
+      <section className="pt-28 pb-12 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Blog</span>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white uppercase mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+          <span className="badge-green mb-5 inline-flex">Blog</span>
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-eco-text uppercase leading-[0.92] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
             Artículos y guías
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Todo lo que necesitás saber sobre módulos habitacionales, piscinas, financiación y construcción modular en Argentina.
+          <p className="text-eco-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+            Todo lo que necesita saber sobre módulos habitacionales, piscinas, financiación y construcción modular en Argentina.
           </p>
         </div>
       </section>
@@ -72,54 +72,59 @@ export default async function BlogPage({
       </section>
 
       {/* Grid de artículos */}
-      <section className="py-12 max-w-5xl mx-auto px-4">
-        {articulos.length === 0 ? (
-          <div className="text-center py-20 text-eco-text-muted">
-            <p className="text-lg">No hay artículos en esta categoría todavía.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articulos.map((a) => (
-              <Link
-                key={a.id}
-                href={`/blog/${a.slug}`}
-                className="group bg-eco-bg-card border border-eco-border hover:border-eco-green/40 rounded-2xl overflow-hidden flex flex-col transition-all hover:shadow-lg hover:shadow-eco-green/5"
-              >
-                {a.imagen ? (
-                  <div className="relative aspect-video bg-eco-bg-surface overflow-hidden">
-                    <Image
-                      src={a.imagen}
-                      alt={a.titulo}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                ) : (
-                  <div className="aspect-video bg-eco-bg-surface flex items-center justify-center">
-                    <span className="text-eco-text-muted text-sm">Sin imagen</span>
-                  </div>
-                )}
-                <div className="p-5 flex flex-col gap-2 flex-1">
-                  {a.categoria && (
-                    <span className="text-eco-green text-xs font-semibold uppercase tracking-wider capitalize">{a.categoria}</span>
+      <section className="py-14 bg-eco-bg">
+        <div className="max-w-5xl mx-auto px-4">
+          {articulos.length === 0 ? (
+            <div className="text-center py-20 text-eco-text-muted">
+              <p className="text-lg">No hay artículos en esta categoría todavía.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {articulos.map((a) => (
+                <Link
+                  key={a.id}
+                  href={`/blog/${a.slug}`}
+                  className="card-premium group overflow-hidden flex flex-col"
+                >
+                  {a.imagen ? (
+                    <div className="relative aspect-video bg-eco-bg-surface overflow-hidden">
+                      <Image
+                        src={a.imagen}
+                        alt={a.titulo}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                  ) : (
+                    <div className="aspect-video bg-gradient-to-br from-eco-bg to-eco-bg-surface flex items-center justify-center border-b border-eco-border">
+                      <span className="text-eco-text-muted text-sm">Sin imagen</span>
+                    </div>
                   )}
-                  <h2 className="text-eco-text font-bold leading-snug group-hover:text-eco-green transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
-                    {a.titulo}
-                  </h2>
-                  {a.resumen && (
-                    <p className="text-eco-text-muted text-sm flex-1 line-clamp-3">{a.resumen}</p>
-                  )}
-                  <div className="flex items-center gap-3 text-eco-text-muted text-xs pt-2 border-t border-eco-border">
-                    <span>{new Date(a.creadoEn).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                    <span>·</span>
-                    <span>{tiempoLectura(a.contenido)} min de lectura</span>
+                  <div className="p-5 flex flex-col gap-2.5 flex-1">
+                    {a.categoria && (
+                      <span className="text-eco-green text-[11px] font-bold uppercase tracking-widest">{a.categoria}</span>
+                    )}
+                    <h2
+                      className="text-eco-text font-bold leading-snug group-hover:text-eco-green transition-colors"
+                      style={{ fontFamily: 'var(--font-display)' }}
+                    >
+                      {a.titulo}
+                    </h2>
+                    {a.resumen && (
+                      <p className="text-eco-text-muted text-sm flex-1 line-clamp-3 leading-relaxed">{a.resumen}</p>
+                    )}
+                    <div className="flex items-center gap-3 text-eco-text-muted text-xs pt-3 border-t border-eco-border mt-auto">
+                      <span>{new Date(a.creadoEn).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                      <span>·</span>
+                      <span>{tiempoLectura(a.contenido)} min de lectura</span>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </section>
     </>
   )

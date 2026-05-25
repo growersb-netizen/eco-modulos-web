@@ -31,7 +31,7 @@ function makeMsg(text: string, from: 'user' | 'agent', agent?: string): Message 
 }
 
 const SESSION_KEY = 'eco_chat_session'
-const WELCOME = '¡Hola! Soy Valentina, asesora de Eco Módulos & Piscinas. 😊\n¿Buscás una piscina, un módulo habitacional, o querés saber más sobre la financiación?'
+const WELCOME = 'Hola, soy Valentina 👋 ¿En qué te puedo ayudar hoy?'
 
 // ── Componente ────────────────────────────────────────────────────────────────
 export default function ChatWidget() {
@@ -142,26 +142,26 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[370px] bg-[#1a1a1a] border border-[#2a2a2a] rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[370px] bg-white border border-eco-border rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.14)] overflow-hidden flex flex-col"
             style={{ maxHeight: 'calc(100vh - 120px)', height: '520px' }}
             role="dialog"
             aria-label="Chat con Valentina"
           >
             {/* Header */}
-            <div className="bg-[#111] border-b border-[#2a2a2a] px-4 py-3 flex items-center gap-3 flex-shrink-0">
+            <div className="bg-eco-green-dark px-4 py-3 flex items-center gap-3 flex-shrink-0">
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-eco-green/20 border border-eco-green/40 flex items-center justify-center text-xl">
+                <div className="w-10 h-10 rounded-full bg-white/15 border border-white/25 flex items-center justify-center text-xl">
                   🌿
                 </div>
-                <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-[#111]" />
+                <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-eco-green-dark" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-white font-semibold text-sm leading-tight">Valentina</p>
-                <p className="text-[#6b7280] text-xs">Asesora · En línea ahora</p>
+                <p className="text-white/55 text-xs">Asesora · En línea ahora</p>
               </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-[#6b7280] hover:text-white transition-colors p-1 rounded-lg hover:bg-[#2a2a2a]"
+                className="text-white/60 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
                 aria-label="Cerrar chat"
               >
                 <X className="w-5 h-5" />
@@ -170,8 +170,8 @@ export default function ChatWidget() {
 
             {/* Mensajes */}
             <div
-              className="flex-1 overflow-y-auto px-4 py-4 space-y-3 scroll-smooth"
-              style={{ scrollbarWidth: 'thin', scrollbarColor: '#2a2a2a transparent' }}
+              className="flex-1 overflow-y-auto px-4 py-4 space-y-3 scroll-smooth bg-eco-bg"
+              style={{ scrollbarWidth: 'thin', scrollbarColor: '#E5E2DA transparent' }}
             >
               {messages.map((msg) => (
                 <div
@@ -179,18 +179,18 @@ export default function ChatWidget() {
                   className={`flex flex-col gap-1 ${msg.from === 'user' ? 'items-end' : 'items-start'}`}
                 >
                   {msg.from === 'agent' && msg.agent && (
-                    <span className="text-[10px] text-[#6b7280] px-1">{msg.agent}</span>
+                    <span className="text-[10px] text-eco-text-muted px-1">{msg.agent}</span>
                   )}
                   <div
                     className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
                       msg.from === 'user'
-                        ? 'bg-eco-green text-white rounded-tr-sm'
-                        : 'bg-[#252525] text-[#f5f5f5] rounded-tl-sm'
+                        ? 'bg-eco-green text-white rounded-tr-sm shadow-sm'
+                        : 'bg-white text-eco-text rounded-tl-sm shadow-sm border border-eco-border'
                     }`}
                   >
                     {formatText(msg.text)}
                   </div>
-                  <span className="text-[10px] text-[#4b5563] px-1">{msg.time}</span>
+                  <span className="text-[10px] text-eco-text-muted/60 px-1">{msg.time}</span>
                 </div>
               ))}
 
@@ -198,12 +198,12 @@ export default function ChatWidget() {
               {waiting && (
                 <div className="flex flex-col items-start gap-1">
                   <span className="text-[10px] text-[#6b7280] px-1">Valentina</span>
-                  <div className="bg-[#252525] px-4 py-3 rounded-2xl rounded-tl-sm">
+                  <div className="bg-white border border-eco-border px-4 py-3 rounded-2xl rounded-tl-sm shadow-sm">
                     <div className="flex gap-1 items-center">
                       {[0, 150, 300].map((delay) => (
                         <motion.span
                           key={delay}
-                          className="w-2 h-2 bg-[#6b7280] rounded-full"
+                          className="w-2 h-2 bg-eco-text-muted/50 rounded-full"
                           animate={{ y: [0, -4, 0] }}
                           transition={{ repeat: Infinity, duration: 0.8, delay: delay / 1000 }}
                         />
@@ -217,7 +217,7 @@ export default function ChatWidget() {
             </div>
 
             {/* Input */}
-            <div className="border-t border-[#2a2a2a] px-3 py-3 flex items-end gap-2 flex-shrink-0 bg-[#111]">
+            <div className="border-t border-eco-border px-3 py-3 flex items-end gap-2 flex-shrink-0 bg-white">
               <textarea
                 ref={inputRef}
                 value={input}
@@ -227,10 +227,10 @@ export default function ChatWidget() {
                   e.target.style.height = Math.min(e.target.scrollHeight, 96) + 'px'
                 }}
                 onKeyDown={handleKey}
-                placeholder="Escribí tu consulta…"
+                placeholder="Escriba su consulta…"
                 disabled={waiting}
                 rows={1}
-                className="flex-1 bg-[#252525] border border-[#333] rounded-xl px-3 py-2.5 text-sm text-white placeholder-[#6b7280] resize-none focus:outline-none focus:border-eco-green transition-colors disabled:opacity-60"
+                className="flex-1 bg-eco-bg-surface border border-eco-border rounded-xl px-3 py-2.5 text-sm text-eco-text placeholder-eco-text-muted resize-none focus:outline-none focus:border-eco-green transition-colors disabled:opacity-60"
                 style={{ maxHeight: '96px' }}
               />
               <button
@@ -247,8 +247,8 @@ export default function ChatWidget() {
             </div>
 
             {/* Footer */}
-            <div className="bg-[#0d0d0d] px-4 py-1.5 text-center flex-shrink-0">
-              <p className="text-[10px] text-[#374151]">Eco Módulos & Piscinas · Asistente IA</p>
+            <div className="bg-eco-bg-surface border-t border-eco-border px-4 py-1.5 text-center flex-shrink-0">
+              <p className="text-[10px] text-eco-text-muted/60">Eco Módulos & Piscinas · Asistente IA</p>
             </div>
           </motion.div>
         )}
@@ -296,10 +296,10 @@ export default function ChatWidget() {
           <motion.div
             initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1.5 }}
-            className="absolute right-16 top-1/2 -translate-y-1/2 bg-[#1a1a1a] border border-[#2a2a2a] text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-lg pointer-events-none hidden sm:block"
+            className="absolute right-16 top-1/2 -translate-y-1/2 bg-eco-green-dark text-white text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-lg pointer-events-none hidden sm:block"
           >
             💬 Chatear con Valentina
-            <span className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-0 h-0 border-l-[6px] border-l-[#1a1a1a] border-y-[4px] border-y-transparent" />
+            <span className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-0 h-0 border-l-[6px] border-l-eco-green-dark border-y-[4px] border-y-transparent" />
           </motion.div>
         )}
       </motion.div>

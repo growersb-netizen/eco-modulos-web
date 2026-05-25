@@ -58,7 +58,7 @@ export default function ContactForm() {
           ¡Consulta enviada!
         </h3>
         <p className="text-eco-text-muted max-w-md">
-          Te vamos a contactar a la brevedad por WhatsApp. ¡Gracias por confiar en Eco Módulos & Piscinas!
+          Lo contactaremos a la brevedad por WhatsApp. ¡Gracias por confiar en Eco Módulos & Piscinas!
         </p>
         <button
           onClick={() => setEnviado(false)}
@@ -74,7 +74,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <input {...register('nombre')} placeholder="Tu nombre (opcional)" className={inputClass} />
+          <input {...register('nombre')} placeholder="Su nombre (opcional)" className={inputClass} />
           {errors.nombre && <p className="text-red-400 text-xs mt-1">{errors.nombre.message}</p>}
         </div>
         <div>
@@ -97,7 +97,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <select {...register('producto_interes')} className={inputClass}>
-            <option value="">¿Qué te interesa? *</option>
+            <option value="">¿Qué le interesa? *</option>
             <option value="modulo">Módulo habitacional</option>
             <option value="piscina">Piscina de fibra</option>
             <option value="combo">Combo Módulo + Piscina</option>

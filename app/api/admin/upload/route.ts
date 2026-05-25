@@ -1,15 +1,13 @@
 import { NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { uploadImagen } from '@/lib/r2'
+import { isAdminAuth } from '@/lib/admin-auth'
 import sharp from 'sharp'
 
 const TIPOS_PERMITIDOS = ['image/jpeg', 'image/png', 'image/webp']
 const MAX_SIZE = 5 * 1024 * 1024 // 5MB
 
 export async function POST(req: Request) {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+  if (!await isAdminAuth(req)) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
 
   if (!process.env.R2_ACCOUNT_ID || !process.env.R2_ACCESS_KEY_ID) {
     return NextResponse.json(

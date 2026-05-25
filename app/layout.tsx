@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: '%s | Eco Módulos & Piscinas',
   },
   description:
-    'Fabricamos viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio. Financiación directa hasta 120 cuotas sin banco. Planta en Zárate, showroom en CABA. Cooperativa INAES con +15 años.',
+    'Fabricamos viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio. Financiación directa hasta 120 cuotas sin banco. Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES.',
   keywords: [
     'viviendas modulares',
     'piscinas fibra de vidrio',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     'piscinas argentina',
     'eco modulos',
     'NCE tecnologia',
-    'cooperativa INAES',
+    'cooperativa de trabajo eco zarate',
   ],
   openGraph: {
     type: 'website',
@@ -77,11 +77,13 @@ const jsonLd = {
   '@type': 'LocalBusiness',
   '@id': 'https://ecomodulosypiscinas.com.ar/#business',
   name: 'Eco Módulos & Piscinas',
-  alternateName: 'Eco Modulos Piscinas',
+  alternateName: ['Eco Modulos Piscinas', 'Cooperativa de Trabajo Eco Zárate Limitada', 'Cooperativa Eco Zárate', 'EcoModulos y Piscinas'],
+  legalName: 'Cooperativa de Trabajo Eco Zárate Limitada',
+  taxID: '30-71807393-2',
   description:
-    'Fabricante directo de viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco. Cooperativa de trabajo INAES con más de 15 años de trayectoria.',
+    'Fabricante directo de viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco. Cooperativa de Trabajo Eco Zárate Limitada, inscripta ante INAES. Más de 15 años de trayectoria.',
   url: 'https://ecomodulosypiscinas.com.ar',
-  telephone: '+54-9-11-4449-8854',
+  telephone: '+5491168733406',
   email: 'info@ecomodulosypiscinas.com.ar',
   priceRange: '$$',
   currenciesAccepted: 'ARS',

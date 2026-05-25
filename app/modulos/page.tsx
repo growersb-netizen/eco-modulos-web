@@ -2,6 +2,7 @@ import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
+import FaqAccordion from '@/components/shared/FaqAccordion'
 import {
   MessageCircle, HardHat, Flame, Mountain, Wheat, Building2,
   Clock, Zap, Wrench, CheckCircle,
@@ -86,7 +87,7 @@ const APLICACIONES = [
   {
     icon: Home,
     titulo: 'Vivienda particular',
-    desc: 'Unidad habitacional permanente o transitoria de 18 a 72 m². Llave en mano. Financiación directa hasta 120 cuotas sin banco ni garante.',
+    desc: 'Unidad habitacional de 18 a 72 m². Baño completo incluido desde 12 m², kitchenette desde 18 m². Habitable desde el día de la instalación. Financiación directa hasta 120 cuotas sin banco.',
     color: 'text-eco-green',
   },
   {
@@ -160,7 +161,7 @@ const FAQ = [
   },
   {
     q: '¿Los módulos se pueden reubicar una vez terminado el proyecto?',
-    r: 'Exactamente. Al no requerir fundaciones permanentes, los módulos son desmontables y relocalizables. Muchas empresas los usan en sucesivos proyectos, lo que maximiza la inversión.',
+    r: 'Así es. Al no requerir fundaciones permanentes, los módulos son desmontables y relocalizables. Muchas empresas los usan en sucesivos proyectos, lo que maximiza la inversión.',
   },
   {
     q: '¿Tienen experiencia en proyectos para empresas, municipios o gobiernos provinciales?',
@@ -175,8 +176,8 @@ const FAQ = [
     r: 'Para módulos de hasta 36 m², una losa de baja densidad, blocks de hormigón o una plataforma de madera sobre suelo compactado es suficiente. Para campamentos de mayor escala, nuestro equipo técnico asesora según el tipo de suelo y la carga del proyecto.',
   },
   {
-    q: '¿Los módulos incluyen instalación eléctrica y sanitaria?',
-    r: 'Sí. Se entregan con pre-instalación eléctrica y sanitaria completa. Las conexiones a la red o generador, agua y efluentes son responsabilidad de quien los recibe, aunque asesoramos en la planificación.',
+    q: '¿Qué está incluido en el módulo? ¿Baño, cocina, instalaciones?',
+    r: 'Sí, todo incluido. Desde el módulo de 12 m² se entrega con baño completo (inodoro, ducha, lavabo y ventilación) operativo desde el primer día. Desde 18 m² incorpora kitchenette con mesada, muebles y conexiones ejecutadas. Todos los módulos incluyen instalación eléctrica y sanitaria interna completa. Las conexiones a la red eléctrica externa, agua y efluentes corren por cuenta del cliente, aunque asesoramos en la planificación sin costo adicional.',
   },
   {
     q: '¿Pueden adaptarse a climas extremos como la Patagonia o el NOA?',
@@ -210,26 +211,26 @@ export default async function ModulosPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ── HERO ── */}
-      <section className="pt-28 pb-16 bg-gradient-to-b from-eco-green-dark to-eco-bg">
+      {/* ── HERO — premium light ── */}
+      <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+          <span className="badge-green mb-5 inline-flex">
             Construcción modular industrializada · Tecnología NCE
           </span>
           <h1
-            className="text-5xl sm:text-7xl font-extrabold text-white uppercase leading-none mb-6"
+            className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Módulos NCE.<br />
-            <span className="text-eco-green">Llave en mano. En días.</span>
+            <span className="text-eco-green">Llave en mano. Instalación en días.</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto mb-4">
-            Viviendas, quinchos, obradores, campamentos, oficinas de campo y más. Líderes en fabricación de módulos NCE en Argentina. Logística propia en todo el país.
+          <p className="text-eco-text-muted text-lg max-w-3xl mx-auto mb-4 leading-relaxed">
+            Viviendas, quinchos, obradores, campamentos, oficinas de campo y más. Habitable desde el primer día: baño completo, cocina integrada, Obra Blanca terminada.
           </p>
-          <p className="text-eco-text-muted text-sm max-w-2xl mx-auto mb-4">
-            Practicidad · Prolijidad · Rapidez · Eficiencia energética · Sin obra civil
+          <p className="text-eco-text-muted text-sm max-w-2xl mx-auto mb-6">
+            Baño incluido desde 12 m² · Kitchenette desde 18 m² · Instalación en el día · Sin obra civil · Financiación hasta 120 cuotas
           </p>
-          <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-semibold px-4 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-eco-green/8 border border-eco-green/20 text-eco-green text-xs font-semibold px-4 py-2 rounded-full mb-8">
             <CheckCircle className="w-3.5 h-3.5" />
             Stock disponible — entrega e instalación inmediata
           </div>
@@ -238,7 +239,7 @@ export default async function ModulosPage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors"
+              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_16px_rgba(42,95,64,0.25)] hover:shadow-[0_8px_24px_rgba(42,95,64,0.35)]"
             >
               <MessageCircle className="w-5 h-5" />Solicitar cotización
             </a>
@@ -248,7 +249,7 @@ export default async function ModulosPage() {
       </section>
 
       {/* ── VENTAJAS CORPORATIVAS ── */}
-      <section className="bg-eco-bg-card border-y border-eco-border py-12">
+      <section className="bg-eco-bg-surface border-b border-eco-border py-12">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {VENTAJAS.map(({ icon: Icon, titulo, desc }) => (
@@ -267,7 +268,8 @@ export default async function ModulosPage() {
       </section>
 
       {/* ── APLICACIONES ── */}
-      <section className="py-16 max-w-7xl mx-auto px-4">
+      <section className="py-20 bg-eco-bg">
+        <div className="max-w-7xl mx-auto px-4">
         <SectionTitle
           titulo="Aplicaciones"
           subtitulo="Un módulo NCE puede resolver casi cualquier necesidad de espacio funcional sin recurrir a la obra tradicional."
@@ -276,7 +278,7 @@ export default async function ModulosPage() {
           {APLICACIONES.map(({ icon: Icon, titulo, desc }) => (
             <div
               key={titulo}
-              className="bg-eco-bg-card border border-eco-border hover:border-eco-green/40 rounded-xl p-5 flex flex-col gap-3 transition-colors"
+              className="card-premium p-5 flex flex-col gap-3"
             >
               <div className="w-9 h-9 rounded-lg bg-eco-green/10 flex items-center justify-center flex-shrink-0">
                 <Icon className="w-4 h-4 text-eco-green" />
@@ -288,10 +290,11 @@ export default async function ModulosPage() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       {/* ── RUBROS ── */}
-      <section className="py-16 bg-eco-bg-card border-y border-eco-border">
+      <section className="py-20 bg-eco-bg-surface border-y border-eco-border">
         <div className="max-w-6xl mx-auto px-4">
           <SectionTitle
             titulo="Rubros que trabajan con nosotros"
@@ -299,7 +302,7 @@ export default async function ModulosPage() {
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {RUBROS.map(({ icon: Icon, nombre, desc }) => (
-              <div key={nombre} className="flex gap-4 bg-eco-bg-surface border border-eco-border rounded-xl p-5 hover:border-eco-green/30 transition-colors">
+              <div key={nombre} className="flex gap-4 bg-eco-bg-card border border-eco-border rounded-xl p-5 hover:border-eco-green/30 hover:shadow-sm transition-all">
                 <div className="w-10 h-10 rounded-xl bg-eco-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Icon className="w-5 h-5 text-eco-green" />
                 </div>
@@ -316,7 +319,8 @@ export default async function ModulosPage() {
       </section>
 
       {/* ── CATÁLOGO ── */}
-      <section className="py-16 max-w-7xl mx-auto px-4">
+      <section className="py-20 bg-eco-bg">
+        <div className="max-w-7xl mx-auto px-4">
         <SectionTitle
           titulo="Catálogo de módulos"
           subtitulo="Precios de contado con entrega inmediata desde stock. Para compras financiadas, coordinar plazo de fabricación."
@@ -339,34 +343,37 @@ export default async function ModulosPage() {
             />
           ))}
         </div>
+        </div>
       </section>
 
       {/* ── LLAVE EN MANO ── */}
-      <section className="py-14 max-w-5xl mx-auto px-4">
+      <section className="py-20 bg-eco-bg-surface border-y border-eco-border">
+        <div className="max-w-5xl mx-auto px-4">
         <div className="bg-eco-bg-card border border-eco-green/20 rounded-2xl p-8">
           <div className="flex flex-col sm:flex-row gap-8 items-start">
             <div className="flex-1">
               <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
-                Entrega llave en mano
+                Habitable desde el día 1
               </span>
               <h2 className="text-3xl font-extrabold text-eco-text mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                Terminado. Listo para usar o personalizar.
+                Instalado hoy. Listo para vivir.
               </h2>
               <p className="text-eco-text-muted text-sm leading-relaxed">
-                Cada módulo se entrega <strong className="text-eco-text">completamente terminado</strong> y habitable desde el primer día. No vendemos estructura: entregamos una unidad funcional.
+                Cada módulo llega a tu terreno <strong className="text-eco-text">completamente terminado</strong>: baño operativo, cocina instalada, Obra Blanca prolija y todas las conexiones ejecutadas. No es una estructura para completar — es una unidad funcional lista para habitarse desde el primer momento.
               </p>
               <p className="text-eco-text-muted text-sm leading-relaxed mt-3">
-                No ofrecemos terminaciones de lujo ni detalles decorativos de obra fina — eso no es lo que hacemos. Lo que sí garantizamos es <strong className="text-eco-text">practicidad, prolijidad, solidez y eficiencia</strong>. El cliente tiene un módulo habitable y puede personalizarlo a gusto sin necesidad de obra adicional.
+                La practicidad, la prolijidad y la solidez están garantizadas de fábrica. Lo que el cliente hace después — pintar, decorar, elegir su estilo — es <strong className="text-eco-text">libertad total, no tarea pendiente</strong>.
               </p>
             </div>
             <div className="sm:w-72 flex-shrink-0 space-y-3">
               {[
-                { label: 'Interior', detalle: 'Paredes y cielorraso fondeados en blanco. Piso fondeado en gris. Instalación eléctrica y sanitaria incluida.' },
-                { label: 'Exterior', detalle: 'Revestimiento plástico texturizado impermeabilizado. Resistente a la intemperie. Bajo mantenimiento.' },
-                { label: 'Aberturas', detalle: 'Puerta de acceso y ventanas según modelo. Incluidas en precio de catálogo.' },
-                { label: 'Personalización', detalle: 'El cliente elige colores, revestimientos, muebles y detalles. Sin obra adicional.' },
+                { label: 'Baño completo', detalle: 'Incluido desde el módulo de 12 m². Inodoro, ducha, lavabo y ventilación. Funcional desde el primer día.' },
+                { label: 'Cocina kitchenette', detalle: 'Desde 18 m², con mesada, muebles y conexiones listas para usar. Todo incluido en el precio.' },
+                { label: 'Obra Blanca terminada', detalle: 'Interior fondeado en blanco, piso gris fondeado. Instalación eléctrica y sanitaria ejecutada.' },
+                { label: 'Exterior impermeabilizado', detalle: 'Revestimiento plástico texturizado resistente a la intemperie. Bajo mantenimiento, alta durabilidad.' },
+                { label: 'Lista para personalizar', detalle: 'El cliente elige colores, muebles y detalles desde el primer día. Sin obra adicional.' },
               ].map(({ label, detalle }) => (
-                <div key={label} className="flex gap-3 bg-eco-bg-surface rounded-xl px-4 py-3">
+                <div key={label} className="flex gap-3 bg-eco-bg rounded-xl px-4 py-3 border border-eco-border">
                   <CheckCircle className="w-4 h-4 text-eco-green flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-eco-text text-xs font-bold uppercase tracking-widest">{label}</p>
@@ -376,6 +383,7 @@ export default async function ModulosPage() {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -387,7 +395,7 @@ export default async function ModulosPage() {
             subtitulo="No Convencional de Eficiencia energética — proceso de fabricación propio"
           />
           <p className="mt-4 text-eco-text-muted text-sm max-w-2xl mx-auto text-center">
-            Fabricado íntegramente en nuestra planta de Zárate. Cada panel sale terminado, con anclajes incorporados, listo para armado en seco sin agua ni desperdicios.
+            Fabricado íntegramente en nuestra planta de Zárate. Cada módulo sale terminado de fábrica — con baño, cocina y todas las instalaciones ejecutadas — listo para instalarse en el día y habitarse desde el primer momento.
           </p>
           <div className="mt-10 space-y-4">
             {[
@@ -425,37 +433,29 @@ export default async function ModulosPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-16 max-w-3xl mx-auto px-4">
-        <SectionTitle titulo="Preguntas frecuentes" />
-        <div className="mt-10 space-y-4">
-          {FAQ.map((f) => (
-            <details
-              key={f.q}
-              className="group bg-eco-bg-card border border-eco-border rounded-xl"
-            >
-              <summary className="flex items-center justify-between px-5 py-4 cursor-pointer text-eco-text font-medium list-none">
-                {f.q}
-                <span className="text-eco-green group-open:rotate-45 transition-transform text-xl leading-none flex-shrink-0 ml-3">+</span>
-              </summary>
-              <p className="px-5 pb-4 text-eco-text-muted text-sm">{f.r}</p>
-            </details>
-          ))}
+      <section className="py-20 bg-eco-bg">
+        <div className="max-w-3xl mx-auto px-4">
+          <SectionTitle titulo="Preguntas frecuentes" />
+          <div className="mt-10">
+            <FaqAccordion items={FAQ} />
+          </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="py-16 bg-eco-bg-card border-t border-eco-border">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      {/* ── CTA final — dark green ── */}
+      <section className="py-24 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2
-            className="text-4xl font-extrabold text-eco-text mb-4 uppercase"
+            className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            ¿Tenés un proyecto?
+            ¿Tiene un proyecto?
           </h2>
-          <p className="text-eco-text-muted mb-2">
-            Nuestro equipo técnico evalúa tu requerimiento sin costo y sin compromiso.
+          <p className="text-white/60 mb-2 text-lg">
+            Nuestro equipo técnico evalúa su requerimiento sin costo ni compromiso.
           </p>
-          <p className="text-eco-text-muted text-sm mb-8">
+          <p className="text-white/40 text-sm mb-10">
             Trabajamos con empresas, municipios, cooperativas y proyectos particulares.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -463,7 +463,7 @@ export default async function ModulosPage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
             >
               <MessageCircle className="w-5 h-5" />Solicitar cotización por WhatsApp
             </a>

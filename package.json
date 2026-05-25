@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "tsx scripts/seed-turso.ts",
+    "backup": "tsx scripts/backup_turso.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

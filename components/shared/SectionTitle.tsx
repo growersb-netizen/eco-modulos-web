@@ -6,6 +6,8 @@ interface SectionTitleProps {
   centrado?: boolean
   className?: string
   badge?: string
+  /** Show a short decorative green underline */
+  decorLine?: boolean
 }
 
 export default function SectionTitle({
@@ -14,22 +16,29 @@ export default function SectionTitle({
   centrado = true,
   className,
   badge,
+  decorLine = true,
 }: SectionTitleProps) {
   return (
     <div className={cn(centrado ? 'text-center' : '', className)}>
       {badge && (
-        <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+        <span className="badge-green mb-4 inline-flex">
           {badge}
         </span>
       )}
       <h2
-        className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-eco-text uppercase tracking-tight leading-tight"
+        className={cn(
+          'text-3xl sm:text-4xl lg:text-5xl font-extrabold text-eco-text uppercase tracking-tight leading-tight',
+          decorLine && (centrado ? 'heading-line heading-line-center' : 'heading-line'),
+        )}
         style={{ fontFamily: 'var(--font-display)' }}
       >
         {titulo}
       </h2>
       {subtitulo && (
-        <p className="mt-3 text-eco-text-muted text-base sm:text-lg max-w-2xl mx-auto">
+        <p className={cn(
+          'mt-5 text-eco-text-muted text-base sm:text-lg leading-relaxed',
+          centrado ? 'max-w-2xl mx-auto' : 'max-w-2xl',
+        )}>
           {subtitulo}
         </p>
       )}

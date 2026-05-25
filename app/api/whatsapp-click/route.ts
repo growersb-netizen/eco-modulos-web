@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/db'
+import { syncLeadCRM } from '@/lib/crm'
+import { siguienteVendedor } from '@/lib/utils'
 import { z } from 'zod'
 
 const schema = z.object({
   producto: z.string().default('general'),
-  vendedor: z.string().default('stefania'),
   pagina: z.string().default('/'),
 })
 
@@ -12,14 +12,14 @@ export async function POST(req: Request) {
   try {
     const body = await req.json()
     const data = schema.parse(body)
+    const vendedor = siguienteVendedor()
 
-    await prisma.lead.create({
-      data: {
-        producto_interes: data.producto,
-        fuente: 'web_whatsapp',
-        vendedor_asignado: data.vendedor,
-        estado: 'nuevo',
-      },
+    // Registra el click como lead frío en el CRM. Turso no almacena datos de clientes.
+    syncLeadCRM({
+      producto_interes: data.producto,
+      fuente: 'web_whatsapp',
+      vendedor_asignado: vendedor,
+      mensaje: `Click WhatsApp desde ${data.pagina}`,
     })
 
     return NextResponse.json({ ok: true })

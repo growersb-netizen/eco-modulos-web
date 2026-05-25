@@ -1,0 +1,336 @@
+INFORME DE ESTADO — ECO MÓDULOS WEB
+Fecha: 04/05/2026 | Revisión: código fuente completo
+================================================================================
+
+
+1. ARQUITECTURA
+================================================================================
+
+Deploy         : NO deployado — solo corre local en localhost:3000
+URL activa     : Ninguna — ecomodulosypiscinas.com.ar no está configurada
+Framework      : Next.js 16.2.4 — App Router, TypeScript, React 19
+Estilos        : Tailwind CSS v4 con tokens custom (eco-green, eco-teal, eco-bg-card) + Framer Motion
+Base de datos  : Turso (SQLite en edge) — Prisma 7 con adapter libsql. Credenciales reales en .env.local OK
+Auth           : NextAuth v4 — JWT, sesiones de 8h, login email/password con bcrypt
+Storage imgs   : Cloudflare R2 via AWS SDK — credenciales placeholder, NO funcional
+TypeScript     : Compila sin errores (verificado)
+
+
+2. PÁGINAS Y RUTAS
+================================================================================
+
+SITIO PÚBLICO
+-------------
+
+/                  COMPLETA
+                   Hero dinámico (DB), Trust bar, 3 cards de productos con precios (DB),
+                   Cómo funciona, Simulador de cuotas, Galería obras, Testimonios,
+                   Por qué elegirnos, CTA final.
+
+/modulos           COMPLETA
+                   Catálogo 12 módulos desde DB, 10 aplicaciones corporativas,
+                   6 sectores industriales, proceso NCE correcto (5 etapas: Wood Frame,
+                   Ensamble triple, Celulosa Encapsulada, Resina náutica, Obra Blanca), FAQ.
+
+/piscinas          COMPLETA
+                   16 modelos desde DB, Miniportante destacada,
+                   comparativa fibra vs mampostería, FAQ.
+
+/combo             COMPLETA
+                   Configurador dinámico: select módulo + piscina desde DB, selector de cuotas,
+                   descuento 25% calculado en tiempo real, link WhatsApp con combo personalizado.
+
+/financiacion      COMPLETA
+                   3 planes de financiación, simulador embebido,
+                   tabla de 13 coeficientes desde DB, FAQ.
+
+/nosotros          COMPLETA
+                   Historia cooperativa, hitos 2010-2025, sección reciclaje
+                   con clientes corporativos (Carrefour, Toyota, Atucha, TransBA),
+                   3 áreas de atención sin nombres personales.
+
+/obras             COMPLETA (sin contenido)
+                   Grid con filtros por tipo, lightbox, paginación.
+                   Sin imágenes cargadas en la base de datos.
+
+/contacto          COMPLETA
+                   Formulario con validación, datos de contacto,
+                   guarda lead en DB y sincroniza con CRM.
+
+/blog              COMPLETA
+                   Listado artículos publicados, filtro por categoría,
+                   3 artículos del seed inicial.
+
+/blog/[slug]       COMPLETA
+                   Artículo individual con generateMetadata dinámico, tiempo de lectura.
+
+/videollamada      COMPLETA
+                   Formulario de solicitud, guarda como lead con fuente videollamada_web,
+                   alternativa Google Form si hay env var configurada.
+
+
+PANEL ADMIN (/admin/*)
+-----------------------
+
+/admin/login                    COMPLETA
+                                Form email/password, redirect automático si ya autenticado.
+
+/admin/dashboard                COMPLETA
+                                4 métricas reales (leads hoy/semana/mes/sin contactar),
+                                gráfico Recharts últimos 30 días, tabla últimos 10 leads.
+
+/admin/leads                    COMPLETA
+                                Filtros estado/vendedor/producto, paginación 20 por página,
+                                drawer lateral con edición, reasignación de vendedor,
+                                export CSV, link WhatsApp directo al lead.
+
+/admin/productos/modulos        COMPLETA
+                                CRUD completo, modal de edición, toggle activo/inactivo.
+
+/admin/productos/piscinas       COMPLETA
+                                CRUD completo, modal de edición, toggle activo + toggle destacada.
+
+/admin/financiacion             COMPLETA
+                                Tabla de 13 coeficientes editable inline.
+
+/admin/obras                    COMPLETA
+                                Grid con upload de imágenes (requiere R2 configurado).
+
+/admin/blog                     COMPLETA
+                                Listado, toggle publicado/borrador.
+
+/admin/blog/[id]                COMPLETA
+                                Editor HTML con preview, campos categoría/slug/imagen/publicado.
+
+/admin/testimonios              COMPLETA
+                                CRUD completo, selector de estrellas visual, grid de tarjetas.
+
+/admin/config                   COMPLETA
+                                Edición de: hero, empresa, redes sociales,
+                                multiplicador de precio, IDs de GA4 y Meta Pixel.
+
+/admin/usuarios                 COMPLETA
+                                CRUD de usuarios, solo accesible para rol admin.
+
+
+3. CONEXIONES
+================================================================================
+
+CRM — eco-crm.fly.dev
+-----------------------
+Implementación: lib/crm.ts
+Endpoint: POST https://eco-crm.fly.dev/api/leads/agent
+Auth: Bearer eco-crm-api-key-2024
+Timeout: 3 segundos (fire and forget, no bloquea al usuario)
+
+Se dispara automáticamente cuando se crea un lead desde:
+- Formulario de contacto (/contacto)
+- Modal de videollamada (/videollamada)
+
+Advertencia: La API key hardcodeada (eco-crm-api-key-2024) puede no coincidir
+con la que tiene el CRM en producción actualmente. No verificable sin hacer
+un request real al servidor.
+
+
+MULTIAGENTE — eco-multiagente-polished-sunset-4227.fly.dev
+------------------------------------------------------------
+Implementación: app/api/chat/route.ts
+Endpoint: POST https://eco-multiagente-polished-sunset-4227.fly.dev/chat/web
+Timeout: 30 segundos
+
+Estado: La API proxy existe y está correctamente implementada.
+PERO: Ningún componente del sitio web público la utiliza.
+No hay widget de chat, no hay chat flotante, no hay página de chat.
+La ruta /api/chat existe pero es código muerto de momento.
+El multiagente deployado en Fly.io no está conectado al sitio web.
+
+
+WHATSAPP
+---------
+Los 3 vendedores (Stefanía, Hernán, Daniel) están configurados en .env.local
+pero todos apuntan al mismo número: 5491168733406.
+
+El router en lib/whatsapp.ts asigna vendedores por tipo de producto:
+- Piscinas → Hernán
+- Módulos / Combo → Daniel
+- Default → Stefanía
+
+Como todos son el mismo número, la lógica de asignación está implementada
+pero no tiene efecto real hasta que se carguen los números correctos en Vercel.
+
+
+FORMULARIOS QUE DISPARAN FLUJOS
+---------------------------------
+Formulario de contacto (/contacto)
+  - Guarda lead en DB: SI
+  - Sync CRM: SI (asíncrono)
+  - Link WhatsApp: generado en pantalla de confirmación
+
+Modal de videollamada (/videollamada)
+  - Guarda lead en DB: SI
+  - Sync CRM: SI (asíncrono)
+  - Link WhatsApp: disponible en pantalla de confirmación
+
+Simulador LoanSimulator
+  - Guarda lead en DB: NO
+  - Sync CRM: NO
+  - Link WhatsApp: SI, con datos de la simulación pre-cargados
+
+WhatsApp FAB (botón flotante)
+  - Guarda lead en DB: NO
+  - Sync CRM: NO
+  - Abre WhatsApp directamente
+
+
+4. ASSETS Y CONTENIDO
+================================================================================
+
+CONTENIDO DINÁMICO
+-------------------
+Todo el contenido del sitio es 100% dinámico desde Turso DB:
+- Precios de módulos y piscinas → editables desde Admin > Productos
+- Textos del hero → editables desde Admin > Configuración
+- Coeficientes de cuotas → editables desde Admin > Financiación
+- Testimonios, blog, obras → CRUD completo desde el admin
+
+No hay contenido hardcodeado en el código fuente excepto textos de UI
+(labels, tooltips, mensajes de error).
+
+
+IMÁGENES — ESTADO REAL
+------------------------
+Directorio /public contiene únicamente:
+  file.svg      (icono Next.js por defecto)
+  globe.svg     (icono Next.js por defecto)
+  next.svg      (icono Next.js por defecto)
+  vercel.svg    (icono Next.js por defecto)
+  window.svg    (icono Next.js por defecto)
+
+No hay ninguna imagen del negocio. Específicamente:
+  - /public/og-image.jpg: NO EXISTE. Referenciado en el metadata OG de todas
+    las páginas. Google y redes sociales mostrarán imagen rota al compartir.
+  - Fotos de módulos: campo imagen en DB = NULL para todos los registros
+  - Fotos de piscinas: igual, campo imagen = NULL
+  - Fotos de obras: la galería existe en el código pero no hay obras cargadas
+  - Logo de la empresa: se usa texto en el Navbar, no hay archivo de logo
+
+
+BASE DE DATOS — CONTENIDO ACTUAL (del seed)
+--------------------------------------------
+Módulos:        12 registros (6 m² a 72 m²), precios cargados, sin imágenes
+Piscinas:       16 modelos, precios cargados, sin imágenes
+Coeficientes:   13 planes (3 a 120 cuotas)
+Testimonios:    3 ejemplos del seed
+Artículos blog: 3 artículos del seed con contenido real
+Config sitio:   12 claves (hero, empresa, precios, redes)
+Obras:          0 registros
+Leads:          0 registros (DB nueva)
+Usuarios:       1 admin (admin@ecomodulosypiscinas.com.ar)
+
+
+5. GAPS CRÍTICOS
+================================================================================
+
+BLOQUEANTES — NO SE PUEDE IR A PRODUCCIÓN SIN ESTOS
+------------------------------------------------------
+
+[1] middleware.ts NO EXISTE — CRÍTICO DE SEGURIDAD
+    El archivo middleware.ts que protege /admin/* no fue creado.
+    Solo existe dentro de node_modules/next-auth, no en la raíz del proyecto.
+    Consecuencia: cualquier persona que conozca la URL puede entrar directamente
+    a /admin/dashboard, /admin/leads, /admin/config sin autenticarse.
+    El login existe y funciona, pero no hay nada que lo fuerce.
+    Solución: crear middleware.ts en la raíz del proyecto (5 minutos de trabajo).
+
+[2] Cloudflare R2 NO CONFIGURADO
+    Variables en .env.local:
+      R2_ACCOUNT_ID=tu_account_id     (placeholder)
+      R2_ACCESS_KEY_ID=tu_access_key  (placeholder)
+      R2_SECRET_ACCESS_KEY=tu_secret_key (placeholder)
+    Consecuencia: el upload de imágenes desde el admin devuelve error 503.
+    El admin tiene que pegar URLs de imágenes externas manualmente.
+    Solución: crear API key en Cloudflare R2 y cargar las credenciales reales.
+
+[3] NEXTAUTH_URL apunta a localhost
+    Variable actual: NEXTAUTH_URL=http://localhost:3000
+    Consecuencia: en Vercel, NextAuth va a usar localhost para los callbacks,
+    el login va a redirigir incorrectamente y el sistema de sesiones va a fallar.
+    Solución: cambiar a https://ecomodulosypiscinas.com.ar en las env vars de Vercel.
+
+[4] No hay deploy en producción
+    El sitio no existe en ninguna URL pública.
+    No hay proyecto en Vercel, no hay dominio configurado.
+    Solución: crear proyecto en Vercel, cargar todas las env vars, conectar dominio.
+
+[5] Sin imágenes en todo el sitio
+    El sitio en producción va a tener tarjetas de productos sin foto,
+    galería de obras vacía, blog sin imágenes destacadas,
+    y el tag OG va a mostrar imagen rota en redes sociales.
+    Solución: configurar R2 primero, luego cargar imágenes desde el admin.
+
+
+IMPORTANTES — AFECTAN FUNCIONALIDAD PERO NO BLOQUEAN EL DEPLOY
+----------------------------------------------------------------
+
+[6] og-image.jpg no existe
+    Todos los metadatos OG referencian /og-image.jpg.
+    Google, WhatsApp y Facebook mostrarán preview sin imagen al compartir
+    cualquier página del sitio.
+    Solución: crear imagen 1200×630 px y colocarla en /public/og-image.jpg.
+
+[7] Simulador no captura leads
+    Cuando alguien usa el simulador y ve su cuota, no hay formulario de captura.
+    El link va directo a WhatsApp. Si el usuario no manda el mensaje,
+    el lead se pierde. No queda ningún registro de que alguien simuló.
+    Solución: agregar un mini-form después del resultado del simulador.
+
+[8] Multiagente no está conectado al sitio
+    La API proxy /api/chat existe y está bien implementada, pero ningún componente
+    del frontend la utiliza. El multiagente deployado en Fly.io está desconectado
+    del sitio web. No hay chat, no hay asistente IA visible para el usuario.
+    Solución: crear un componente de chat widget que use /api/chat.
+
+[9] Números de WhatsApp duplicados
+    Stefanía, Hernán y Daniel tienen el mismo número en .env.local.
+    El router de vendedores funciona en código pero no tiene efecto real.
+    Solución: actualizar las variables WA_STEFANIA, WA_HERNAN, WA_DANIEL
+    en Vercel con los números reales de cada vendedor.
+
+[10] Editor de blog es HTML raw
+     El admin escribe HTML crudo en el editor de artículos.
+     No hay WYSIWYG ni Markdown. Funciona pero es incómodo para
+     alguien no técnico.
+     Solución: integrar un editor como TipTap o SimpleMDE (trabajo adicional).
+
+
+YA RESUELTO — NO REQUIERE ACCIÓN
+----------------------------------
+- TypeScript compila sin errores
+- NEXTAUTH_SECRET real generado (antes era placeholder)
+- Tecnología NCE correcta en todo el código:
+  Wood Frame, Ensamble triple, Celulosa Encapsulada, Resina náutica, Obra Blanca
+- Página Nosotros sin nombres personales, con sección reciclaje
+  y clientes corporativos reales
+- Turso DB conectada con credenciales reales
+- CRM sync implementado y funcional en código
+- DB seeded: 12 módulos, 16 piscinas, 13 coeficientes,
+  3 testimonios, 3 artículos de blog, 1 usuario admin
+
+
+6. ORDEN DE ACCIÓN PARA IR A PRODUCCIÓN
+================================================================================
+
+Paso 1 — Crear middleware.ts (crítico de seguridad, 5 minutos)
+Paso 2 — Configurar proyecto en Vercel y cargar todas las env vars
+Paso 3 — Cambiar NEXTAUTH_URL a https://ecomodulosypiscinas.com.ar en Vercel
+Paso 4 — Configurar Cloudflare R2: crear API key, cargar credenciales en Vercel
+Paso 5 — Crear og-image.jpg (1200×630 px) y colocarla en /public/
+Paso 6 — Subir imágenes de productos y obras desde el panel admin
+Paso 7 — Actualizar números de WhatsApp reales en Vercel (WA_STEFANIA/HERNAN/DANIEL)
+Paso 8 — Verificar que el CRM sync funciona enviando un lead de prueba
+Paso 9 — Conectar el multiagente al sitio (widget de chat)
+
+
+================================================================================
+Fin del informe — eco-modulos-web — 04/05/2026
+================================================================================

@@ -4,14 +4,14 @@ import LoanSimulator from '@/components/shared/LoanSimulator'
 import VideoCallButton from '@/components/shared/VideoCallButton'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MessageCircle, Shield, Truck, Wrench, Award, CheckCircle, Star } from 'lucide-react'
+import { MessageCircle, Shield, Truck, Wrench, Award, CheckCircle, Star, ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const revalidate = 0
 
 export const metadata: Metadata = {
   title: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra en Argentina',
-  description: 'Fabricamos viviendas modulares NCE y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco ni garante. Cooperativa INAES. Planta en Zárate, showroom en Buenos Aires.',
+  description: 'Fabricamos viviendas modulares NCE y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco ni garante. Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES.',
   keywords: [
     'viviendas modulares argentina',
     'casas modulares precio',
@@ -52,10 +52,9 @@ export default async function HomePage() {
   const cfg: Record<string, string> = {}
   for (const c of configs) cfg[c.clave] = c.valor
 
-  const heroTitulo    = cfg.hero_titulo    || 'SOLUCIONES MODULARES Y PISCINAS. FABRICACIÓN DIRECTA.'
-  const heroSubtitulo = cfg.hero_subtitulo || 'Obradores, campamentos, unidades habitacionales y piscinas de fibra. Sin obra civil. Sin banco. Todo el país.'
+  const heroTitulo    = cfg.hero_titulo    || 'VIVIENDAS MODULARES Y PISCINAS. FINANCIACIÓN PROPIA HASTA 120 CUOTAS.'
+  const heroSubtitulo = cfg.hero_subtitulo || 'Fabricación industrial propia. Financiación directa. Cobertura en todo el país.'
 
-  // Precios de la sección Productos — editables desde el panel Admin › Configuración
   const heroModulosDesde  = cfg.hero_modulos_desde  || 'Desde $2.990.000'
   const heroModulosCuota  = cfg.hero_modulos_cuota  || 'Cuotas desde $28.650/mes'
   const heroPiscinasDesde = cfg.hero_piscinas_desde || 'Desde $2.000.000'
@@ -67,55 +66,80 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-eco-green-dark via-[#0d1f0d] to-eco-bg">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-eco-bg/40 to-eco-bg" />
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 pt-24 pb-16">
-          <div className="inline-flex items-center gap-2 bg-eco-green/10 border border-eco-green/30 text-eco-green text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-            <CheckCircle className="w-3.5 h-3.5" />
-            Cooperativa INAES · +15 años de experiencia
+      {/* ═══════════════════════════════════════════
+          HERO — deep forest, premium & architectural
+      ════════════════════════════════════════════ */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-eco-green-dark">
+        {/* Subtle geometric grid overlay */}
+        <div className="absolute inset-0 hero-grid-pattern opacity-100" />
+        {/* Radial glow — center */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(42,95,64,0.25),transparent)]" />
+        {/* Bottom fade to page bg */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-eco-bg to-transparent" />
+
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 pt-28 pb-20 animate-fade-up">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
+            <CheckCircle className="w-3.5 h-3.5 text-eco-green-light" />
+            Cooperativa INAES · Más de 15 años de trayectoria
           </div>
+
+          {/* Headline */}
           <h1
-            className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white uppercase tracking-tight leading-none mb-6"
+            className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white uppercase tracking-tight leading-[0.92] mb-7"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             {heroTitulo}
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+
+          <p className="text-lg sm:text-xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
             {heroSubtitulo}
           </p>
+
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold text-lg px-8 py-4 rounded-xl transition-colors"
+              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(42,95,64,0.4)] hover:shadow-[0_8px_32px_rgba(42,95,64,0.5)]"
             >
               <MessageCircle className="w-5 h-5" />
               Consultar por WhatsApp
             </a>
             <Link
               href="/financiacion"
-              className="flex items-center justify-center gap-2 border-2 border-white/30 hover:border-eco-green text-white hover:text-eco-green font-bold text-lg px-8 py-4 rounded-xl transition-colors"
+              className="flex items-center justify-center gap-2 bg-white/8 border border-white/20 hover:bg-white/15 hover:border-white/30 text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 backdrop-blur-sm"
             >
               Ver planes de financiación
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center pt-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full" />
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+          <div className="w-5 h-8 border border-white/20 rounded-full flex items-start justify-center pt-1.5">
+            <div className="w-0.5 h-2 bg-white/40 rounded-full animate-bounce" />
           </div>
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <section className="bg-eco-bg-card border-y border-eco-border py-5">
+      {/* ═══════════════════════════════════════════
+          TRUST BAR
+      ════════════════════════════════════════════ */}
+      <section className="bg-eco-bg-card border-b border-eco-border py-4">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-10">
-            {['+15 Años de experiencia', 'Líderes en módulos NCE', 'Cooperativa INAES', 'Logística propia en todo el país', 'Financiación directa hasta 120 cuotas'].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-eco-text-muted text-sm">
-                <CheckCircle className="w-4 h-4 text-eco-green flex-shrink-0" />
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            {[
+              'Más de 15 años de trayectoria',
+              'Líderes en módulos NCE',
+              'Cooperativa INAES',
+              'Logística propia · Todo el país',
+              'Financiación directa hasta 120 cuotas',
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-eco-text-muted text-sm py-1">
+                <div className="w-1 h-1 rounded-full bg-eco-green flex-shrink-0" />
                 <span>{item}</span>
               </div>
             ))}
@@ -123,47 +147,127 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* PRODUCTOS */}
-      <section className="py-20 max-w-7xl mx-auto px-4">
-        <SectionTitle titulo="Nuestros productos" subtitulo="Fabricamos todo en planta propia. Sin intermediarios. Financiación directa." badge="Catálogo" />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { titulo: 'Módulos NCE', sub: 'Llave en mano · Instalación el mismo día', desde: heroModulosDesde, cuota: heroModulosCuota, href: '/modulos', desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible — entrega e instalación inmediata. Logística propia en todo el país.' },
-            { titulo: 'Piscinas de Fibra', sub: 'Stock disponible · Instalación en el día', desde: heroPiscinasDesde, cuota: heroPiscinasCuota, href: '/piscinas', desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Financiación hasta 120 cuotas.' },
-            { titulo: 'Combo Especial', sub: '25% de descuento', desde: heroComboDesde, cuota: heroComboCuota, href: '/combo', desc: 'Combiná tu módulo con una piscina y ahorrá 25% sobre el precio total.', badge: '25% OFF' },
-          ].map((prod) => (
-            <Link key={prod.href} href={prod.href} className="group bg-eco-bg-card border border-eco-border hover:border-eco-green/40 rounded-2xl p-8 flex flex-col gap-4 transition-all hover:shadow-lg hover:shadow-eco-green/5">
-              {prod.badge && <span className="self-start bg-yellow-400/10 text-yellow-400 text-xs font-bold px-2 py-1 rounded-full">{prod.badge}</span>}
-              <div>
-                <p className="text-eco-text-muted text-xs uppercase tracking-widest mb-1">{prod.sub}</p>
-                <h3 className="text-2xl font-extrabold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>{prod.titulo}</h3>
-              </div>
-              <p className="text-eco-text-muted text-sm flex-1">{prod.desc}</p>
-              <div>
-                <p className="text-eco-green text-xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>{prod.desde}</p>
-                <p className="text-eco-text-muted text-xs">{prod.cuota}</p>
-              </div>
-              <span className="text-eco-green text-sm font-semibold group-hover:underline">Ver catálogo →</span>
-            </Link>
-          ))}
+      {/* ═══════════════════════════════════════════
+          PRODUCTOS
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-eco-bg">
+        <div className="max-w-7xl mx-auto px-4">
+          <SectionTitle
+            titulo="Nuestros productos"
+            subtitulo="Producción íntegra en planta propia. Sin intermediarios. Financiación directa."
+            badge="Catálogo"
+          />
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                titulo: 'Módulos NCE',
+                sub: 'Llave en mano · Instalación el mismo día',
+                desde: heroModulosDesde,
+                cuota: heroModulosCuota,
+                href: '/modulos',
+                desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible con entrega e instalación inmediata. Logística propia en todo el país.',
+              },
+              {
+                titulo: 'Piscinas de Fibra',
+                sub: 'Stock disponible · Instalación en el día',
+                desde: heroPiscinasDesde,
+                cuota: heroPiscinasCuota,
+                href: '/piscinas',
+                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Financiación hasta 120 cuotas.',
+              },
+              {
+                titulo: 'Combo Especial',
+                sub: 'Módulo + Piscina',
+                desde: heroComboDesde,
+                cuota: heroComboCuota,
+                href: '/combo',
+                desc: 'Al combinar un módulo con una piscina, el descuento es del 25% sobre el precio total.',
+                badge: '25% OFF',
+              },
+            ].map((prod) => (
+              <Link
+                key={prod.href}
+                href={prod.href}
+                className="card-premium group p-8 flex flex-col gap-5 cursor-pointer"
+              >
+                {prod.badge && (
+                  <span className="self-start bg-eco-teal/10 text-eco-teal text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-eco-teal/20">
+                    {prod.badge}
+                  </span>
+                )}
+                <div>
+                  <p className="text-eco-text-muted text-[11px] uppercase tracking-widest font-medium mb-1.5">{prod.sub}</p>
+                  <h3
+                    className="text-2xl font-extrabold text-eco-text"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {prod.titulo}
+                  </h3>
+                </div>
+                <p className="text-eco-text-muted text-sm leading-relaxed flex-1">{prod.desc}</p>
+                <div className="border-t border-eco-border pt-4">
+                  <p
+                    className="text-eco-green text-xl font-extrabold"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {prod.desde}
+                  </p>
+                  <p className="text-eco-text-muted text-xs mt-0.5">{prod.cuota}</p>
+                </div>
+                <span className="flex items-center gap-1 text-eco-green text-sm font-semibold group-hover:gap-2 transition-all">
+                  Ver catálogo <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CÓMO FUNCIONA */}
-      <section className="py-20 bg-eco-bg-card border-y border-eco-border">
+      {/* ═══════════════════════════════════════════
+          CÓMO FUNCIONA
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-eco-bg-surface border-y border-eco-border">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionTitle titulo="Cómo funciona" subtitulo="El proceso más directo para tener tu solución modular o piscina instalada" />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <SectionTitle
+            titulo="Cómo funciona"
+            subtitulo="El camino más directo para tener su solución modular o piscina instalada"
+          />
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { n: '01', titulo: 'Elegís tu modelo', desc: 'Explorá nuestro catálogo de módulos y piscinas. Simulá tu cuota en segundos sin comprometerte a nada.' },
-              { n: '02', titulo: 'Agendamos una videollamada', desc: 'Un asesor del equipo te explica todo: financiación, plazos, transporte e instalación. Sin costo.' },
-              { n: '03', titulo: 'Lo instalamos en tu terreno', desc: 'Contado: coordinamos entrega e instalación de inmediato — módulos hasta 18 m² y piscinas se instalan en el día. Financiado: se acuerda el plazo de fabricación al confirmar el pedido.' },
-            ].map((paso) => (
-              <div key={paso.n} className="flex gap-4">
-                <span className="text-5xl font-extrabold text-eco-green/20 leading-none flex-shrink-0" style={{ fontFamily: 'var(--font-display)' }}>{paso.n}</span>
-                <div>
-                  <h3 className="text-lg font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>{paso.titulo}</h3>
-                  <p className="text-eco-text-muted text-sm">{paso.desc}</p>
+              {
+                n: '01',
+                titulo: 'Selección del modelo',
+                desc: 'Explore nuestro catálogo de módulos y piscinas. Simule su cuota en segundos sin ningún compromiso.',
+              },
+              {
+                n: '02',
+                titulo: 'Asesoramiento personalizado',
+                desc: 'Un especialista del equipo le explica en detalle la financiación, los plazos, el transporte y la instalación. Sin costo.',
+              },
+              {
+                n: '03',
+                titulo: 'Instalación en su terreno',
+                desc: 'Contado: coordinamos la entrega e instalación de forma inmediata. Financiado: el plazo de fabricación se acuerda al confirmar el pedido.',
+              },
+            ].map((paso, i) => (
+              <div key={paso.n} className="flex gap-5">
+                <div className="flex-shrink-0">
+                  <span
+                    className="text-6xl font-extrabold text-eco-green/12 leading-none tabular-nums"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {paso.n}
+                  </span>
+                </div>
+                <div className="pt-2">
+                  <div className="w-6 h-0.5 bg-eco-green mb-3" />
+                  <h3
+                    className="text-lg font-bold text-eco-text mb-2"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {paso.titulo}
+                  </h3>
+                  <p className="text-eco-text-muted text-sm leading-relaxed">{paso.desc}</p>
                 </div>
               </div>
             ))}
@@ -171,99 +275,150 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* SIMULADOR */}
-      <section className="py-20 max-w-4xl mx-auto px-4">
-        <SectionTitle titulo="Simulá tu cuota" subtitulo="Sin banco. Sin requisitos imposibles. Elegí el plan que más te conviene." />
-        <div className="mt-10"><LoanSimulator /></div>
+      {/* ═══════════════════════════════════════════
+          SIMULADOR
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-eco-bg">
+        <div className="max-w-4xl mx-auto px-4">
+          <SectionTitle
+            titulo="Simule su cuota"
+            subtitulo="Sin banco. Sin trámites complejos. Elija el plan que mejor se adapte a su situación."
+          />
+          <div className="mt-12">
+            <LoanSimulator />
+          </div>
+        </div>
       </section>
 
-      {/* GALERÍA OBRAS */}
+      {/* ═══════════════════════════════════════════
+          GALERÍA OBRAS
+      ════════════════════════════════════════════ */}
       {obras.length > 0 && (
-        <section className="py-20 bg-eco-bg-card border-y border-eco-border">
+        <section className="py-24 bg-eco-bg-surface border-y border-eco-border">
           <div className="max-w-7xl mx-auto px-4">
             <SectionTitle titulo="Nuestras obras" subtitulo="Proyectos reales en todo el país" badge="Galería" />
-            <div className="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="mt-12 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {obras.map((obra) => (
-                <div key={obra.id} className="relative aspect-video bg-eco-bg-surface rounded-xl overflow-hidden group">
-                  {obra.imagen && <Image src={obra.imagen} alt={`${obra.titulo} — ${obra.localidad}`} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" />}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <div
+                  key={obra.id}
+                  className="relative aspect-video bg-eco-bg rounded-xl overflow-hidden group border border-eco-border"
+                >
+                  {obra.imagen && (
+                    <Image
+                      src={obra.imagen}
+                      alt={`${obra.titulo} — ${obra.localidad}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-eco-green-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div>
                       <p className="text-white font-semibold text-sm">{obra.titulo}</p>
-                      <p className="text-gray-300 text-xs">{obra.localidad}, {obra.provincia}</p>
+                      <p className="text-white/60 text-xs">{obra.localidad}, {obra.provincia}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-8">
-              <Link href="/obras" className="text-eco-green hover:text-eco-green-light font-semibold transition-colors">Ver galería completa →</Link>
+            <div className="text-center mt-10">
+              <Link
+                href="/obras"
+                className="inline-flex items-center gap-2 text-eco-green hover:text-eco-green-light font-semibold transition-colors text-sm"
+              >
+                Ver galería completa <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>
       )}
 
-      {/* TESTIMONIOS */}
+      {/* ═══════════════════════════════════════════
+          TESTIMONIOS
+      ════════════════════════════════════════════ */}
       {testimonios.length > 0 && (
-        <section className="py-20 max-w-7xl mx-auto px-4">
-          <SectionTitle titulo="Lo que dicen nuestros clientes" badge="Testimonios" />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonios.map((t) => (
-              <div key={t.id} className="bg-eco-bg-card border border-eco-border rounded-xl p-6">
-                <div className="flex mb-3">{Array.from({ length: t.estrellas }).map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}</div>
-                <p className="text-eco-text text-sm leading-relaxed mb-4">"{t.texto}"</p>
-                <div>
-                  <p className="text-eco-text font-semibold text-sm">{t.nombre}</p>
-                  <p className="text-eco-text-muted text-xs">{t.localidad} · {t.producto}</p>
+        <section className="py-24 bg-eco-bg">
+          <div className="max-w-7xl mx-auto px-4">
+            <SectionTitle titulo="Lo que dicen nuestros clientes" badge="Testimonios" />
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonios.map((t) => (
+                <div key={t.id} className="card-premium p-6 flex flex-col gap-4">
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: t.estrellas }).map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-eco-text text-sm leading-relaxed flex-1">"{t.texto}"</p>
+                  <div className="border-t border-eco-border pt-4">
+                    <p className="text-eco-text font-semibold text-sm">{t.nombre}</p>
+                    <p className="text-eco-text-muted text-xs mt-0.5">{t.localidad} · {t.producto}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
       )}
 
-      {/* POR QUÉ ELEGIRNOS */}
-      <section className="py-20 bg-eco-bg-card border-y border-eco-border">
+      {/* ═══════════════════════════════════════════
+          POR QUÉ ELEGIRNOS
+      ════════════════════════════════════════════ */}
+      <section className="py-24 bg-eco-bg-surface border-y border-eco-border">
         <div className="max-w-7xl mx-auto px-4">
           <SectionTitle titulo="Por qué elegirnos" />
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Wrench, titulo: 'Fabricación propia', desc: 'Planta de 7.000 m² en Zárate. Controlamos todo el proceso productivo.' },
-              { icon: Shield, titulo: 'Financiación directa', desc: 'Sin banco, sin garante. Hasta 120 cuotas con aprobación simple.' },
-              { icon: Truck, titulo: 'Instalación inmediata', desc: 'Stock disponible. Módulos hasta 18 m² y piscinas instalados en el día. Logística propia en todo el país.' },
-              { icon: Award, titulo: 'Garantía cooperativa', desc: 'Cooperativa INAES con +15 años. Solidez y transparencia garantizadas.' },
+              { icon: Shield, titulo: 'Financiación directa', desc: 'Sin banco ni garante. Hasta 120 cuotas con aprobación directa.' },
+              { icon: Truck, titulo: 'Instalación inmediata', desc: 'Stock disponible. Módulos y piscinas instalados en el día. Logística propia.' },
+              { icon: Award, titulo: 'Respaldo cooperativo', desc: 'Cooperativa INAES · CUIT 30-71807393-2 · Más de 15 años de trayectoria.' },
             ].map(({ icon: Icon, titulo, desc }) => (
-              <div key={titulo} className="flex flex-col items-center text-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-eco-green/10 flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-eco-green" />
+              <div key={titulo} className="flex flex-col items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-eco-green/10 flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-5 h-5 text-eco-green" />
                 </div>
-                <h3 className="font-bold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</h3>
-                <p className="text-eco-text-muted text-sm">{desc}</p>
+                <div>
+                  <h3
+                    className="font-bold text-eco-text mb-1.5"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                  >
+                    {titulo}
+                  </h3>
+                  <p className="text-eco-text-muted text-sm leading-relaxed">{desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-24 bg-eco-green-dark">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            ¿Listo para tu próximo proyecto?
+      {/* ═══════════════════════════════════════════
+          CTA FINAL
+      ════════════════════════════════════════════ */}
+      <section className="py-28 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_50%,rgba(42,95,64,0.3),transparent)]" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            ¿Tiene un proyecto en mente?
           </h2>
-          <p className="text-xl text-green-200 mb-10">
-            Consultanos sin compromiso. Financiación directa, sin banco, hasta 120 cuotas.
+          <p className="text-lg text-white/60 mb-10 leading-relaxed">
+            Contáctenos sin compromiso. Financiación directa sin banco, hasta 120 cuotas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold text-lg px-8 py-4 rounded-xl hover:bg-green-50 transition-colors"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold text-base px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
             >
               <MessageCircle className="w-5 h-5" />
               Consultar por WhatsApp
             </a>
-            <VideoCallButton className="flex items-center justify-center gap-2 border-2 border-white/50 text-white font-bold text-lg px-8 py-4 rounded-xl hover:border-white transition-colors" />
+            <VideoCallButton className="flex items-center justify-center gap-2 bg-white/8 border border-white/20 hover:bg-white/15 text-white font-bold text-base px-8 py-4 rounded-xl transition-all backdrop-blur-sm" />
           </div>
         </div>
       </section>

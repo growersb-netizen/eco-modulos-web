@@ -1,19 +1,16 @@
 import { NextResponse } from 'next/server'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import { prisma } from '@/lib/db'
+import { isAdminAuth } from '@/lib/admin-auth'
 
 export async function GET() {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+  if (!await isAdminAuth()) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
 
   const piscinas = await prisma.piscina.findMany({ orderBy: { orden: 'asc' } })
   return NextResponse.json(piscinas)
 }
 
 export async function POST(req: Request) {
-  const session = await getServerSession(authOptions)
-  if (!session) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
+  if (!await isAdminAuth(req)) return NextResponse.json({ error: 'No autorizado' }, { status: 401 })
 
   const body = await req.json()
   const piscina = await prisma.piscina.create({

@@ -26,13 +26,17 @@ export default function ComboPageClient() {
       fetch('/api/piscinas').then((r) => r.json()),
       fetch('/api/admin/coeficientes').then((r) => r.json()),
     ]).then(([m, p, c]) => {
-      setModulos(m)
-      setPiscinas(p)
-      if (m.length) setModuloId(m[0].id)
-      if (p.length) setPiscinaId(p[0].id)
+      const modulosArr = Array.isArray(m) ? m : []
+      const piscinasArr = Array.isArray(p) ? p : []
+      setModulos(modulosArr)
+      setPiscinas(piscinasArr)
+      if (modulosArr.length) setModuloId(modulosArr[0].id)
+      if (piscinasArr.length) setPiscinaId(piscinasArr[0].id)
       const map: Record<number, number> = {}
       if (Array.isArray(c)) c.forEach((x: { cuotas: number; coef: number }) => { map[x.cuotas] = x.coef })
       setCoeficientes(map)
+      setLoading(false)
+    }).catch(() => {
       setLoading(false)
     })
   }, [])
@@ -57,21 +61,22 @@ export default function ComboPageClient() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-28 pb-16 bg-gradient-to-b from-[#1a1200] to-eco-bg">
+      {/* Hero — premium light */}
+      <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-yellow-400/10 text-yellow-400 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-            Oferta exclusiva
+          <span className="inline-flex items-center gap-1.5 bg-eco-teal/8 border border-eco-teal/20 text-eco-teal text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-5">
+            25% OFF · Oferta exclusiva
           </span>
-          <h1 className="text-5xl sm:text-7xl font-extrabold text-white uppercase mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Combo<br />con descuento
+          <h1 className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+            Combo Módulo<br />
+            <span className="text-eco-teal">+ Piscina</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            Combiná tu módulo habitacional con una piscina de fibra de vidrio y pagás el precio contado de cada producto. Un solo plan de financiación.
+          <p className="text-eco-text-muted text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+            Combine su módulo habitacional con una piscina de fibra de vidrio y obtenga el precio contado de cada producto. Un solo plan de financiación.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-4 rounded-xl transition-colors">
-              <MessageCircle className="w-5 h-5" />Consultar combo
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_16px_rgba(42,95,64,0.25)] hover:shadow-[0_8px_24px_rgba(42,95,64,0.35)]">
+              <MessageCircle className="w-5 h-5" />Consultar combo por WhatsApp
             </a>
             <VideoCallButton productoDefault="combo" variant="outline" label="Agendar videollamada" />
           </div>
@@ -80,7 +85,7 @@ export default function ComboPageClient() {
 
       {/* Configurador */}
       <section className="py-16 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="Armá tu combo" subtitulo="Elegí el módulo y la piscina que más te gustan. El descuento se aplica automáticamente." />
+        <SectionTitle titulo="Configure su combo" subtitulo="Seleccione el módulo y la piscina de su preferencia. El descuento se aplica automáticamente." />
 
         {loading ? (
           <div className="mt-10 text-center text-eco-text-muted">Cargando productos…</div>
@@ -145,7 +150,7 @@ export default function ComboPageClient() {
                   <span>Precio de lista total</span>
                   <span className="line-through text-eco-text-muted">{formatPeso(precioListaTotal)}</span>
                 </div>
-                <div className="flex justify-between text-yellow-400 font-semibold">
+                <div className="flex justify-between text-eco-teal font-semibold">
                   <span className="flex items-center gap-1.5"><Tag className="w-4 h-4" />Descuento combo ({pctDescuento}%)</span>
                   <span>— {formatPeso(ahorro)}</span>
                 </div>
@@ -177,17 +182,19 @@ export default function ComboPageClient() {
       </section>
 
       {/* Beneficios */}
-      <section className="py-16 bg-eco-bg-card border-y border-eco-border">
+      <section className="py-20 bg-eco-bg-surface border-y border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
           <SectionTitle titulo="¿Por qué el combo?" />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { icon: Tag, titulo: 'Ahorro real en el combo', desc: 'Pagás el precio contado de cada producto: el precio más económico disponible. Sin recargos ni descuentos artificiales sobre lista.' },
+              { icon: Tag, titulo: 'Ahorro real', desc: 'Paga el precio contado de cada producto: el precio más económico disponible. Sin recargos ni descuentos artificiales sobre lista.' },
               { icon: CheckCircle, titulo: 'Un solo plan de pago', desc: 'Todo en un único plan de financiación directa, sin banco, sin garante. Hasta 60 cuotas fijas con el combo.' },
               { icon: MessageCircle, titulo: 'Instalación coordinada', desc: 'Módulo y piscina se fabrican en paralelo y se instalan en la misma visita. Un solo viaje de logística.' },
             ].map(({ icon: Icon, titulo, desc }) => (
-              <div key={titulo} className="bg-eco-bg-surface rounded-xl p-6">
-                <Icon className="w-6 h-6 text-yellow-400 mb-3" />
+              <div key={titulo} className="card-premium p-6">
+                <div className="w-10 h-10 rounded-xl bg-eco-teal/10 flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5 text-eco-teal" />
+                </div>
                 <h3 className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</h3>
                 <p className="text-eco-text-muted text-sm">{desc}</p>
               </div>
@@ -196,15 +203,27 @@ export default function ComboPageClient() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 max-w-3xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>¿Querés saber más?</h2>
-        <p className="text-eco-text-muted mb-8">Nuestro equipo comercial te arma el combo ideal según tu terreno y presupuesto.</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-            <MessageCircle className="w-5 h-5" />WhatsApp — Combos
-          </a>
-          <VideoCallButton productoDefault="combo" variant="outline" />
+      {/* CTA final */}
+      <section className="py-24 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+            ¿Desea saber más?
+          </h2>
+          <p className="text-white/60 mb-10 text-lg">
+            Nuestro equipo comercial arma el combo ideal según su terreno y presupuesto.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+            >
+              <MessageCircle className="w-5 h-5" />Consultar combo por WhatsApp
+            </a>
+            <VideoCallButton productoDefault="combo" variant="outline" />
+          </div>
         </div>
       </section>
     </>

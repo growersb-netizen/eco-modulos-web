@@ -77,24 +77,27 @@ export default async function ArticuloPage({ params }: { params: Promise<{ slug:
 
       {/* Contenido */}
       <div
-        className="prose prose-invert prose-green max-w-none text-eco-text-muted prose-headings:text-eco-text prose-headings:font-bold prose-a:text-eco-green prose-strong:text-eco-text prose-li:text-eco-text-muted"
+        className="prose prose-green max-w-none text-eco-text prose-headings:text-eco-text prose-headings:font-bold prose-a:text-eco-green prose-strong:text-eco-text prose-li:text-eco-text"
         dangerouslySetInnerHTML={{ __html: articulo.contenido.replace(/\n/g, '<br/>') }}
       />
 
       {/* CTA final */}
-      <div className="mt-16 bg-eco-bg-card border border-eco-border rounded-2xl p-6 text-center">
-        <h2 className="text-2xl font-extrabold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-          ¿Te quedaron dudas?
+      <div className="mt-16 bg-eco-green-dark rounded-2xl p-8 text-center relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="relative z-10">
+        <h2 className="text-2xl font-extrabold text-white mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+          ¿Le quedaron dudas?
         </h2>
-        <p className="text-eco-text-muted text-sm mb-4">Nuestro equipo responde en menos de 2 horas por WhatsApp.</p>
+        <p className="text-white/60 text-sm mb-5">Nuestro equipo responde en menos de 2 horas por WhatsApp.</p>
         <a
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-6 py-3 rounded-xl transition-colors"
+          className="inline-flex items-center gap-2 bg-white text-eco-green-dark font-bold px-6 py-3 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_16px_rgba(0,0,0,0.12)]"
         >
           <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
         </a>
+        </div>
       </div>
     </article>
   )

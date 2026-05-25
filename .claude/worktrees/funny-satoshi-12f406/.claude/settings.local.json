@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item \"C:\\\\Users\\\\PC\\\\eco-modulos-web\\\\.git\\\\HEAD.lock\" -Force)"
+    ]
+  }
+}

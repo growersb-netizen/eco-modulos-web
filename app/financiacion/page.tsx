@@ -2,6 +2,7 @@ import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import LoanSimulator from '@/components/shared/LoanSimulator'
 import VideoCallButton from '@/components/shared/VideoCallButton'
+import FaqAccordion from '@/components/shared/FaqAccordion'
 import { MessageCircle, CheckCircle, Shield, Clock } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -28,10 +29,10 @@ export const metadata: Metadata = {
 }
 
 const FAQ = [
-  { q: '¿Qué se requiere para acceder a la financiación?', r: 'Solo necesitás DNI argentino y teléfono de contacto. No pedimos recibos de sueldo, garantes ni historial crediticio. La aprobación es directa con nuestro equipo de ventas.' },
-  { q: '¿Las cuotas son fijas o variables?', r: 'Las cuotas son fijas en pesos desde el inicio del contrato. No se ajustan por inflación ni por ningún índice. Lo que firmás, pagás.' },
+  { q: '¿Qué se requiere para acceder a la financiación?', r: 'Solo se requiere DNI argentino y teléfono de contacto. No se solicitan recibos de sueldo, garantes ni historial crediticio. La aprobación se gestiona directamente con nuestro equipo comercial.' },
+  { q: '¿Las cuotas son fijas o variables?', r: 'Las cuotas son fijas en pesos desde el inicio del contrato. No se ajustan por inflación ni por ningún índice. El valor pactado al momento de la firma se mantiene durante toda la vigencia del plan.' },
   { q: '¿Hay descuento por pago contado?', r: 'Sí. El precio de lista tiene un descuento del 30% para pago contado. Este es el precio que se muestra en el catálogo.' },
-  { q: '¿Puedo cancelar anticipadamente?', r: 'Sí, podés cancelar el saldo en cualquier momento sin penalidad. Si cancelás dentro de los primeros 6 meses, te hacemos un descuento adicional sobre el saldo restante.' },
+  { q: '¿Puedo cancelar anticipadamente?', r: 'Sí, es posible cancelar el saldo anticipadamente en cualquier momento sin penalidad. Si se cancela dentro de los primeros 6 meses, se aplica un descuento adicional sobre el saldo restante.' },
   { q: '¿Cuáles son los plazos de entrega con financiación?', r: 'Para proyectos financiados, los plazos de fabricación e instalación se coordinan al momento de confirmar el pedido y suscribir el plan. Nuestro equipo te informa los tiempos exactos según el modelo y la disponibilidad de stock.' },
   { q: '¿El flete y la instalación están incluidos en el precio?', r: 'El precio de catálogo no incluye flete ni instalación. Estos costos se calculan según la distancia desde nuestra planta en Zárate y se pueden incluir en el plan de financiación.' },
   { q: '¿Puedo financiar el combo módulo + piscina?', r: 'Sí. El combo tiene financiación hasta 60 cuotas y un descuento del 25% sobre el precio total de ambos productos.' },
@@ -41,7 +42,7 @@ const PLANES = [
   {
     nombre: 'Plan Corto',
     cuotas: '3 a 12',
-    desc: 'Menor costo financiero total. Ideal para proyectos corporativos, compras de reposición o quienes prefieren liquidar rápido.',
+    desc: 'Menor costo financiero total. Ideal para proyectos corporativos, compras de reposición o clientes que prefieren cancelar en el menor plazo posible.',
     color: 'eco-green',
     beneficios: ['Menor costo financiero', 'Más apto para empresas', 'Ideal con ingresos estables o capital disponible'],
   },
@@ -72,15 +73,16 @@ export default async function FinanciacionPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="pt-28 pb-16 bg-gradient-to-b from-eco-green-dark to-eco-bg">
+      {/* Hero — premium light */}
+      <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Financiación directa</span>
-          <h1 className="text-5xl sm:text-7xl font-extrabold text-white uppercase mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Sin banco.<br />Sin garante.<br />Hasta 120 cuotas.
+          <span className="badge-green mb-5 inline-flex">Financiación directa</span>
+          <h1 className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+            Financiación directa.<br />Sin banco ni garante.<br />
+            <span className="text-eco-green">Hasta 120 cuotas.</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            Financiación propia de la cooperativa. Aprobación directa, cuotas fijas, sin trámites imposibles.
+          <p className="text-eco-text-muted text-lg max-w-2xl mx-auto mb-8">
+            Financiación propia de la cooperativa. Aprobación directa, cuotas fijas y sin trámites complejos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
@@ -98,7 +100,7 @@ export default async function FinanciacionPage() {
             {[
               { icon: Shield, text: 'Sin banco ni garante' },
               { icon: CheckCircle, text: 'Solo DNI argentino' },
-              { icon: Clock, text: 'Aprobación en 24 hs' },
+              { icon: Clock, text: 'Aprobación en 24 horas' },
               { icon: CheckCircle, text: 'Cuotas fijas en pesos' },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-2 text-eco-text-muted text-sm">
@@ -120,7 +122,7 @@ export default async function FinanciacionPage() {
             { icono: '🏊', titulo: 'Piscinas de fibra', detalle: '16 modelos instalados en 72 hs. Financiación hasta 120 cuotas sin banco.' },
             { icono: '🔗', titulo: 'Combo módulo + piscina', detalle: '25% de descuento sobre el total. Financiación única hasta 60 cuotas.' },
           ].map(({ icono, titulo, detalle }) => (
-            <div key={titulo} className="bg-eco-bg-card border border-eco-border rounded-xl p-5 flex flex-col gap-2">
+            <div key={titulo} className="card-premium p-5 flex flex-col gap-2">
               <span className="text-2xl">{icono}</span>
               <p className="font-bold text-eco-text text-sm" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</p>
               <p className="text-eco-text-muted text-xs">{detalle}</p>
@@ -128,16 +130,16 @@ export default async function FinanciacionPage() {
           ))}
         </div>
         <p className="text-eco-text-muted text-xs mt-5 text-center">
-          Para proyectos corporativos (obradores, campamentos, etc.), consultá condiciones especiales de pago.
+          Para proyectos corporativos (obradores, campamentos y similares), consulte las condiciones especiales de financiación.
         </p>
       </section>
 
       {/* Planes */}
       <section className="py-16 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="Nuestros planes" subtitulo="Elegí el plazo que más se adapta a tu situación." />
+        <SectionTitle titulo="Nuestros planes" subtitulo="Elija el plazo que mejor se adapta a su situación." />
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
           {PLANES.map((plan) => (
-            <div key={plan.nombre} className="relative bg-eco-bg-card border border-eco-border rounded-2xl p-6 flex flex-col gap-3">
+            <div key={plan.nombre} className="relative card-premium p-6 flex flex-col gap-3">
               {plan.badge && (
                 <span className="absolute top-4 right-4 bg-eco-teal/20 text-eco-teal text-xs font-bold px-2 py-1 rounded-full">{plan.badge}</span>
               )}
@@ -160,7 +162,7 @@ export default async function FinanciacionPage() {
       {/* Simulador */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
-          <SectionTitle titulo="Simulá tu cuota" subtitulo="Sin compromiso. Los valores son orientativos; la cotización final incluye flete e instalación." />
+          <SectionTitle titulo="Simule su cuota" subtitulo="Sin compromiso. Los valores son orientativos; la cotización definitiva incluye flete e instalación." />
           <div className="mt-10"><LoanSimulator /></div>
         </div>
       </section>
@@ -198,32 +200,36 @@ export default async function FinanciacionPage() {
       )}
 
       {/* FAQ */}
-      <section className="py-16 bg-eco-bg-card border-y border-eco-border">
+      <section className="py-20 bg-eco-bg">
         <div className="max-w-3xl mx-auto px-4">
           <SectionTitle titulo="Preguntas frecuentes" />
-          <div className="mt-10 space-y-4">
-            {FAQ.map((f) => (
-              <details key={f.q} className="group bg-eco-bg-surface border border-eco-border rounded-xl">
-                <summary className="flex items-center justify-between px-5 py-4 cursor-pointer text-eco-text font-medium list-none">
-                  {f.q}
-                  <span className="text-eco-green group-open:rotate-45 transition-transform text-xl leading-none">+</span>
-                </summary>
-                <p className="px-5 pb-4 text-eco-text-muted text-sm">{f.r}</p>
-              </details>
-            ))}
+          <div className="mt-10">
+            <FaqAccordion items={FAQ} />
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 max-w-3xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>¿Querés saber si calificás?</h2>
-        <p className="text-eco-text-muted mb-8">Hablá con nuestro equipo. La aprobación es rápida y sin vueltas.</p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-            <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
-          </a>
-          <VideoCallButton variant="outline" />
+      {/* CTA final */}
+      <section className="py-24 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+            ¿Desea consultar su plan?
+          </h2>
+          <p className="text-white/60 mb-10 text-lg">
+            El proceso de aprobación es ágil y directo. Sin banco, sin trámites complejos.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+            >
+              <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
+            </a>
+            <VideoCallButton variant="outline" />
+          </div>
         </div>
       </section>
     </>

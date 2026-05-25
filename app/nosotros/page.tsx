@@ -5,27 +5,27 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Quiénes Somos | Cooperativa INAES Eco Módulos & Piscinas',
-  description: 'Cooperativa de trabajo INAES con +15 años de trayectoria. Fabricación de módulos habitacionales NCE, piscinas de fibra y gestión de materiales reciclables para grandes empresas. Planta propia en Zárate, Buenos Aires.',
+  title: 'Quiénes Somos | Cooperativa de Trabajo Eco Zárate Ltda. | Eco Módulos & Piscinas',
+  description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. +15 años fabricando módulos NCE, piscinas de fibra y gestionando materiales reciclables. Planta en Zárate, Buenos Aires.',
   keywords: [
-    'cooperativa INAES viviendas modulares',
-    'fabricante módulos habitacionales Zárate',
-    'empresa piscinas fibra Buenos Aires',
+    'cooperativa de trabajo eco zarate limitada',
+    'cooperativa eco zarate INAES',
+    'eco modulos y piscinas quienes somos',
+    'fabricante módulos habitacionales Zárate Buenos Aires',
+    'empresa piscinas fibra vidrio argentina',
     'cooperativa reciclaje industrial argentina',
-    'eco módulos piscinas quiénes somos',
-    'cooperativa construcción reciclaje',
-    'materiales reciclables empresas argentina',
+    'CUIT 30718073932',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/nosotros' },
   openGraph: {
-    title: 'Quiénes Somos | Eco Módulos & Piscinas',
-    description: 'Cooperativa INAES con +15 años. Fabricación modular NCE, piscinas de fibra y gestión de reciclaje industrial para empresas líderes.',
+    title: 'Cooperativa de Trabajo Eco Zárate Ltda. | Eco Módulos & Piscinas',
+    description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. Fabricación modular NCE, piscinas de fibra y gestión de reciclaje industrial.',
     url: 'https://ecomodulosypiscinas.com.ar/nosotros',
   },
 }
 
 const HITOS = [
-  { año: '2008', hecho: 'Fundación de la cooperativa de trabajo en Zárate, provincia de Buenos Aires. Registro ante INAES.' },
+  { año: '2008', hecho: 'Fundación de la Cooperativa de Trabajo Eco Zárate Limitada en Zárate, Buenos Aires. Inscripción ante INAES · CUIT 30-71807393-2.' },
   { año: '2010', hecho: 'Inicio del programa de gestión de materiales reciclables con industrias de la región.' },
   { año: '2012', hecho: 'Lanzamiento de la primera línea de módulos habitacionales NCE (No Convencional de Eficiencia energética).' },
   { año: '2015', hecho: 'Incorporación de piscinas de fibra de vidrio al catálogo. Expansión logística a todo el país.' },
@@ -65,16 +65,20 @@ const AREAS = [
 export default function NosotrosPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-28 pb-16 bg-gradient-to-b from-eco-green-dark to-eco-bg">
+      {/* Hero — premium light */}
+      <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-eco-green/10 text-eco-green text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-            Cooperativa INAES · Zárate, Buenos Aires
+          <span className="badge-green mb-5 inline-flex">
+            Cooperativa de Trabajo Eco Zárate Ltda. · INAES · Zárate, Buenos Aires
           </span>
-          <h1 className="text-5xl sm:text-7xl font-extrabold text-white uppercase mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Más de 15 años<br />de trayectoria cooperativa
+          <h1
+            className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Más de 15 años<br />
+            <span className="text-eco-green">de trayectoria cooperativa</span>
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-eco-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
             Fabricación modular, piscinas de fibra y gestión de materiales reciclables. Una cooperativa con múltiples rubros, escala industrial y presencia en todo el país.
           </p>
         </div>
@@ -125,15 +129,21 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* Cooperativa INAES */}
+      {/* Datos legales */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-5xl mx-auto px-4">
-          <SectionTitle titulo="Cooperativa INAES" subtitulo="¿Qué significa operar bajo esta figura?" />
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <SectionTitle titulo="Cooperativa de Trabajo Eco Zárate Ltda." subtitulo="Datos legales y por qué importa la figura cooperativa" />
+          <div className="mb-8 mt-4 flex flex-wrap justify-center gap-4 text-xs text-eco-text-muted">
+            <span className="flex items-center gap-1.5 bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-1.5"><Shield className="w-3.5 h-3.5 text-eco-green" /> Razón social: Cooperativa de Trabajo Eco Zárate Limitada</span>
+            <span className="flex items-center gap-1.5 bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-1.5"><Shield className="w-3.5 h-3.5 text-eco-green" /> CUIT: 30-71807393-2</span>
+            <span className="flex items-center gap-1.5 bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-1.5"><Shield className="w-3.5 h-3.5 text-eco-green" /> Inscripta ante INAES</span>
+            <span className="flex items-center gap-1.5 bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-1.5"><MapPin className="w-3.5 h-3.5 text-eco-green" /> Zárate, Buenos Aires</span>
+          </div>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { icon: Shield, titulo: 'Solidez legal y transparencia', desc: 'Registrados en el Instituto Nacional de Asociativismo y Economía Social. Marco legal sólido, balances públicos y estructura auditada.' },
-              { icon: Users, titulo: 'Propiedad colectiva', desc: 'Los trabajadores son los propietarios. No hay accionistas externos que extraigan utilidades. Las ganancias se reinvierten en operaciones y mejoras.' },
-              { icon: Award, titulo: 'Compromiso real con el cliente', desc: 'Al contratar con una cooperativa, respaldás el trabajo asociativo genuino. Cada operación genera empleo de calidad en Argentina.' },
+              { icon: Shield, titulo: 'Solidez legal y transparencia', desc: 'Inscripta ante el Instituto Nacional de Asociativismo y Economía Social (INAES). Marco legal sólido, balances públicos y estructura auditada. Emitimos factura A o B.' },
+              { icon: Users, titulo: 'Propiedad colectiva', desc: 'Los trabajadores son los propietarios. No hay accionistas externos ni extracción de utilidades. Cada peso generado se reinvierte en operaciones, planta y calidad de servicio.' },
+              { icon: Award, titulo: 'Respaldo y seriedad', desc: 'Más de 15 años de operación continua, +2.000 proyectos instalados y contratos con empresas, municipios y organismos del Estado. Documentación técnica disponible para licitaciones.' },
             ].map(({ icon: Icon, titulo, desc }) => (
               <div key={titulo} className="flex flex-col gap-3">
                 <div className="w-10 h-10 rounded-xl bg-eco-green/10 flex items-center justify-center">
@@ -187,7 +197,7 @@ export default function NosotrosPage() {
           <p className="text-eco-text-muted text-sm mb-6 uppercase tracking-widest text-center font-semibold">Empresas que confían en nuestra gestión</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {RECICLAJE_CLIENTES.map((c) => (
-              <div key={c.nombre} className="bg-eco-bg-card border border-eco-border rounded-xl p-5 flex flex-col items-center gap-2 text-center">
+              <div key={c.nombre} className="card-premium p-5 flex flex-col items-center gap-2 text-center">
                 <span className="text-3xl">{c.icono}</span>
                 <p className="font-extrabold text-eco-text text-lg" style={{ fontFamily: 'var(--font-display)' }}>{c.nombre}</p>
                 <p className="text-eco-text-muted text-xs">{c.sector}</p>
@@ -229,7 +239,7 @@ export default function NosotrosPage() {
               </div>
             </div>
             {/* Placeholder planta */}
-            <div className="sm:w-64 h-44 bg-gradient-to-br from-[#0d1f0d] to-eco-bg-surface rounded-xl overflow-hidden relative flex-shrink-0">
+            <div className="sm:w-64 h-44 bg-gradient-to-br from-eco-green/10 to-eco-bg-surface rounded-xl overflow-hidden relative flex-shrink-0 border border-eco-border">
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
                 <svg viewBox="0 0 120 80" className="w-28 h-20 opacity-30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="5" y="25" width="50" height="50" rx="1" stroke="#2d9e4f" strokeWidth="1.5" fill="#2d9e4f" fillOpacity="0.07"/>
@@ -257,12 +267,13 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* Áreas de contacto — sin nombres propios */}
-      <section className="py-16 max-w-5xl mx-auto px-4">
+      {/* Áreas de contacto */}
+      <section className="py-20 bg-eco-bg">
+        <div className="max-w-5xl mx-auto px-4">
         <SectionTitle titulo="Áreas de atención" subtitulo="Cada consulta va al área correcta. Respuesta técnica directa, sin intermediarios." />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
           {AREAS.map((a) => (
-            <div key={a.titulo} className="bg-eco-bg-card border border-eco-border rounded-2xl p-6 flex flex-col gap-4">
+            <div key={a.titulo} className="card-premium p-6 flex flex-col gap-4">
               <div className="w-14 h-14 rounded-2xl bg-eco-green/10 border border-eco-green/20 flex items-center justify-center text-3xl">
                 {a.icono}
               </div>
@@ -281,15 +292,24 @@ export default function NosotrosPage() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-eco-bg-card border-t border-eco-border">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-extrabold text-eco-text mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>¿Querés conocernos?</h2>
-          <p className="text-eco-text-muted mb-8">Agendá una videollamada con nuestro equipo o visitanos en Zárate, de lunes a viernes de 9 a 17hs.</p>
+      {/* CTA final */}
+      <section className="py-24 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+            ¿Quiere conocernos?
+          </h2>
+          <p className="text-white/60 mb-10 text-lg">
+            Reserve una videollamada con nuestro equipo o visítenos en Zárate, de lunes a viernes de 9 a 17 h.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contacto" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
+            <Link
+              href="/contacto"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+            >
               Ir a contacto
             </Link>
             <VideoCallButton variant="outline" label="Agendar videollamada" />
