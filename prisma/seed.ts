@@ -56,7 +56,7 @@ async function main() {
   ]
 
   const usosModulo = JSON.stringify(['Vivienda', 'Ampliación', 'Oficina', 'Quincho', 'Glamping', 'Inversión'])
-  const descripcionModulo = 'Módulo habitacional de tecnología NCE (No Convencional de Eficiencia energética). Estructura Wood Frame, blindaje de fibra de vidrio con resina náutica, emplacado de Núcleo de Celulosa Encapsulada. Eficiencia térmica y acústica superior. Llave en mano en Obra Blanca.'
+  const descripcionModulo = 'Módulo habitacional con sistema constructivo Wood Frame: estructura de madera, revestimiento exterior en placas cementicias y terminación interior en Durlock. Eficiencia térmica y acústica superior. Llave en mano en Obra Blanca.'
 
   for (let i = 0; i < modulos.length; i++) {
     const m = modulos[i]
@@ -154,7 +154,7 @@ async function main() {
       nombre: 'María González',
       localidad: 'Pilar, Buenos Aires',
       producto: 'Módulo 36 m²',
-      texto: 'Increíble la calidad y velocidad de instalación. En menos de una semana tenía mi local comercial funcionando. El equipo de Eco Módulos es excelente, siempre disponibles para cualquier consulta.',
+      texto: 'Increíble la calidad y velocidad de instalación. En menos de una semana tenía mi local comercial funcionando. El equipo de EcoFiver es excelente, siempre disponibles para cualquier consulta.',
       estrellas: 5,
       orden: 0,
     },
@@ -170,7 +170,7 @@ async function main() {
       nombre: 'Laura Martínez',
       localidad: 'Mendoza',
       producto: 'Combo Módulo 48 m² + Piscina',
-      texto: 'Compramos el combo módulo-piscina en 60 cuotas y fue la mejor decisión. El financiamiento directo sin banco nos facilitó todo. Hoy tenemos nuestro espacio de glamping generando ingresos.',
+      texto: 'Compramos el combo módulo-piscina en un solo plan y fue la mejor decisión. El financiamiento directo sin banco nos facilitó todo. Hoy tenemos nuestro espacio de glamping generando ingresos.',
       estrellas: 5,
       orden: 2,
     },
@@ -189,27 +189,27 @@ async function main() {
     {
       titulo: 'Casa modular vs ladrillo: comparativa real 2026',
       slug: 'casa-modular-vs-ladrillo',
-      resumen: 'Comparamos en detalle los costos, tiempos y calidad de una vivienda modular NCE versus construcción tradicional de ladrillo en Argentina en 2026.',
+      resumen: 'Comparamos en detalle los costos, tiempos y calidad de una vivienda modular Wood Frame versus construcción tradicional de ladrillo en Argentina en 2026.',
       categoria: 'vivienda',
       contenido: `<h2>Casa modular vs ladrillo: ¿cuál conviene en Argentina en 2026?</h2>
-<p>La elección entre una vivienda modular y una construcción tradicional de ladrillos es una de las decisiones más importantes que puede tomar una familia argentina. En Eco Módulos & Piscinas llevamos más de 15 años ayudando a personas a tomar esta decisión con información real, sin marketing vacío.</p>
+<p>La elección entre una vivienda modular y una construcción tradicional de ladrillos es una de las decisiones más importantes que puede tomar una familia argentina. En EcoFiver llevamos más de 15 años ayudando a personas a tomar esta decisión con información real, sin marketing vacío.</p>
 
 <h3>Tiempo de construcción</h3>
-<p>Una de las ventajas más evidentes de la construcción modular NCE es el tiempo. Mientras que una vivienda de ladrillo de 60 m² puede tardar entre 12 y 24 meses en completarse (dependiendo de los imprevistos, el clima y la disponibilidad de mano de obra), un módulo habitacional del mismo tamaño se instala en sitio en tan solo 5 a 10 días hábiles.</p>
+<p>Una de las ventajas más evidentes de la construcción modular Wood Frame es el tiempo. Mientras que una vivienda de ladrillo de 60 m² puede tardar entre 12 y 24 meses en completarse (dependiendo de los imprevistos, el clima y la disponibilidad de mano de obra), un módulo habitacional del mismo tamaño se instala en sitio en tan solo 5 a 10 días hábiles.</p>
 <p>Esto significa que podés estar viviendo en tu nueva casa en cuestión de semanas, no de años. Para familias en situación de necesidad habitacional urgente, esto no es un detalle menor.</p>
 
 <h3>Costo real de construcción</h3>
-<p>La comparación de costos entre construcción modular y ladrillo en Argentina es más compleja de lo que parece. En general, el costo por metro cuadrado de un módulo NCE terminado, llave en mano, es comparable o incluso menor al de una construcción de ladrillo de calidad equivalente.</p>
+<p>La comparación de costos entre construcción modular y ladrillo en Argentina es más compleja de lo que parece. En general, el costo por metro cuadrado de un módulo Wood Frame terminado, llave en mano, es comparable o incluso menor al de una construcción de ladrillo de calidad equivalente.</p>
 <p>Pero hay factores que la gente suele ignorar al calcular el costo del ladrillo: el tiempo de tu propia supervisión (si es autogestionada), las demasías de material (estimadas en un 15-20%), el costo de los imprevistos, y el costo financiero de tener el dinero inmovilizado por más de un año durante la construcción.</p>
 
 <h3>Calidad constructiva</h3>
-<p>La tecnología NCE (No Convencional de Eficiencia energética) utiliza estructura Wood Frame procesada mecánicamente, emplacado con Núcleo de Celulosa Encapsulada y blindaje exterior de fibra de vidrio con resina náutica. El resultado es una vivienda que supera a la construcción de ladrillo convencional en eficiencia energética, resistencia a la humedad y durabilidad estructural.</p>
+<p>El sistema Wood Frame utiliza una estructura de madera procesada mecánicamente, revestida por fuera con placas cementicias y terminada por dentro en Durlock. El resultado es una vivienda que supera a la construcción de ladrillo convencional en eficiencia energética, resistencia a la humedad y durabilidad estructural.</p>
 
 <h3>Financiación directa</h3>
-<p>Quizás la diferencia más importante en el contexto argentino actual es la financiación. En Eco Módulos ofrecemos planes propios de hasta 120 cuotas sin banco, sin garante y sin requisitos imposibles. Para la construcción de ladrillo, la financiación suele depender de créditos hipotecarios que son difíciles de acceder para gran parte de la población.</p>
+<p>Quizás la diferencia más importante en el contexto argentino actual es la financiación. En EcoFiver ofrecemos planes propios de hasta 120 cuotas ajustadas por índice ICC, sin banco, sin garante y sin requisitos imposibles. Para la construcción de ladrillo, la financiación suele depender de créditos hipotecarios que son difíciles de acceder para gran parte de la población.</p>
 
 <h3>Conclusión</h3>
-<p>Si valorás la velocidad de entrega, la certeza del costo final, la eficiencia energética y la posibilidad de financiar sin banco, la vivienda modular NCE es la mejor opción en 2026. ¿Tenés dudas? Agendá una videollamada gratuita con nuestro equipo.</p>`,
+<p>Si valorás la velocidad de entrega, la certeza del costo final, la eficiencia energética y la posibilidad de financiar sin banco, la vivienda modular Wood Frame es la mejor opción en 2026. ¿Tenés dudas? Agendá una videollamada gratuita con nuestro equipo.</p>`,
       publicado: true,
     },
     {
@@ -218,7 +218,7 @@ async function main() {
       resumen: 'Precios actualizados 2026 de piscinas de fibra de vidrio en Argentina. Modelos, tamaños y planes de financiación disponibles.',
       categoria: 'piscinas',
       contenido: `<h2>¿Cuánto cuesta una piscina de fibra de vidrio en Argentina en 2026?</h2>
-<p>Una de las preguntas más frecuentes que recibimos en Eco Módulos & Piscinas es sobre el costo real de una piscina de fibra de vidrio. En este artículo te contamos todo lo que necesitás saber, con precios reales y sin letra chica.</p>
+<p>Una de las preguntas más frecuentes que recibimos en EcoFiver es sobre el costo real de una piscina de fibra de vidrio. En este artículo te contamos todo lo que necesitás saber, con precios reales y sin letra chica.</p>
 
 <h3>Rango de precios según modelo</h3>
 <p>Los precios de las piscinas de fibra varían significativamente según el tamaño y diseño. En nuestro catálogo 2026, tenemos modelos que van desde los $2.000.000 para modelos compactos (la Miniportante, ideal para espacios pequeños) hasta los $6.500.000 para modelos grandes como la Minimalista Grande de 6,40×3,00m.</p>
@@ -230,7 +230,7 @@ async function main() {
 <p>Las piscinas de fibra de vidrio tienen varias ventajas respecto a las de hormigón o mampostería. La principal es el tiempo de instalación: una piscina de fibra se instala en 2 a 5 días, mientras que una de mampostería puede tomar 30 a 60 días. Además, el mantenimiento es menor, ya que la superficie lisa de la fibra no favorece el desarrollo de algas.</p>
 
 <h3>Financiación sin banco</h3>
-<p>En Eco Módulos ofrecemos planes de financiación propios para nuestras piscinas. Podés acceder a cuotas fijas desde 3 hasta 120 cuotas, sin necesidad de crédito bancario. El proceso de aprobación es simple y rápido.</p>
+<p>En EcoFiver ofrecemos planes de financiación propios para nuestras piscinas. Podés acceder a cuotas fijas desde 3 hasta 120 cuotas, sin necesidad de crédito bancario. El proceso de aprobación es simple y rápido.</p>
 
 <h3>¿Cómo empezar?</h3>
 <p>El primer paso es elegir el modelo que más se adapta a tu espacio y presupuesto. Te recomendamos usar nuestro simulador de cuotas online para tener una idea del costo mensual antes de consultar. Luego, agendá una videollamada gratuita con nuestro equipo para ajustar los detalles.</p>`,
@@ -242,13 +242,13 @@ async function main() {
       resumen: 'Guía completa sobre las opciones de financiación directa para comprar o construir una vivienda en Argentina sin depender de créditos bancarios.',
       categoria: 'financiacion',
       contenido: `<h2>Cómo financiar una vivienda sin crédito bancario en Argentina</h2>
-<p>En un contexto donde el acceso al crédito hipotecario es difícil para gran parte de los argentinos, existen alternativas reales para financiar tu vivienda sin depender de un banco. En Eco Módulos & Piscinas desarrollamos nuestro propio sistema de financiación directa para que cualquier familia pueda acceder a una vivienda de calidad.</p>
+<p>En un contexto donde el acceso al crédito hipotecario es difícil para gran parte de los argentinos, existen alternativas reales para financiar tu vivienda sin depender de un banco. En EcoFiver desarrollamos nuestro propio sistema de financiación directa para que cualquier familia pueda acceder a una vivienda de calidad.</p>
 
 <h3>El problema del crédito hipotecario en Argentina</h3>
 <p>Obtener un crédito hipotecario en Argentina requiere, en general, una serie de requisitos que excluyen a una gran parte de la población: ingresos formales demostrables, historial crediticio impecable, relación cuota-ingreso del 25-30%, y un enganche inicial significativo. Muchas familias que necesitan una vivienda simplemente no califican.</p>
 
 <h3>Financiación directa: cómo funciona</h3>
-<p>En Eco Módulos ofrecemos financiación directa: nosotros somos quien financia, sin intermediarios bancarios. Esto nos permite ser más flexibles en los requisitos y en los plazos. Los planes disponibles van desde 3 cuotas (sin interés) hasta 120 cuotas en el Plan PMI.</p>
+<p>En EcoFiver ofrecemos financiación directa: nosotros somos quien financia, sin intermediarios bancarios. Esto nos permite ser más flexibles en los requisitos y en los plazos. Los planes disponibles van desde 3 cuotas (sin interés) hasta 120 cuotas en el Plan PMI.</p>
 
 <h3>Plan PMI: 120 cuotas</h3>
 <p>El Plan PMI (Plan de Módulo Integral) es nuestra opción de financiación más extendida. Permite acceder a un módulo habitacional o una piscina en hasta 120 cuotas mensuales fijas. Es el plan elegido por familias que buscan cuotas accesibles y prefieren pagar en el largo plazo.</p>
@@ -261,43 +261,43 @@ async function main() {
       publicado: true,
     },
     {
-      titulo: 'Qué es la tecnología NCE y por qué importa',
-      slug: 'tecnologia-nce-que-es',
-      resumen: 'Explicación detallada de la tecnología NCE (No Convencional de Eficiencia energética) usada en los módulos habitacionales de Eco Módulos.',
+      titulo: 'Qué es el sistema Wood Frame y por qué importa',
+      slug: 'sistema-wood-frame-que-es',
+      resumen: 'Explicación detallada del sistema constructivo Wood Frame usado en los módulos habitacionales de EcoFiver.',
       categoria: 'vivienda',
-      contenido: `<h2>¿Qué es la tecnología NCE y por qué es superior a la construcción convencional?</h2>
-<p>Cuando hablamos de tecnología NCE (No Convencional de Eficiencia energética), nos referimos al sistema constructivo que utilizamos en Eco Módulos & Piscinas para fabricar nuestros módulos habitacionales. En este artículo te explicamos en detalle en qué consiste y por qué representa una evolución respecto a la construcción tradicional.</p>
+      contenido: `<h2>¿Qué es el sistema Wood Frame y por qué es superior a la construcción convencional?</h2>
+<p>Cuando hablamos de Wood Frame, nos referimos al sistema constructivo que utilizamos en EcoFiver para fabricar nuestros módulos habitacionales. En este artículo te explicamos en detalle en qué consiste y por qué representa una evolución respecto a la construcción tradicional.</p>
 
-<h3>El proceso constructivo NCE: 5 etapas</h3>
+<h3>El proceso constructivo Wood Frame: 5 etapas</h3>
 <p><strong>1. Estructura Wood Frame:</strong> Se utiliza tirante de primera calidad (2×6) que se cepilla y endereza mecánicamente hasta obtener tirantes de 2×2. Estructura liviana y extremadamente resistente, sin perfiles metálicos ni riesgo de corrosión.</p>
 <p><strong>2. Ensamble triple:</strong> Los paneles se ensamblan con triple fijación: encolado industrial, pegado químico y atornillado estructural. Esta combinación garantiza la rigidez del módulo tanto durante el transporte como a lo largo de toda su vida útil.</p>
-<p><strong>3. Emplacado NCE — Núcleo de Celulosa Encapsulada:</strong> Los paneles se cubren con placas de NCE: un material aislante de Núcleo de Celulosa Encapsulada que ofrece eficiencia térmica y acústica superior a cualquier sistema de steel frame o construcción convencional.</p>
-<p><strong>4. Blindaje con resina náutica:</strong> Cada panel ingresa a la espresora, donde se aplica fibra de vidrio combinada con resina náutica en vuelta completa. Esto otorga resistencia estructural excepcional y protección exterior absoluta contra la humedad y el clima — sin membranas ni chapas adicionales.</p>
-<p><strong>5. Obra Blanca:</strong> Tras el fibrado, el panel pasa por perfilado, lijado y pintado. El módulo se entrega en Obra Blanca: interior fondeado en blanco, piso gris fondeado, exterior con revestimiento plástico texturizado impermeabilizado. Terminación prolija y profesional, habitable desde el primer día.</p>
+<p><strong>3. Revestimiento exterior en placas cementicias:</strong> La estructura de madera se reviste por fuera con placas cementicias, un material resistente a la intemperie, de bajo mantenimiento y alta durabilidad. Sin madera vista en el exterior.</p>
+<p><strong>4. Terminación interior en Durlock:</strong> El interior se termina en Durlock, con instalación eléctrica y sanitaria ejecutada. Base lista para que el cliente personalice a gusto.</p>
+<p><strong>5. Obra Blanca:</strong> El módulo se entrega en Obra Blanca: interior fondeado en blanco, piso gris fondeado. Terminación prolija y profesional, habitable desde el primer día. Disponible en estilo minimalista (techo escondido/plano) o americana (techo a dos aguas).</p>
 
 <h3>Montaje en seco: sin obra en el terreno</h3>
 <p>Los tabiques salen de nuestra planta de Zárate con todos los anclajes ya incorporados. El armado en sitio no requiere agua, no genera escombros y no depende de obra civil previa. Un equipo especializado instala el módulo completo en el día (modelos hasta 18 m²), con máximo 5 días para viviendas de mayor metraje.</p>
 
 <h3>¿Por qué es más eficiente energéticamente?</h3>
-<p>El Núcleo de Celulosa Encapsulada reduce drásticamente la transferencia de calor entre el interior y el exterior. En la práctica, en verano el módulo permanece más fresco y en invierno retiene el calor por más tiempo — con ahorros energéticos concretos respecto a casas de ladrillo del mismo tamaño.</p>`,
+<p>La combinación de estructura de madera con revestimiento en placas cementicias reduce la transferencia de calor entre el interior y el exterior. En la práctica, en verano el módulo permanece más fresco y en invierno retiene el calor por más tiempo — con ahorros energéticos concretos respecto a casas de ladrillo del mismo tamaño.</p>`,
       publicado: true,
     },
     {
       titulo: 'Módulo habitacional: el negocio del glamping en Argentina',
       slug: 'glamping-modulo-habitacional',
-      resumen: 'Cómo los módulos habitacionales de Eco Módulos se están convirtiendo en la opción preferida para proyectos de glamping en Argentina.',
+      resumen: 'Cómo los módulos habitacionales de EcoFiver se están convirtiendo en la opción preferida para proyectos de glamping en Argentina.',
       categoria: 'inspiracion',
       contenido: `<h2>Módulos habitacionales para glamping: el negocio del turismo de lujo en Argentina</h2>
-<p>El glamping (glamorous camping) es una de las tendencias de turismo que más está creciendo en Argentina. Emprendedores de todo el país descubren en los módulos habitacionales de Eco Módulos & Piscinas la herramienta perfecta para lanzar proyectos de alojamiento turístico de alta gama sin necesidad de grandes inversiones en construcción tradicional.</p>
+<p>El glamping (glamorous camping) es una de las tendencias de turismo que más está creciendo en Argentina. Emprendedores de todo el país descubren en los módulos habitacionales de EcoFiver la herramienta perfecta para lanzar proyectos de alojamiento turístico de alta gama sin necesidad de grandes inversiones en construcción tradicional.</p>
 
 <h3>¿Por qué elegir módulos para glamping?</h3>
-<p>Las ventajas son múltiples. En primer lugar, la velocidad de instalación: en cuestión de semanas podés tener tu emprendimiento de glamping funcionando y generando ingresos, en lugar de esperar meses por una construcción de ladrillo. Segundo, la escalabilidad: podés comenzar con 2 o 3 módulos y agregar más a medida que el negocio crece. Tercero, la estética: los módulos NCE tienen un diseño moderno y atractivo que funciona muy bien para el mercado de turismo de lujo.</p>
+<p>Las ventajas son múltiples. En primer lugar, la velocidad de instalación: en cuestión de semanas podés tener tu emprendimiento de glamping funcionando y generando ingresos, en lugar de esperar meses por una construcción de ladrillo. Segundo, la escalabilidad: podés comenzar con 2 o 3 módulos y agregar más a medida que el negocio crece. Tercero, la estética: los módulos Wood Frame tienen un diseño moderno y atractivo que funciona muy bien para el mercado de turismo de lujo.</p>
 
 <h3>El negocio en números</h3>
 <p>Un módulo de 18 m² en un destino turístico de primer nivel puede generar entre $80.000 y $150.000 pesos por noche en 2026. Con una ocupación promedio del 50%, un solo módulo puede generar más de $1.000.000 pesos mensuales de ingresos brutos. En ese escenario, el retorno de la inversión inicial puede alcanzarse en 18 a 36 meses.</p>
 
 <h3>Combinación módulo + piscina</h3>
-<p>Muchos emprendedores de glamping optan por el combo módulo + piscina que ofrecemos con un 25% de descuento especial. Una cabaña modular con piscina privada es uno de los productos más demandados en las plataformas de alquiler turístico de corto plazo.</p>
+<p>Muchos emprendedores de glamping optan por el combo módulo + piscina, que permite financiar ambos productos en un solo plan. Una cabaña modular con piscina privada es uno de los productos más demandados en las plataformas de alquiler turístico de corto plazo.</p>
 
 <h3>Financiación para emprendedores</h3>
 <p>Ofrecemos planes especiales de financiación para proyectos de glamping. Podés financiar tus módulos en hasta 60 o 120 cuotas, comenzar a generar ingresos desde el primer mes, y usar esos ingresos para pagar las cuotas. Agendá una videollamada con nuestro equipo para diseñar un plan personalizado para tu proyecto.</p>`,
@@ -355,7 +355,7 @@ async function main() {
     { clave: 'empresa_instagram',            valor: 'https://instagram.com/ecomodulosypiscinas' },
     { clave: 'flete_precio_km',              valor: '3000' },
     { clave: 'flete_miniportante_km',        valor: '2000' },
-    { clave: 'combo_descuento',              valor: '25' },
+    { clave: 'combo_descuento',              valor: '0' },
     { clave: 'precio_lista_multiplicador',   valor: '1.40' },
     { clave: 'horarios',                     valor: 'Lun–Vie 9–18hs · Sáb 9–13hs' },
   ]

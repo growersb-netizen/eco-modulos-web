@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const articulo = await prisma.articuloBlog.findFirst({ where: { slug, publicado: true } })
   if (!articulo) return { title: 'Artículo no encontrado' }
   return {
-    title: `${articulo.titulo} | Blog Eco Módulos & Piscinas`,
+    title: `${articulo.titulo} | Blog EcoFiver`,
     description: articulo.resumen || articulo.titulo,
     openGraph: {
       title: articulo.titulo,

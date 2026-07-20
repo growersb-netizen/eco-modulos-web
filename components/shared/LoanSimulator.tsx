@@ -6,7 +6,9 @@ import { MessageCircle, Calculator, Phone, User, CheckCircle } from 'lucide-reac
 import { trackSimulador } from '@/lib/analytics'
 import { formatPeso as fmt } from '@/lib/utils'
 
-const CUOTAS = [3, 6, 12, 18, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+// Piscinas: cuota fija, plazos cortos. Módulos: cuota ajustada por ICC, hasta 120.
+const CUOTAS_PISCINA = [12, 18, 24, 36]
+const CUOTAS_MODULO = [3, 6, 12, 18, 24, 36, 48, 60, 72, 84, 96, 108, 120]
 
 interface Producto {
   id: string
@@ -85,6 +87,7 @@ export default function LoanSimulator() {
   const productos = tipo === 'modulo' ? modulos : piscinas
   const productoSeleccionado = productos.find((p) => p.id === productoId)
   const vendedor = tipo === 'piscina' ? 'hernan' : 'daniel'
+  const cuotasOptions = tipo === 'piscina' ? CUOTAS_PISCINA : CUOTAS_MODULO
 
   async function enviarLead() {
     if (!leadTelefono.trim()) {
@@ -140,7 +143,7 @@ export default function LoanSimulator() {
           <h3 className="font-bold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>
             Simule su cuota
           </h3>
-          <p className="text-eco-text-muted text-xs">Valores orientativos — sin banco ni garante</p>
+          <p className="text-eco-text-muted text-xs">Sin banco ni garante · piscinas con cuota fija, módulos ajustados por ICC</p>
         </div>
       </div>
 
@@ -151,9 +154,13 @@ export default function LoanSimulator() {
           <select
             value={tipo}
             onChange={(e) => {
-              setTipo(e.target.value as 'modulo' | 'piscina')
-              const lista = e.target.value === 'modulo' ? modulos : piscinas
+              const nuevoTipo = e.target.value as 'modulo' | 'piscina'
+              setTipo(nuevoTipo)
+              const lista = nuevoTipo === 'modulo' ? modulos : piscinas
               if (lista.length > 0) setProductoId(lista[0].id)
+              // Las piscinas no permiten plazos mayores a 36 cuotas — reacomodar si hace falta.
+              const opciones = nuevoTipo === 'piscina' ? CUOTAS_PISCINA : CUOTAS_MODULO
+              if (!opciones.includes(cuotas)) setCuotas(opciones[opciones.length - 1])
             }}
             className="w-full bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-2.5 text-eco-text text-sm focus:outline-none focus:border-eco-green"
           >
@@ -186,7 +193,7 @@ export default function LoanSimulator() {
             onChange={(e) => setCuotas(Number(e.target.value))}
             className="w-full bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-2.5 text-eco-text text-sm focus:outline-none focus:border-eco-green"
           >
-            {CUOTAS.map((c) => (
+            {cuotasOptions.map((c) => (
               <option key={c} value={c}>
                 {c} cuotas{c <= 6 ? ' sin interés' : ''}
               </option>

@@ -5,8 +5,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Quiénes Somos | Cooperativa de Trabajo Eco Zárate Ltda. | Eco Módulos & Piscinas',
-  description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. +15 años fabricando módulos NCE, piscinas de fibra y gestionando materiales reciclables. Planta en Zárate, Buenos Aires.',
+  title: 'Quiénes Somos | Cooperativa de Trabajo Eco Zárate Ltda. | EcoFiver',
+  description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. +15 años fabricando módulos Wood Frame, piscinas de fibra y gestionando materiales reciclables. Planta en Zárate, Buenos Aires.',
   keywords: [
     'cooperativa de trabajo eco zarate limitada',
     'cooperativa eco zarate INAES',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/nosotros' },
   openGraph: {
-    title: 'Cooperativa de Trabajo Eco Zárate Ltda. | Eco Módulos & Piscinas',
-    description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. Fabricación modular NCE, piscinas de fibra y gestión de reciclaje industrial.',
+    title: 'Cooperativa de Trabajo Eco Zárate Ltda. | EcoFiver',
+    description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. Fabricación modular Wood Frame, piscinas de fibra y gestión de reciclaje industrial.',
     url: 'https://ecomodulosypiscinas.com.ar/nosotros',
   },
 }
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const HITOS = [
   { año: '2008', hecho: 'Fundación de la Cooperativa de Trabajo Eco Zárate Limitada en Zárate, Buenos Aires. Inscripción ante INAES · CUIT 30-71807393-2.' },
   { año: '2010', hecho: 'Inicio del programa de gestión de materiales reciclables con industrias de la región.' },
-  { año: '2012', hecho: 'Lanzamiento de la primera línea de módulos habitacionales NCE (No Convencional de Eficiencia energética).' },
+  { año: '2012', hecho: 'Lanzamiento de la primera línea de módulos habitacionales con sistema constructivo Wood Frame.' },
   { año: '2015', hecho: 'Incorporación de piscinas de fibra de vidrio al catálogo. Expansión logística a todo el país.' },
   { año: '2018', hecho: 'Expansión de planta a 7.000 m² en Zárate. Inicio de contratos de reciclaje con empresas de escala nacional.' },
   { año: '2021', hecho: 'Lanzamiento del Combo Módulo + Piscina con financiación propia. Primeros contratos corporativos de obradores y campamentos.' },
@@ -45,7 +45,7 @@ const AREAS = [
   {
     icono: '🏗️',
     titulo: 'Área de Soluciones Constructivas',
-    desc: 'Módulos NCE, obradores, campamentos, unidades habitacionales y piscinas de fibra. Proyectos para empresas, municipios y particulares.',
+    desc: 'Módulos Wood Frame, obradores, campamentos, unidades habitacionales y piscinas de fibra. Proyectos para empresas, municipios y particulares.',
     wa: 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, necesito información sobre módulos y soluciones constructivas.'),
   },
   {
@@ -107,10 +107,10 @@ export default function NosotrosPage() {
       <section className="py-16 max-w-4xl mx-auto px-4">
         <SectionTitle titulo="Nuestra historia" centrado={false} />
         <p className="mt-6 text-eco-text-muted leading-relaxed">
-          Eco Módulos & Piscinas nació en 2008 como una cooperativa de trabajo en Zárate, provincia de Buenos Aires. Desde el inicio operamos en dos ejes complementarios: la fabricación de soluciones modulares para infraestructura y vivienda, y la gestión profesional de materiales reciclables para la industria.
+          EcoFiver nació en 2008 como una cooperativa de trabajo en Zárate, provincia de Buenos Aires. Desde el inicio operamos en dos ejes complementarios: la fabricación de soluciones modulares para infraestructura y vivienda, y la gestión profesional de materiales reciclables para la industria.
         </p>
         <p className="mt-4 text-eco-text-muted leading-relaxed">
-          Fabricamos módulos constructivos con tecnología NCE (No Convencional de Eficiencia energética) — obradores, campamentos, unidades habitacionales, oficinas de campo — y piscinas de fibra de vidrio. Todo en planta propia en Zárate, con logística directa a todo el país y financiación sin banco.
+          Fabricamos módulos constructivos con sistema Wood Frame (estructura de madera, revestimiento exterior en placas cementicias, terminación interior en Durlock) — obradores, campamentos, unidades habitacionales, oficinas de campo — y piscinas de fibra de vidrio. Todo en planta propia en Zárate, con logística directa a todo el país y financiación sin banco.
         </p>
         <p className="mt-4 text-eco-text-muted leading-relaxed">
           Ser cooperativa no es solo una forma jurídica: es una forma de operar. Sin accionistas externos. Sin extracción de utilidades. Cada peso que genera la cooperativa vuelve al equipo, a la planta y al alcance del servicio.
@@ -171,7 +171,7 @@ export default function NosotrosPage() {
           Además de la fabricación modular y las piscinas, la cooperativa opera un área especializada en retiro, clasificación y procesamiento de materiales reciclables generados por grandes empresas industriales, comerciales e institucionales de la Argentina.
         </p>
         <p className="mt-4 text-eco-text-muted leading-relaxed">
-          Los materiales retirados — plásticos, metales, cartón, vidrio y otros — son procesados en nuestra planta y reincorporados a la cadena industrial como materia prima. Este ciclo reduce el desperdicio, baja el costo energético de la producción y cierra el loop de la economía circular. El mismo compromiso ambiental que aplicamos en la eficiencia energética de nuestros módulos NCE lo aplicamos a la gestión de residuos industriales.
+          Los materiales retirados — plásticos, metales, cartón, vidrio y otros — son procesados en nuestra planta y reincorporados a la cadena industrial como materia prima. Este ciclo reduce el desperdicio, baja el costo energético de la producción y cierra el loop de la economía circular. El mismo compromiso ambiental que aplicamos en la eficiencia energética de nuestros módulos Wood Frame lo aplicamos a la gestión de residuos industriales.
         </p>
 
         {/* Beneficios del reciclaje */}
@@ -180,7 +180,7 @@ export default function NosotrosPage() {
             { icon: Recycle, titulo: 'Retiro en planta', desc: 'Operamos directamente en las instalaciones del cliente con equipos especializados.' },
             { icon: Factory, titulo: 'Procesamiento propio', desc: 'Clasificación y acondicionamiento en nuestra planta de Zárate para devolución a la industria.' },
             { icon: Leaf, titulo: 'Materia prima circular', desc: 'Los materiales procesados vuelven a la cadena productiva, reduciendo el uso de recursos vírgenes.' },
-            { icon: Zap, titulo: 'Eficiencia energética', desc: 'Menos extracción primaria = menor consumo energético global. Coherente con nuestros módulos NCE.' },
+            { icon: Zap, titulo: 'Eficiencia energética', desc: 'Menos extracción primaria = menor consumo energético global. Coherente con nuestros módulos Wood Frame.' },
           ].map(({ icon: Icon, titulo, desc }) => (
             <div key={titulo} className="bg-eco-bg-card border border-eco-border rounded-xl p-5 flex flex-col gap-3">
               <div className="w-10 h-10 rounded-xl bg-eco-teal/10 flex items-center justify-center">
@@ -220,7 +220,7 @@ export default function NosotrosPage() {
                 <Factory className="w-5 h-5 text-eco-green mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-eco-text font-semibold">7.000 m² de planta cubierta</p>
-                  <p className="text-eco-text-muted text-sm">Fabricación de módulos NCE, producción de piscinas de fibra y área de procesamiento de reciclables — todo bajo el mismo techo. Control de calidad en cada etapa.</p>
+                  <p className="text-eco-text-muted text-sm">Fabricación de módulos Wood Frame, producción de piscinas de fibra y área de procesamiento de reciclables — todo bajo el mismo techo. Control de calidad en cada etapa.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

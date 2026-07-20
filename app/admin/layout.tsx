@@ -2,7 +2,7 @@ import Providers from '@/components/Providers'
 import AdminSidebar from '@/components/admin/Sidebar'
 
 export const metadata = {
-  title: 'Panel Admin | Eco Módulos & Piscinas',
+  title: 'Panel Admin | EcoFiver',
 }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

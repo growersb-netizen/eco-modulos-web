@@ -9,33 +9,33 @@ import type { Metadata } from 'next'
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Financiación Directa Hasta 120 Cuotas Sin Banco | Eco Módulos & Piscinas',
-  description: 'Financiación propia sin banco, sin garante y sin VERAZ. Módulos habitacionales y piscinas de fibra en hasta 120 cuotas fijas. Aprobación simple, cuota accesible. Todo el país.',
+  title: 'Financiación Directa Sin Banco | Piscinas Fijas, Módulos por ICC | EcoFiver',
+  description: 'Financiación propia sin banco, sin garante y sin VERAZ. Piscinas de fibra en cuotas fijas hasta 36 cuotas. Módulos habitacionales y combos hasta 120 cuotas ajustadas por índice ICC. Aprobación simple. Todo el país.',
   keywords: [
     'financiación sin banco módulos',
     'cuotas sin garante vivienda modular',
     'financiamiento piscinas argentina',
     'módulos hasta 120 cuotas',
-    'piscina en cuotas sin banco',
+    'piscina en cuotas fijas sin banco',
     'crédito vivienda sin VERAZ',
     'financiación directa cooperativa',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/financiacion' },
   openGraph: {
-    title: 'Financiación Hasta 120 Cuotas Sin Banco | Eco Módulos & Piscinas',
-    description: 'Módulos y piscinas en cuotas fijas sin banco ni garante. Aprobación simple en todo el país.',
+    title: 'Financiación Directa Sin Banco | EcoFiver',
+    description: 'Piscinas con cuota fija hasta 36 cuotas. Módulos y combos hasta 120 cuotas ajustadas por índice ICC. Sin banco ni garante. Aprobación simple en todo el país.',
     url: 'https://ecomodulosypiscinas.com.ar/financiacion',
   },
 }
 
 const FAQ = [
   { q: '¿Qué se requiere para acceder a la financiación?', r: 'Solo se requiere DNI argentino y teléfono de contacto. No se solicitan recibos de sueldo, garantes ni historial crediticio. La aprobación se gestiona directamente con nuestro equipo comercial.' },
-  { q: '¿Las cuotas son fijas o variables?', r: 'Las cuotas son fijas en pesos desde el inicio del contrato. No se ajustan por inflación ni por ningún índice. El valor pactado al momento de la firma se mantiene durante toda la vigencia del plan.' },
-  { q: '¿Hay descuento por pago contado?', r: 'Sí. El precio de lista tiene un descuento del 30% para pago contado. Este es el precio que se muestra en el catálogo.' },
+  { q: '¿Las cuotas son fijas o variables?', r: 'Depende del producto. Las piscinas tienen cuota fija en pesos desde el inicio del contrato: el valor pactado al firmar se mantiene igual durante toda la vigencia del plan. Los módulos habitacionales y los combos módulo + piscina se ajustan periódicamente según el índice ICC (Índice del Costo de la Construcción) — nunca por dólar ni por inflación general.' },
+  { q: '¿Hay descuento por pago contado?', r: 'Sí, cada producto tiene su propio descuento por pago contado respecto al precio de lista; el valor exacto varía según el modelo y se muestra en cada catálogo.' },
   { q: '¿Puedo cancelar anticipadamente?', r: 'Sí, es posible cancelar el saldo anticipadamente en cualquier momento sin penalidad. Si se cancela dentro de los primeros 6 meses, se aplica un descuento adicional sobre el saldo restante.' },
   { q: '¿Cuáles son los plazos de entrega con financiación?', r: 'Para proyectos financiados, los plazos de fabricación e instalación se coordinan al momento de confirmar el pedido y suscribir el plan. Nuestro equipo te informa los tiempos exactos según el modelo y la disponibilidad de stock.' },
   { q: '¿El flete y la instalación están incluidos en el precio?', r: 'El precio de catálogo no incluye flete ni instalación. Estos costos se calculan según la distancia desde nuestra planta en Zárate y se pueden incluir en el plan de financiación.' },
-  { q: '¿Puedo financiar el combo módulo + piscina?', r: 'Sí. El combo tiene financiación hasta 60 cuotas y un descuento del 25% sobre el precio total de ambos productos.' },
+  { q: '¿Puedo financiar el combo módulo + piscina?', r: 'Sí. Sumamos el valor nominal del módulo y la piscina (sin ningún descuento adicional) y financiamos ese total hasta 120 cuotas, ajustadas por índice ICC, con ingreso equivalente a 2 cuotas.' },
 ]
 
 const PLANES = [
@@ -82,7 +82,7 @@ export default async function FinanciacionPage() {
             <span className="text-eco-green">Hasta 120 cuotas.</span>
           </h1>
           <p className="text-eco-text-muted text-lg max-w-2xl mx-auto mb-8">
-            Financiación propia de la cooperativa. Aprobación directa, cuotas fijas y sin trámites complejos.
+            Financiación propia de la cooperativa. Piscinas con cuota fija; módulos y combos ajustados por índice ICC. Aprobación directa, sin trámites complejos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
@@ -101,7 +101,7 @@ export default async function FinanciacionPage() {
               { icon: Shield, text: 'Sin banco ni garante' },
               { icon: CheckCircle, text: 'Solo DNI argentino' },
               { icon: Clock, text: 'Aprobación en 24 horas' },
-              { icon: CheckCircle, text: 'Cuotas fijas en pesos' },
+              { icon: CheckCircle, text: 'Piscinas fijas · módulos por ICC' },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-2 text-eco-text-muted text-sm">
                 <Icon className="w-4 h-4 text-eco-green flex-shrink-0" />
@@ -117,10 +117,10 @@ export default async function FinanciacionPage() {
         <SectionTitle titulo="¿Qué financiamos?" subtitulo="La financiación cubre el módulo o la piscina terminados llave en mano. Flete e instalación se pueden incluir en el plan." />
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icono: '🏠', titulo: 'Viviendas modulares', detalle: 'De 18 a 72 m². Terminadas, habitables y financiadas hasta 120 cuotas.' },
-            { icono: '🔥', titulo: 'Quinchos y recreación', detalle: 'Módulos para esparcimiento. Financiación hasta 60 cuotas. Llave en mano.' },
-            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: '16 modelos instalados en 72 hs. Financiación hasta 120 cuotas sin banco.' },
-            { icono: '🔗', titulo: 'Combo módulo + piscina', detalle: '25% de descuento sobre el total. Financiación única hasta 60 cuotas.' },
+            { icono: '🏠', titulo: 'Viviendas modulares', detalle: 'De 18 a 72 m². Terminadas, habitables y financiadas hasta 120 cuotas ajustadas por ICC.' },
+            { icono: '🔥', titulo: 'Quinchos y recreación', detalle: 'Módulos para esparcimiento. Mismo esquema que las viviendas: financiación hasta 120 cuotas ajustadas por ICC. Llave en mano.' },
+            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: '16 modelos instalados en 72 hs. Financiación con cuota fija en pesos, hasta 36 cuotas.' },
+            { icono: '🔗', titulo: 'Combo módulo + piscina', detalle: 'Se suma el valor nominal de ambos productos, sin descuento adicional. Financiación única hasta 120 cuotas ajustadas por ICC.' },
           ].map(({ icono, titulo, detalle }) => (
             <div key={titulo} className="card-premium p-5 flex flex-col gap-2">
               <span className="text-2xl">{icono}</span>
@@ -170,7 +170,7 @@ export default async function FinanciacionPage() {
       {/* Tabla de coeficientes */}
       {coeficientes.length > 0 && (
         <section className="py-16 max-w-3xl mx-auto px-4">
-          <SectionTitle titulo="Tabla de coeficientes" subtitulo="El coeficiente se multiplica por el precio de contado para obtener el total financiado." />
+          <SectionTitle titulo="Tabla de coeficientes" subtitulo="Aplica a módulos, quinchos y combos (cuota ajustada por índice ICC). El coeficiente se multiplica por el precio de contado para obtener el total financiado. Las piscinas tienen su propio esquema de cuota fija — ver la sección de piscinas." />
           <div className="mt-8 overflow-hidden rounded-xl border border-eco-border">
             <table className="w-full text-sm">
               <thead>

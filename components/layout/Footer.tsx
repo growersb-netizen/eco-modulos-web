@@ -29,7 +29,7 @@ export default function Footer() {
                 className="text-lg font-bold uppercase tracking-wide text-white"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                Eco Módulos & Piscinas
+                EcoFiver
               </span>
             </Link>
             <p className="text-white/55 text-sm leading-relaxed mb-6">

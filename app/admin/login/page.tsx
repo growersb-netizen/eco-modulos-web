@@ -61,7 +61,7 @@ export default function LoginPage() {
               className="text-2xl font-bold uppercase tracking-wider"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Eco Módulos
+              EcoFiver
             </span>
           </div>
           <p className="text-eco-text-muted text-sm">Panel de Administración</p>
@@ -129,7 +129,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-eco-text-muted text-xs mt-6">
-          Panel exclusivo para el equipo de Eco Módulos & Piscinas
+          Panel exclusivo para el equipo de EcoFiver
         </p>
       </div>
     </div>

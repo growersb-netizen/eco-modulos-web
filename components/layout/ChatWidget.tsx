@@ -248,7 +248,7 @@ export default function ChatWidget() {
 
             {/* Footer */}
             <div className="bg-eco-bg-surface border-t border-eco-border px-4 py-1.5 text-center flex-shrink-0">
-              <p className="text-[10px] text-eco-text-muted/60">Eco Módulos & Piscinas · Asistente IA</p>
+              <p className="text-[10px] text-eco-text-muted/60">EcoFiver · Asistente IA</p>
             </div>
           </motion.div>
         )}

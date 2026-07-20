@@ -13,24 +13,24 @@ import type { Metadata } from 'next'
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Módulos NCE | Viviendas, Quinchos, Obradores y Campamentos | Eco Módulos & Piscinas',
-  description: 'Fabricantes líderes de módulos NCE en Argentina. Viviendas, quinchos, obradores, campamentos, oficinas rurales y unidades habitacionales. Llave en mano. Logística propia en todo el país. Financiación directa hasta 120 cuotas sin banco.',
+  title: 'Módulos Wood Frame | Viviendas, Quinchos, Obradores y Campamentos | EcoFiver',
+  description: 'Fabricantes líderes de módulos industrializados Wood Frame en Argentina. Viviendas, quinchos, obradores, campamentos, oficinas rurales y unidades habitacionales. Llave en mano. Logística propia en todo el país. Financiación directa hasta 120 cuotas ajustadas por índice ICC, sin banco.',
   keywords: [
     'módulos habitacionales argentina líderes',
-    'viviendas modulares NCE',
+    'viviendas modulares Wood Frame',
     'quinchos modulares prefabricados',
     'obradores modulares',
     'campamentos modulares oil gas',
     'módulos para minería argentina',
     'unidades habitacionales prefabricadas',
     'módulos llave en mano',
-    'construcción modular industrializada NCE',
+    'construcción modular industrializada Wood Frame',
     'módulos financiación 120 cuotas',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/modulos' },
   openGraph: {
-    title: 'Módulos NCE Llave en Mano | Eco Módulos & Piscinas',
-    description: 'Líderes en fabricación de módulos NCE. Viviendas, quinchos, obradores y campamentos. Logística propia en todo el país. Financiación hasta 120 cuotas.',
+    title: 'Módulos Wood Frame Llave en Mano | EcoFiver',
+    description: 'Líderes en fabricación de módulos Wood Frame. Viviendas, quinchos, obradores y campamentos. Logística propia en todo el país. Financiación hasta 120 cuotas ajustadas por ICC.',
     url: 'https://ecomodulosypiscinas.com.ar/modulos',
   },
 }
@@ -134,7 +134,7 @@ const RUBROS = [
 const VENTAJAS = [
   {
     icon: Star,
-    titulo: 'Líderes en módulos NCE',
+    titulo: 'Líderes en módulos Wood Frame',
     desc: 'Más de 15 años de experiencia y +2.000 unidades instaladas en Argentina. Fabricación propia en 7.000 m² de planta en Zárate, Buenos Aires.',
   },
   {
@@ -144,7 +144,7 @@ const VENTAJAS = [
   },
   {
     icon: Zap,
-    titulo: 'Eficiencia energética NCE',
+    titulo: 'Eficiencia energética Wood Frame',
     desc: 'Aislación térmica y acústica muy superior a la mampostería convencional. Menor consumo energético en cualquier clima del país.',
   },
   {
@@ -181,7 +181,7 @@ const FAQ = [
   },
   {
     q: '¿Pueden adaptarse a climas extremos como la Patagonia o el NOA?',
-    r: 'La tecnología NCE incluye doble panel con aislación que supera la normativa térmica básica. Esto los hace adecuados para el frío patagónico, las amplitudes térmicas del NOA y la aridez de Cuyo. Disponibles con refuerzos adicionales a pedido.',
+    r: 'La estructura Wood Frame con revestimiento en placas cementicias ofrece una aislación térmica superior a la mampostería convencional. Esto los hace adecuados para el frío patagónico, las amplitudes térmicas del NOA y la aridez de Cuyo. Disponibles con refuerzos adicionales a pedido.',
   },
 ]
 
@@ -215,20 +215,20 @@ export default async function ModulosPage() {
       <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <span className="badge-green mb-5 inline-flex">
-            Construcción modular industrializada · Tecnología NCE
+            Construcción modular industrializada · Tecnología Wood Frame
           </span>
           <h1
             className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Módulos NCE.<br />
+            Módulos Wood Frame.<br />
             <span className="text-eco-green">Llave en mano. Instalación en días.</span>
           </h1>
           <p className="text-eco-text-muted text-lg max-w-3xl mx-auto mb-4 leading-relaxed">
             Viviendas, quinchos, obradores, campamentos, oficinas de campo y más. Habitable desde el primer día: baño completo, cocina integrada, Obra Blanca terminada.
           </p>
           <p className="text-eco-text-muted text-sm max-w-2xl mx-auto mb-6">
-            Baño incluido desde 12 m² · Kitchenette desde 18 m² · Instalación en el día · Sin obra civil · Financiación hasta 120 cuotas
+            Baño incluido desde 12 m² · Kitchenette desde 18 m² · Instalación en el día · Sin obra civil · Financiación hasta 120 cuotas ajustadas por ICC
           </p>
           <div className="inline-flex items-center gap-2 bg-eco-green/8 border border-eco-green/20 text-eco-green text-xs font-semibold px-4 py-2 rounded-full mb-8">
             <CheckCircle className="w-3.5 h-3.5" />
@@ -272,7 +272,7 @@ export default async function ModulosPage() {
         <div className="max-w-7xl mx-auto px-4">
         <SectionTitle
           titulo="Aplicaciones"
-          subtitulo="Un módulo NCE puede resolver casi cualquier necesidad de espacio funcional sin recurrir a la obra tradicional."
+          subtitulo="Un módulo Wood Frame puede resolver casi cualquier necesidad de espacio funcional sin recurrir a la obra tradicional."
         />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {APLICACIONES.map(({ icon: Icon, titulo, desc }) => (
@@ -370,7 +370,7 @@ export default async function ModulosPage() {
                 { label: 'Baño completo', detalle: 'Incluido desde el módulo de 12 m². Inodoro, ducha, lavabo y ventilación. Funcional desde el primer día.' },
                 { label: 'Cocina kitchenette', detalle: 'Desde 18 m², con mesada, muebles y conexiones listas para usar. Todo incluido en el precio.' },
                 { label: 'Obra Blanca terminada', detalle: 'Interior fondeado en blanco, piso gris fondeado. Instalación eléctrica y sanitaria ejecutada.' },
-                { label: 'Exterior impermeabilizado', detalle: 'Revestimiento plástico texturizado resistente a la intemperie. Bajo mantenimiento, alta durabilidad.' },
+                { label: 'Exterior en placas cementicias', detalle: 'Revestimiento en placas cementicias, resistente a la intemperie. Bajo mantenimiento, alta durabilidad.' },
                 { label: 'Lista para personalizar', detalle: 'El cliente elige colores, muebles y detalles desde el primer día. Sin obra adicional.' },
               ].map(({ label, detalle }) => (
                 <div key={label} className="flex gap-3 bg-eco-bg rounded-xl px-4 py-3 border border-eco-border">
@@ -387,12 +387,12 @@ export default async function ModulosPage() {
         </div>
       </section>
 
-      {/* ── TECNOLOGÍA NCE ── */}
+      {/* ── SISTEMA CONSTRUCTIVO WOOD FRAME ── */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-5xl mx-auto px-4">
           <SectionTitle
-            titulo="Tecnología NCE"
-            subtitulo="No Convencional de Eficiencia energética — proceso de fabricación propio"
+            titulo="Sistema Constructivo Wood Frame"
+            subtitulo="Viviendas industrializadas — proceso de fabricación propio"
           />
           <p className="mt-4 text-eco-text-muted text-sm max-w-2xl mx-auto text-center">
             Fabricado íntegramente en nuestra planta de Zárate. Cada módulo sale terminado de fábrica — con baño, cocina y todas las instalaciones ejecutadas — listo para instalarse en el día y habitarse desde el primer momento.
@@ -401,9 +401,9 @@ export default async function ModulosPage() {
             {[
               { n: '01', titulo: 'Estructura Wood Frame', desc: 'Se utiliza tirante de primera calidad (2×6) que se cepilla y endereza mecánicamente hasta obtener tirantes de 2×2. Estructura liviana y extremadamente resistente. Sin perfiles metálicos expuestos ni corrosión.' },
               { n: '02', titulo: 'Sistema de ensamble triple', desc: 'Los paneles se ensamblan con triple fijación: encolado industrial, pegado químico y atornillado estructural. Garantiza rigidez durante el transporte y a lo largo de toda la vida útil del módulo.' },
-              { n: '03', titulo: 'Emplacado NCE — Núcleo de Celulosa Encapsulada', desc: 'Los paneles se cubren con placas de NCE (Núcleo de Celulosa Encapsulada). Material aislante que ofrece eficiencia térmica y acústica superior a cualquier sistema de steel frame o construcción tradicional.' },
-              { n: '04', titulo: 'Blindaje con resina náutica', desc: 'Cada panel ingresa a la espresora donde se aplica fibra de vidrio combinada con resina náutica en vuelta completa. Otorga resistencia estructural excepcional y protección exterior absoluta contra la humedad, el clima y la intemperie.' },
-              { n: '05', titulo: 'Obra Blanca', desc: 'Tras el fibrado, cada panel pasa por perfilado, lijado y pintado. Se entrega en Obra Blanca: interior fondeado en blanco, piso gris fondeado, exterior con revestimiento plástico texturizado impermeabilizado. Terminación prolija, habitable desde el primer día. El cliente personaliza a gusto.' },
+              { n: '03', titulo: 'Revestimiento exterior en placas cementicias', desc: 'La estructura de madera se reviste por fuera con placas cementicias, un material resistente a la intemperie, de bajo mantenimiento y alta durabilidad. Sin madera vista en el exterior.' },
+              { n: '04', titulo: 'Terminación interior en Durlock — Obra Blanca', desc: 'Interior fondeado en Durlock, piso gris fondeado, instalación eléctrica y sanitaria ejecutada. Terminación prolija, habitable desde el primer día. El cliente personaliza a gusto.' },
+              { n: '05', titulo: 'Estilo a elección: minimalista o americana', desc: 'Silueta minimalista (techo escondido/plano) o americana (techo a dos aguas) — ambas con el mismo sistema constructivo y revestimiento. Se define según el gusto del cliente.' },
             ].map((capa) => (
               <div key={capa.n} className="flex gap-4 bg-eco-bg-surface border border-eco-border rounded-xl p-5">
                 <span

@@ -9,8 +9,8 @@ import type { Metadata } from 'next'
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Piscinas de Fibra de Vidrio | Catálogo y Precios | Eco Módulos & Piscinas',
-  description: 'Catálogo de piscinas de fibra de vidrio: 16 modelos desde 2×3 m hasta 4×8 m. Instalación en 3-5 días. Financiación directa hasta 120 cuotas sin banco. Modelo autoportante sin obra ni excavación.',
+  title: 'Piscinas de Fibra de Vidrio | Catálogo y Precios | EcoFiver',
+  description: 'Catálogo de piscinas de fibra de vidrio: 16 modelos desde 2×3 m hasta 4×8 m. Instalación en 3-5 días. Financiación directa con cuota fija en pesos, hasta 36 cuotas, sin banco. Modelo autoportante sin obra ni excavación.',
   keywords: [
     'piscinas fibra de vidrio argentina',
     'piscinas prefabricadas precio',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/piscinas' },
   openGraph: {
-    title: 'Piscinas de Fibra de Vidrio | Eco Módulos & Piscinas',
-    description: '16 modelos de piscinas de fibra de vidrio. Stock disponible — instalación el mismo día. Financiación hasta 120 cuotas sin banco ni garante.',
+    title: 'Piscinas de Fibra de Vidrio | EcoFiver',
+    description: '16 modelos de piscinas de fibra de vidrio. Stock disponible — instalación el mismo día. Financiación con cuota fija en pesos, hasta 36 cuotas, sin banco ni garante.',
     url: 'https://ecomodulosypiscinas.com.ar/piscinas',
   },
 }

@@ -5,9 +5,9 @@ import { X, Video, Phone, Mail, User, Clock, MessageSquare, CheckCircle, Externa
 import { cn } from '@/lib/utils'
 
 const PRODUCTOS = [
-  { value: 'modulo', label: '🏠 Módulo habitacional / Vivienda modular', sub: 'De 6 a 72 m², tecnología NCE' },
+  { value: 'modulo', label: '🏠 Módulo habitacional / Vivienda modular', sub: 'De 6 a 72 m², tecnología Wood Frame' },
   { value: 'piscina', label: '🏊 Piscina de fibra de vidrio', sub: '16 modelos, instalación en días' },
-  { value: 'combo', label: '🏠🏊 Combo módulo + piscina', sub: 'Ahorro del 25% por compra conjunta' },
+  { value: 'combo', label: '🏠🏊 Combo módulo + piscina', sub: 'Un solo plan de financiación' },
   { value: 'otro', label: '📋 Evaluación general / tengo dudas', sub: 'Hablemos sin compromiso' },
 ]
 

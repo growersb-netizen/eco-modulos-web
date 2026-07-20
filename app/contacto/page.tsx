@@ -5,7 +5,7 @@ import { MessageCircle, MapPin, Clock, Phone } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contacto | WhatsApp y Videollamada | Eco Módulos & Piscinas',
+  title: 'Contacto | WhatsApp y Videollamada | EcoFiver',
   description: 'Contactanos por WhatsApp, email o agendá una videollamada gratuita. Asesores especializados en módulos habitacionales y piscinas de fibra de vidrio. Respondemos en menos de 2 horas.',
   keywords: [
     'contacto eco módulos piscinas',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/contacto' },
   openGraph: {
-    title: 'Contacto | Eco Módulos & Piscinas',
+    title: 'Contacto | EcoFiver',
     description: 'Escribinos por WhatsApp o agendá una videollamada gratuita con nuestros asesores.',
     url: 'https://ecomodulosypiscinas.com.ar/contacto',
   },
@@ -42,7 +42,7 @@ const WA_LINKS = [
     titulo: 'Consulta general',
     desc: 'Cualquier consulta, combo módulo + piscina o información general',
     tel: '5491168733406',
-    text: 'Hola, quiero consultar sobre Eco Módulos & Piscinas',
+    text: 'Hola, quiero consultar sobre EcoFiver',
   },
 ]
 
@@ -144,7 +144,7 @@ export default function ContactoPage() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación Eco Módulos en Zárate"
+                title="Ubicación EcoFiver en Zárate"
               />
             </div>
           </div>

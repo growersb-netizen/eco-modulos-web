@@ -76,7 +76,7 @@ export default function ProductCard({
               </svg>
             )}
             <p className="text-eco-green text-xs font-semibold uppercase tracking-widest opacity-50 mt-2 relative z-10">
-              {tipo === 'modulo' ? 'Módulo NCE' : 'Fibra de vidrio'}
+              {tipo === 'modulo' ? 'Módulo Wood Frame' : 'Fibra de vidrio'}
             </p>
           </div>
         )}

@@ -58,7 +58,7 @@ export default function ContactForm() {
           ¡Consulta enviada!
         </h3>
         <p className="text-eco-text-muted max-w-md">
-          Lo contactaremos a la brevedad por WhatsApp. ¡Gracias por confiar en Eco Módulos & Piscinas!
+          Lo contactaremos a la brevedad por WhatsApp. ¡Gracias por confiar en EcoFiver!
         </p>
         <button
           onClick={() => setEnviado(false)}

@@ -48,7 +48,7 @@ export default function AdminSidebar() {
       <div className="flex items-center gap-2 px-4 py-5 border-b border-[#2a2a2a]">
         <Leaf className="w-5 h-5 text-eco-green" />
         <span className="text-sm font-bold text-eco-text uppercase tracking-wide" style={{ fontFamily: 'var(--font-display)' }}>
-          Eco Módulos Admin
+          EcoFiver Admin
         </span>
       </div>
 

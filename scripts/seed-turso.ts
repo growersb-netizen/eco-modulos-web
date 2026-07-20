@@ -16,7 +16,7 @@ async function run() {
   const hash = await bcrypt.hash(adminPassword, 12)
   const now = new Date().toISOString()
 
-  const descModulo = 'Módulo habitacional de tecnología NCE. Estructura Wood Frame, blindaje de fibra de vidrio con resina náutica, Núcleo de Celulosa Encapsulada. Eficiencia térmica y acústica superior. Llave en mano en Obra Blanca.'
+  const descModulo = 'Módulo habitacional con sistema constructivo Wood Frame: estructura de madera, revestimiento exterior en placas cementicias y terminación interior en Durlock. Eficiencia térmica y acústica superior. Llave en mano en Obra Blanca.'
   const usosModulo = JSON.stringify(['Vivienda', 'Ampliación', 'Oficina', 'Quincho', 'Glamping', 'Inversión'])
   const descPiscina = 'Piscina de fibra de vidrio de alta resistencia. Resistente a rayos UV, químicos y temperatura. Instalación rápida y limpia.'
   const usosPiscina = JSON.stringify(['Residencial', 'Comercial', 'Glamping', 'Hotel', 'Club'])
@@ -80,7 +80,7 @@ async function run() {
     { sql: `INSERT OR IGNORE INTO testimonios (id, nombre, localidad, producto, texto, estrellas, activo, orden, creadoEn) VALUES (?,?,?,?,?,5,1,1,?)`,
       args: ['test-2','Roberto Fernández','Córdoba Capital','Piscina Minimalista Mediana','La piscina superó todas mis expectativas. La fibra se mantiene perfecta después de dos temporadas.',now] },
     { sql: `INSERT OR IGNORE INTO testimonios (id, nombre, localidad, producto, texto, estrellas, activo, orden, creadoEn) VALUES (?,?,?,?,?,5,1,2,?)`,
-      args: ['test-3','Laura Martínez','Mendoza','Combo Módulo 48 m² + Piscina','Compramos el combo en 60 cuotas. Hoy tenemos nuestro espacio de glamping generando ingresos.',now] },
+      args: ['test-3','Laura Martínez','Mendoza','Combo Módulo 48 m² + Piscina','Compramos el combo en un solo plan de financiación. Hoy tenemos nuestro espacio de glamping generando ingresos.',now] },
 
     // Config
     ...([
@@ -92,12 +92,12 @@ async function run() {
       ['hero_piscinas_desde','Desde $2.000.000'],
       ['hero_piscinas_cuota','Cuotas desde $19.200/mes'],
       ['hero_combo_desde','Módulo + Piscina'],
-      ['hero_combo_cuota','60 cuotas fijas'],
+      ['hero_combo_cuota','Hasta 120 cuotas, ajustadas por ICC'],
       ['empresa_telefono','+54 9 11 6873-3406'],
       ['empresa_email','info@ecomodulosypiscinas.com.ar'],
       ['empresa_direccion','Zárate, Provincia de Buenos Aires'],
       ['social_instagram','https://instagram.com/ecomodulosypiscinas'],
-      ['combo_descuento','25'],
+      ['combo_descuento','0'],
       ['precio_lista_multiplicador','1.40'],
       ['horarios','Lun–Vie 9–18hs · Sáb 9–13hs'],
     ] as [string, string][]).map(([clave, valor]) => ({
@@ -107,7 +107,7 @@ async function run() {
 
     // Blog
     { sql: `INSERT OR IGNORE INTO articulos_blog (id, titulo, slug, resumen, contenido, categoria, publicado, creadoEn, actualizadoEn) VALUES (?,?,?,?,?,?,1,?,?)`,
-      args: ['blog-1','Casa modular vs ladrillo: comparativa real 2026','casa-modular-vs-ladrillo','Costos, tiempos y calidad de vivienda modular NCE versus ladrillo en Argentina 2026.','<h2>Casa modular vs ladrillo en Argentina</h2><p>Los módulos NCE se instalan en 5-10 días versus 12-24 meses del ladrillo. Financiación directa sin banco hasta 120 cuotas.','modulos',now,now] },
+      args: ['blog-1','Casa modular vs ladrillo: comparativa real 2026','casa-modular-vs-ladrillo','Costos, tiempos y calidad de vivienda modular Wood Frame versus ladrillo en Argentina 2026.','<h2>Casa modular vs ladrillo en Argentina</h2><p>Los módulos Wood Frame se instalan en 5-10 días versus 12-24 meses del ladrillo. Financiación directa sin banco, hasta 120 cuotas ajustadas por ICC.','modulos',now,now] },
     { sql: `INSERT OR IGNORE INTO articulos_blog (id, titulo, slug, resumen, contenido, categoria, publicado, creadoEn, actualizadoEn) VALUES (?,?,?,?,?,?,1,?,?)`,
       args: ['blog-2','¿Cuánto cuesta una piscina de fibra en Argentina?','costo-piscina-fibra-argentina','Precios actualizados de piscinas de fibra de vidrio. Modelos, tamaños y financiación.','<h2>Precios de piscinas de fibra en Argentina</h2><p>Desde $2.000.000 la Miniportante hasta $6.500.000 la Minimalista Grande. Instalación en 3-5 días.','piscinas',now,now] },
     { sql: `INSERT OR IGNORE INTO articulos_blog (id, titulo, slug, resumen, contenido, categoria, publicado, creadoEn, actualizadoEn) VALUES (?,?,?,?,?,?,1,?,?)`,

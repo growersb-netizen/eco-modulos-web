@@ -51,7 +51,7 @@ const OBRAS = [
     localidad: 'Mar del Plata',
     provincia: 'Buenos Aires',
     tipo: 'combo',
-    descripcion: 'Proyecto integral: módulo de 54 m² con 2 dormitorios + piscina de fibra de vidrio. Financiación en 60 cuotas fijas.',
+    descripcion: 'Proyecto integral: módulo de 54 m² con 2 dormitorios + piscina de fibra de vidrio. Financiado en un solo plan, ajustado por ICC.',
     imagen: 'https://picsum.photos/id/28/800/600',
   },
   {

@@ -16,7 +16,7 @@ const SECCIONES: { titulo: string; items: ConfigEntry[] }[] = [
   {
     titulo: 'Empresa',
     items: [
-      { label: 'Nombre empresa', key: 'empresa_nombre', placeholder: 'Eco Módulos & Piscinas' },
+      { label: 'Nombre empresa', key: 'empresa_nombre', placeholder: 'EcoFiver' },
       { label: 'Dirección', key: 'empresa_direccion', placeholder: 'Zárate, Buenos Aires' },
       { label: 'Teléfono general', key: 'empresa_telefono', placeholder: '+54 9 11 6873-3406' },
       { label: 'Email', key: 'empresa_email', type: 'url', placeholder: 'info@ecomodulosypiscinas.com.ar' },

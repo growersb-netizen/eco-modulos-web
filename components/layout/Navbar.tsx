@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils'
 const links = [
   { href: '/modulos',     label: 'Módulos' },
   { href: '/piscinas',    label: 'Piscinas' },
-  { href: '/combo',       label: 'Combo 25% OFF' },
+  { href: '/combo',       label: 'Combo' },
   { href: '/financiacion',label: 'Financiación' },
   { href: '/obras',       label: 'Obras' },
   { href: '/nosotros',    label: 'Nosotros' },
@@ -69,7 +69,7 @@ export default function Navbar() {
               )}
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Eco Módulos & Piscinas
+              EcoFiver
             </span>
           </Link>
 

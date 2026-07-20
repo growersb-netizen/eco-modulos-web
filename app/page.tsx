@@ -10,8 +10,8 @@ import type { Metadata } from 'next'
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra en Argentina',
-  description: 'Fabricamos viviendas modulares NCE y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco ni garante. Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES.',
+  title: 'EcoFiver | Viviendas Modulares y Piscinas de Fibra en Argentina',
+  description: 'Fabricamos viviendas modulares Wood Frame y piscinas de fibra de vidrio con financiación propia sin banco ni garante. Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES.',
   keywords: [
     'viviendas modulares argentina',
     'casas modulares precio',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar' },
   openGraph: {
-    title: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra',
-    description: 'Módulos habitacionales y piscinas de fibra con financiación directa hasta 120 cuotas. Sin banco ni garante. Todo el país.',
+    title: 'EcoFiver | Viviendas Modulares y Piscinas de Fibra',
+    description: 'Módulos habitacionales Wood Frame y piscinas de fibra con financiación directa sin banco ni garante. Todo el país.',
     url: 'https://ecomodulosypiscinas.com.ar',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
@@ -60,7 +60,7 @@ export default async function HomePage() {
   const heroPiscinasDesde = cfg.hero_piscinas_desde || 'Desde $2.000.000'
   const heroPiscinasCuota = cfg.hero_piscinas_cuota || 'Cuotas desde $19.200/mes'
   const heroComboDesde    = cfg.hero_combo_desde    || 'Módulo + Piscina'
-  const heroComboCuota    = cfg.hero_combo_cuota    || '60 cuotas fijas'
+  const heroComboCuota    = cfg.hero_combo_cuota    || 'Hasta 120 cuotas, ajustadas por ICC'
 
   const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
 
@@ -133,10 +133,10 @@ export default async function HomePage() {
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
             {[
               'Más de 15 años de trayectoria',
-              'Líderes en módulos NCE',
+              'Líderes en módulos Wood Frame',
               'Cooperativa INAES',
               'Logística propia · Todo el país',
-              'Financiación directa hasta 120 cuotas',
+              'Financiación directa · piscinas fijas, módulos por ICC',
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 text-eco-text-muted text-sm py-1">
                 <div className="w-1 h-1 rounded-full bg-eco-green flex-shrink-0" />
@@ -160,7 +160,7 @@ export default async function HomePage() {
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                titulo: 'Módulos NCE',
+                titulo: 'Módulos Wood Frame',
                 sub: 'Llave en mano · Instalación el mismo día',
                 desde: heroModulosDesde,
                 cuota: heroModulosCuota,
@@ -173,7 +173,7 @@ export default async function HomePage() {
                 desde: heroPiscinasDesde,
                 cuota: heroPiscinasCuota,
                 href: '/piscinas',
-                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Financiación hasta 120 cuotas.',
+                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Financiación con cuota fija hasta 36 cuotas.',
               },
               {
                 titulo: 'Combo Especial',
@@ -181,8 +181,7 @@ export default async function HomePage() {
                 desde: heroComboDesde,
                 cuota: heroComboCuota,
                 href: '/combo',
-                desc: 'Al combinar un módulo con una piscina, el descuento es del 25% sobre el precio total.',
-                badge: '25% OFF',
+                desc: 'Combine su módulo con una piscina y financie el valor total en un solo plan, hasta 120 cuotas ajustadas por ICC.',
               },
             ].map((prod) => (
               <Link
@@ -190,11 +189,6 @@ export default async function HomePage() {
                 href={prod.href}
                 className="card-premium group p-8 flex flex-col gap-5 cursor-pointer"
               >
-                {prod.badge && (
-                  <span className="self-start bg-eco-teal/10 text-eco-teal text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-eco-teal/20">
-                    {prod.badge}
-                  </span>
-                )}
                 <div>
                   <p className="text-eco-text-muted text-[11px] uppercase tracking-widest font-medium mb-1.5">{prod.sub}</p>
                   <h3
@@ -369,7 +363,7 @@ export default async function HomePage() {
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Wrench, titulo: 'Fabricación propia', desc: 'Planta de 7.000 m² en Zárate. Controlamos todo el proceso productivo.' },
-              { icon: Shield, titulo: 'Financiación directa', desc: 'Sin banco ni garante. Hasta 120 cuotas con aprobación directa.' },
+              { icon: Shield, titulo: 'Financiación directa', desc: 'Sin banco ni garante. Piscinas con cuota fija; módulos y combos hasta 120 cuotas ajustadas por ICC.' },
               { icon: Truck, titulo: 'Instalación inmediata', desc: 'Stock disponible. Módulos y piscinas instalados en el día. Logística propia.' },
               { icon: Award, titulo: 'Respaldo cooperativo', desc: 'Cooperativa INAES · CUIT 30-71807393-2 · Más de 15 años de trayectoria.' },
             ].map(({ icon: Icon, titulo, desc }) => (
@@ -406,7 +400,7 @@ export default async function HomePage() {
             ¿Tiene un proyecto en mente?
           </h2>
           <p className="text-lg text-white/60 mb-10 leading-relaxed">
-            Contáctenos sin compromiso. Financiación directa sin banco, hasta 120 cuotas.
+            Contáctenos sin compromiso. Financiación directa sin banco: piscinas con cuota fija, módulos y combos hasta 120 cuotas ajustadas por ICC.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

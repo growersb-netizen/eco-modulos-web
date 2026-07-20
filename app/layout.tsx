@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     (process.env.NEXT_PUBLIC_SITE_URL || 'https://ecomodulosypiscinas.com.ar').replace(/^﻿/, '')
   ),
   title: {
-    default: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra en Argentina',
-    template: '%s | Eco Módulos & Piscinas',
+    default: 'EcoFiver | Viviendas Modulares y Piscinas de Fibra en Argentina',
+    template: '%s | EcoFiver',
   },
   description:
-    'Fabricamos viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio. Financiación directa hasta 120 cuotas sin banco. Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES.',
+    'Fabricamos viviendas modulares (tecnología Wood Frame) y piscinas de fibra de vidrio. Financiación directa sin banco. Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES.',
   keywords: [
     'viviendas modulares',
     'piscinas fibra de vidrio',
@@ -39,31 +39,32 @@ export const metadata: Metadata = {
     'financiacion sin banco',
     'modulos habitacionales',
     'piscinas argentina',
+    'ecofiver',
     'eco modulos',
-    'NCE tecnologia',
+    'wood frame tecnologia',
     'cooperativa de trabajo eco zarate',
   ],
   openGraph: {
     type: 'website',
     locale: 'es_AR',
     url: 'https://ecomodulosypiscinas.com.ar',
-    siteName: 'Eco Módulos & Piscinas',
-    title: 'Eco Módulos & Piscinas | Viviendas Modulares y Piscinas de Fibra',
+    siteName: 'EcoFiver',
+    title: 'EcoFiver | Viviendas Modulares y Piscinas de Fibra',
     description:
-      'Fabricamos viviendas modulares y piscinas de fibra de vidrio con financiación directa hasta 120 cuotas sin banco.',
+      'Fabricamos viviendas modulares Wood Frame y piscinas de fibra de vidrio con financiación directa sin banco.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Eco Módulos & Piscinas',
+        alt: 'EcoFiver',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eco Módulos & Piscinas',
-    description: 'Viviendas modulares y piscinas de fibra. Hasta 120 cuotas sin banco.',
+    title: 'EcoFiver',
+    description: 'Viviendas modulares Wood Frame y piscinas de fibra. Financiación directa sin banco.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -76,12 +77,12 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://ecomodulosypiscinas.com.ar/#business',
-  name: 'Eco Módulos & Piscinas',
-  alternateName: ['Eco Modulos Piscinas', 'Cooperativa de Trabajo Eco Zárate Limitada', 'Cooperativa Eco Zárate', 'EcoModulos y Piscinas'],
+  name: 'EcoFiver',
+  alternateName: ['Eco Módulos & Piscinas', 'Eco Modulos Piscinas', 'EcoModulos y Piscinas', 'Cooperativa de Trabajo Eco Zárate Limitada', 'Cooperativa Eco Zárate'],
   legalName: 'Cooperativa de Trabajo Eco Zárate Limitada',
   taxID: '30-71807393-2',
   description:
-    'Fabricante directo de viviendas modulares (tecnología NCE) y piscinas de fibra de vidrio con financiación propia hasta 120 cuotas sin banco. Cooperativa de Trabajo Eco Zárate Limitada, inscripta ante INAES. Más de 15 años de trayectoria.',
+    'Fabricante directo de viviendas modulares (tecnología Wood Frame) y piscinas de fibra de vidrio con financiación propia sin banco. Cooperativa de Trabajo Eco Zárate Limitada, inscripta ante INAES. Más de 15 años de trayectoria.',
   url: 'https://ecomodulosypiscinas.com.ar',
   telephone: '+5491168733406',
   email: 'info@ecomodulosypiscinas.com.ar',
@@ -126,8 +127,8 @@ const jsonLd = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Product',
-          name: 'Módulos Habitacionales NCE',
-          description: 'Viviendas modulares prefabricadas de 6 a 72 m² con tecnología NCE',
+          name: 'Módulos Habitacionales Wood Frame',
+          description: 'Viviendas modulares prefabricadas de 6 a 72 m² con tecnología Wood Frame',
           url: 'https://ecomodulosypiscinas.com.ar/modulos',
         },
       },

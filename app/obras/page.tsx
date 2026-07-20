@@ -7,18 +7,18 @@ import type { Metadata } from 'next'
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Galería de Obras | Módulos y Piscinas Instalados | Eco Módulos & Piscinas',
-  description: 'Galería de proyectos reales: módulos habitacionales NCE y piscinas de fibra de vidrio instalados en toda Argentina. Viví la experiencia de nuestros clientes.',
+  title: 'Galería de Obras | Módulos y Piscinas Instalados | EcoFiver',
+  description: 'Galería de proyectos reales: módulos habitacionales Wood Frame y piscinas de fibra de vidrio instalados en toda Argentina. Viví la experiencia de nuestros clientes.',
   keywords: [
     'galería módulos habitacionales instalados',
     'fotos piscinas fibra vidrio argentina',
     'obras viviendas modulares',
-    'proyectos reales módulos NCE',
+    'proyectos reales módulos Wood Frame',
     'instalaciones piscinas fibra',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/obras' },
   openGraph: {
-    title: 'Galería de Obras | Eco Módulos & Piscinas',
+    title: 'Galería de Obras | EcoFiver',
     description: 'Proyectos reales de módulos habitacionales y piscinas de fibra instalados en todo el país.',
     url: 'https://ecomodulosypiscinas.com.ar/obras',
   },
