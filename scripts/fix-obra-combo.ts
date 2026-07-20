@@ -8,7 +8,7 @@ async function main() {
   for (const o of obras) {
     await prisma.obra.update({
       where: { id: o.id },
-      data: { descripcion: o.descripcion.replace('Financiación en 60 cuotas fijas.', 'Financiado en un solo plan, ajustado por ICC.') },
+      data: { descripcion: (o.descripcion ?? '').replace('Financiación en 60 cuotas fijas.', 'Financiado en un solo plan, ajustado por ICC.') },
     })
     console.log(`Patcheada obra: ${o.id}`)
   }

@@ -58,12 +58,8 @@ const faqJsonLd = {
 }
 
 export default async function PiscinasPage() {
-  const [piscinas, coeficientes] = await Promise.all([
-    prisma.piscina.findMany({ where: { activo: true }, orderBy: [{ destacada: 'desc' }, { orden: 'asc' }] }),
-    prisma.coeficienteCuota.findMany({ where: { activo: true }, orderBy: { cuotas: 'asc' } }),
-  ])
+  const piscinas = await prisma.piscina.findMany({ where: { activo: true }, orderBy: [{ destacada: 'desc' }, { orden: 'asc' }] })
 
-  const coef12 = coeficientes.find((c) => c.cuotas === 12)?.coef ?? 1.15
   const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa consultar por piscinas de fibra de vidrio')
 
   return (
@@ -129,7 +125,7 @@ export default async function PiscinasPage() {
         <SectionTitle titulo="Catálogo completo" centrado={false} />
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {piscinas.map((p) => (
-            <ProductCard key={p.id} id={p.id} nombre={p.nombre} medida={p.medida} descripcion={p.descripcion} usos={JSON.parse(p.usos || '[]')} precio_contado={p.precio_contado} precio_lista={p.precio_lista} imagen={p.imagen} tipo="piscina" destacada={p.destacada} coeficiente12={coef12} />
+            <ProductCard key={p.id} id={p.id} nombre={p.nombre} medida={p.medida} descripcion={p.descripcion} usos={JSON.parse(p.usos || '[]')} precio_contado={p.precio_contado} precio_lista={p.precio_lista} imagen={p.imagen} tipo="piscina" destacada={p.destacada} />
           ))}
         </div>
       </section>

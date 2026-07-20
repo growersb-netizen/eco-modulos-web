@@ -13,10 +13,6 @@ export function formatPeso(valor: number): string {
   }).format(valor)
 }
 
-export function calcularCuota(precioLista: number, coef: number, cuotas: number): number {
-  return Math.ceil((precioLista * coef) / cuotas)
-}
-
 export function slugify(texto: string): string {
   return texto
     .toLowerCase()

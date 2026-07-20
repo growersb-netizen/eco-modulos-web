@@ -1,44 +1,35 @@
 import SectionTitle from '@/components/shared/SectionTitle'
 import VideoCallButton from '@/components/shared/VideoCallButton'
-import { MessageCircle, Award, Users, MapPin, Factory, Shield, Leaf, Recycle, Building2, Zap } from 'lucide-react'
+import { MessageCircle, Award, Users, MapPin, Factory, Shield, Building2 } from 'lucide-react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Quiénes Somos | Cooperativa de Trabajo Eco Zárate Ltda. | EcoFiver',
-  description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. +15 años fabricando módulos Wood Frame, piscinas de fibra y gestionando materiales reciclables. Planta en Zárate, Buenos Aires.',
+  description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. +15 años fabricando módulos Wood Frame y piscinas de fibra. Planta en Zárate, Buenos Aires.',
   keywords: [
     'cooperativa de trabajo eco zarate limitada',
     'cooperativa eco zarate INAES',
     'eco modulos y piscinas quienes somos',
     'fabricante módulos habitacionales Zárate Buenos Aires',
     'empresa piscinas fibra vidrio argentina',
-    'cooperativa reciclaje industrial argentina',
     'CUIT 30718073932',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/nosotros' },
   openGraph: {
     title: 'Cooperativa de Trabajo Eco Zárate Ltda. | EcoFiver',
-    description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. Fabricación modular Wood Frame, piscinas de fibra y gestión de reciclaje industrial.',
+    description: 'Cooperativa de Trabajo Eco Zárate Limitada · CUIT 30-71807393-2 · Inscripta ante INAES. Fabricación modular Wood Frame y piscinas de fibra.',
     url: 'https://ecomodulosypiscinas.com.ar/nosotros',
   },
 }
 
 const HITOS = [
   { año: '2008', hecho: 'Fundación de la Cooperativa de Trabajo Eco Zárate Limitada en Zárate, Buenos Aires. Inscripción ante INAES · CUIT 30-71807393-2.' },
-  { año: '2010', hecho: 'Inicio del programa de gestión de materiales reciclables con industrias de la región.' },
   { año: '2012', hecho: 'Lanzamiento de la primera línea de módulos habitacionales con sistema constructivo Wood Frame.' },
   { año: '2015', hecho: 'Incorporación de piscinas de fibra de vidrio al catálogo. Expansión logística a todo el país.' },
-  { año: '2018', hecho: 'Expansión de planta a 7.000 m² en Zárate. Inicio de contratos de reciclaje con empresas de escala nacional.' },
+  { año: '2018', hecho: 'Expansión de planta a 7.000 m² en Zárate.' },
   { año: '2021', hecho: 'Lanzamiento del Combo Módulo + Piscina con financiación propia. Primeros contratos corporativos de obradores y campamentos.' },
   { año: '2024', hecho: 'Más de 2.000 proyectos instalados en Argentina. Presencia activa en 23 provincias.' },
-]
-
-const RECICLAJE_CLIENTES = [
-  { nombre: 'Carrefour', icono: '🛒', sector: 'Retail / Supermercados' },
-  { nombre: 'Toyota', icono: '🏭', sector: 'Industria automotriz' },
-  { nombre: 'Atucha', icono: '⚡', sector: 'Energía / Nuclear' },
-  { nombre: 'TransBA', icono: '🚌', sector: 'Transporte público' },
 ]
 
 const AREAS = [
@@ -47,12 +38,6 @@ const AREAS = [
     titulo: 'Área de Soluciones Constructivas',
     desc: 'Módulos Wood Frame, obradores, campamentos, unidades habitacionales y piscinas de fibra. Proyectos para empresas, municipios y particulares.',
     wa: 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, necesito información sobre módulos y soluciones constructivas.'),
-  },
-  {
-    icono: '♻️',
-    titulo: 'Área de Gestión de Reciclaje',
-    desc: 'Retiro, clasificación y procesamiento de materiales reciclables en empresas industriales, comerciales e institucionales.',
-    wa: 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, quisiera consultar sobre el servicio de gestión de reciclaje.'),
   },
   {
     icono: '📋',
@@ -79,7 +64,7 @@ export default function NosotrosPage() {
             <span className="text-eco-green">de trayectoria cooperativa</span>
           </h1>
           <p className="text-eco-text-muted text-lg max-w-2xl mx-auto leading-relaxed">
-            Fabricación modular, piscinas de fibra y gestión de materiales reciclables. Una cooperativa con múltiples rubros, escala industrial y presencia en todo el país.
+            Fabricación modular y piscinas de fibra. Una cooperativa con escala industrial y presencia en todo el país.
           </p>
         </div>
       </section>
@@ -107,7 +92,7 @@ export default function NosotrosPage() {
       <section className="py-16 max-w-4xl mx-auto px-4">
         <SectionTitle titulo="Nuestra historia" centrado={false} />
         <p className="mt-6 text-eco-text-muted leading-relaxed">
-          EcoFiver nació en 2008 como una cooperativa de trabajo en Zárate, provincia de Buenos Aires. Desde el inicio operamos en dos ejes complementarios: la fabricación de soluciones modulares para infraestructura y vivienda, y la gestión profesional de materiales reciclables para la industria.
+          EcoFiver nació en 2008 como una cooperativa de trabajo en Zárate, provincia de Buenos Aires, dedicada a la fabricación de soluciones modulares para infraestructura y vivienda, y de piscinas de fibra de vidrio.
         </p>
         <p className="mt-4 text-eco-text-muted leading-relaxed">
           Fabricamos módulos constructivos con sistema Wood Frame (estructura de madera, revestimiento exterior en placas cementicias, terminación interior en Durlock) — obradores, campamentos, unidades habitacionales, oficinas de campo — y piscinas de fibra de vidrio. Todo en planta propia en Zárate, con logística directa a todo el país y financiación sin banco.
@@ -157,59 +142,6 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* ── SECCIÓN RECICLAJE ── */}
-      <section className="py-20 max-w-5xl mx-auto px-4">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="inline-block bg-eco-teal/10 text-eco-teal text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full">Compromiso ambiental</span>
-        </div>
-        <SectionTitle
-          titulo="Gestión de materiales reciclables"
-          subtitulo="Un eje estratégico de la cooperativa — y parte de la base de nuestra eficiencia."
-          centrado={false}
-        />
-        <p className="mt-6 text-eco-text-muted leading-relaxed">
-          Además de la fabricación modular y las piscinas, la cooperativa opera un área especializada en retiro, clasificación y procesamiento de materiales reciclables generados por grandes empresas industriales, comerciales e institucionales de la Argentina.
-        </p>
-        <p className="mt-4 text-eco-text-muted leading-relaxed">
-          Los materiales retirados — plásticos, metales, cartón, vidrio y otros — son procesados en nuestra planta y reincorporados a la cadena industrial como materia prima. Este ciclo reduce el desperdicio, baja el costo energético de la producción y cierra el loop de la economía circular. El mismo compromiso ambiental que aplicamos en la eficiencia energética de nuestros módulos Wood Frame lo aplicamos a la gestión de residuos industriales.
-        </p>
-
-        {/* Beneficios del reciclaje */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {[
-            { icon: Recycle, titulo: 'Retiro en planta', desc: 'Operamos directamente en las instalaciones del cliente con equipos especializados.' },
-            { icon: Factory, titulo: 'Procesamiento propio', desc: 'Clasificación y acondicionamiento en nuestra planta de Zárate para devolución a la industria.' },
-            { icon: Leaf, titulo: 'Materia prima circular', desc: 'Los materiales procesados vuelven a la cadena productiva, reduciendo el uso de recursos vírgenes.' },
-            { icon: Zap, titulo: 'Eficiencia energética', desc: 'Menos extracción primaria = menor consumo energético global. Coherente con nuestros módulos Wood Frame.' },
-          ].map(({ icon: Icon, titulo, desc }) => (
-            <div key={titulo} className="bg-eco-bg-card border border-eco-border rounded-xl p-5 flex flex-col gap-3">
-              <div className="w-10 h-10 rounded-xl bg-eco-teal/10 flex items-center justify-center">
-                <Icon className="w-5 h-5 text-eco-teal" />
-              </div>
-              <h3 className="font-bold text-eco-text text-sm" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</h3>
-              <p className="text-eco-text-muted text-xs">{desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Empresas cliente */}
-        <div className="mt-12">
-          <p className="text-eco-text-muted text-sm mb-6 uppercase tracking-widest text-center font-semibold">Empresas que confían en nuestra gestión</p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {RECICLAJE_CLIENTES.map((c) => (
-              <div key={c.nombre} className="card-premium p-5 flex flex-col items-center gap-2 text-center">
-                <span className="text-3xl">{c.icono}</span>
-                <p className="font-extrabold text-eco-text text-lg" style={{ fontFamily: 'var(--font-display)' }}>{c.nombre}</p>
-                <p className="text-eco-text-muted text-xs">{c.sector}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-eco-text-muted text-xs mt-5 text-center">
-            Entre otros clientes industriales, comerciales e institucionales de todo el país.
-          </p>
-        </div>
-      </section>
-
       {/* Planta */}
       <section className="py-16 bg-eco-bg-card border-y border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
@@ -220,7 +152,7 @@ export default function NosotrosPage() {
                 <Factory className="w-5 h-5 text-eco-green mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-eco-text font-semibold">7.000 m² de planta cubierta</p>
-                  <p className="text-eco-text-muted text-sm">Fabricación de módulos Wood Frame, producción de piscinas de fibra y área de procesamiento de reciclables — todo bajo el mismo techo. Control de calidad en cada etapa.</p>
+                  <p className="text-eco-text-muted text-sm">Fabricación de módulos Wood Frame y producción de piscinas de fibra — todo bajo el mismo techo. Control de calidad en cada etapa.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -233,8 +165,8 @@ export default function NosotrosPage() {
               <div className="flex items-start gap-3">
                 <Building2 className="w-5 h-5 text-eco-green mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-eco-text font-semibold">Tres áreas operativas integradas</p>
-                  <p className="text-eco-text-muted text-sm">Construcción modular · Piscinas de fibra · Gestión de reciclables. Una sola estructura cooperativa que cubre tres rubros de escala industrial.</p>
+                  <p className="text-eco-text font-semibold">Dos áreas operativas integradas</p>
+                  <p className="text-eco-text-muted text-sm">Construcción modular · Piscinas de fibra. Una sola estructura cooperativa que cubre ambos rubros a escala industrial.</p>
                 </div>
               </div>
             </div>

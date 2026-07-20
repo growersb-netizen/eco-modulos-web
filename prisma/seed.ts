@@ -40,19 +40,21 @@ async function main() {
   console.log('✅ Usuario admin creado')
 
   // ─── MÓDULOS (12 modelos) ───
+  // precio_lista = m² × $690.000 (tarifa financiada real, misma fuente que landing-financiacion).
+  // precio_contado es el precio propio de esta web (la landing no publica contado de módulos).
   const modulos = [
-    { nombre: 'Módulo 6 m²',  medida: '6 m²',  precio_contado: 2990000,  precio_lista: 4186000  },
-    { nombre: 'Módulo 12 m²', medida: '12 m²', precio_contado: 4980000,  precio_lista: 6972000  },
-    { nombre: 'Módulo 18 m²', medida: '18 m²', precio_contado: 7470000,  precio_lista: 10458000 },
-    { nombre: 'Módulo 24 m²', medida: '24 m²', precio_contado: 9960000,  precio_lista: 13944000 },
-    { nombre: 'Módulo 30 m²', medida: '30 m²', precio_contado: 12450000, precio_lista: 17430000 },
-    { nombre: 'Módulo 36 m²', medida: '36 m²', precio_contado: 14940000, precio_lista: 20916000 },
-    { nombre: 'Módulo 42 m²', medida: '42 m²', precio_contado: 17430000, precio_lista: 24402000 },
-    { nombre: 'Módulo 48 m²', medida: '48 m²', precio_contado: 19920000, precio_lista: 27888000 },
-    { nombre: 'Módulo 54 m²', medida: '54 m²', precio_contado: 22410000, precio_lista: 31374000 },
-    { nombre: 'Módulo 60 m²', medida: '60 m²', precio_contado: 24900000, precio_lista: 34860000 },
-    { nombre: 'Módulo 66 m²', medida: '66 m²', precio_contado: 27390000, precio_lista: 38346000 },
-    { nombre: 'Módulo 72 m²', medida: '72 m²', precio_contado: 29880000, precio_lista: 41832000 },
+    { nombre: 'Módulo 6 m²',  medida: '6 m²',  precio_contado: 2990000,  precio_lista: 4140000  },
+    { nombre: 'Módulo 12 m²', medida: '12 m²', precio_contado: 4980000,  precio_lista: 8280000  },
+    { nombre: 'Módulo 18 m²', medida: '18 m²', precio_contado: 7470000,  precio_lista: 12420000 },
+    { nombre: 'Módulo 24 m²', medida: '24 m²', precio_contado: 9960000,  precio_lista: 16560000 },
+    { nombre: 'Módulo 30 m²', medida: '30 m²', precio_contado: 12450000, precio_lista: 20700000 },
+    { nombre: 'Módulo 36 m²', medida: '36 m²', precio_contado: 14940000, precio_lista: 24840000 },
+    { nombre: 'Módulo 42 m²', medida: '42 m²', precio_contado: 17430000, precio_lista: 28980000 },
+    { nombre: 'Módulo 48 m²', medida: '48 m²', precio_contado: 19920000, precio_lista: 33120000 },
+    { nombre: 'Módulo 54 m²', medida: '54 m²', precio_contado: 22410000, precio_lista: 37260000 },
+    { nombre: 'Módulo 60 m²', medida: '60 m²', precio_contado: 24900000, precio_lista: 41400000 },
+    { nombre: 'Módulo 66 m²', medida: '66 m²', precio_contado: 27390000, precio_lista: 45540000 },
+    { nombre: 'Módulo 72 m²', medida: '72 m²', precio_contado: 29880000, precio_lista: 49680000 },
   ]
 
   const usosModulo = JSON.stringify(['Vivienda', 'Ampliación', 'Oficina', 'Quincho', 'Glamping', 'Inversión'])
@@ -62,7 +64,7 @@ async function main() {
     const m = modulos[i]
     await prisma.modulo.upsert({
       where: { id: `modulo-${i + 1}` },
-      update: { precio_contado: m.precio_contado, precio_lista: m.precio_lista },
+      update: { precio_contado: m.precio_contado, precio_lista: m.precio_lista, descripcion: descripcionModulo },
       create: {
         id: `modulo-${i + 1}`,
         nombre: m.nombre,
@@ -80,22 +82,22 @@ async function main() {
 
   // ─── PISCINAS (16 modelos) ───
   const piscinas = [
-    { nombre: 'Minideck',                         medida: '3,00×2,00×0,70m',   precio_contado: 2500000, precio_lista: 3500000, destacada: false },
-    { nombre: 'Miniportante',                     medida: '2,50×2,10×0,70m',   precio_contado: 2000000, precio_lista: 2800000, destacada: true  },
-    { nombre: 'Autoportante',                     medida: '4,10×2,10×0,70m',   precio_contado: 2500000, precio_lista: 3500000, destacada: false },
-    { nombre: 'Arco Romano Chica Recta',          medida: '4,60×2,47×1,20m',   precio_contado: 3900000, precio_lista: 5460000, destacada: false },
-    { nombre: 'Arco Romano Chica C/Desnivel',     medida: '4,60×2,35m',        precio_contado: 2990000, precio_lista: 4186000, destacada: false },
-    { nombre: 'Arco Romano Mediana Recta',        medida: '6,40×2,94×1,40m',   precio_contado: 3690000, precio_lista: 5166000, destacada: false },
-    { nombre: 'Arco Romano Mediana C/Desnivel',   medida: '7,00×3,35m',        precio_contado: 4900000, precio_lista: 6860000, destacada: false },
-    { nombre: 'Arco Romano Grande',               medida: '8,10×3,35m',        precio_contado: 5200000, precio_lista: 7280000, destacada: false },
-    { nombre: 'Playa Húmeda',                     medida: '5,20×2,45m',        precio_contado: 3290000, precio_lista: 4606000, destacada: false },
-    { nombre: 'Minimalista Chica',                medida: '3,97×2,46×1,20m',   precio_contado: 3700000, precio_lista: 5180000, destacada: false },
-    { nombre: 'Minimalista Mediana',              medida: '5,50×2,90×1,50m',   precio_contado: 5900000, precio_lista: 8260000, destacada: false },
-    { nombre: 'Minimalista Grande',               medida: '6,40×3,00×1,40m',   precio_contado: 6500000, precio_lista: 9100000, destacada: false },
-    { nombre: 'Recta C/Mini Escalera',            medida: '4,63×2,48×1,25m',   precio_contado: 4500000, precio_lista: 6300000, destacada: false },
-    { nombre: 'Playa Húmeda Chica C/Escalera',   medida: '4,10×2,40×1,20m',   precio_contado: 3800000, precio_lista: 5320000, destacada: false },
-    { nombre: 'Semi Playa Húmeda C/Escalera',    medida: '6,70×2,95×1,50m',   precio_contado: 4500000, precio_lista: 6300000, destacada: false },
-    { nombre: 'Playa y Abanico',                  medida: '9,20×3,80m',        precio_contado: 5500000, precio_lista: 7700000, destacada: false },
+    { nombre: 'Minideck',                         medida: '3,00×2,00×0,70m',           precio_contado: 3000000, precio_lista: 4370000, destacada: false },
+    { nombre: 'Miniportante',                     medida: '2,50×2,10×0,70m',           precio_contado: 2500000, precio_lista: 3640000, destacada: true  },
+    { nombre: 'Autoportante',                     medida: '4,10×2,10×0,70m',           precio_contado: 3000000, precio_lista: 4370000, destacada: false },
+    { nombre: 'Arco Romano Chico Recto',          medida: '4,60×2,47×1,20m',           precio_contado: 3000000, precio_lista: 4370000, destacada: false },
+    { nombre: 'Arco Romano Chico C/Desnivel',     medida: '4,60×2,35×1,10 a 1,30m',    precio_contado: 2990000, precio_lista: 4350000, destacada: false },
+    { nombre: 'Arco Romano Mediano Recto',        medida: '6,40×2,94×1,40m',           precio_contado: 4900000, precio_lista: 7130000, destacada: false },
+    { nombre: 'Arco Romano Mediano C/Desnivel',   medida: '7,00×3,35×1,25 a 1,70m',    precio_contado: 4900000, precio_lista: 7130000, destacada: false },
+    { nombre: 'Arco Romano Grande',               medida: '8,10×3,35×1,25 a 1,80m',    precio_contado: 4800000, precio_lista: 6990000, destacada: false },
+    { nombre: 'Playa Húmeda',                     medida: '5,20×2,45×1,10 a 1,30m',    precio_contado: 3290000, precio_lista: 4790000, destacada: false },
+    { nombre: 'Minimalista Chica',                medida: '3,97×2,46×1,20m',           precio_contado: 2800000, precio_lista: 4080000, destacada: false },
+    { nombre: 'Minimalista Mediana',              medida: '5,50×2,90×1,50m',           precio_contado: 4425000, precio_lista: 6440000, destacada: false },
+    { nombre: 'Minimalista Grande',               medida: '6,40×3,00×1,40m',           precio_contado: 3690000, precio_lista: 5370000, destacada: false },
+    { nombre: 'Recta C/Mini Escalera',            medida: '4,63×2,48×1,25m',           precio_contado: 3375000, precio_lista: 4910000, destacada: false },
+    { nombre: 'Playa Húmeda Chica C/Escalera',   medida: '4,10×2,40×1,20m',           precio_contado: 2850000, precio_lista: 4150000, destacada: false },
+    { nombre: 'Semi Playa Húmeda C/Escalera',    medida: '6,70×2,95×1,50m',           precio_contado: 3990000, precio_lista: 5810000, destacada: false },
+    { nombre: 'Playa y Abanico',                  medida: '9,20×3,80×1,25 a 1,80m',    precio_contado: 5500000, precio_lista: 8000000, destacada: false },
   ]
 
   const usosPiscina = JSON.stringify(['Residencial', 'Comercial', 'Glamping', 'Hotel', 'Club'])
@@ -221,7 +223,7 @@ async function main() {
 <p>Una de las preguntas más frecuentes que recibimos en EcoFiver es sobre el costo real de una piscina de fibra de vidrio. En este artículo te contamos todo lo que necesitás saber, con precios reales y sin letra chica.</p>
 
 <h3>Rango de precios según modelo</h3>
-<p>Los precios de las piscinas de fibra varían significativamente según el tamaño y diseño. En nuestro catálogo 2026, tenemos modelos que van desde los $2.000.000 para modelos compactos (la Miniportante, ideal para espacios pequeños) hasta los $6.500.000 para modelos grandes como la Minimalista Grande de 6,40×3,00m.</p>
+<p>Los precios de las piscinas de fibra varían significativamente según el tamaño y diseño. En nuestro catálogo 2026, tenemos modelos que van desde los $2.500.000 para modelos compactos (la Miniportante, ideal para espacios pequeños) hasta los $4.900.000 para modelos grandes como la Arco Romano Mediano de 6,40×2,94×1,40m.</p>
 
 <h3>¿Qué incluye el precio?</h3>
 <p>Nuestros precios incluyen la piscina de fibra de vidrio terminada en fábrica, el flete hasta tu domicilio (hasta cierta distancia), y la instalación básica. No incluyen la excavación (excepto modelos autoportantes y la Miniportante), la conexión eléctrica del sistema de filtrado, ni la decoración perimetral.</p>
@@ -230,7 +232,7 @@ async function main() {
 <p>Las piscinas de fibra de vidrio tienen varias ventajas respecto a las de hormigón o mampostería. La principal es el tiempo de instalación: una piscina de fibra se instala en 2 a 5 días, mientras que una de mampostería puede tomar 30 a 60 días. Además, el mantenimiento es menor, ya que la superficie lisa de la fibra no favorece el desarrollo de algas.</p>
 
 <h3>Financiación sin banco</h3>
-<p>En EcoFiver ofrecemos planes de financiación propios para nuestras piscinas. Podés acceder a cuotas fijas desde 3 hasta 120 cuotas, sin necesidad de crédito bancario. El proceso de aprobación es simple y rápido.</p>
+<p>En EcoFiver ofrecemos planes de financiación propios para nuestras piscinas. Podés acceder a cuotas fijas en pesos a 12, 18, 24 o 36 meses, sin necesidad de crédito bancario. El proceso de aprobación es simple y rápido.</p>
 
 <h3>¿Cómo empezar?</h3>
 <p>El primer paso es elegir el modelo que más se adapta a tu espacio y presupuesto. Te recomendamos usar nuestro simulador de cuotas online para tener una idea del costo mensual antes de consultar. Luego, agendá una videollamada gratuita con nuestro equipo para ajustar los detalles.</p>`,

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
-import { simularCuotas } from '@/lib/crm'
 
 const schema = z.object({
   productoId: z.string().optional(),
@@ -9,10 +8,10 @@ const schema = z.object({
   precio: z.number().positive().optional(),
 })
 
-const FACTOR: Record<string, number> = { modulo: 2, piscina: 1.5, MODULO: 2, PISCINA: 1.5 }
+const FACTOR: Record<string, number> = { modulo: 2, piscina: 2, MODULO: 2, PISCINA: 2 }
 const PLAZOS = [6, 12, 18, 24, 36, 48]
 
-/** Fórmula local de fallback cuando el CRM no responde. */
+/** cuota = precio / (cuotas + factor) — misma fórmula real que landing-financiacion. */
 function calcularLocal(precio: number, tipo: string, cuotas?: number) {
   const factor = FACTOR[tipo] ?? 2
   if (cuotas) {
@@ -39,12 +38,8 @@ export async function POST(req: Request) {
     const body = await req.json()
     const { tipo, cuotas, precio } = schema.parse(body)
 
-    // Si viene precio directo, usar fórmula del CRM (o fallback local)
+    // Si viene precio directo, calculamos con la fórmula real (misma que landing-financiacion).
     if (precio) {
-      const tipoNorm = (tipo.toUpperCase()) as 'MODULO' | 'PISCINA'
-      const crmData = await simularCuotas({ tipo: tipoNorm, precio, cuotas })
-      if (crmData) return NextResponse.json(crmData)
-      // Fallback local si CRM no responde
       return NextResponse.json(calcularLocal(precio, tipo, cuotas))
     }
 
@@ -61,10 +56,10 @@ export async function POST(req: Request) {
         if (producto) {
           const pc = producto.precio_contado
           const pl = producto.precio_lista
-          const tipoNorm = (tipo.toUpperCase()) as 'MODULO' | 'PISCINA'
-          const crmData = await simularCuotas({ tipo: tipoNorm, precio: pc, cuotas })
-          if (crmData) return NextResponse.json({ ...crmData, precioContado: pc, precioLista: pl })
-          const local = calcularLocal(pc, tipo, cuotas)
+          // La cuota se financia siempre sobre el precio de LISTA (no el de contado).
+          // El contado solo se muestra como referencia del descuento por pago único.
+          // Misma fórmula real que landing-financiacion: cuota = precio_lista / (cuotas + 2).
+          const local = calcularLocal(pl, tipo, cuotas)
           return NextResponse.json({
             ...local,
             precioContado: pc,
@@ -95,8 +90,5 @@ export async function GET(req: Request) {
 
   if (!precio) return NextResponse.json({ error: 'precio requerido' }, { status: 400 })
 
-  const tipoNorm = (tipo.toUpperCase()) as 'MODULO' | 'PISCINA'
-  const crmData = await simularCuotas({ tipo: tipoNorm, precio, cuotas })
-  if (crmData) return NextResponse.json(crmData)
   return NextResponse.json(calcularLocal(precio, tipo, cuotas))
 }

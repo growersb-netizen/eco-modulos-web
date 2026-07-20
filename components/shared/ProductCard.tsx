@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { MessageCircle } from 'lucide-react'
-import { formatPeso, calcularCuota } from '@/lib/utils'
+import { formatPeso } from '@/lib/utils'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
 import { cn } from '@/lib/utils'
 
@@ -15,8 +15,10 @@ interface ProductCardProps {
   imagen?: string | null
   tipo: 'modulo' | 'piscina'
   destacada?: boolean
-  coeficiente12?: number
 }
+
+// Misma fórmula que landing-financiacion: cuota = precio de lista / (cuotas + 2)
+const FACTOR_INGRESO = 2
 
 export default function ProductCard({
   id,
@@ -29,9 +31,8 @@ export default function ProductCard({
   imagen,
   tipo,
   destacada,
-  coeficiente12 = 1.15,
 }: ProductCardProps) {
-  const cuota12 = calcularCuota(precio_lista, coeficiente12, 12)
+  const cuota12 = Math.round(precio_lista / (12 + FACTOR_INGRESO))
   const vendedor = tipo === 'piscina' ? 'hernan' : 'daniel'
   const mensaje = `Hola, me interesa el ${nombre} (${medida}). ¿Me puede dar más información?`
 

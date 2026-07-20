@@ -196,12 +196,8 @@ const faqJsonLd = {
 }
 
 export default async function ModulosPage() {
-  const [modulos, coeficientes] = await Promise.all([
-    prisma.modulo.findMany({ where: { activo: true }, orderBy: { orden: 'asc' } }),
-    prisma.coeficienteCuota.findMany({ where: { activo: true }, orderBy: { cuotas: 'asc' } }),
-  ])
+  const modulos = await prisma.modulo.findMany({ where: { activo: true }, orderBy: { orden: 'asc' } })
 
-  const coef12 = coeficientes.find((c) => c.cuotas === 12)?.coef ?? 1.15
   const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, necesito información sobre módulos. Quiero consultar disponibilidad y precios.')
 
   return (
@@ -339,7 +335,6 @@ export default async function ModulosPage() {
               precio_lista={m.precio_lista}
               imagen={m.imagen}
               tipo="modulo"
-              coeficiente12={coef12}
             />
           ))}
         </div>

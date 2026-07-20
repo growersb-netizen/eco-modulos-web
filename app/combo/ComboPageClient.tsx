@@ -17,24 +17,19 @@ export default function ComboPageClient() {
   const [moduloId, setModuloId] = useState('')
   const [piscinaId, setPiscinaId] = useState('')
   const [cuotas, setCuotas] = useState(120)
-  const [coeficientes, setCoeficientes] = useState<Record<number, number>>({})
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     Promise.all([
       fetch('/api/modulos').then((r) => r.json()),
       fetch('/api/piscinas').then((r) => r.json()),
-      fetch('/api/admin/coeficientes').then((r) => r.json()),
-    ]).then(([m, p, c]) => {
+    ]).then(([m, p]) => {
       const modulosArr = Array.isArray(m) ? m : []
       const piscinasArr = Array.isArray(p) ? p : []
       setModulos(modulosArr)
       setPiscinas(piscinasArr)
       if (modulosArr.length) setModuloId(modulosArr[0].id)
       if (piscinasArr.length) setPiscinaId(piscinasArr[0].id)
-      const map: Record<number, number> = {}
-      if (Array.isArray(c)) c.forEach((x: { cuotas: number; coef: number }) => { map[x.cuotas] = x.coef })
-      setCoeficientes(map)
       setLoading(false)
     }).catch(() => {
       setLoading(false)
@@ -45,13 +40,14 @@ export default function ComboPageClient() {
   const piscina = piscinas.find((p) => p.id === piscinaId)
 
   // Total a financiar = suma del valor nominal (precio de lista) de ambos productos,
-  // sin ningún descuento adicional. Se financia igual que un módulo: coeficiente
-  // de la tabla (ajustado por ICC) según la cantidad de cuotas elegida.
+  // sin ningún descuento adicional. Misma fórmula que landing-financiacion:
+  // cuota = total / (cuotas + 2), ingreso = 2 * cuota.
   const precioListaTotal = (modulo?.precio_lista ?? 0) + (piscina?.precio_lista ?? 0)
   // Referencia informativa: lo que costaría cada producto pagado de contado por separado.
   const precioContadoTotal = (modulo?.precio_contado ?? 0) + (piscina?.precio_contado ?? 0)
-  const coef = coeficientes[cuotas] ?? 2.10
-  const cuotaMensual = precioListaTotal * coef / cuotas
+  const FACTOR_INGRESO = 2
+  const cuotaMensual = precioListaTotal / (cuotas + FACTOR_INGRESO)
+  const ingreso = cuotaMensual * FACTOR_INGRESO
 
   const waLink = modulo && piscina
     ? 'https://wa.me/5491168733406?text=' + encodeURIComponent(
@@ -158,6 +154,7 @@ export default function ComboPageClient() {
               <div className="bg-eco-bg-surface rounded-xl p-4 text-center">
                 <p className="text-eco-text-muted text-xs uppercase tracking-wider mb-1">{cuotas} cuotas de</p>
                 <p className="text-3xl font-extrabold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>{formatPeso(Math.round(cuotaMensual))}<span className="text-sm font-normal text-eco-text-muted">/mes</span></p>
+                <p className="text-eco-text-muted text-xs mt-1">+ ingreso de {formatPeso(Math.round(ingreso))} (equivalente a 2 cuotas)</p>
                 <p className="text-eco-text-muted text-xs mt-1">Cuota en pesos, ajustada por índice ICC.</p>
               </div>
 

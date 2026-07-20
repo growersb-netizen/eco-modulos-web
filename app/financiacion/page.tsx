@@ -1,4 +1,3 @@
-import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import LoanSimulator from '@/components/shared/LoanSimulator'
 import VideoCallButton from '@/components/shared/VideoCallButton'
@@ -64,11 +63,6 @@ const PLANES = [
 ]
 
 export default async function FinanciacionPage() {
-  const coeficientes = await prisma.coeficienteCuota.findMany({
-    where: { activo: true },
-    orderBy: { cuotas: 'asc' },
-  })
-
   const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa conocer los planes de financiación')
 
   return (
@@ -167,37 +161,25 @@ export default async function FinanciacionPage() {
         </div>
       </section>
 
-      {/* Tabla de coeficientes */}
-      {coeficientes.length > 0 && (
-        <section className="py-16 max-w-3xl mx-auto px-4">
-          <SectionTitle titulo="Tabla de coeficientes" subtitulo="Aplica a módulos, quinchos y combos (cuota ajustada por índice ICC). El coeficiente se multiplica por el precio de contado para obtener el total financiado. Las piscinas tienen su propio esquema de cuota fija — ver la sección de piscinas." />
-          <div className="mt-8 overflow-hidden rounded-xl border border-eco-border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-eco-bg-surface border-b border-eco-border">
-                  <th className="text-left px-4 py-3 text-eco-text-muted">Cuotas</th>
-                  <th className="text-center px-4 py-3 text-eco-text-muted">Coeficiente</th>
-                  <th className="text-center px-4 py-3 text-eco-text-muted">Ejemplo $1.000.000</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-eco-border">
-                {coeficientes.map((c) => (
-                  <tr key={c.id} className="hover:bg-eco-bg-surface/50">
-                    <td className="px-4 py-3 text-eco-text font-medium">{c.cuotas} cuotas</td>
-                    <td className="px-4 py-3 text-center text-eco-text-muted">×{c.coef.toFixed(2)}</td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="text-eco-green font-semibold">
-                        {new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(Math.round(1000000 * c.coef / c.cuotas))}/mes
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {/* Cómo se calcula la cuota */}
+      <section className="py-16 max-w-3xl mx-auto px-4">
+        <SectionTitle titulo="Cómo se calcula su cuota" subtitulo="La misma fórmula real que usamos en todos nuestros canales de venta." />
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="card-premium p-6">
+            <p className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Piscinas</p>
+            <p className="text-eco-text-muted text-sm mb-3">Cuota fija en pesos a 12, 18, 24 o 36 meses:</p>
+            <p className="bg-eco-bg-surface rounded-lg px-4 py-3 text-eco-text text-sm font-mono">cuota = precio de lista ÷ (cuotas + 2)</p>
+            <p className="text-eco-text-muted text-xs mt-3">El ingreso inicial equivale a 2 cuotas del plan elegido.</p>
           </div>
-          <p className="text-eco-text-muted text-xs mt-4 text-center">Coeficientes vigentes. Pueden actualizarse. La cotización final es la que prevalece.</p>
-        </section>
-      )}
+          <div className="card-premium p-6">
+            <p className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Módulos y combos</p>
+            <p className="text-eco-text-muted text-sm mb-3">Cuota en pesos ajustada por índice ICC, hasta 120 meses:</p>
+            <p className="bg-eco-bg-surface rounded-lg px-4 py-3 text-eco-text text-sm font-mono">cuota = precio de lista ÷ (cuotas + 2)</p>
+            <p className="text-eco-text-muted text-xs mt-3">En el combo, el precio de lista es la suma del módulo y la piscina, sin descuento adicional.</p>
+          </div>
+        </div>
+        <p className="text-eco-text-muted text-xs mt-6 text-center">Valores orientativos — use el simulador de arriba para su modelo y plazo exactos.</p>
+      </section>
 
       {/* FAQ */}
       <section className="py-20 bg-eco-bg">
