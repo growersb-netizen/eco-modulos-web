@@ -60,20 +60,20 @@ export default function ProductCard({
             <div className="absolute inset-0 hero-grid-pattern opacity-30" />
             {tipo === 'modulo' ? (
               <svg viewBox="0 0 140 90" className="w-28 h-20 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="15" y="38" width="110" height="48" rx="3" stroke="#2A5F40" strokeWidth="1.5" fill="#2A5F40" fillOpacity="0.06"/>
-                <polygon points="70,8 10,40 130,40" fill="#2A5F40" fillOpacity="0.08" stroke="#2A5F40" strokeWidth="1.5" strokeLinejoin="round"/>
-                <rect x="55" y="56" width="30" height="30" rx="1.5" stroke="#2A5F40" strokeWidth="1.2" fill="#2A5F40" fillOpacity="0.08"/>
-                <rect x="22" y="52" width="20" height="16" rx="1.5" stroke="#1A6E65" strokeWidth="1.2" fill="#1A6E65" fillOpacity="0.08"/>
-                <rect x="98" y="52" width="20" height="16" rx="1.5" stroke="#1A6E65" strokeWidth="1.2" fill="#1A6E65" fillOpacity="0.08"/>
-                <line x1="15" y1="86" x2="125" y2="86" stroke="#2A5F40" strokeWidth="1" strokeDasharray="5,4" opacity="0.3"/>
+                <rect x="15" y="38" width="110" height="48" rx="3" stroke="#0B2350" strokeWidth="1.5" fill="#0B2350" fillOpacity="0.06"/>
+                <polygon points="70,8 10,40 130,40" fill="#0B2350" fillOpacity="0.08" stroke="#0B2350" strokeWidth="1.5" strokeLinejoin="round"/>
+                <rect x="55" y="56" width="30" height="30" rx="1.5" stroke="#0B2350" strokeWidth="1.2" fill="#0B2350" fillOpacity="0.08"/>
+                <rect x="22" y="52" width="20" height="16" rx="1.5" stroke="#4EC3B5" strokeWidth="1.2" fill="#4EC3B5" fillOpacity="0.08"/>
+                <rect x="98" y="52" width="20" height="16" rx="1.5" stroke="#4EC3B5" strokeWidth="1.2" fill="#4EC3B5" fillOpacity="0.08"/>
+                <line x1="15" y1="86" x2="125" y2="86" stroke="#0B2350" strokeWidth="1" strokeDasharray="5,4" opacity="0.3"/>
               </svg>
             ) : (
               <svg viewBox="0 0 140 90" className="w-28 h-20 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="70" cy="62" rx="52" ry="24" stroke="#1A6E65" strokeWidth="1.5" fill="#1A6E65" fillOpacity="0.06"/>
-                <path d="M18 62 Q26 24 70 20 Q114 24 122 62" stroke="#1A6E65" strokeWidth="1.5" fill="#1A6E65" fillOpacity="0.08"/>
-                <ellipse cx="70" cy="62" rx="34" ry="15" stroke="#2A5F40" strokeWidth="1" fill="#2A5F40" fillOpacity="0.06" strokeDasharray="4,3"/>
-                <line x1="70" y1="20" x2="70" y2="77" stroke="#1A6E65" strokeWidth="0.8" opacity="0.25" strokeDasharray="4,3"/>
-                <line x1="18" y1="62" x2="122" y2="62" stroke="#1A6E65" strokeWidth="0.8" opacity="0.25" strokeDasharray="4,3"/>
+                <ellipse cx="70" cy="62" rx="52" ry="24" stroke="#4EC3B5" strokeWidth="1.5" fill="#4EC3B5" fillOpacity="0.06"/>
+                <path d="M18 62 Q26 24 70 20 Q114 24 122 62" stroke="#4EC3B5" strokeWidth="1.5" fill="#4EC3B5" fillOpacity="0.08"/>
+                <ellipse cx="70" cy="62" rx="34" ry="15" stroke="#0B2350" strokeWidth="1" fill="#0B2350" fillOpacity="0.06" strokeDasharray="4,3"/>
+                <line x1="70" y1="20" x2="70" y2="77" stroke="#4EC3B5" strokeWidth="0.8" opacity="0.25" strokeDasharray="4,3"/>
+                <line x1="18" y1="62" x2="122" y2="62" stroke="#4EC3B5" strokeWidth="0.8" opacity="0.25" strokeDasharray="4,3"/>
               </svg>
             )}
             <p className="text-eco-green text-xs font-semibold uppercase tracking-widest opacity-50 mt-2 relative z-10">
@@ -146,7 +146,7 @@ export default function ProductCard({
           href={buildWhatsAppLink(vendedor, mensaje)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 text-sm shadow-[0_2px_8px_rgba(42,95,64,0.20)] hover:shadow-[0_4px_16px_rgba(42,95,64,0.30)]"
+          className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 text-sm shadow-[0_2px_8px_rgba(11,35,80,0.20)] hover:shadow-[0_4px_16px_rgba(11,35,80,0.30)]"
         >
           <MessageCircle className="w-4 h-4" />
           Consultar por WhatsApp

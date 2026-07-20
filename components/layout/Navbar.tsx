@@ -106,7 +106,7 @@ export default function Navbar() {
             className={cn(
               'hidden lg:flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-200',
               scrolled || !isHeroPage
-                ? 'bg-eco-green text-white hover:bg-eco-green-light shadow-[0_2px_8px_rgba(42,95,64,0.25)] hover:shadow-[0_4px_16px_rgba(42,95,64,0.35)]'
+                ? 'bg-eco-green text-white hover:bg-eco-green-light shadow-[0_2px_8px_rgba(11,35,80,0.25)] hover:shadow-[0_4px_16px_rgba(11,35,80,0.35)]'
                 : 'bg-white/15 text-white border border-white/25 hover:bg-white/25 backdrop-blur-sm'
             )}
           >
@@ -160,7 +160,7 @@ export default function Navbar() {
                 href={buildWhatsAppLink('stefania', 'Hola, me interesa consultar')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-eco-green text-white font-semibold py-3 px-4 rounded-lg mt-2 transition-colors shadow-[0_2px_8px_rgba(42,95,64,0.25)]"
+                className="flex items-center justify-center gap-2 bg-eco-green text-white font-semibold py-3 px-4 rounded-lg mt-2 transition-colors shadow-[0_2px_8px_rgba(11,35,80,0.25)]"
               >
                 <MessageCircle className="w-4 h-4" />
                 Contactar por WhatsApp

@@ -235,7 +235,7 @@ export default async function ModulosPage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_16px_rgba(42,95,64,0.25)] hover:shadow-[0_8px_24px_rgba(42,95,64,0.35)]"
+              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_16px_rgba(11,35,80,0.25)] hover:shadow-[0_8px_24px_rgba(11,35,80,0.35)]"
             >
               <MessageCircle className="w-5 h-5" />Solicitar cotización
             </a>

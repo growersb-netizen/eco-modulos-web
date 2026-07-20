@@ -73,7 +73,7 @@ export default async function HomePage() {
         {/* Subtle geometric grid overlay */}
         <div className="absolute inset-0 hero-grid-pattern opacity-100" />
         {/* Radial glow — center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(42,95,64,0.25),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(11,35,80,0.25),transparent)]" />
         {/* Bottom fade to page bg */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-eco-bg to-transparent" />
 
@@ -102,7 +102,7 @@ export default async function HomePage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(42,95,64,0.4)] hover:shadow-[0_8px_32px_rgba(42,95,64,0.5)]"
+              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(11,35,80,0.4)] hover:shadow-[0_8px_32px_rgba(11,35,80,0.5)]"
             >
               <MessageCircle className="w-5 h-5" />
               Consultar por WhatsApp
@@ -391,7 +391,7 @@ export default async function HomePage() {
       ════════════════════════════════════════════ */}
       <section className="py-28 bg-eco-green-dark relative overflow-hidden">
         <div className="absolute inset-0 hero-grid-pattern opacity-60" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_50%,rgba(42,95,64,0.3),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_50%,rgba(11,35,80,0.3),transparent)]" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight"

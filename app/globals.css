@@ -4,25 +4,25 @@
 
 @theme {
   /* ── Fondos ── */
-  --color-eco-bg:          #F5F3EE;   /* piedra cálida — fondo general */
+  --color-eco-bg:          #F6F8FB;   /* gris azulado — fondo general */
   --color-eco-bg-card:     #FFFFFF;   /* blanco puro — tarjetas */
-  --color-eco-bg-surface:  #ECEAE4;   /* crema tenue — secciones alt */
+  --color-eco-bg-surface:  #EAF3FB;   /* celeste tenue — secciones alt */
 
   /* ── Texto ── */
-  --color-eco-text:        #1C1C1A;   /* casi negro cálido */
-  --color-eco-text-muted:  #6B7280;   /* gris neutro */
+  --color-eco-text:        #16232F;   /* casi negro azulado */
+  --color-eco-text-muted:  #5C6B7A;   /* gris azulado */
 
   /* ── Bordes ── */
-  --color-eco-border:      #E5E2DA;   /* borde sutil cálido */
+  --color-eco-border:      #E2E8F0;   /* borde sutil azulado */
 
-  /* ── Verde bosque premium ── */
-  --color-eco-green:       #2A5F40;   /* principal */
-  --color-eco-green-dark:  #142E1E;   /* héroes y CTAs */
-  --color-eco-green-light: #3A7A55;   /* hover */
+  /* ── Navy EcoFiver ── */
+  --color-eco-green:       #0B2350;   /* principal */
+  --color-eco-green-dark:  #081A3D;   /* héroes y CTAs */
+  --color-eco-green-light: #1E3A6B;   /* hover */
 
-  /* ── Teal refinado ── */
-  --color-eco-teal:        #1A6E65;
-  --color-eco-teal-light:  #258A80;
+  /* ── Teal EcoFiver ── */
+  --color-eco-teal:        #4EC3B5;
+  --color-eco-teal-light:  #7DD8CC;
 
   /* ── Tipografía ── */
   --font-display: "Barlow Condensed", sans-serif;
@@ -36,8 +36,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #F5F3EE;
-  color: #1C1C1A;
+  background: #F6F8FB;
+  color: #16232F;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,14 +48,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: #2A5F40;
+  background: #0B2350;
   color: #fff;
 }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: #F5F3EE; }
-::-webkit-scrollbar-thumb { background: #2A5F40; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #F6F8FB; }
+::-webkit-scrollbar-thumb { background: #0B2350; border-radius: 3px; }
 
 /* ══════════════════════════════════════════
    UTILIDADES PREMIUM
@@ -64,19 +64,19 @@ h1, h2, h3, h4, h5, h6 {
 /* Tarjeta premium — sombra + hover lift */
 .card-premium {
   background: #FFFFFF;
-  border: 1px solid #E5E2DA;
+  border: 1px solid #E2E8F0;
   border-radius: 14px;
   box-shadow:
     0 1px 3px rgba(0,0,0,0.04),
-    0 4px 16px rgba(44,95,64,0.05);
+    0 4px 16px rgba(11,35,80,0.05);
   transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 .card-premium:hover {
   box-shadow:
     0 4px 12px rgba(0,0,0,0.06),
-    0 16px 48px rgba(44,95,64,0.12);
+    0 16px 48px rgba(11,35,80,0.12);
   transform: translateY(-3px);
-  border-color: rgba(42,95,64,0.30);
+  border-color: rgba(11,35,80,0.30);
 }
 
 /* Badge refinado */
@@ -84,15 +84,15 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(42,95,64,0.08);
-  color: #2A5F40;
+  background: rgba(78,195,181,0.12);
+  color: #0B2350;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 5px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(42,95,64,0.18);
+  border: 1px solid rgba(78,195,181,0.30);
 }
 
 /* Línea decorativa bajo el título */
@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 48px;
   height: 3px;
-  background: #2A5F40;
+  background: #4EC3B5;
   border-radius: 2px;
   margin-top: 14px;
 }
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Separador de sección */
 .section-rule {
   border: none;
-  border-top: 1px solid #E5E2DA;
+  border-top: 1px solid #E2E8F0;
   margin: 0;
 }
 
@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 2rem;
   font-weight: 800;
-  color: #2A5F40;
+  color: #0B2350;
   line-height: 1;
 }
 
@@ -149,20 +149,20 @@ h1, h2, h3, h4, h5, h6 {
 /* ── FAQ accordion premium ── */
 details.faq-item {
   background: #FFFFFF;
-  border: 1px solid #E5E2DA;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 details.faq-item[open] {
-  border-color: rgba(42,95,64,0.30);
-  box-shadow: 0 4px 16px rgba(42,95,64,0.08);
+  border-color: rgba(11,35,80,0.30);
+  box-shadow: 0 4px 16px rgba(11,35,80,0.08);
 }
 details.faq-item > summary {
   list-style: none;
   cursor: pointer;
   padding: 18px 22px;
   font-weight: 500;
-  color: #1C1C1A;
+  color: #16232F;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,24 +174,24 @@ details.faq-item > summary .faq-icon {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: rgba(42,95,64,0.08);
+  background: rgba(11,35,80,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #2A5F40;
+  color: #0B2350;
   font-size: 16px;
   line-height: 1;
   transition: background 0.2s ease, transform 0.25s ease;
 }
 details.faq-item[open] > summary .faq-icon {
-  background: #2A5F40;
+  background: #0B2350;
   color: white;
   transform: rotate(45deg);
 }
 details.faq-item > .faq-body {
   padding: 14px 22px 18px;
-  color: #6B7280;
+  color: #5C6B7A;
   font-size: 0.875rem;
   line-height: 1.7;
 }
@@ -199,12 +199,12 @@ details.faq-item > .faq-body {
 /* ── Info card (borde + hover lift liviano) ── */
 .card-info {
   background: #FFFFFF;
-  border: 1px solid #E5E2DA;
+  border: 1px solid #E2E8F0;
   border-radius: 12px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .card-info:hover {
-  border-color: rgba(42,95,64,0.25);
+  border-color: rgba(11,35,80,0.25);
   box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
@@ -212,21 +212,21 @@ details.faq-item > .faq-body {
 .stat-value {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 800;
-  color: #2A5F40;
+  color: #0B2350;
   line-height: 1;
 }
 
-/* ── Green section CTA ── */
-.section-forest { background: #142E1E; }
+/* ── Navy section CTA ── */
+.section-forest { background: #0B2350; }
 
 /* Input premium */
 input, textarea, select {
   background: #FFFFFF !important;
-  border-color: #E5E2DA !important;
-  color: #1C1C1A !important;
+  border-color: #E2E8F0 !important;
+  color: #16232F !important;
 }
 input:focus, textarea:focus, select:focus {
-  border-color: #2A5F40 !important;
-  box-shadow: 0 0 0 3px rgba(42,95,64,0.10) !important;
+  border-color: #0B2350 !important;
+  box-shadow: 0 0 0 3px rgba(11,35,80,0.10) !important;
   outline: none !important;
 }

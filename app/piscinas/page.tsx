@@ -71,7 +71,7 @@ export default async function PiscinasPage() {
       {/* Hero — premium light */}
       <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="badge-green mb-5 inline-flex" style={{ color: '#1A6E65', background: 'rgba(26,110,101,0.08)', borderColor: 'rgba(26,110,101,0.20)' }}>
+          <span className="badge-green mb-5 inline-flex" style={{ color: '#0B2350', background: 'rgba(78,195,181,0.12)', borderColor: 'rgba(78,195,181,0.30)' }}>
             Catálogo de piscinas
           </span>
           <h1

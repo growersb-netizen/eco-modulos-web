@@ -171,7 +171,7 @@ export default function ChatWidget() {
             {/* Mensajes */}
             <div
               className="flex-1 overflow-y-auto px-4 py-4 space-y-3 scroll-smooth bg-eco-bg"
-              style={{ scrollbarWidth: 'thin', scrollbarColor: '#E5E2DA transparent' }}
+              style={{ scrollbarWidth: 'thin', scrollbarColor: '#E2E8F0 transparent' }}
             >
               {messages.map((msg) => (
                 <div
