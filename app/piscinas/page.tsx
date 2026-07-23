@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/db'
+import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
@@ -98,6 +99,11 @@ export default async function PiscinasPage() {
               <MessageCircle className="w-5 h-5" />Consultar al equipo de piscinas
             </a>
             <VideoCallButton variant="outline" label="Agendar videollamada" productoDefault="piscina" />
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 mt-12">
+          <div className="relative w-full h-[260px] sm:h-[380px] rounded-2xl overflow-hidden">
+            <Image src="/hero-piscinas.jpg" alt="Piscina de fibra de vidrio instalada en jardín" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
           </div>
         </div>
       </section>

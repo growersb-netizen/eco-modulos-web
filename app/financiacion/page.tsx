@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
 import LoanSimulator from '@/components/shared/LoanSimulator'
 import VideoCallButton from '@/components/shared/VideoCallButton'
@@ -83,6 +84,11 @@ export default async function FinanciacionPage() {
               <MessageCircle className="w-5 h-5" />Consultar financiación
             </a>
             <VideoCallButton variant="outline" label="Agendar videollamada" />
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 mt-12">
+          <div className="relative w-full h-[260px] sm:h-[380px] rounded-2xl overflow-hidden">
+            <Image src="/hero-financiacion.jpg" alt="Familia firmando su plan de financiación" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
           </div>
         </div>
       </section>

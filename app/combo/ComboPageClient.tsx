@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
 import VideoCallButton from '@/components/shared/VideoCallButton'
 import { MessageCircle, CheckCircle, Tag } from 'lucide-react'
@@ -75,6 +76,11 @@ export default function ComboPageClient() {
               <MessageCircle className="w-5 h-5" />Consultar combo por WhatsApp
             </a>
             <VideoCallButton productoDefault="combo" variant="outline" label="Agendar videollamada" />
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 mt-12">
+          <div className="relative w-full h-[260px] sm:h-[380px] rounded-2xl overflow-hidden">
+            <Image src="/hero-combo.jpg" alt="Módulo y piscina combinados en el mismo terreno" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
           </div>
         </div>
       </section>

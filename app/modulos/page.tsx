@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/db'
+import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
@@ -240,6 +241,11 @@ export default async function ModulosPage() {
               <MessageCircle className="w-5 h-5" />Solicitar cotización
             </a>
             <VideoCallButton variant="outline" label="Consulta técnica gratuita" productoDefault="modulo" />
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 mt-12">
+          <div className="relative w-full h-[260px] sm:h-[380px] rounded-2xl overflow-hidden">
+            <Image src="/hero-modulos.jpg" alt="Módulos Wood Frame en distintos estilos" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
           </div>
         </div>
       </section>

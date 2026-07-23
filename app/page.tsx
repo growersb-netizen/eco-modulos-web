@@ -70,6 +70,10 @@ export default async function HomePage() {
           HERO — deep forest, premium & architectural
       ════════════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-eco-green-dark">
+        {/* Foto de fondo */}
+        <Image src="/hero-home.jpg" alt="Módulo Wood Frame con piscina" fill priority className="object-cover" sizes="100vw" />
+        {/* Oscurecido para legibilidad del texto */}
+        <div className="absolute inset-0 bg-eco-green-dark/70" />
         {/* Subtle geometric grid overlay */}
         <div className="absolute inset-0 hero-grid-pattern opacity-100" />
         {/* Radial glow — center */}

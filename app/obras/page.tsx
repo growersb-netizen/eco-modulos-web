@@ -64,6 +64,11 @@ export default async function ObrasPage({
             Proyectos reales en todo el país. Cada imagen es un cliente que confió en nosotros.
           </p>
         </div>
+        <div className="max-w-6xl mx-auto px-4 mt-12">
+          <div className="relative w-full h-[260px] sm:h-[380px] rounded-2xl overflow-hidden">
+            <Image src="/hero-obras.jpg" alt="Proyectos de módulos y piscinas instalados" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
+          </div>
+        </div>
       </section>
 
       {/* Filtros */}
