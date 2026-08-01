@@ -84,7 +84,7 @@ const jsonLd = {
   description:
     'Fabricante directo de viviendas modulares (tecnología Wood Frame) y piscinas de fibra de vidrio con financiación propia sin banco. Cooperativa de Trabajo Eco Zárate Limitada, inscripta ante INAES. Más de 15 años de trayectoria.',
   url: 'https://ecomodulosypiscinas.com.ar',
-  telephone: '+5491168733406',
+  telephone: '+5491126036495',
   email: 'info@ecomodulosypiscinas.com.ar',
   priceRange: '$$',
   currenciesAccepted: 'ARS',

@@ -128,7 +128,7 @@ export default function LoanSimulator() {
     }
   }
   const waLink = result && productoSeleccionado && typeof result.cuota === 'number'
-    ? `https://wa.me/${tipo === 'piscina' ? process.env.NEXT_PUBLIC_WA_HERNAN || '5491168733406' : process.env.NEXT_PUBLIC_WA_DANIEL || '5491168733406'}?text=${encodeURIComponent(
+    ? `https://wa.me/${tipo === 'piscina' ? process.env.NEXT_PUBLIC_WA_HERNAN || '5491126036495' : process.env.NEXT_PUBLIC_WA_DANIEL || '5491126036495'}?text=${encodeURIComponent(
         `Hola, simulé ${productoSeleccionado.nombre} en ${cuotas} cuotas (${result.label ?? cuotas + ' cuotas'}). Me quedan $${result.cuota.toLocaleString('es-AR')}/mes. Quiero asesorarme.`
       )}`
     : '#'

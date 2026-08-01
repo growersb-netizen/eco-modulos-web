@@ -46,7 +46,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="https://wa.me/5491168733406"
+                href="https://wa.me/5491126036495"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-white/50 hover:text-white transition-colors text-xs font-medium border border-white/10 hover:border-white/30 px-3 py-1.5 rounded-lg"
@@ -91,7 +91,7 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-eco-green-light mt-0.5 flex-shrink-0" />
                 <a
-                  href="https://wa.me/5491168733406"
+                  href="https://wa.me/5491126036495"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/60 hover:text-white text-sm transition-colors"

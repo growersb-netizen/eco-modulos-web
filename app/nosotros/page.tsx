@@ -37,13 +37,13 @@ const AREAS = [
     icono: '🏗️',
     titulo: 'Área de Soluciones Constructivas',
     desc: 'Módulos Wood Frame, obradores, campamentos, unidades habitacionales y piscinas de fibra. Proyectos para empresas, municipios y particulares.',
-    wa: 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, necesito información sobre módulos y soluciones constructivas.'),
+    wa: 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, necesito información sobre módulos y soluciones constructivas.'),
   },
   {
     icono: '📋',
     titulo: 'Área Comercial y Proyectos',
     desc: 'Cotizaciones corporativas, proyectos integrales, combos y licitaciones con organismos públicos o privados.',
-    wa: 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, quisiera consultar sobre proyectos y cotizaciones corporativas.'),
+    wa: 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, quisiera consultar sobre proyectos y cotizaciones corporativas.'),
   },
 ]
 

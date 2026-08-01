@@ -61,7 +61,7 @@ const faqJsonLd = {
 export default async function PiscinasPage() {
   const piscinas = await prisma.piscina.findMany({ where: { activo: true }, orderBy: [{ destacada: 'desc' }, { orden: 'asc' }] })
 
-  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa consultar por piscinas de fibra de vidrio')
+  const waLink = 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, me interesa consultar por piscinas de fibra de vidrio')
 
   return (
     <>

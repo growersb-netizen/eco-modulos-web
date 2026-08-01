@@ -115,7 +115,7 @@ There is no migration workflow for Turso — changes are applied directly. Seed 
 
 ## Contact & business constants
 
-- Phone / WhatsApp: `+54 9 11 6873-3406` → `5491168733406` (international, no spaces/dashes)
+- Phone / WhatsApp: `+54 9 11 6873-3406` → `5491126036495` (international, no spaces/dashes)
 - Legal name: `Cooperativa de Trabajo Eco Zárate Limitada`
 - CUIT: `30-71807393-2`
 - CRM URL: `https://eco-crm-dawn-fog-5476.fly.dev`

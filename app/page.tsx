@@ -62,7 +62,7 @@ export default async function HomePage() {
   const heroComboDesde    = cfg.hero_combo_desde    || 'Módulo + Piscina'
   const heroComboCuota    = cfg.hero_combo_cuota    || 'Hasta 120 cuotas, ajustadas por ICC'
 
-  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
+  const waLink = 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
 
   return (
     <>

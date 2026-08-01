@@ -199,7 +199,7 @@ const faqJsonLd = {
 export default async function ModulosPage() {
   const modulos = await prisma.modulo.findMany({ where: { activo: true }, orderBy: { orden: 'asc' } })
 
-  const waLink = 'https://wa.me/5491168733406?text=' + encodeURIComponent('Hola, necesito información sobre módulos. Quiero consultar disponibilidad y precios.')
+  const waLink = 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, necesito información sobre módulos. Quiero consultar disponibilidad y precios.')
 
   return (
     <>

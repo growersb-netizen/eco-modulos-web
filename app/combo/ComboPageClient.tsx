@@ -51,7 +51,7 @@ export default function ComboPageClient() {
   const ingreso = cuotaMensual * FACTOR_INGRESO
 
   const waLink = modulo && piscina
-    ? 'https://wa.me/5491168733406?text=' + encodeURIComponent(
+    ? 'https://wa.me/5491126036495?text=' + encodeURIComponent(
         `Hola, me interesa el Combo Módulo + Piscina:\n• Módulo: ${modulo.nombre} (${modulo.medida})\n• Piscina: ${piscina.nombre} (${piscina.medida})\n• Plan: ${cuotas} cuotas ajustadas por ICC\nTotal a financiar: ${formatPeso(precioListaTotal)}\n¿Me podés dar más info?`
       )
     : '#'
