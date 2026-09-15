@@ -1,6 +1,6 @@
 import { ExternalLink, Info } from 'lucide-react'
 
-const CRM_URL = 'https://eco-crm-dawn-fog-5476.fly.dev'
+const CRM_URL = 'https://eco-crm-production.up.railway.app'
 
 export default function AdminLeadsPage() {
   return (

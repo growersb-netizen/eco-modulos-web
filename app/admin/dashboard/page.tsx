@@ -15,7 +15,7 @@ export default async function DashboardPage() {
       prisma.obra.findMany({ where: { activo: true }, take: 5, orderBy: { creadoEn: 'desc' } }),
     ])
 
-  const CRM_URL = 'https://eco-crm-dawn-fog-5476.fly.dev'
+  const CRM_URL = 'https://eco-crm-production.up.railway.app'
 
   return (
     <div className="space-y-6">

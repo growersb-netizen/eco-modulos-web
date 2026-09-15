@@ -40,7 +40,7 @@ CRM       ←→  Leads, sales, operations only
 
 **Turso (libsql)** stores: products, prices, financing coefficients, blog articles, gallery, testimonials, site config, admin users. Accessed via Prisma (`lib/db.ts`) — always using `https://` not `libsql://` (WebSocket fails in Vercel Lambda).
 
-**CRM** (`https://eco-crm-dawn-fog-5476.fly.dev`) stores: leads, conversations, sales, payments, deliveries. The web writes to it only via `lib/crm.ts → syncLeadCRM()` with a 3-second timeout. The web **never reads from the CRM**.
+**CRM** (`https://eco-crm-production.up.railway.app`) stores: leads, conversations, sales, payments, deliveries. The web writes to it only via `lib/crm.ts → syncLeadCRM()` with a 3-second timeout. The web **never reads from the CRM**.
 
 **Prohibited:** saving client data in Turso. `prisma.lead` does not exist. `/api/admin/leads` returns HTTP 410.
 
@@ -118,7 +118,7 @@ There is no migration workflow for Turso — changes are applied directly. Seed 
 - Phone / WhatsApp: `+54 9 11 6873-3406` → `5491126036495` (international, no spaces/dashes)
 - Legal name: `Cooperativa de Trabajo Eco Zárate Limitada`
 - CUIT: `30-71807393-2`
-- CRM URL: `https://eco-crm-dawn-fog-5476.fly.dev`
+- CRM URL: `https://eco-crm-production.up.railway.app`
 - Vercel project: `eco-modulos-web`
 
 Hardcode these values or read from `config_sitio` — never use other numbers/names found in `.claude/worktrees/` (those are stale copies).
