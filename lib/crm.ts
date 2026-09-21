@@ -1,6 +1,26 @@
 const CRM_URL = process.env.CRM_API_URL
 const CRM_KEY = process.env.CRM_API_KEY
 
+async function _fetchWithRetry(
+  url: string,
+  init: RequestInit,
+  maxAttempts = 2,
+): Promise<void> {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 10000)
+    try {
+      await fetch(url, { ...init, signal: controller.signal })
+      clearTimeout(timeout)
+      return
+    } catch (err) {
+      clearTimeout(timeout)
+      if (attempt === maxAttempts) throw err
+      await new Promise(r => setTimeout(r, 1000 * attempt))
+    }
+  }
+}
+
 export async function syncLeadCRM(lead: {
   nombre?: string | null
   telefono?: string | null
@@ -18,11 +38,8 @@ export async function syncLeadCRM(lead: {
 }): Promise<void> {
   if (!CRM_URL || !CRM_KEY) return
 
-  const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), 3000)
-
   try {
-    await fetch(`${CRM_URL}/api/leads`, {
+    await _fetchWithRetry(`${CRM_URL}/api/leads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -42,12 +59,9 @@ export async function syncLeadCRM(lead: {
         utm_medium: lead.utm_medium,
         utm_campaign: lead.utm_campaign,
       }),
-      signal: controller.signal,
     })
   } catch (err) {
     console.error('[CRM sync error]', err)
-  } finally {
-    clearTimeout(timeout)
   }
 }
 
