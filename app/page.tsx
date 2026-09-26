@@ -79,24 +79,21 @@ export default async function HomePage() {
               {
                 titulo: 'Módulos Wood Frame',
                 sub: 'Llave en mano · Instalación el mismo día',
-                desde: heroModulosDesde,
-                cuota: heroModulosCuota,
+                badge: 'Pagás en tu domicilio',
                 href: '/modulos',
                 desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible con entrega e instalación inmediata. Logística propia en todo el país.',
               },
               {
                 titulo: 'Piscinas de Fibra',
                 sub: 'Stock disponible · Instalación en el día',
-                desde: heroPiscinasDesde,
-                cuota: heroPiscinasCuota,
+                badge: 'Garantía 10 años',
                 href: '/piscinas',
-                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Financiación con cuota fija hasta 36 cuotas.',
+                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Pagás en tu domicilio al instalar.',
               },
               {
                 titulo: 'Combo Especial',
                 sub: 'Módulo + Piscina',
-                desde: heroComboDesde,
-                cuota: heroComboCuota,
+                badge: 'Financiación hasta 120 cuotas',
                 href: '/combo',
                 desc: 'Combine su módulo con una piscina y financie el valor total en un solo plan, hasta 120 cuotas ajustadas por ICC.',
               },
@@ -117,13 +114,9 @@ export default async function HomePage() {
                 </div>
                 <p className="text-eco-text-muted text-sm leading-relaxed flex-1">{prod.desc}</p>
                 <div className="border-t border-eco-border pt-4">
-                  <p
-                    className="text-eco-green text-xl font-extrabold"
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    {prod.desde}
-                  </p>
-                  <p className="text-eco-text-muted text-xs mt-0.5">{prod.cuota}</p>
+                  <span className="inline-block bg-eco-green/8 text-eco-green text-xs font-bold px-3 py-1 rounded-full border border-eco-green/20">
+                    {prod.badge}
+                  </span>
                 </div>
                 <span className="flex items-center gap-1 text-eco-green text-sm font-semibold group-hover:gap-2 transition-all">
                   Ver catálogo <ArrowRight className="w-3.5 h-3.5" />

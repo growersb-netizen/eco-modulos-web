@@ -84,7 +84,7 @@ export default async function PiscinaDetallePage({ params }: Props) {
               {/* Badges */}
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  { icon: BadgeDollarSign, label: 'Pagás al recibir' },
+                  { icon: BadgeDollarSign, label: 'Pagás en el domicilio' },
                   { icon: ShieldCheck,     label: 'Garantía 10 años' },
                   { icon: Star,            label: 'Cert. Calidad Premium' },
                   { icon: CalendarCheck,   label: 'Instalación en el día' },
