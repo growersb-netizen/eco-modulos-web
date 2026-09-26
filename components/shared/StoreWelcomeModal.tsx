@@ -68,7 +68,7 @@ export default function StoreWelcomeModal() {
         {/* Badges */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           {[
-            { icon: BadgeDollarSign, label: 'Pagás al recibir' },
+            { icon: BadgeDollarSign, label: 'Pagás en el domicilio' },
             { icon: ShieldCheck,     label: 'Garantía 10 años' },
             { icon: Star,            label: 'Cert. Calidad Premium' },
             { icon: CalendarCheck,   label: 'Instalación en el día' },
