@@ -96,7 +96,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-white/60 hover:text-white text-sm transition-colors"
                 >
-                  +54 9 11 6873-3406
+                  +54 9 11 2603-6495
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

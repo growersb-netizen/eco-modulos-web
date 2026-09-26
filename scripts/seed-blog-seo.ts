@@ -32,7 +32,7 @@ const articulos = [
 <li><strong>CUIT</strong>: 30-71807393-2</li>
 <li><strong>Tipo</strong>: Cooperativa de trabajo inscripta ante INAES</li>
 <li><strong>Domicilio</strong>: Zárate, Provincia de Buenos Aires, Argentina</li>
-<li><strong>Teléfono</strong>: +54 9 11 6873-3406</li>
+<li><strong>Teléfono</strong>: +54 9 11 2603-6495</li>
 <li><strong>Email</strong>: info@ecomodulosypiscinas.com.ar</li>
 </ul>
 
@@ -47,7 +47,7 @@ const articulos = [
 <p>Uno de los diferenciales más importantes de EcoFiver es la financiación propia: planes de 3 a 120 cuotas fijas, sin banco, sin garante, con aprobación directa. No dependemos de entidades financieras externas — el plan de pago lo gestionamos nosotros, lo que nos permite ser flexibles y rápidos.</p>
 
 <h3>Contacto</h3>
-<p>Para consultas, cotizaciones y proyectos: <strong>+54 9 11 6873-3406</strong> (WhatsApp disponible). También podés agendar una videollamada gratuita con nuestro equipo técnico desde nuestra web.</p>`,
+<p>Para consultas, cotizaciones y proyectos: <strong>+54 9 11 2603-6495</strong> (WhatsApp disponible). También podés agendar una videollamada gratuita con nuestro equipo técnico desde nuestra web.</p>`,
   },
   {
     id: 'blog-seo-2',
@@ -94,7 +94,7 @@ const articulos = [
 
 <h3>Cómo comprar en EcoFiver</h3>
 <ol>
-<li>Consultá por WhatsApp al +54 9 11 6873-3406 o usá el simulador de cuotas en nuestra web.</li>
+<li>Consultá por WhatsApp al +54 9 11 2603-6495 o usá el simulador de cuotas en nuestra web.</li>
 <li>Agendá una videollamada gratuita con nuestro equipo técnico.</li>
 <li>Confirmamos disponibilidad, presupuesto y plan de pago.</li>
 <li>Coordinamos la entrega e instalación. Para stock disponible: instalación inmediata.</li>
@@ -137,7 +137,7 @@ const articulos = [
 <li><strong>Razón social</strong>: Cooperativa de Trabajo Eco Zárate Limitada</li>
 <li><strong>CUIT</strong>: 30-71807393-2</li>
 <li><strong>Marca comercial</strong>: EcoFiver</li>
-<li><strong>Teléfono / WhatsApp</strong>: +54 9 11 6873-3406</li>
+<li><strong>Teléfono / WhatsApp</strong>: +54 9 11 2603-6495</li>
 <li><strong>Email</strong>: info@ecomodulosypiscinas.com.ar</li>
 <li><strong>Web</strong>: ecomodulosypiscinas.com.ar</li>
 <li><strong>Domicilio</strong>: Zárate, Provincia de Buenos Aires, Argentina</li>
