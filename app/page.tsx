@@ -1,6 +1,6 @@
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
-
+import HeroCarousel from '@/components/shared/HeroCarousel'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle, Shield, Truck, Wrench, Award, CheckCircle, Star, ArrowRight } from 'lucide-react'
@@ -31,102 +31,16 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const [configs, obras, testimonios] = await Promise.all([
-    prisma.configSitio.findMany({
-      where: {
-        clave: {
-          in: [
-            'hero_titulo', 'hero_subtitulo',
-            'hero_modulos_desde', 'hero_modulos_cuota',
-            'hero_piscinas_desde', 'hero_piscinas_cuota',
-            'hero_combo_desde', 'hero_combo_cuota',
-          ],
-        },
-      },
-    }),
+  const [obras, testimonios] = await Promise.all([
     prisma.obra.findMany({ where: { activo: true }, take: 6, orderBy: { creadoEn: 'desc' } }),
     prisma.testimonio.findMany({ where: { activo: true }, take: 3, orderBy: { orden: 'asc' } }),
   ])
-
-  const cfg: Record<string, string> = {}
-  for (const c of configs) cfg[c.clave] = c.valor
-
-  const heroTitulo    = cfg.hero_titulo    || 'VIVIENDAS MODULARES Y PISCINAS. FINANCIACIÓN PROPIA HASTA 120 CUOTAS.'
-  const heroSubtitulo = cfg.hero_subtitulo || 'Fabricación industrial propia. Financiación directa. Cobertura en todo el país.'
-
-  const heroModulosDesde  = cfg.hero_modulos_desde  || 'Desde $2.990.000'
-  const heroModulosCuota  = cfg.hero_modulos_cuota  || 'Cuotas desde $28.650/mes'
-  const heroPiscinasDesde = cfg.hero_piscinas_desde || 'Desde $2.000.000'
-  const heroPiscinasCuota = cfg.hero_piscinas_cuota || 'Cuotas desde $19.200/mes'
-  const heroComboDesde    = cfg.hero_combo_desde    || 'Módulo + Piscina'
-  const heroComboCuota    = cfg.hero_combo_cuota    || 'Hasta 120 cuotas, ajustadas por ICC'
 
   const waLink = 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
 
   return (
     <>
-      {/* ═══════════════════════════════════════════
-          HERO — deep forest, premium & architectural
-      ════════════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-eco-green-dark">
-        {/* Foto de fondo */}
-        <Image src="/hero-home.jpg" alt="Módulo Wood Frame con piscina" fill priority className="object-cover" sizes="100vw" />
-        {/* Oscurecido para legibilidad del texto */}
-        <div className="absolute inset-0 bg-eco-green-dark/70" />
-        {/* Subtle geometric grid overlay */}
-        <div className="absolute inset-0 hero-grid-pattern opacity-100" />
-        {/* Radial glow — center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(11,35,80,0.25),transparent)]" />
-        {/* Bottom fade to page bg */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-eco-bg to-transparent" />
-
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 pt-28 pb-20 animate-fade-up">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
-            <CheckCircle className="w-3.5 h-3.5 text-eco-green-light" />
-            Cooperativa INAES · Más de 15 años de trayectoria
-          </div>
-
-          {/* Headline */}
-          <h1
-            className="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white uppercase tracking-tight leading-[0.92] mb-7"
-            style={{ fontFamily: 'var(--font-display)' }}
-          >
-            {heroTitulo}
-          </h1>
-
-          <p className="text-lg sm:text-xl text-white/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-            {heroSubtitulo}
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={waLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 shadow-[0_4px_20px_rgba(11,35,80,0.4)] hover:shadow-[0_8px_32px_rgba(11,35,80,0.5)]"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Consultar por WhatsApp
-            </a>
-            <Link
-              href="/financiacion"
-              className="flex items-center justify-center gap-2 bg-white/8 border border-white/20 hover:bg-white/15 hover:border-white/30 text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 backdrop-blur-sm"
-            >
-              Ver planes de financiación
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <div className="w-5 h-8 border border-white/20 rounded-full flex items-start justify-center pt-1.5">
-            <div className="w-0.5 h-2 bg-white/40 rounded-full animate-bounce" />
-          </div>
-        </div>
-      </section>
+      <HeroCarousel />
 
       {/* ═══════════════════════════════════════════
           TRUST BAR
