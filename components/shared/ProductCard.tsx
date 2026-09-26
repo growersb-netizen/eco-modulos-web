@@ -82,7 +82,7 @@ export default function ProductCard({
       </div>
 
       {/* Image — clickeable → detalle del producto */}
-      <Link href={`/${tipo === 'piscina' ? 'piscinas' : 'modulos'}/${id}`} className="relative block h-56 bg-eco-bg-surface overflow-hidden">
+      <Link href={`/${tipo === 'piscina' ? 'piscinas' : 'modulos'}/${id}`} className="relative block w-full h-56 bg-eco-bg-surface overflow-hidden">
         {imagen ? (
           <Image
             src={imagen}
