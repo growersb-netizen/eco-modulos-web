@@ -81,8 +81,8 @@ export default function ProductCard({
         </div>
       </div>
 
-      {/* Image */}
-      <div className="relative h-48 bg-eco-bg-surface overflow-hidden">
+      {/* Image — clickeable → detalle del producto */}
+      <Link href={`/${tipo === 'piscina' ? 'piscinas' : 'modulos'}/${id}`} className="relative block h-56 bg-eco-bg-surface overflow-hidden">
         {imagen ? (
           <Image
             src={imagen}
@@ -115,17 +115,19 @@ export default function ProductCard({
           </div>
         )}
         {destacada && (
-          <span className="absolute top-3 left-3 bg-eco-teal text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg">Más popular</span>
+          <span className="absolute top-3 left-3 bg-eco-teal text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg z-10">Más popular</span>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-4 flex flex-col gap-3 flex-1">
         <div>
-          <h3 className="text-lg font-extrabold text-eco-text leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-            {nombre}
-          </h3>
+          <Link href={`/${tipo === 'piscina' ? 'piscinas' : 'modulos'}/${id}`} className="hover:text-eco-teal transition-colors">
+            <h3 className="text-lg font-extrabold text-eco-text leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
+              {nombre}
+            </h3>
+          </Link>
           <p className="text-eco-text-muted text-xs mt-0.5">{medida}</p>
         </div>
 
