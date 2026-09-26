@@ -63,7 +63,7 @@ const SLIDES: PageSlide[] = [
 const TRUST = [
   'Instalación en el día',
   '16 modelos disponibles en stock',
-  'Garantía 10 años',
+  'Garantía total 10 años · certificado de calidad premium',
   'Pagás el día de la instalación, en el domicilio',
 ]
 
@@ -78,7 +78,7 @@ const FAQ = [
   { q: '¿Cuánto tarda la instalación?', r: 'La instalación de una piscina de fibra se realiza en el día. Stock disponible para coordinar fecha inmediata.' },
   { q: '¿Cuándo y cómo pago?', r: 'El pago total se realiza el día de la instalación, en el domicilio, en efectivo o transferencia. La seña de reserva se abona por MercadoPago (un asesor te envía el link por WhatsApp).' },
   { q: '¿La Miniportante necesita excavación?', r: 'No. La Miniportante es autoportante: se apoya sobre el suelo nivelado. Sin excavación ni obra civil.' },
-  { q: '¿Qué garantía tienen?', r: '10 años sobre el casco de fibra de vidrio. El gel coat (color/terminación) tiene 3 años de garantía.' },
+  { q: '¿Qué garantía tienen?', r: 'Garantía total de 10 años. Cada piscina incluye certificado de calidad premium.' },
   { q: '¿Hacen instalación en todo el país?', r: 'Sí. Logística propia a todo el territorio argentino. El flete se calcula según distancia desde nuestra planta en Zárate, Buenos Aires.' },
 ]
 

@@ -85,8 +85,8 @@ export default async function PiscinaDetallePage({ params }: Props) {
               <div className="grid grid-cols-2 gap-2">
                 {[
                   { icon: BadgeDollarSign, label: 'Pagás el día de la instalación' },
-                  { icon: ShieldCheck,     label: 'Garantía 10 años' },
-                  { icon: Star,            label: 'Cert. Calidad Premium' },
+                  { icon: ShieldCheck,     label: 'Garantía total 10 años' },
+                  { icon: Star,            label: 'Certificado calidad premium' },
                   { icon: CalendarCheck,   label: 'Instalación en el día' },
                 ].map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-2 bg-eco-bg-surface border border-eco-border rounded-xl px-3 py-2.5">
