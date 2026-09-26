@@ -37,13 +37,13 @@ const SLIDES: PageSlide[] = [
     ],
   },
   {
-    badge: '✅ MINIPORTANTE · SIN EXCAVACIÓN',
-    titulo: 'LA PISCINA QUE SE INSTALA SIN OBRA CIVIL',
-    subtitulo: 'La Miniportante se apoya sobre el suelo nivelado. Sin excavadora, sin escombros, sin semanas de espera. Lista en el día.',
+    badge: '✅ SIN EXCAVACIÓN · SIN OBRA CIVIL',
+    titulo: 'MINIPORTANTE, AUTOPORTANTE Y MINIDECK. INSTALADAS EN EL DÍA.',
+    subtitulo: 'Tres modelos sin excavación. Se apoyan sobre el suelo nivelado. Sin excavadora, sin escombros, sin semanas de espera.',
     imagen: '/hero-piscinas.jpg',
     acento: 'green',
     btns: [
-      { label: 'Ver Miniportante',       href: '#catalogo',   primary: true, icon: 'cart' },
+      { label: 'Ver modelos',            href: '#catalogo',   primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_PISCINAS,   external: true, icon: 'wa' },
     ],
   },

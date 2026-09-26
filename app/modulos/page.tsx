@@ -63,14 +63,14 @@ const SLIDES: PageSlide[] = [
 const TRUST = [
   'Stock disponible — entrega inmediata',
   'Baño incluido desde 12 m²',
-  'Instalación en el día · sin obra civil',
+  'Módulos hasta 18 m² instalados en el día',
   'Pagás el día de la instalación, en el domicilio',
 ]
 
 const FAQ = [
   {
     q: '¿Cuánto tarda la instalación?',
-    r: 'Módulos de hasta 18 m² se instalan en el día. Módulos de mayor metraje demoran entre 2 y 5 días. Disponemos de stock para coordinar fecha de inmediata.',
+    r: 'Módulos de hasta 18 m² se instalan en el día. Módulos de mayor metraje demoran entre 2 y 5 días. Para compras financiadas, el plazo de entrega se pacta según el plan solicitado.',
   },
   {
     q: '¿Cuándo y cómo pago?',
