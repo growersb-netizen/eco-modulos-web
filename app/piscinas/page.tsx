@@ -125,30 +125,6 @@ export default async function PiscinasPage() {
         </div>
       </section>
 
-      {/* MINIPORTANTE HIGHLIGHT */}
-      <section className="py-6 max-w-7xl mx-auto px-4">
-        <div className="bg-eco-teal/5 border border-eco-teal/30 rounded-2xl p-5 flex flex-col sm:flex-row gap-4 items-center">
-          <div className="flex-1">
-            <span className="inline-block bg-eco-teal/10 text-eco-teal text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2">
-              Sin excavación — Instalación Express
-            </span>
-            <h2 className="text-2xl font-extrabold text-eco-text mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-              Piscina Miniportante
-            </h2>
-            <p className="text-eco-text-muted text-sm">
-              Sin excavación, sin obra civil, instalada en 1 día. El modelo de mayor demanda. Ideal para patios pequeños y quinchos.
-            </p>
-          </div>
-          <a
-            href={WA_PISCINAS}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-6 py-3 rounded-xl transition-colors text-sm"
-          >
-            <MessageCircle className="w-4 h-4" />Reservar Miniportante
-          </a>
-        </div>
-      </section>
 
       {/* CATÁLOGO */}
       <section id="catalogo" className="py-10 max-w-7xl mx-auto px-4 scroll-mt-20">
