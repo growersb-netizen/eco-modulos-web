@@ -4,6 +4,7 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
 import FaqAccordion from '@/components/shared/FaqAccordion'
+import StoreWelcomeModal from '@/components/shared/StoreWelcomeModal'
 import {
   MessageCircle, HardHat, Flame, Mountain, Wheat, Building2,
   Clock, Zap, Wrench, CheckCircle,
@@ -203,6 +204,7 @@ export default async function ModulosPage() {
 
   return (
     <>
+      <StoreWelcomeModal />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

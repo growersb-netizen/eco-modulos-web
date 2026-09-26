@@ -4,6 +4,7 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
 import VideoCallButton from '@/components/shared/VideoCallButton'
 import FaqAccordion from '@/components/shared/FaqAccordion'
+import StoreWelcomeModal from '@/components/shared/StoreWelcomeModal'
 import { MessageCircle, CheckCircle, X } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -65,6 +66,7 @@ export default async function PiscinasPage() {
 
   return (
     <>
+      <StoreWelcomeModal />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { MessageCircle } from 'lucide-react'
+import Link from 'next/link'
+import { MessageCircle, ShoppingCart } from 'lucide-react'
 import { formatPeso } from '@/lib/utils'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
 import { cn } from '@/lib/utils'
@@ -124,7 +125,8 @@ export default function ProductCard({
         <div className="mt-auto pt-4 border-t border-eco-border">
           <div className="flex items-end justify-between gap-2 mb-1">
             <div>
-              <p className="text-[11px] text-eco-text-muted uppercase tracking-wider font-medium mb-0.5">Precio contado</p>
+              <p className="text-[11px] text-eco-text-muted uppercase tracking-wider font-medium mb-0.5 line-through">{formatPeso(precio_lista)}</p>
+              <p className="text-[11px] text-eco-teal font-bold uppercase tracking-wider mb-0.5">Contado / transferencia</p>
               <p
                 className="text-2xl font-extrabold text-eco-green leading-none"
                 style={{ fontFamily: 'var(--font-display)' }}
@@ -132,25 +134,34 @@ export default function ProductCard({
                 {formatPeso(precio_contado)}
               </p>
             </div>
-            <div className="text-right">
-              <p className="text-[11px] text-eco-text-muted line-through">{formatPeso(precio_lista)}</p>
-            </div>
+            <span className="text-[11px] font-bold text-eco-teal bg-eco-teal/8 border border-eco-teal/20 px-2 py-1 rounded-full">
+              Ahorrás {formatPeso(precio_lista - precio_contado)}
+            </span>
           </div>
-          <p className="text-eco-teal text-sm font-semibold">
-            12 cuotas de {formatPeso(cuota12)}/mes
+          <p className="text-eco-text-muted text-xs font-medium mt-1">
+            12 cuotas de {formatPeso(cuota12)}/mes con financiación
           </p>
         </div>
 
-        {/* CTA */}
-        <a
-          href={buildWhatsAppLink(vendedor, mensaje)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 text-sm shadow-[0_2px_8px_rgba(11,35,80,0.20)] hover:shadow-[0_4px_16px_rgba(11,35,80,0.30)]"
-        >
-          <MessageCircle className="w-4 h-4" />
-          Consultar por WhatsApp
-        </a>
+        {/* CTAs */}
+        <div className="flex flex-col gap-2">
+          <Link
+            href={`/${tipo === 'piscina' ? 'piscinas' : 'modulos'}/${id}`}
+            className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold py-3 px-4 rounded-xl transition-all duration-200 text-sm shadow-[0_2px_8px_rgba(11,35,80,0.20)] hover:shadow-[0_4px_16px_rgba(11,35,80,0.30)]"
+          >
+            <ShoppingCart className="w-4 h-4" />
+            Reservar instalación
+          </Link>
+          <a
+            href={buildWhatsAppLink(vendedor, mensaje)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 border border-eco-border hover:border-eco-teal/40 text-eco-text-muted hover:text-eco-teal font-medium py-2.5 px-4 rounded-xl transition-all text-sm"
+          >
+            <MessageCircle className="w-3.5 h-3.5" />
+            Consultar por WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   )

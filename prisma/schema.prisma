@@ -112,3 +112,40 @@ model ConfigSitio {
 
   @@map("config_sitio")
 }
+
+model Pedido {
+  id               String   @id @default(cuid())
+
+  productoTipo     String
+  productoId       String
+  productoNombre   String
+  productoMedida   String
+  precioContado    Int
+  precioLista      Int
+
+  clienteNombre    String
+  clienteTelefono  String
+  clienteEmail     String
+  clienteDni       String
+
+  calle            String
+  pisoDpto         String?
+  localidad        String
+  partido          String
+  codigoPostal     String
+
+  fechaInstalacion DateTime
+  formaPago        String
+  notas            String?
+
+  dejaSeña         Boolean  @default(false)
+  señaConfirmada   Boolean  @default(false)
+
+  estado           String   @default("PENDIENTE")
+  notasAdmin       String?
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("pedidos")
+}

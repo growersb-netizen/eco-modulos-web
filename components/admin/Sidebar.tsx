@@ -6,12 +6,13 @@ import { usePathname } from 'next/navigation'
 import { signOut, useSession } from 'next-auth/react'
 import {
   Leaf, LayoutDashboard, Box, Waves, DollarSign, Image,
-  Users, FileText, Star, Settings, UserCog, LogOut, Menu, X,
+  Users, FileText, Star, Settings, UserCog, LogOut, Menu, X, ShoppingCart,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const links = [
   { href: '/admin/dashboard',          label: 'Dashboard',     icon: LayoutDashboard },
+  { href: '/admin/pedidos',            label: 'Pedidos',       icon: ShoppingCart },
   { href: '/admin/productos/modulos',  label: 'Módulos',       icon: Box },
   { href: '/admin/productos/piscinas', label: 'Piscinas',      icon: Waves },
   { href: '/admin/financiacion',       label: 'Financiación',  icon: DollarSign },
