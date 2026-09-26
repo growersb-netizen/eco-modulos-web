@@ -79,7 +79,7 @@ export default async function HomePage() {
               {
                 titulo: 'Módulos Wood Frame',
                 sub: 'Llave en mano · Instalación el mismo día',
-                badge: 'Pagás en tu domicilio',
+                badge: 'Pagás el día de la instalación',
                 href: '/modulos',
                 desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible con entrega e instalación inmediata. Logística propia en todo el país.',
               },
@@ -88,7 +88,7 @@ export default async function HomePage() {
                 sub: 'Stock disponible · Instalación en el día',
                 badge: 'Garantía 10 años',
                 href: '/piscinas',
-                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Pagás en tu domicilio al instalar.',
+                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Pagás el día de la instalación, en el domicilio.',
               },
               {
                 titulo: 'Combo Especial',

@@ -28,7 +28,7 @@ const SLIDES: PageSlide[] = [
   {
     badge: '🏠 TIENDA VIRTUAL · MÓDULOS',
     titulo: 'COMPRÁ TU MÓDULO Y PAGALO EL DÍA DE LA INSTALACIÓN',
-    subtitulo: 'Sin anticipos. El equipo llega a tu domicilio, instala y cobra en el momento. Efectivo o transferencia. Stock disponible.',
+    subtitulo: 'Sin anticipos. El equipo llega, instala y cobra el día de la instalación, en el domicilio. Efectivo o transferencia. Stock disponible.',
     imagen: '/hero-modulos.jpg',
     acento: 'teal',
     btns: [
@@ -64,7 +64,7 @@ const TRUST = [
   'Stock disponible — entrega inmediata',
   'Baño incluido desde 12 m²',
   'Instalación en el día · sin obra civil',
-  'Pagás en tu domicilio el día de la instalación',
+  'Pagás el día de la instalación, en el domicilio',
 ]
 
 const FAQ = [
@@ -74,7 +74,7 @@ const FAQ = [
   },
   {
     q: '¿Cuándo y cómo pago?',
-    r: 'El pago total se realiza en tu domicilio el día de la instalación, en efectivo o transferencia bancaria. No se requieren anticipos. La seña de reserva se abona por MercadoPago (un asesor te envía el link por WhatsApp).',
+    r: 'El pago total se realiza el día de la instalación, en el domicilio, en efectivo o transferencia bancaria. No se requieren anticipos. La seña de reserva se abona por MercadoPago (un asesor te envía el link por WhatsApp).',
   },
   {
     q: '¿Qué está incluido en el módulo?',
@@ -178,7 +178,7 @@ export default async function ModulosPage() {
             ¿Querés reservar tu módulo?
           </h2>
           <p className="text-white/60 mb-8">
-            Elegí el modelo, pactamos la fecha de instalación y listo. Pagás en tu domicilio el día que te instalamos.
+            Elegí el modelo, pactamos la fecha de instalación y listo. Pagás el día de la instalación, en el domicilio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

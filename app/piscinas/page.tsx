@@ -28,7 +28,7 @@ const SLIDES: PageSlide[] = [
   {
     badge: '🏊 TIENDA VIRTUAL · PISCINAS',
     titulo: 'COMPRÁ TU PISCINA Y LA INSTALAMOS EN EL DÍA',
-    subtitulo: 'Sin anticipos. El equipo instala y cobra en tu domicilio. Efectivo o transferencia. Stock disponible. Garantía 10 años.',
+    subtitulo: 'Sin anticipos. El equipo instala y cobra el día de la instalación, en el domicilio. Efectivo o transferencia. Stock disponible. Garantía 10 años.',
     imagen: '/hero-piscinas.jpg',
     acento: 'teal',
     btns: [
@@ -64,7 +64,7 @@ const TRUST = [
   'Instalación en el día',
   '16 modelos disponibles en stock',
   'Garantía 10 años',
-  'Pagás en tu domicilio al momento de la instalación',
+  'Pagás el día de la instalación, en el domicilio',
 ]
 
 const COMPARATIVA = [
@@ -76,7 +76,7 @@ const COMPARATIVA = [
 
 const FAQ = [
   { q: '¿Cuánto tarda la instalación?', r: 'La instalación de una piscina de fibra se realiza en el día. Stock disponible para coordinar fecha inmediata.' },
-  { q: '¿Cuándo y cómo pago?', r: 'El pago total se realiza en tu domicilio el día de la instalación, en efectivo o transferencia. La seña de reserva se abona por MercadoPago (un asesor te envía el link por WhatsApp).' },
+  { q: '¿Cuándo y cómo pago?', r: 'El pago total se realiza el día de la instalación, en el domicilio, en efectivo o transferencia. La seña de reserva se abona por MercadoPago (un asesor te envía el link por WhatsApp).' },
   { q: '¿La Miniportante necesita excavación?', r: 'No. La Miniportante es autoportante: se apoya sobre el suelo nivelado. Sin excavación ni obra civil.' },
   { q: '¿Qué garantía tienen?', r: '10 años sobre el casco de fibra de vidrio. El gel coat (color/terminación) tiene 3 años de garantía.' },
   { q: '¿Hacen instalación en todo el país?', r: 'Sí. Logística propia a todo el territorio argentino. El flete se calcula según distancia desde nuestra planta en Zárate, Buenos Aires.' },
@@ -234,7 +234,7 @@ export default async function PiscinasPage() {
             ¿Querés reservar tu piscina?
           </h2>
           <p className="text-white/60 mb-8">
-            Elegí el modelo, pactamos la fecha de instalación y listo. Pagás en tu domicilio el día que te instalamos.
+            Elegí el modelo, pactamos la fecha de instalación y listo. Pagás el día de la instalación, en el domicilio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

@@ -17,7 +17,7 @@ interface Props {
 }
 
 const FORMA_PAGO = [
-  { value: 'efectivo',               label: 'Efectivo en el domicilio (el día de la instalación)' },
+  { value: 'efectivo',               label: 'Efectivo el día de la instalación, en el domicilio' },
   { value: 'transferencia',          label: 'Transferencia bancaria (el día de la instalación)' },
   { value: 'consultar_financiacion', label: 'Quiero consultar financiación en cuotas' },
 ]
@@ -119,7 +119,7 @@ export default function OrderForm({ producto }: Props) {
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
           {[
-            { icon: BadgeDollarSign, label: 'Pagás en el domicilio' },
+            { icon: BadgeDollarSign, label: 'Pagás el día de la instalación' },
             { icon: ShieldCheck,     label: 'Garantía 10 años' },
             { icon: Star,            label: 'Cert. Premium' },
             { icon: CalendarCheck,   label: 'Instalación en el día' },
