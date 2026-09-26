@@ -56,7 +56,7 @@ export default async function ModuloDetallePage({ params }: Props) {
           <div>
             <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-eco-bg-surface mb-6 border border-eco-border">
               {m.imagen ? (
-                <Image src={m.imagen} alt={m.nombre} fill className="object-contain p-2" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <Image src={m.imagen} alt={m.nombre} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
                   <span className="text-7xl opacity-20">🏠</span>
