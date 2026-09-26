@@ -27,7 +27,6 @@ export default async function PiscinaDetallePage({ params }: Props) {
   if (!p) notFound()
 
   const ahorro = p.precio_lista - p.precio_contado
-  const cuota12 = Math.round(p.precio_lista / 14)
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-eco-bg">
@@ -78,7 +77,7 @@ export default async function PiscinaDetallePage({ params }: Props) {
                   </span>
                 </div>
                 <p className="text-eco-text-muted text-sm mt-3">
-                  O financiá en <span className="font-semibold text-eco-text">12 cuotas de {formatPeso(cuota12)}/mes</span> sin banco ni garante.
+                  <a href="/financiacion" className="text-eco-teal font-semibold hover:underline">Ver planes de financiación →</a>
                 </p>
               </div>
 

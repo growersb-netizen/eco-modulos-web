@@ -2,7 +2,7 @@ import { prisma } from '@/lib/db'
 import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
-import VideoCallButton from '@/components/shared/VideoCallButton'
+
 import FaqAccordion from '@/components/shared/FaqAccordion'
 import StoreWelcomeModal from '@/components/shared/StoreWelcomeModal'
 import { MessageCircle, CheckCircle, X } from 'lucide-react'
@@ -100,7 +100,6 @@ export default async function PiscinasPage() {
             >
               <MessageCircle className="w-5 h-5" />Consultar al equipo de piscinas
             </a>
-            <VideoCallButton variant="outline" label="Agendar videollamada" productoDefault="piscina" />
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 mt-12">
@@ -208,7 +207,6 @@ export default async function PiscinasPage() {
             >
               <MessageCircle className="w-5 h-5" />WhatsApp — Piscinas
             </a>
-            <VideoCallButton variant="outline" productoDefault="piscina" />
           </div>
         </div>
       </section>

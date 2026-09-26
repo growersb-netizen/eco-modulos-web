@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
-import VideoCallButton from '@/components/shared/VideoCallButton'
+
 import { MessageCircle, CheckCircle, Tag } from 'lucide-react'
 import { formatPeso } from '@/lib/utils'
 
@@ -75,7 +75,6 @@ export default function ComboPageClient() {
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_16px_rgba(11,35,80,0.25)] hover:shadow-[0_8px_24px_rgba(11,35,80,0.35)]">
               <MessageCircle className="w-5 h-5" />Consultar combo por WhatsApp
             </a>
-            <VideoCallButton productoDefault="combo" variant="outline" label="Agendar videollamada" />
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 mt-12">
@@ -219,7 +218,6 @@ export default function ComboPageClient() {
             >
               <MessageCircle className="w-5 h-5" />Consultar combo por WhatsApp
             </a>
-            <VideoCallButton productoDefault="combo" variant="outline" />
           </div>
         </div>
       </section>

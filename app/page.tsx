@@ -1,7 +1,6 @@
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
-import LoanSimulator from '@/components/shared/LoanSimulator'
-import VideoCallButton from '@/components/shared/VideoCallButton'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle, Shield, Truck, Wrench, Award, CheckCircle, Star, ArrowRight } from 'lucide-react'
@@ -282,8 +281,13 @@ export default async function HomePage() {
             titulo="Simule su cuota"
             subtitulo="Sin banco. Sin trámites complejos. Elija el plan que mejor se adapte a su situación."
           />
-          <div className="mt-12">
-            <LoanSimulator />
+          <div className="mt-8 text-center">
+            <a
+              href="/financiacion"
+              className="inline-flex items-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors shadow"
+            >
+              Ver planes de financiación
+            </a>
           </div>
         </div>
       </section>
@@ -416,7 +420,12 @@ export default async function HomePage() {
               <MessageCircle className="w-5 h-5" />
               Consultar por WhatsApp
             </a>
-            <VideoCallButton className="flex items-center justify-center gap-2 bg-white/8 border border-white/20 hover:bg-white/15 text-white font-bold text-base px-8 py-4 rounded-xl transition-all backdrop-blur-sm" />
+            <a
+              href="/financiacion"
+              className="flex items-center justify-center gap-2 bg-white/8 border border-white/20 hover:bg-white/15 text-white font-bold text-base px-8 py-4 rounded-xl transition-all backdrop-blur-sm"
+            >
+              Ver financiación
+            </a>
           </div>
         </div>
       </section>

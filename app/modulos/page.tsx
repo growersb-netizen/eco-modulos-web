@@ -2,7 +2,7 @@ import { prisma } from '@/lib/db'
 import Image from 'next/image'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
-import VideoCallButton from '@/components/shared/VideoCallButton'
+
 import FaqAccordion from '@/components/shared/FaqAccordion'
 import StoreWelcomeModal from '@/components/shared/StoreWelcomeModal'
 import {
@@ -242,7 +242,6 @@ export default async function ModulosPage() {
             >
               <MessageCircle className="w-5 h-5" />Solicitar cotización
             </a>
-            <VideoCallButton variant="outline" label="Consulta técnica gratuita" productoDefault="modulo" />
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 mt-12">
@@ -470,7 +469,6 @@ export default async function ModulosPage() {
             >
               <MessageCircle className="w-5 h-5" />Solicitar cotización por WhatsApp
             </a>
-            <VideoCallButton variant="outline" label="Consulta técnica gratuita" productoDefault="modulo" />
           </div>
         </div>
       </section>

@@ -18,9 +18,6 @@ interface ProductCardProps {
   destacada?: boolean
 }
 
-// Misma fórmula que landing-financiacion: cuota = precio de lista / (cuotas + 2)
-const FACTOR_INGRESO = 2
-
 export default function ProductCard({
   id,
   nombre,
@@ -33,7 +30,6 @@ export default function ProductCard({
   tipo,
   destacada,
 }: ProductCardProps) {
-  const cuota12 = Math.round(precio_lista / (12 + FACTOR_INGRESO))
   const vendedor = tipo === 'piscina' ? 'hernan' : 'daniel'
   const mensaje = `Hola, me interesa el ${nombre} (${medida}). ¿Me puede dar más información?`
 
@@ -138,9 +134,6 @@ export default function ProductCard({
               Ahorrás {formatPeso(precio_lista - precio_contado)}
             </span>
           </div>
-          <p className="text-eco-text-muted text-xs font-medium mt-1">
-            12 cuotas de {formatPeso(cuota12)}/mes con financiación
-          </p>
         </div>
 
         {/* CTAs */}
