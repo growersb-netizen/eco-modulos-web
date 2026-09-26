@@ -20,24 +20,24 @@ const WA = 'https://wa.me/5491126036495?text='
 
 const SLIDES: Slide[] = [
   {
-    id: 'modulos',
-    badge: '🏠 TIENDA VIRTUAL · MÓDULOS',
-    titulo: 'COMPRÁ TU MÓDULO Y PAGALO EL DÍA DE LA INSTALACIÓN',
-    subtitulo: 'Sin anticipos. Sin bancos. El equipo llega, instala y cobra el día de la instalación, en el domicilio. Efectivo o transferencia.',
-    imagen: '/hero-modulos.jpg',
-    cta1: { label: 'Reservar módulo', href: '/modulos', icon: <ShoppingCart className="w-5 h-5" /> },
-    cta2: { label: 'Consultar por WhatsApp', href: WA + encodeURIComponent('Hola, quiero reservar un módulo con pago el día de la instalación'), icon: <MessageCircle className="w-5 h-5" /> },
-    acento: 'teal',
-  },
-  {
     id: 'piscinas',
     badge: '🏊 TIENDA VIRTUAL · PISCINAS',
     titulo: 'COMPRÁ TU PISCINA Y PAGALA EL DÍA DE LA INSTALACIÓN',
     subtitulo: 'Sin anticipos. Sin bancos. Instalamos y cobramos el día de la instalación, en el domicilio. Garantía 10 años.',
     imagen: '/hero-piscinas.jpg',
-    cta1: { label: 'Reservar piscina', href: '/piscinas', icon: <ShoppingCart className="w-5 h-5" /> },
+    cta1: { label: 'Ver modelos disponibles', href: '/piscinas', icon: <ShoppingCart className="w-5 h-5" /> },
     cta2: { label: 'Consultar por WhatsApp', href: WA + encodeURIComponent('Hola, quiero reservar una piscina con pago el día de la instalación'), icon: <MessageCircle className="w-5 h-5" /> },
     acento: 'green',
+  },
+  {
+    id: 'modulos',
+    badge: '🏠 TIENDA VIRTUAL · MÓDULOS',
+    titulo: 'COMPRÁ TU MÓDULO Y PAGALO EL DÍA DE LA INSTALACIÓN',
+    subtitulo: 'Sin anticipos. Sin bancos. El equipo llega, instala y cobra el día de la instalación, en el domicilio. Efectivo o transferencia.',
+    imagen: '/hero-modulos.jpg',
+    cta1: { label: 'Ver modelos disponibles', href: '/modulos', icon: <ShoppingCart className="w-5 h-5" /> },
+    cta2: { label: 'Consultar por WhatsApp', href: WA + encodeURIComponent('Hola, quiero reservar un módulo con pago el día de la instalación'), icon: <MessageCircle className="w-5 h-5" /> },
+    acento: 'teal',
   },
   {
     id: 'financiacion',
@@ -76,7 +76,7 @@ export default function HeroCarousel() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-eco-green-dark"
+      className="relative min-h-[520px] sm:min-h-[600px] lg:min-h-screen flex items-center justify-center overflow-hidden bg-eco-green-dark"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -92,7 +92,7 @@ export default function HeroCarousel() {
             alt={s.badge}
             fill
             priority={i === 0}
-            className="object-cover"
+            className="object-contain"
             sizes="100vw"
           />
         </div>

@@ -51,7 +51,7 @@ export default function PageHeroCarousel({ slides }: { slides: PageSlide[] }) {
 
   return (
     <section
-      className="relative min-h-[440px] sm:min-h-[520px] flex items-center justify-center overflow-hidden bg-eco-green-dark"
+      className="relative min-h-[380px] sm:min-h-[460px] flex items-center justify-center overflow-hidden bg-eco-green-dark"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -67,7 +67,7 @@ export default function PageHeroCarousel({ slides }: { slides: PageSlide[] }) {
             alt={s.badge}
             fill
             priority={i === 0}
-            className="object-cover"
+            className="object-contain"
             sizes="100vw"
           />
         </div>

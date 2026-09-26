@@ -3,6 +3,7 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
 import FaqAccordion from '@/components/shared/FaqAccordion'
 import StoreWelcomeModal from '@/components/shared/StoreWelcomeModal'
+import LocationModal from '@/components/shared/LocationModal'
 import PageHeroCarousel from '@/components/shared/PageHeroCarousel'
 import type { PageSlide } from '@/components/shared/PageHeroCarousel'
 import { MessageCircle, CheckCircle, X } from 'lucide-react'
@@ -32,7 +33,7 @@ const SLIDES: PageSlide[] = [
     imagen: '/hero-piscinas.jpg',
     acento: 'teal',
     btns: [
-      { label: 'Ver catálogo',           href: '#catalogo',   primary: true, icon: 'cart' },
+      { label: 'Ver modelos disponibles', href: '#catalogo',   primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_PISCINAS,   external: true, icon: 'wa' },
     ],
   },
@@ -43,7 +44,7 @@ const SLIDES: PageSlide[] = [
     imagen: '/hero-piscinas.jpg',
     acento: 'green',
     btns: [
-      { label: 'Ver modelos',            href: '#catalogo',   primary: true, icon: 'cart' },
+      { label: 'Ver modelos disponibles', href: '#catalogo',   primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_PISCINAS,   external: true, icon: 'wa' },
     ],
   },
@@ -54,7 +55,7 @@ const SLIDES: PageSlide[] = [
     imagen: '/hero-piscinas.jpg',
     acento: 'blue',
     btns: [
-      { label: 'Elegir mi piscina',      href: '#catalogo',   primary: true, icon: 'cart' },
+      { label: 'Ver modelos disponibles', href: '#catalogo',   primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_PISCINAS,   external: true, icon: 'wa' },
     ],
   },
@@ -101,6 +102,7 @@ export default async function PiscinasPage() {
   return (
     <>
       <StoreWelcomeModal />
+      <LocationModal />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
