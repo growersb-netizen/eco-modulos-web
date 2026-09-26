@@ -17,8 +17,8 @@ interface Props {
 }
 
 const FORMA_PAGO = [
-  { value: 'efectivo',               label: 'Efectivo al terminar la instalación' },
-  { value: 'transferencia',          label: 'Transferencia bancaria previa' },
+  { value: 'efectivo',               label: 'Efectivo en el domicilio (el día de la instalación)' },
+  { value: 'transferencia',          label: 'Transferencia bancaria (el día de la instalación)' },
   { value: 'consultar_financiacion', label: 'Quiero consultar financiación en cuotas' },
 ]
 
@@ -119,7 +119,7 @@ export default function OrderForm({ producto }: Props) {
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
           {[
-            { icon: BadgeDollarSign, label: 'Pagás al recibir' },
+            { icon: BadgeDollarSign, label: 'Pagás en el domicilio' },
             { icon: ShieldCheck,     label: 'Garantía 10 años' },
             { icon: Star,            label: 'Cert. Premium' },
             { icon: CalendarCheck,   label: 'Instalación en el día' },
@@ -249,15 +249,7 @@ export default function OrderForm({ producto }: Props) {
           />
           <div>
             <p className="text-sm font-semibold text-eco-text">Quiero dejar una seña para asegurar mi fecha <span className="text-eco-text-muted font-normal">(opcional)</span></p>
-            {form.dejaSeña && (
-              <div className="mt-3 bg-eco-bg border border-eco-border rounded-xl p-4 text-sm text-eco-text space-y-1">
-                <p className="font-semibold text-eco-teal mb-2">Datos para la transferencia:</p>
-                <p>CBU: <span className="font-mono font-semibold">0000003100044700831884</span></p>
-                <p>Alias: <span className="font-semibold">ECOFIVER.SEÑA</span></p>
-                <p>Monto sugerido: <span className="font-semibold">$50.000</span></p>
-                <p className="text-eco-text-muted text-xs mt-2">El equipo verificará la transferencia y te confirmará por WhatsApp.</p>
-              </div>
-            )}
+            <p className="text-xs text-eco-text-muted mt-1">El pago de la seña se realiza por MercadoPago. Un asesor te enviará el link de pago por WhatsApp.</p>
           </div>
         </label>
       </div>
