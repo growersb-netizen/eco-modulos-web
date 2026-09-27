@@ -92,16 +92,14 @@ export default function HeroCarousel() {
             alt={s.badge}
             fill
             priority={i === 0}
-            className="object-contain"
+            className="object-cover"
             sizes="100vw"
           />
         </div>
       ))}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-eco-green-dark/65" />
-      <div className="absolute inset-0 hero-grid-pattern opacity-80" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(11,35,80,0.20),transparent)]" />
+      <div className="absolute inset-0 bg-eco-green-dark/60" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-eco-bg to-transparent" />
 
       {/* Content */}

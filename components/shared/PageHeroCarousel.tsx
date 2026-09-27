@@ -67,15 +67,14 @@ export default function PageHeroCarousel({ slides }: { slides: PageSlide[] }) {
             alt={s.badge}
             fill
             priority={i === 0}
-            className="object-contain"
+            className="object-cover"
             sizes="100vw"
           />
         </div>
       ))}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-eco-green-dark/70" />
-      <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+      <div className="absolute inset-0 bg-eco-green-dark/60" />
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-eco-bg to-transparent" />
 
       {/* Content */}

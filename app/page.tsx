@@ -31,9 +31,11 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const [obras, testimonios] = await Promise.all([
+  const [obras, testimonios, piscinasDestacadas, modulosDestacados] = await Promise.all([
     prisma.obra.findMany({ where: { activo: true }, take: 6, orderBy: { creadoEn: 'desc' } }),
     prisma.testimonio.findMany({ where: { activo: true }, take: 3, orderBy: { orden: 'asc' } }),
+    prisma.piscina.findMany({ where: { activo: true }, orderBy: [{ destacada: 'desc' }, { orden: 'asc' }], take: 6 }),
+    prisma.modulo.findMany({ where: { activo: true }, orderBy: { orden: 'asc' }, take: 5 }),
   ])
 
   const waLink = 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
@@ -60,6 +62,110 @@ export default async function HomePage() {
                 <span>{item}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          TIENDA — MODELOS DESTACADOS
+      ════════════════════════════════════════════ */}
+      <section className="py-10 bg-eco-bg-card border-b border-eco-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="px-4 flex items-baseline justify-between mb-6">
+            <div>
+              <p className="text-eco-teal text-xs font-bold uppercase tracking-widest mb-1">Tienda virtual</p>
+              <h2 className="text-2xl font-extrabold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>
+                Modelos disponibles ahora
+              </h2>
+            </div>
+          </div>
+
+          {/* Piscinas */}
+          <div className="mb-8">
+            <div className="px-4 flex items-center justify-between mb-3">
+              <p className="text-xs font-bold uppercase tracking-widest text-eco-text-muted">🏊 Piscinas de fibra</p>
+              <Link href="/piscinas" className="text-xs font-semibold text-eco-green hover:underline">Ver todas →</Link>
+            </div>
+            <div className="flex gap-4 overflow-x-auto pb-3 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {piscinasDestacadas.map(p => (
+                <Link
+                  key={p.id}
+                  href={`/piscinas/${p.id}`}
+                  className="flex-shrink-0 w-44 card-premium overflow-hidden group"
+                >
+                  <div className="relative h-32 bg-eco-bg-surface overflow-hidden">
+                    {p.imagen ? (
+                      <Image src={p.imagen} alt={p.nombre} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="176px" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-eco-text-muted text-xs">Sin imagen</div>
+                    )}
+                  </div>
+                  <div className="p-3">
+                    <p className="font-bold text-eco-text text-xs leading-tight line-clamp-2">{p.nombre}</p>
+                    {p.medida && <p className="text-eco-text-muted text-[11px] mt-0.5">{p.medida}</p>}
+                    {p.precio_contado && (
+                      <p className="text-eco-teal font-extrabold text-sm mt-1.5">
+                        ${Number(p.precio_contado).toLocaleString('es-AR')}
+                      </p>
+                    )}
+                    <span className="mt-2 flex items-center text-[11px] font-semibold text-eco-green gap-1 group-hover:gap-2 transition-all">
+                      Reservar <ArrowRight className="w-2.5 h-2.5" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+              <Link
+                href="/piscinas"
+                className="flex-shrink-0 w-32 flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-eco-border hover:border-eco-green text-eco-text-muted hover:text-eco-green transition-colors p-4"
+              >
+                <span className="text-xl font-bold">+</span>
+                <span className="text-xs font-semibold text-center leading-tight">Ver todos los modelos</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Módulos */}
+          <div>
+            <div className="px-4 flex items-center justify-between mb-3">
+              <p className="text-xs font-bold uppercase tracking-widest text-eco-text-muted">🏠 Módulos Wood Frame</p>
+              <Link href="/modulos" className="text-xs font-semibold text-eco-green hover:underline">Ver todos →</Link>
+            </div>
+            <div className="flex gap-4 overflow-x-auto pb-3 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {modulosDestacados.map(m => (
+                <Link
+                  key={m.id}
+                  href={`/modulos/${m.id}`}
+                  className="flex-shrink-0 w-44 card-premium overflow-hidden group"
+                >
+                  <div className="relative h-32 bg-eco-bg-surface overflow-hidden">
+                    {m.imagen ? (
+                      <Image src={m.imagen} alt={m.nombre} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="176px" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-eco-text-muted text-xs">Sin imagen</div>
+                    )}
+                  </div>
+                  <div className="p-3">
+                    <p className="font-bold text-eco-text text-xs leading-tight line-clamp-2">{m.nombre}</p>
+                    {m.medida && <p className="text-eco-text-muted text-[11px] mt-0.5">{m.medida}</p>}
+                    {m.precio_contado && (
+                      <p className="text-eco-teal font-extrabold text-sm mt-1.5">
+                        ${Number(m.precio_contado).toLocaleString('es-AR')}
+                      </p>
+                    )}
+                    <span className="mt-2 flex items-center text-[11px] font-semibold text-eco-green gap-1 group-hover:gap-2 transition-all">
+                      Reservar <ArrowRight className="w-2.5 h-2.5" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+              <Link
+                href="/modulos"
+                className="flex-shrink-0 w-32 flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-eco-border hover:border-eco-green text-eco-text-muted hover:text-eco-green transition-colors p-4"
+              >
+                <span className="text-xl font-bold">+</span>
+                <span className="text-xs font-semibold text-center leading-tight">Ver todos los modelos</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -304,10 +410,8 @@ export default async function HomePage() {
       {/* ═══════════════════════════════════════════
           CTA FINAL
       ════════════════════════════════════════════ */}
-      <section className="py-28 bg-eco-green-dark relative overflow-hidden">
-        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_50%,rgba(11,35,80,0.3),transparent)]" />
-        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+      <section className="py-28 bg-eco-green-dark">
+        <div className="max-w-3xl mx-auto px-4 text-center">
           <h2
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-display)' }}

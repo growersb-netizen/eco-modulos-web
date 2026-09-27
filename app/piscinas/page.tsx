@@ -128,56 +128,8 @@ export default async function PiscinasPage() {
       </section>
 
 
-      {/* COMPARATIVA FIBRA VS HORMIGÓN — antes del catálogo para empujar la decisión */}
-      <section className="py-12 bg-eco-bg-card border-b border-eco-border">
-        <div className="max-w-3xl mx-auto px-4">
-          <SectionTitle
-            titulo="Fibra vs. Hormigón"
-            subtitulo="La diferencia que nadie te cuenta antes de gastar el doble y esperar meses"
-          />
-          <div className="mt-8 overflow-hidden rounded-xl border border-eco-border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-eco-bg-surface border-b border-eco-border">
-                  <th className="text-left px-4 py-3 text-eco-text-muted">Aspecto</th>
-                  <th className="text-center px-4 py-3 text-eco-teal font-bold">Fibra de vidrio</th>
-                  <th className="text-center px-4 py-3 text-eco-text-muted">Hormigón</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-eco-border">
-                {COMPARATIVA.map(row => (
-                  <tr key={row.aspecto} className="hover:bg-eco-bg-surface/50">
-                    <td className="px-4 py-3 text-eco-text font-medium text-xs">{row.aspecto}</td>
-                    <td className="px-4 py-3 text-center">
-                      <div className="flex items-center justify-center gap-1.5">
-                        <CheckCircle className="w-3.5 h-3.5 flex-shrink-0 text-eco-teal" />
-                        <span className="text-eco-text text-xs">{row.fibra}</span>
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <div className="flex items-center justify-center gap-1.5 text-eco-text-muted">
-                        <X className="w-3.5 h-3.5 flex-shrink-0 text-red-500/70" />
-                        <span className="text-xs">{row.hormigon}</span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="mt-6 text-center">
-            <a
-              href="#catalogo"
-              className="inline-flex items-center gap-2 bg-eco-teal text-white font-bold px-8 py-3.5 rounded-xl hover:bg-eco-teal-light transition-colors shadow-[0_2px_12px_rgba(78,195,181,0.35)]"
-            >
-              Ver modelos disponibles →
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* CATÁLOGO */}
-      <section id="catalogo" className="py-10 max-w-7xl mx-auto px-4 scroll-mt-20">
+      <section id="catalogo" className="py-12 max-w-7xl mx-auto px-4 scroll-mt-20">
         <SectionTitle
           titulo="Catálogo completo"
           subtitulo="Seleccioná tu modelo y reservá la fecha de instalación."
@@ -202,6 +154,54 @@ export default async function PiscinasPage() {
         </div>
       </section>
 
+      {/* COMPARATIVA FIBRA VS HORMIGÓN */}
+      <section className="py-12 bg-eco-bg-surface border-y border-eco-border">
+        <div className="max-w-3xl mx-auto px-4">
+          <SectionTitle
+            titulo="Fibra vs. Hormigón"
+            subtitulo="Por qué elegir fibra de vidrio — la diferencia que pocos te explican antes de decidir"
+          />
+          <div className="mt-8 overflow-hidden rounded-xl border border-eco-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-eco-bg-card border-b border-eco-border">
+                  <th className="text-left px-4 py-3 text-eco-text-muted">Aspecto</th>
+                  <th className="text-center px-4 py-3 text-eco-teal font-bold">Fibra de vidrio</th>
+                  <th className="text-center px-4 py-3 text-eco-text-muted">Hormigón</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-eco-border">
+                {COMPARATIVA.map(row => (
+                  <tr key={row.aspecto} className="hover:bg-eco-bg-card/80">
+                    <td className="px-4 py-3 text-eco-text font-medium text-xs">{row.aspecto}</td>
+                    <td className="px-4 py-3 text-center">
+                      <div className="flex items-center justify-center gap-1.5">
+                        <CheckCircle className="w-3.5 h-3.5 flex-shrink-0 text-eco-teal" />
+                        <span className="text-eco-text text-xs">{row.fibra}</span>
+                      </div>
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <div className="flex items-center justify-center gap-1.5 text-eco-text-muted">
+                        <X className="w-3.5 h-3.5 flex-shrink-0 text-red-500/70" />
+                        <span className="text-xs">{row.hormigon}</span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-6 text-center">
+            <a
+              href="#catalogo"
+              className="inline-flex items-center gap-2 bg-eco-teal text-white font-bold px-8 py-3.5 rounded-xl hover:bg-eco-teal-light transition-colors shadow-[0_2px_12px_rgba(78,195,181,0.35)]"
+            >
+              ↑ Volver al catálogo
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 bg-eco-bg">
         <div className="max-w-3xl mx-auto px-4">
@@ -213,9 +213,8 @@ export default async function PiscinasPage() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-20 bg-eco-green-dark relative overflow-hidden">
-        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
-        <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
+      <section className="py-20 bg-eco-green-dark">
+        <div className="max-w-2xl mx-auto px-4 text-center">
           <h2
             className="text-3xl sm:text-4xl font-extrabold text-white mb-3 uppercase"
             style={{ fontFamily: 'var(--font-display)' }}

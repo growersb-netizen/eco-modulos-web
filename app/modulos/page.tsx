@@ -170,9 +170,8 @@ export default async function ModulosPage() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-20 bg-eco-green-dark relative overflow-hidden">
-        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
-        <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
+      <section className="py-20 bg-eco-green-dark">
+        <div className="max-w-2xl mx-auto px-4 text-center">
           <h2
             className="text-3xl sm:text-4xl font-extrabold text-white mb-3 uppercase"
             style={{ fontFamily: 'var(--font-display)' }}
