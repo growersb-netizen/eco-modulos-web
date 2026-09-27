@@ -41,7 +41,7 @@ const SLIDES: PageSlide[] = [
     badge: '✅ SIN EXCAVACIÓN · SIN OBRA CIVIL',
     titulo: '¿QUERÉS LA PISCINA ESTA SEMANA? NOSOTROS LA INSTALAMOS.',
     subtitulo: 'Sin excavadora, sin obra, sin escombros. Tu patio queda listo el mismo día. Solo nivelás el suelo — el equipo hace el resto. Miniportante, Autoportante y MiniDeck.',
-    imagen: '/hero-piscinas-flow.jpg',
+    imagen: '/hero-piscinas-autoportante.jpg',
     acento: 'green',
     btns: [
       { label: 'Ver modelos sin excavación', href: '#catalogo',   primary: true, icon: 'cart' },

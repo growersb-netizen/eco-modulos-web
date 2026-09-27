@@ -28,30 +28,30 @@ const WA_MODULOS = 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hol
 const SLIDES: PageSlide[] = [
   {
     badge: '🏠 TIENDA VIRTUAL · MÓDULOS',
-    titulo: 'COMPRÁ TU MÓDULO Y PAGALO EL DÍA DE LA INSTALACIÓN',
-    subtitulo: 'Sin anticipos. El equipo llega, instala y cobra el día de la instalación, en el domicilio. Efectivo o transferencia. Stock disponible.',
+    titulo: 'RESERVÁ TU MÓDULO HOY Y LO INSTALAMOS ESTA SEMANA',
+    subtitulo: 'Stock disponible para entrega inmediata. Reservá tu fecha hoy — pagás cero hasta el día que el equipo lo instala en tu domicilio. Sin anticipos, sin riesgos.',
     imagen: '/hero-modulos.jpg',
     acento: 'teal',
     btns: [
-      { label: 'Ver modelos disponibles', href: '#catalogo',    primary: true, icon: 'cart' },
+      { label: 'Reservar mi módulo ahora', href: '#catalogo',    primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_MODULOS,     external: true, icon: 'wa' },
     ],
   },
   {
-    badge: '🔨 LLAVE EN MANO · INSTALACIÓN EN DÍAS',
-    titulo: 'MÓDULO WOOD FRAME TERMINADO. HABITABLE DESDE EL DÍA 1.',
-    subtitulo: 'Baño completo desde 12 m² · Kitchenette desde 18 m² · Obra Blanca terminada · Sin obra civil previa · Sin escombros.',
+    badge: '🔨 LLAVE EN MANO · HABITABLE DESDE EL DÍA 1',
+    titulo: 'EL EQUIPO LLEGA, INSTALA Y SE VA. TU ESPACIO ESTÁ LISTO.',
+    subtitulo: 'Baño, kitchenette, obra blanca terminada. Sin obra civil, sin escombros, sin semanas de espera. Tu nuevo espacio habitable el mismo día que llega el módulo.',
     imagen: '/hero-modulos.jpg',
     acento: 'green',
     btns: [
-      { label: 'Ver modelos disponibles', href: '#catalogo',    primary: true, icon: 'cart' },
+      { label: 'Reservar mi módulo ahora', href: '#catalogo',    primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_MODULOS,     external: true, icon: 'wa' },
     ],
   },
   {
     badge: '💳 FINANCIACIÓN PROPIA · HASTA 120 CUOTAS',
-    titulo: 'TAMBIÉN PODÉS FINANCIAR TU MÓDULO SIN BANCO NI GARANTE',
-    subtitulo: 'Cuotas ajustadas por ICC. Aprobación en el día. Sin banco ni garante. Consultá el plan que mejor se adapta a vos.',
+    titulo: '¿NO TENÉS EL TOTAL? FINANCIAMOS NOSOTROS, SIN BANCO.',
+    subtitulo: 'Aprobación en el día, sin trámites bancarios, sin garante. Cuotas que se ajustan a tu presupuesto. Más gente puede tener su módulo de lo que imagina.',
     imagen: '/hero-financiacion.jpg',
     acento: 'blue',
     btns: [
