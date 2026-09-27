@@ -3,7 +3,7 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import HeroCarousel from '@/components/shared/HeroCarousel'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MessageCircle, Shield, Truck, Wrench, Award, CheckCircle, Star, ArrowRight } from 'lucide-react'
+import { MessageCircle, Shield, Truck, Wrench, Award, Star, ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const revalidate = 0
@@ -104,9 +104,12 @@ export default async function HomePage() {
                     <p className="font-bold text-eco-text text-xs leading-tight line-clamp-2">{p.nombre}</p>
                     {p.medida && <p className="text-eco-text-muted text-[11px] mt-0.5">{p.medida}</p>}
                     {p.precio_contado && (
-                      <p className="text-eco-teal font-extrabold text-sm mt-1.5">
-                        ${Number(p.precio_contado).toLocaleString('es-AR')}
-                      </p>
+                      <div className="mt-1.5">
+                        <p className="text-eco-teal font-extrabold text-sm leading-none">
+                          ${Number(p.precio_contado).toLocaleString('es-AR')}
+                        </p>
+                        <p className="text-eco-text-muted text-[10px] mt-0.5">+ flete según zona</p>
+                      </div>
                     )}
                     <span className="mt-2 flex items-center text-[11px] font-semibold text-eco-green gap-1 group-hover:gap-2 transition-all">
                       Reservar <ArrowRight className="w-2.5 h-2.5" />
@@ -148,9 +151,12 @@ export default async function HomePage() {
                     <p className="font-bold text-eco-text text-xs leading-tight line-clamp-2">{m.nombre}</p>
                     {m.medida && <p className="text-eco-text-muted text-[11px] mt-0.5">{m.medida}</p>}
                     {m.precio_contado && (
-                      <p className="text-eco-teal font-extrabold text-sm mt-1.5">
-                        ${Number(m.precio_contado).toLocaleString('es-AR')}
-                      </p>
+                      <div className="mt-1.5">
+                        <p className="text-eco-teal font-extrabold text-sm leading-none">
+                          ${Number(m.precio_contado).toLocaleString('es-AR')}
+                        </p>
+                        <p className="text-eco-text-muted text-[10px] mt-0.5">+ flete según zona</p>
+                      </div>
                     )}
                     <span className="mt-2 flex items-center text-[11px] font-semibold text-eco-green gap-1 group-hover:gap-2 transition-all">
                       Reservar <ArrowRight className="w-2.5 h-2.5" />
@@ -166,69 +172,6 @@ export default async function HomePage() {
                 <span className="text-xs font-semibold text-center leading-tight">Ver todos los modelos</span>
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          PRODUCTOS
-      ════════════════════════════════════════════ */}
-      <section className="py-24 bg-eco-bg">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionTitle
-            titulo="Nuestros productos"
-            subtitulo="Producción íntegra en planta propia. Sin intermediarios. Financiación directa."
-            badge="Catálogo"
-          />
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                titulo: 'Módulos Wood Frame',
-                sub: 'Llave en mano · Instalación el mismo día',
-                badge: 'Pagás el día de la instalación',
-                href: '/modulos',
-                desc: 'Viviendas, quinchos, obradores, campamentos y más. Stock disponible con entrega e instalación inmediata. Logística propia en todo el país.',
-              },
-              {
-                titulo: 'Piscinas de Fibra',
-                sub: 'Stock disponible · Instalación en el día',
-                badge: 'Garantía 10 años',
-                href: '/piscinas',
-                desc: 'Sin excavación con la Miniportante. Instalación el mismo día. Pagás el día de la instalación, en el domicilio.',
-              },
-              {
-                titulo: 'Combo Especial',
-                sub: 'Módulo + Piscina',
-                badge: 'Financiación hasta 120 cuotas',
-                href: '/combo',
-                desc: 'Combine su módulo con una piscina y financie el valor total en un solo plan, hasta 120 cuotas ajustadas por ICC.',
-              },
-            ].map((prod) => (
-              <Link
-                key={prod.href}
-                href={prod.href}
-                className="card-premium group p-8 flex flex-col gap-5 cursor-pointer"
-              >
-                <div>
-                  <p className="text-eco-text-muted text-[11px] uppercase tracking-widest font-medium mb-1.5">{prod.sub}</p>
-                  <h3
-                    className="text-2xl font-extrabold text-eco-text"
-                    style={{ fontFamily: 'var(--font-display)' }}
-                  >
-                    {prod.titulo}
-                  </h3>
-                </div>
-                <p className="text-eco-text-muted text-sm leading-relaxed flex-1">{prod.desc}</p>
-                <div className="border-t border-eco-border pt-4">
-                  <span className="inline-block bg-eco-green/8 text-eco-green text-xs font-bold px-3 py-1 rounded-full border border-eco-green/20">
-                    {prod.badge}
-                  </span>
-                </div>
-                <span className="flex items-center gap-1 text-eco-green text-sm font-semibold group-hover:gap-2 transition-all">
-                  Ver catálogo <ArrowRight className="w-3.5 h-3.5" />
-                </span>
-              </Link>
-            ))}
           </div>
         </div>
       </section>
@@ -281,26 +224,6 @@ export default async function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          SIMULADOR
-      ════════════════════════════════════════════ */}
-      <section className="py-24 bg-eco-bg">
-        <div className="max-w-4xl mx-auto px-4">
-          <SectionTitle
-            titulo="Simule su cuota"
-            subtitulo="Sin banco. Sin trámites complejos. Elija el plan que mejor se adapte a su situación."
-          />
-          <div className="mt-8 text-center">
-            <a
-              href="/financiacion"
-              className="inline-flex items-center gap-2 bg-eco-teal hover:bg-eco-teal-light text-white font-bold px-8 py-4 rounded-xl transition-colors shadow"
-            >
-              Ver planes de financiación
-            </a>
           </div>
         </div>
       </section>
