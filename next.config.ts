@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
       // GitHub
       { protocol: 'https', hostname: 'raw.githubusercontent.com' },
       { protocol: 'https', hostname: '*.githubusercontent.com' },
+      // Placeholders / seed data
+      { protocol: 'https', hostname: 'picsum.photos' },
+      { protocol: 'https', hostname: 'loremflickr.com' },
+      { protocol: 'https', hostname: 'placehold.co' },
+      { protocol: 'https', hostname: 'via.placeholder.com' },
     ],
   },
   experimental: {
