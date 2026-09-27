@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import HeroCarousel from '@/components/shared/HeroCarousel'
+import HomepageCarousel from '@/components/shared/HomepageCarousel'
+import LocationModal from '@/components/shared/LocationModal'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MessageCircle, Shield, Truck, Wrench, Award, Star, ArrowRight } from 'lucide-react'
@@ -40,8 +42,25 @@ export default async function HomePage() {
 
   const waLink = 'https://wa.me/5491126036495?text=' + encodeURIComponent('Hola, me interesa consultar por módulos y piscinas')
 
+  const piscinas = piscinasDestacadas.map(p => ({
+    id: p.id,
+    nombre: p.nombre,
+    medida: p.medida,
+    precio_contado: p.precio_contado != null ? Number(p.precio_contado) : null,
+    imagen: p.imagen,
+  }))
+
+  const modulos = modulosDestacados.map(m => ({
+    id: m.id,
+    nombre: m.nombre,
+    medida: m.medida,
+    precio_contado: m.precio_contado != null ? Number(m.precio_contado) : null,
+    imagen: m.imagen,
+  }))
+
   return (
     <>
+      <LocationModal />
       <HeroCarousel />
 
       {/* ═══════════════════════════════════════════
@@ -69,114 +88,7 @@ export default async function HomePage() {
       {/* ═══════════════════════════════════════════
           TIENDA — MODELOS DESTACADOS
       ════════════════════════════════════════════ */}
-      {(piscinasDestacadas.length > 0 || modulosDestacados.length > 0) && (
-      <section className="py-10 bg-eco-bg-card border-b border-eco-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="px-4 flex items-baseline justify-between mb-6">
-            <div>
-              <p className="text-eco-teal text-xs font-bold uppercase tracking-widest mb-1">Tienda virtual</p>
-              <h2 className="text-2xl font-extrabold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>
-                Modelos disponibles ahora
-              </h2>
-            </div>
-          </div>
-
-          {/* Piscinas */}
-          <div className="mb-8">
-            <div className="px-4 flex items-center justify-between mb-3">
-              <p className="text-xs font-bold uppercase tracking-widest text-eco-text-muted">🏊 Piscinas de fibra</p>
-              <Link href="/piscinas" className="text-xs font-semibold text-eco-green hover:underline">Ver todas →</Link>
-            </div>
-            <div className="scroll-no-bar flex gap-4 overflow-x-auto pb-3 px-4">
-              {piscinasDestacadas.map(p => (
-                <Link
-                  key={p.id}
-                  href={`/piscinas/${p.id}`}
-                  className="flex-shrink-0 w-44 card-premium overflow-hidden group"
-                >
-                  <div className="relative h-32 bg-eco-bg-surface overflow-hidden">
-                    {p.imagen ? (
-                      <Image src={p.imagen} alt={p.nombre} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="176px" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-eco-text-muted text-xs">Sin imagen</div>
-                    )}
-                  </div>
-                  <div className="p-3">
-                    <p className="font-bold text-eco-text text-xs leading-tight line-clamp-2">{p.nombre}</p>
-                    {p.medida && <p className="text-eco-text-muted text-[11px] mt-0.5">{p.medida}</p>}
-                    {p.precio_contado && (
-                      <div className="mt-1.5">
-                        <p className="text-eco-teal font-extrabold text-sm leading-none">
-                          ${Number(p.precio_contado).toLocaleString('es-AR')}
-                        </p>
-                        <p className="text-eco-text-muted text-[10px] mt-0.5">+ flete según zona</p>
-                      </div>
-                    )}
-                    <span className="mt-2 flex items-center text-[11px] font-semibold text-eco-green gap-1 group-hover:gap-2 transition-all">
-                      Reservar <ArrowRight className="w-2.5 h-2.5" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-              <Link
-                href="/piscinas"
-                className="flex-shrink-0 w-32 flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-eco-border hover:border-eco-green text-eco-text-muted hover:text-eco-green transition-colors p-4"
-              >
-                <span className="text-xl font-bold">+</span>
-                <span className="text-xs font-semibold text-center leading-tight">Ver todos los modelos</span>
-              </Link>
-            </div>
-          </div>
-
-          {/* Módulos */}
-          <div>
-            <div className="px-4 flex items-center justify-between mb-3">
-              <p className="text-xs font-bold uppercase tracking-widest text-eco-text-muted">🏠 Módulos Wood Frame</p>
-              <Link href="/modulos" className="text-xs font-semibold text-eco-green hover:underline">Ver todos →</Link>
-            </div>
-            <div className="scroll-no-bar flex gap-4 overflow-x-auto pb-3 px-4">
-              {modulosDestacados.map(m => (
-                <Link
-                  key={m.id}
-                  href={`/modulos/${m.id}`}
-                  className="flex-shrink-0 w-44 card-premium overflow-hidden group"
-                >
-                  <div className="relative h-32 bg-eco-bg-surface overflow-hidden">
-                    {m.imagen ? (
-                      <Image src={m.imagen} alt={m.nombre} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="176px" />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-eco-text-muted text-xs">Sin imagen</div>
-                    )}
-                  </div>
-                  <div className="p-3">
-                    <p className="font-bold text-eco-text text-xs leading-tight line-clamp-2">{m.nombre}</p>
-                    {m.medida && <p className="text-eco-text-muted text-[11px] mt-0.5">{m.medida}</p>}
-                    {m.precio_contado && (
-                      <div className="mt-1.5">
-                        <p className="text-eco-teal font-extrabold text-sm leading-none">
-                          ${Number(m.precio_contado).toLocaleString('es-AR')}
-                        </p>
-                        <p className="text-eco-text-muted text-[10px] mt-0.5">+ flete según zona</p>
-                      </div>
-                    )}
-                    <span className="mt-2 flex items-center text-[11px] font-semibold text-eco-green gap-1 group-hover:gap-2 transition-all">
-                      Reservar <ArrowRight className="w-2.5 h-2.5" />
-                    </span>
-                  </div>
-                </Link>
-              ))}
-              <Link
-                href="/modulos"
-                className="flex-shrink-0 w-32 flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-eco-border hover:border-eco-green text-eco-text-muted hover:text-eco-green transition-colors p-4"
-              >
-                <span className="text-xl font-bold">+</span>
-                <span className="text-xs font-semibold text-center leading-tight">Ver todos los modelos</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-      )}
+      <HomepageCarousel piscinas={piscinas} modulos={modulos} />
 
       {/* ═══════════════════════════════════════════
           CÓMO FUNCIONA
