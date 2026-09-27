@@ -87,16 +87,14 @@ export default function HomepageCarousel({ piscinas, modulos }: Props) {
         </div>
       )
     }
+    // Sin zona: no mostramos precio, invitamos a consultar
     return (
-      <div className="mt-1.5">
-        <p className="text-eco-teal font-extrabold text-sm leading-none">{fmt(precio)}</p>
-        <button
-          onClick={openModal}
-          className="text-[10px] text-eco-green hover:underline mt-0.5 block text-left"
-        >
-          + calculá flete →
-        </button>
-      </div>
+      <button
+        onClick={(e) => { e.preventDefault(); e.stopPropagation(); openModal() }}
+        className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-eco-green hover:text-eco-green-light transition-colors"
+      >
+        Consultar precio →
+      </button>
     )
   }
 
