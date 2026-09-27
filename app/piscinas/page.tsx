@@ -29,33 +29,33 @@ const SLIDES: PageSlide[] = [
   {
     badge: '🏊 TIENDA VIRTUAL · PISCINAS',
     titulo: 'COMPRÁ TU PISCINA Y LA INSTALAMOS EN EL DÍA',
-    subtitulo: 'Sin anticipos. El equipo instala y cobra el día de la instalación, en el domicilio. Efectivo o transferencia. Stock disponible. Garantía 10 años.',
-    imagen: '/hero-piscinas.jpg',
+    subtitulo: 'El stock se agota en temporada. Reservá tu fecha hoy — pagás cero hasta el día que la instalamos en tu domicilio. Sin anticipos, sin riesgos.',
+    imagen: '/hero-piscinas-flow.jpg',
     acento: 'teal',
     btns: [
-      { label: 'Ver modelos disponibles', href: '#catalogo',   primary: true, icon: 'cart' },
+      { label: 'Reservar mi fecha ahora', href: '#catalogo',   primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_PISCINAS,   external: true, icon: 'wa' },
     ],
   },
   {
     badge: '✅ SIN EXCAVACIÓN · SIN OBRA CIVIL',
-    titulo: 'MINIPORTANTE, AUTOPORTANTE Y MINIDECK. INSTALADAS EN EL DÍA.',
-    subtitulo: 'Tres modelos sin excavación. Se apoyan sobre el suelo nivelado. Sin excavadora, sin escombros, sin semanas de espera.',
-    imagen: '/hero-piscinas.jpg',
+    titulo: '¿QUERÉS LA PISCINA ESTA SEMANA? NOSOTROS LA INSTALAMOS.',
+    subtitulo: 'Sin excavadora, sin obra, sin escombros. Tu patio queda listo el mismo día. Solo nivelás el suelo — el equipo hace el resto. Miniportante, Autoportante y MiniDeck.',
+    imagen: '/hero-piscinas-flow.jpg',
     acento: 'green',
     btns: [
-      { label: 'Ver modelos disponibles', href: '#catalogo',   primary: true, icon: 'cart' },
+      { label: 'Ver modelos sin excavación', href: '#catalogo',   primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_PISCINAS,   external: true, icon: 'wa' },
     ],
   },
   {
     badge: '🛡️ GARANTÍA 10 AÑOS · FIBRA DE VIDRIO',
-    titulo: '16 MODELOS DE FIBRA DE VIDRIO. DESDE 2×3 HASTA 4×8 M.',
-    subtitulo: 'Superficie lisa, no porosa, fácil de limpiar. Alta resistencia UV. Gel coat de larga duración. Sin mantenimiento complejo.',
-    imagen: '/hero-piscinas.jpg',
+    titulo: 'DISFRUTALA EN VERANO. OLVIDATE EN INVIERNO.',
+    subtitulo: 'Sin fisuras, sin revoque, sin mantenimiento complejo. Fibra de vidrio que dura décadas. Garantía escrita de 10 años. Reservá tu fecha antes que se agote el stock.',
+    imagen: '/hero-piscinas-flow.jpg',
     acento: 'blue',
     btns: [
-      { label: 'Ver modelos disponibles', href: '#catalogo',   primary: true, icon: 'cart' },
+      { label: 'Reservar mi fecha ahora', href: '#catalogo',   primary: true, icon: 'cart' },
       { label: 'Consultar por WhatsApp', href: WA_PISCINAS,   external: true, icon: 'wa' },
     ],
   },
@@ -128,36 +128,13 @@ export default async function PiscinasPage() {
       </section>
 
 
-      {/* CATÁLOGO */}
-      <section id="catalogo" className="py-10 max-w-7xl mx-auto px-4 scroll-mt-20">
-        <SectionTitle
-          titulo="Catálogo completo"
-          subtitulo="Seleccioná tu modelo y reservá la fecha de instalación."
-          centrado={false}
-        />
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {piscinas.map(p => (
-            <ProductCard
-              key={p.id}
-              id={p.id}
-              nombre={p.nombre}
-              medida={p.medida}
-              descripcion={p.descripcion}
-              usos={JSON.parse(p.usos || '[]')}
-              precio_contado={p.precio_contado}
-              precio_lista={p.precio_lista}
-              imagen={p.imagen}
-              tipo="piscina"
-              destacada={p.destacada}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* COMPARATIVA FIBRA VS HORMIGÓN */}
-      <section className="py-12 bg-eco-bg-card border-y border-eco-border">
+      {/* COMPARATIVA FIBRA VS HORMIGÓN — antes del catálogo para empujar la decisión */}
+      <section className="py-12 bg-eco-bg-card border-b border-eco-border">
         <div className="max-w-3xl mx-auto px-4">
-          <SectionTitle titulo="Fibra vs. Hormigón" subtitulo="La diferencia que nadie te cuenta antes de construir" />
+          <SectionTitle
+            titulo="Fibra vs. Hormigón"
+            subtitulo="La diferencia que nadie te cuenta antes de gastar el doble y esperar meses"
+          />
           <div className="mt-8 overflow-hidden rounded-xl border border-eco-border">
             <table className="w-full text-sm">
               <thead>
@@ -188,6 +165,40 @@ export default async function PiscinasPage() {
               </tbody>
             </table>
           </div>
+          <div className="mt-6 text-center">
+            <a
+              href="#catalogo"
+              className="inline-flex items-center gap-2 bg-eco-teal text-white font-bold px-8 py-3.5 rounded-xl hover:bg-eco-teal-light transition-colors shadow-[0_2px_12px_rgba(78,195,181,0.35)]"
+            >
+              Ver modelos disponibles →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CATÁLOGO */}
+      <section id="catalogo" className="py-10 max-w-7xl mx-auto px-4 scroll-mt-20">
+        <SectionTitle
+          titulo="Catálogo completo"
+          subtitulo="Seleccioná tu modelo y reservá la fecha de instalación."
+          centrado={false}
+        />
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {piscinas.map(p => (
+            <ProductCard
+              key={p.id}
+              id={p.id}
+              nombre={p.nombre}
+              medida={p.medida}
+              descripcion={p.descripcion}
+              usos={JSON.parse(p.usos || '[]')}
+              precio_contado={p.precio_contado}
+              precio_lista={p.precio_lista}
+              imagen={p.imagen}
+              tipo="piscina"
+              destacada={p.destacada}
+            />
+          ))}
         </div>
       </section>
 
