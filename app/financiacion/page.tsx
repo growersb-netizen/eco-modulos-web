@@ -9,57 +9,57 @@ import type { Metadata } from 'next'
 export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Financiación Directa Sin Banco | Piscinas Fijas, Módulos por ICC | EcoFiver',
-  description: 'Financiación propia sin banco, sin garante y sin VERAZ. Piscinas de fibra en cuotas fijas hasta 36 cuotas. Módulos habitacionales y combos hasta 120 cuotas ajustadas por índice ICC. Aprobación simple. Todo el país.',
+  title: 'Financiación Directa Sin Banco | Solo tu DNI | EcoFiver',
+  description: 'Vivienda modular o piscina en cuotas, sin banco ni garante. Solo necesitás tu DNI. Piscinas con cuota fija hasta 36 meses. Viviendas y combos hasta 120 cuotas. Aprobación el mismo día. Todo el país.',
   keywords: [
-    'financiación sin banco módulos',
-    'cuotas sin garante vivienda modular',
-    'financiamiento piscinas argentina',
-    'módulos hasta 120 cuotas',
-    'piscina en cuotas fijas sin banco',
-    'crédito vivienda sin VERAZ',
-    'financiación directa cooperativa',
+    'financiación sin banco vivienda modular',
+    'piscina en cuotas sin banco argentina',
+    'cuotas sin garante DNI',
+    'vivienda modular financiada',
+    'piscinas a plazo sin banco',
+    'financiación directa fábrica cooperativa',
+    'módulos en cuotas sin recibo de sueldo',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/financiacion' },
   openGraph: {
     title: 'Financiación Directa Sin Banco | EcoFiver',
-    description: 'Piscinas con cuota fija hasta 36 cuotas. Módulos y combos hasta 120 cuotas ajustadas por índice ICC. Sin banco ni garante. Aprobación simple en todo el país.',
+    description: 'Tu vivienda o piscina en cuotas. Sin banco, sin garante, solo tu DNI. Aprobación el mismo día. Todo el país.',
     url: 'https://ecomodulosypiscinas.com.ar/financiacion',
   },
 }
 
 const FAQ = [
-  { q: '¿Qué se requiere para acceder a la financiación?', r: 'Solo se requiere DNI argentino y teléfono de contacto. No se solicitan recibos de sueldo, garantes ni historial crediticio. La aprobación se gestiona directamente con nuestro equipo comercial.' },
-  { q: '¿Las cuotas son fijas o variables?', r: 'Depende del producto. Las piscinas tienen cuota fija en pesos desde el inicio del contrato: el valor pactado al firmar se mantiene igual durante toda la vigencia del plan. Los módulos habitacionales y los combos módulo + piscina se ajustan periódicamente según el índice ICC (Índice del Costo de la Construcción) — nunca por dólar ni por inflación general.' },
-  { q: '¿Hay descuento por pago contado?', r: 'Sí, cada producto tiene su propio descuento por pago contado respecto al precio de lista; el valor exacto varía según el modelo y se muestra en cada catálogo.' },
-  { q: '¿Puedo cancelar anticipadamente?', r: 'Sí, es posible cancelar el saldo anticipadamente en cualquier momento sin penalidad. Si se cancela dentro de los primeros 6 meses, se aplica un descuento adicional sobre el saldo restante.' },
-  { q: '¿Cuáles son los plazos de entrega con financiación?', r: 'Para proyectos financiados, los plazos de fabricación e instalación se coordinan al momento de confirmar el pedido y suscribir el plan. Nuestro equipo te informa los tiempos exactos según el modelo y la disponibilidad de stock.' },
-  { q: '¿El flete y la instalación están incluidos en el precio?', r: 'El precio de catálogo no incluye flete ni instalación. Estos costos se calculan según la distancia desde nuestra planta en Zárate y se pueden incluir en el plan de financiación.' },
-  { q: '¿Puedo financiar el combo módulo + piscina?', r: 'Sí. Sumamos el valor nominal del módulo y la piscina (sin ningún descuento adicional) y financiamos ese total hasta 120 cuotas, ajustadas por índice ICC, con ingreso equivalente a 2 cuotas.' },
+  { q: '¿Qué se requiere para acceder a la financiación?', r: 'Solo DNI argentino y teléfono de contacto. No pedimos recibo de sueldo, garante ni historial crediticio. La aprobación es directa con nuestro equipo comercial — sin banco, sin trámites.' },
+  { q: '¿Las cuotas son fijas o se ajustan?', r: 'Las piscinas tienen cuota 100% fija en pesos desde el primer día: el valor que firmás es el que pagás durante todo el plan. Las viviendas modulares y los combos módulo + piscina se ajustan por índice ICC (el índice oficial de la construcción), no por dólar ni inflación general — lo que protege el valor de tu inversión.' },
+  { q: '¿Hay descuento por pago contado?', r: 'Sí. Cada modelo tiene su precio de contado, que refleja un descuento sobre el precio de lista. Lo ves en el catálogo junto a cada producto.' },
+  { q: '¿Puedo adelantar la entrega antes de terminar el plan?', r: 'Sí. Integrando capital podés adelantar la entrega: piscinas desde cuota 3, viviendas y combos desde cuota 6. Seguís pagando el saldo restante mensualmente — solo adelantás la entrega, no necesitás cancelar todo.' },
+  { q: '¿Cuándo se fabrica y entrega mi vivienda o piscina?', r: 'Para piscinas con stock disponible, la entrega es en 72 horas desde la confirmación del plan. Para viviendas modulares, los plazos se coordinan al confirmar el pedido — nuestro equipo te da la fecha exacta.' },
+  { q: '¿El flete y la instalación están incluidos?', r: 'Se calculan aparte según la distancia desde nuestra fábrica en Zárate y se pueden sumar al plan financiado. Nuestro equipo arma el presupuesto completo antes de confirmar.' },
+  { q: '¿Puedo financiar el combo módulo + piscina?', r: 'Sí. Se financia el total de los dos productos juntos hasta 120 cuotas ajustadas por ICC — una sola cuota, un solo plan, llave en mano.' },
 ]
 
 const PLANES = [
   {
-    nombre: 'Plan Corto',
-    cuotas: '3 a 12',
-    desc: 'Menor costo financiero total. Ideal para proyectos corporativos, compras de reposición o clientes que prefieren cancelar en el menor plazo posible.',
-    color: 'eco-green',
-    beneficios: ['Menor costo financiero', 'Más apto para empresas', 'Ideal con ingresos estables o capital disponible'],
+    nombre: 'Plan Piscinas',
+    cuotas: 'hasta 36',
+    desc: 'Cuota 100% fija en pesos desde el día 1. El valor que firmás es el que pagás — sin sorpresas, sin ajustes, sin inflación.',
+    icono: '🏊',
+    beneficios: ['Cuota fija — sin ajustes', 'Aprobación el mismo día', 'Entrega en 72 horas con stock disponible'],
   },
   {
-    nombre: 'Plan Estándar',
-    cuotas: '24 a 60',
-    desc: 'El plan más elegido para viviendas, quinchos y combos. Balance entre cuota accesible y costo financiero razonable.',
-    color: 'eco-teal',
-    beneficios: ['Cuota mensual cómoda', 'Plazo equilibrado', 'El más solicitado para vivienda y quincho'],
+    nombre: 'Plan Viviendas',
+    cuotas: '24 a 120',
+    desc: 'El plan más flexible para viviendas modulares y quinchos. Cuotas accesibles con ajuste por índice de la construcción — tu inversión crece con el valor del metro cuadrado.',
+    icono: '🏡',
+    beneficios: ['Desde 24 hasta 120 cuotas', 'Cuota ajustada por ICC, no por dólar', 'Entrega anticipada desde cuota 6'],
     badge: 'Más elegido',
   },
   {
-    nombre: 'Plan Extendido',
-    cuotas: '72 a 120',
-    desc: 'Para acceder a más metros cuadrados con la cuota más baja posible. Pensado para vivienda particular y proyectos de mayor inversión.',
-    color: 'yellow',
-    beneficios: ['Cuota mínima mensual', 'Acceso a módulos de mayor metraje', 'Ideal para vivienda en 120 cuotas'],
+    nombre: 'Plan Combo',
+    cuotas: 'hasta 120',
+    desc: 'Vivienda y piscina en un solo plan. Una cuota, una entrega, todo llave en mano. La forma más completa de acceder a los dos productos juntos.',
+    icono: '🔗',
+    beneficios: ['Módulo + piscina en un plan', 'Hasta 120 cuotas por ICC', 'Llave en mano total'],
   },
 ]
 
@@ -82,27 +82,27 @@ export default async function FinanciacionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Hero — premium light */}
+      {/* Hero */}
       <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="badge-green mb-5 inline-flex">Financiación directa</span>
+          <span className="badge-green mb-5 inline-flex">Financiación directa de fábrica</span>
           <h1 className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-            Financiación directa.<br />Sin banco ni garante.<br />
-            <span className="text-eco-green">Hasta 120 cuotas.</span>
+            Tu piscina o vivienda.<br />Sin banco.<br />
+            <span className="text-eco-green">Desde hoy.</span>
           </h1>
           <p className="text-eco-text-muted text-lg max-w-2xl mx-auto mb-8">
-            Financiación propia de la cooperativa. Piscinas con cuota fija; módulos y combos ajustados por índice ICC. Aprobación directa, sin trámites complejos.
+            Financiación propia de fábrica, directa y sin intermediarios. Solo necesitás tu DNI. Sin recibo de sueldo, sin garante, sin historial crediticio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
-              <MessageCircle className="w-5 h-5" />Consultar financiación
+              <MessageCircle className="w-5 h-5" />Quiero mi plan ahora
             </a>
             <VideoCallButton variant="outline" label="Agendar videollamada" />
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 mt-12">
           <div className="relative w-full h-[260px] sm:h-[380px] rounded-2xl overflow-hidden">
-            <Image src="/hero-financiacion.jpg" alt="Familia firmando su plan de financiación" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
+            <Image src="/hero-financiacion.jpg" alt="Familia en su vivienda modular financiada" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
           </div>
         </div>
       </section>
@@ -113,9 +113,9 @@ export default async function FinanciacionPage() {
           <div className="flex flex-wrap justify-center gap-6 lg:gap-12">
             {[
               { icon: Shield, text: 'Sin banco ni garante' },
-              { icon: CheckCircle, text: 'Solo DNI argentino' },
-              { icon: Clock, text: 'Aprobación en 24 horas' },
-              { icon: CheckCircle, text: 'Piscinas fijas · módulos por ICC' },
+              { icon: CheckCircle, text: 'Solo tu DNI argentino' },
+              { icon: Clock, text: 'Aprobación el mismo día' },
+              { icon: CheckCircle, text: 'Garantía de fábrica 10 años' },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-2 text-eco-text-muted text-sm">
                 <Icon className="w-4 h-4 text-eco-green flex-shrink-0" />
@@ -126,15 +126,15 @@ export default async function FinanciacionPage() {
         </div>
       </section>
 
-      {/* Qué financiamos */}
+      {/* Qué podés financiar */}
       <section className="py-14 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="¿Qué financiamos?" subtitulo="La financiación cubre el módulo o la piscina terminados llave en mano. Flete e instalación se pueden incluir en el plan." />
+        <SectionTitle titulo="¿Qué podés financiar?" subtitulo="Todo llave en mano. Flete e instalación se pueden sumar al plan." />
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icono: '🏠', titulo: 'Viviendas modulares', detalle: 'De 18 a 72 m². Terminadas, habitables y financiadas hasta 120 cuotas ajustadas por ICC.' },
-            { icono: '🔥', titulo: 'Quinchos y recreación', detalle: 'Módulos para esparcimiento. Mismo esquema que las viviendas: financiación hasta 120 cuotas ajustadas por ICC. Llave en mano.' },
-            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: '16 modelos instalados en 72 hs. Financiación con cuota fija en pesos, hasta 36 cuotas.' },
-            { icono: '🔗', titulo: 'Combo módulo + piscina', detalle: 'Se suma el valor nominal de ambos productos, sin descuento adicional. Financiación única hasta 120 cuotas ajustadas por ICC.' },
+            { icono: '🏡', titulo: 'Viviendas modulares', detalle: 'Desde 24 m². Llave en mano: estructura, instalaciones y terminaciones completas. Hasta 120 cuotas.' },
+            { icono: '🔥', titulo: 'Quinchos y espacios sociales', detalle: 'Desde 36 m², habitable y equipado desde el primer día. Hasta 120 cuotas ajustadas por ICC.' },
+            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: 'Instalada en tu terreno en menos de 72 horas. Cuota 100% fija en pesos, hasta 36 cuotas.' },
+            { icono: '🔗', titulo: 'Combo vivienda + piscina', detalle: 'Los dos productos en un solo plan. Una cuota, una entrega, todo llave en mano.' },
           ].map(({ icono, titulo, detalle }) => (
             <div key={titulo} className="card-premium p-5 flex flex-col gap-2">
               <span className="text-2xl">{icono}</span>
@@ -143,66 +143,69 @@ export default async function FinanciacionPage() {
             </div>
           ))}
         </div>
-        <p className="text-eco-text-muted text-xs mt-5 text-center">
-          Para proyectos corporativos (obradores, campamentos y similares), consulte las condiciones especiales de financiación.
-        </p>
       </section>
 
       {/* Planes */}
+      <section className="py-16 bg-eco-bg-surface border-y border-eco-border">
+        <div className="max-w-5xl mx-auto px-4">
+          <SectionTitle titulo="Un plan hecho para vos" subtitulo="Elegís el plazo que mejor se adapta a tu situación — nosotros te damos la herramienta para llegar." />
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PLANES.map((plan) => (
+              <div key={plan.nombre} className="relative card-premium p-6 flex flex-col gap-3">
+                {plan.badge && (
+                  <span className="absolute top-4 right-4 bg-eco-teal/20 text-eco-teal text-xs font-bold px-2 py-1 rounded-full">{plan.badge}</span>
+                )}
+                <span className="text-3xl">{plan.icono}</span>
+                <p className="text-eco-text-muted text-xs uppercase tracking-widest">{plan.cuotas} cuotas</p>
+                <h3 className="text-2xl font-extrabold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>{plan.nombre}</h3>
+                <p className="text-eco-text-muted text-sm flex-1">{plan.desc}</p>
+                <ul className="space-y-2 pt-2 border-t border-eco-border">
+                  {plan.beneficios.map((b) => (
+                    <li key={b} className="flex items-center gap-2 text-sm text-eco-text-muted">
+                      <CheckCircle className="w-4 h-4 text-eco-green flex-shrink-0" />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Simulador */}
+      <section className="py-16 bg-eco-bg-card border-b border-eco-border">
+        <div className="max-w-4xl mx-auto px-4">
+          <SectionTitle titulo="Calculá tu cuota ahora" subtitulo="Ingresá el modelo y el plazo — el simulador te muestra cuánto pagás por mes. Sin compromiso." />
+          <div className="mt-10"><LoanSimulator /></div>
+        </div>
+      </section>
+
+      {/* Por qué nuestra financiación */}
       <section className="py-16 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="Nuestros planes" subtitulo="Elija el plazo que mejor se adapta a su situación." />
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PLANES.map((plan) => (
-            <div key={plan.nombre} className="relative card-premium p-6 flex flex-col gap-3">
-              {plan.badge && (
-                <span className="absolute top-4 right-4 bg-eco-teal/20 text-eco-teal text-xs font-bold px-2 py-1 rounded-full">{plan.badge}</span>
-              )}
-              <p className="text-eco-text-muted text-xs uppercase tracking-widest">{plan.cuotas} cuotas</p>
-              <h3 className="text-2xl font-extrabold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>{plan.nombre}</h3>
-              <p className="text-eco-text-muted text-sm flex-1">{plan.desc}</p>
-              <ul className="space-y-2">
-                {plan.beneficios.map((b) => (
-                  <li key={b} className="flex items-center gap-2 text-sm text-eco-text-muted">
-                    <CheckCircle className="w-4 h-4 text-eco-green flex-shrink-0" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
+        <SectionTitle titulo="Por qué elegir nuestra financiación" subtitulo="Diseñada para que puedas acceder a lo que necesitás, con las condiciones que realmente importan." />
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { icono: '🏦', titulo: 'Sin banco ni garante', desc: 'La aprobación es directa con nosotros. No necesitás pasar por banco, tarjeta ni análisis de crédito externo.' },
+            { icono: '📄', titulo: 'Solo tu DNI', desc: 'Un documento, un contacto telefónico. Sin papelerío, sin turnos, sin demoras. Aprobación el mismo día.' },
+            { icono: '🔒', titulo: 'Cuota protegida', desc: 'Las piscinas tienen cuota fija. Las viviendas y combos ajustan por el índice de la construcción — nunca por el dólar ni por inflación general.' },
+            { icono: '🚀', titulo: 'Entrega anticipada disponible', desc: 'No hace falta esperar a terminar de pagar. Integrando capital podés adelantar la entrega desde la cuota 3 en piscinas o la cuota 6 en viviendas.' },
+            { icono: '🏭', titulo: 'Directo de fábrica', desc: 'Financiamos lo que fabricamos. No hay intermediarios, corredores ni gestores — el trato es directo con la cooperativa.' },
+            { icono: '🛡️', titulo: '10 años de garantía', desc: 'Todos los productos llevan garantía de fábrica de 10 años — el respaldo de una cooperativa con más de 15 años de trayectoria.' },
+          ].map(({ icono, titulo, desc }) => (
+            <div key={titulo} className="card-info p-5 flex gap-4">
+              <span className="text-2xl flex-shrink-0">{icono}</span>
+              <div>
+                <p className="font-bold text-eco-text text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</p>
+                <p className="text-eco-text-muted text-xs leading-relaxed">{desc}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Simulador */}
-      <section className="py-16 bg-eco-bg-card border-y border-eco-border">
-        <div className="max-w-4xl mx-auto px-4">
-          <SectionTitle titulo="Simule su cuota" subtitulo="Sin compromiso. Los valores son orientativos; la cotización definitiva incluye flete e instalación." />
-          <div className="mt-10"><LoanSimulator /></div>
-        </div>
-      </section>
-
-      {/* Cómo se calcula la cuota */}
-      <section className="py-16 max-w-3xl mx-auto px-4">
-        <SectionTitle titulo="Cómo se calcula su cuota" subtitulo="La misma fórmula real que usamos en todos nuestros canales de venta." />
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="card-premium p-6">
-            <p className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Piscinas</p>
-            <p className="text-eco-text-muted text-sm mb-3">Cuota fija en pesos a 12, 18, 24 o 36 meses:</p>
-            <p className="bg-eco-bg-surface rounded-lg px-4 py-3 text-eco-text text-sm font-mono">cuota = precio de lista ÷ (cuotas + 2)</p>
-            <p className="text-eco-text-muted text-xs mt-3">El ingreso inicial equivale a 2 cuotas del plan elegido.</p>
-          </div>
-          <div className="card-premium p-6">
-            <p className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Módulos y combos</p>
-            <p className="text-eco-text-muted text-sm mb-3">Cuota en pesos ajustada por índice ICC, hasta 120 meses:</p>
-            <p className="bg-eco-bg-surface rounded-lg px-4 py-3 text-eco-text text-sm font-mono">cuota = precio de lista ÷ (cuotas + 2)</p>
-            <p className="text-eco-text-muted text-xs mt-3">En el combo, el precio de lista es la suma del módulo y la piscina, sin descuento adicional.</p>
-          </div>
-        </div>
-        <p className="text-eco-text-muted text-xs mt-6 text-center">Valores orientativos — use el simulador de arriba para su modelo y plazo exactos.</p>
-      </section>
-
       {/* FAQ */}
-      <section className="py-20 bg-eco-bg">
+      <section className="py-20 bg-eco-bg-surface border-t border-eco-border">
         <div className="max-w-3xl mx-auto px-4">
           <SectionTitle titulo="Preguntas frecuentes" />
           <div className="mt-10">
@@ -216,10 +219,10 @@ export default async function FinanciacionPage() {
         <div className="absolute inset-0 hero-grid-pattern opacity-60" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
-            ¿Desea consultar su plan?
+            El único requisito<br />es querer empezar.
           </h2>
           <p className="text-white/60 mb-10 text-lg">
-            El proceso de aprobación es ágil y directo. Sin banco, sin trámites complejos.
+            Tu DNI alcanza. El banco no hace falta. Hablá con nuestro equipo y armamos tu plan hoy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -228,7 +231,7 @@ export default async function FinanciacionPage() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
             >
-              <MessageCircle className="w-5 h-5" />Consultar por WhatsApp
+              <MessageCircle className="w-5 h-5" />Empezar por WhatsApp
             </a>
             <VideoCallButton variant="outline" />
           </div>

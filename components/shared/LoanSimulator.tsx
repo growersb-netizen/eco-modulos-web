@@ -6,9 +6,9 @@ import { MessageCircle, Calculator, Phone, User, CheckCircle } from 'lucide-reac
 import { trackSimulador } from '@/lib/analytics'
 import { formatPeso as fmt } from '@/lib/utils'
 
-// Piscinas: cuota fija, plazos cortos. Módulos: cuota ajustada por ICC, hasta 120.
+// Piscinas: cuota fija hasta 36 meses. Viviendas/combos: ajustado por ICC, 24-120.
 const CUOTAS_PISCINA = [12, 18, 24, 36]
-const CUOTAS_MODULO = [3, 6, 12, 18, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+const CUOTAS_MODULO = [24, 36, 48, 60, 72, 84, 96, 108, 120]
 
 interface Producto {
   id: string
@@ -141,9 +141,9 @@ export default function LoanSimulator() {
         </div>
         <div>
           <h3 className="font-bold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>
-            Simule su cuota
+            Calculá tu cuota
           </h3>
-          <p className="text-eco-text-muted text-xs">Sin banco ni garante · piscinas con cuota fija, módulos ajustados por ICC</p>
+          <p className="text-eco-text-muted text-xs">Sin banco ni garante · piscinas cuota fija · viviendas y combos por ICC</p>
         </div>
       </div>
 
@@ -164,7 +164,7 @@ export default function LoanSimulator() {
             }}
             className="w-full bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-2.5 text-eco-text text-sm focus:outline-none focus:border-eco-green"
           >
-            <option value="modulo">Módulo habitacional</option>
+            <option value="modulo">Vivienda Modular / Quincho</option>
             <option value="piscina">Piscina de fibra</option>
           </select>
         </div>
@@ -194,9 +194,7 @@ export default function LoanSimulator() {
             className="w-full bg-eco-bg-surface border border-eco-border rounded-lg px-3 py-2.5 text-eco-text text-sm focus:outline-none focus:border-eco-green"
           >
             {cuotasOptions.map((c) => (
-              <option key={c} value={c}>
-                {c} cuotas{c <= 6 ? ' sin interés' : ''}
-              </option>
+              <option key={c} value={c}>{c} cuotas</option>
             ))}
           </select>
         </div>
@@ -212,21 +210,17 @@ export default function LoanSimulator() {
             exit={{ opacity: 0, y: -10 }}
             className="bg-eco-bg-surface border border-eco-border rounded-xl p-6 mb-4"
           >
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               <div>
                 <p className="text-xs text-eco-text-muted mb-1">Precio contado</p>
                 <p className="text-lg font-bold text-eco-text">{fmt(result.precioContado)}</p>
               </div>
               <div>
-                <p className="text-xs text-eco-text-muted mb-1">Precio lista</p>
-                <p className="text-lg font-bold text-eco-text-muted line-through">{fmt(result.precioLista)}</p>
+                <p className="text-xs text-eco-text-muted mb-1">Ingreso inicial</p>
+                <p className="text-lg font-bold text-eco-text">{fmt(result.cuota * 2)}</p>
               </div>
               <div>
-                <p className="text-xs text-eco-text-muted mb-1">Total a pagar</p>
-                <p className="text-lg font-bold text-eco-text">{fmt(result.total)}</p>
-              </div>
-              <div>
-                <p className="text-xs text-eco-text-muted mb-1">Su cuota mensual</p>
+                <p className="text-xs text-eco-text-muted mb-1">Tu cuota mensual</p>
                 <motion.p
                   key={result.cuota}
                   initial={{ scale: 0.8 }}
@@ -239,7 +233,7 @@ export default function LoanSimulator() {
               </div>
             </div>
             <p className="text-eco-text-muted text-xs mt-3">
-              * Valor orientativo. El plan exacto se define en videollamada gratuita con nuestro equipo.
+              Valores orientativos. El asesor te confirma el plan exacto con flete e instalación incluidos.
             </p>
           </motion.div>
         )}
@@ -270,7 +264,7 @@ export default function LoanSimulator() {
             ) : (
               <div className="bg-eco-bg-surface px-5 py-4">
                 <p className="text-eco-text text-sm font-semibold mb-3">
-                  ¿Desea que lo contactemos con esta simulación?
+                  ¿Querés que te llamemos con tu plan armado?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2">
                   <div className="relative flex-1">
@@ -316,7 +310,7 @@ export default function LoanSimulator() {
           className="flex items-center justify-center gap-2 w-full bg-eco-bg-surface hover:bg-eco-bg-card border border-eco-border hover:border-eco-green text-eco-text font-semibold py-3 rounded-lg transition-colors mt-3"
         >
           <MessageCircle className="w-5 h-5 text-eco-green" />
-          O consulte por WhatsApp
+          Hablar con un asesor por WhatsApp
         </a>
       )}
     </div>
