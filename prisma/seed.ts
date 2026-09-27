@@ -91,7 +91,7 @@ async function main() {
     { nombre: 'Arco Romano Mediano C/Desnivel',   medida: '7,00×3,35×1,25 a 1,70m',    precio_contado: 4900000, precio_lista: 7130000, destacada: false },
     { nombre: 'Arco Romano Grande',               medida: '8,10×3,35×1,25 a 1,80m',    precio_contado: 4800000, precio_lista: 6990000, destacada: false },
     { nombre: 'Playa Húmeda',                     medida: '5,20×2,45×1,10 a 1,30m',    precio_contado: 3290000, precio_lista: 4790000, destacada: false },
-    { nombre: 'Minimalista Chica',                medida: '3,97×2,46×1,20m',           precio_contado: 2800000, precio_lista: 4080000, destacada: false },
+    { nombre: 'Minimalista Chica',                medida: '3,97×2,46×1,20m',           precio_contado: 3000000, precio_lista: 4080000, destacada: false },
     { nombre: 'Minimalista Mediana',              medida: '5,50×2,90×1,50m',           precio_contado: 4425000, precio_lista: 6440000, destacada: false },
     { nombre: 'Minimalista Grande',               medida: '6,40×3,00×1,40m',           precio_contado: 3690000, precio_lista: 5370000, destacada: false },
     { nombre: 'Recta C/Mini Escalera',            medida: '4,63×2,48×1,25m',           precio_contado: 3375000, precio_lista: 4910000, destacada: false },

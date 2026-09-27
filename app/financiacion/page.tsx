@@ -57,9 +57,10 @@ const PLANES = [
   {
     nombre: 'Plan Combo',
     cuotas: 'hasta 120',
-    desc: 'Vivienda y piscina en un solo plan. Una cuota, una entrega, todo llave en mano. La forma más completa de acceder a los dos productos juntos.',
+    desc: 'Cuatro combos cerrados de vivienda + piscina con precio promocional de octubre. Un solo plan de financiación, hasta 120 cuotas. Instalación eléctrica, baños, bordes atérmicos y flete incluidos durante todo el mes.',
     icono: '🔗',
-    beneficios: ['Módulo + piscina en un plan', 'Hasta 120 cuotas por ICC', 'Llave en mano total'],
+    badge: 'Promo octubre',
+    beneficios: ['4 combos cerrados para elegir', 'Hasta 120 cuotas por ICC', 'Instalación eléctrica y baños incluidos'],
   },
 ]
 
