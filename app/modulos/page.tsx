@@ -48,17 +48,6 @@ const SLIDES: PageSlide[] = [
       { label: 'Consultar por WhatsApp', href: WA_MODULOS,     external: true, icon: 'wa' },
     ],
   },
-  {
-    badge: '💳 FINANCIACIÓN PROPIA · HASTA 120 CUOTAS',
-    titulo: '¿NO TENÉS EL TOTAL? FINANCIAMOS NOSOTROS, SIN BANCO.',
-    subtitulo: 'Aprobación en el día, sin trámites bancarios, sin garante. Cuotas que se ajustan a tu presupuesto. Más gente puede tener su módulo de lo que imagina.',
-    imagen: '/hero-financiacion.jpg',
-    acento: 'blue',
-    btns: [
-      { label: 'Ver planes de financiación', href: '/financiacion', primary: true, icon: 'arrow' },
-      { label: 'Consultar por WhatsApp',     href: WA_MODULOS,      external: true, icon: 'wa' },
-    ],
-  },
 ]
 
 const TRUST = [

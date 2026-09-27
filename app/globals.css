@@ -4,16 +4,16 @@
 
 @theme {
   /* ── Fondos ── */
-  --color-eco-bg:          #F6F8FB;   /* gris azulado — fondo general */
+  --color-eco-bg:          #F8F7F4;   /* blanco cálido — fondo general */
   --color-eco-bg-card:     #FFFFFF;   /* blanco puro — tarjetas */
-  --color-eco-bg-surface:  #EAF3FB;   /* celeste tenue — secciones alt */
+  --color-eco-bg-surface:  #F0EEE8;   /* crema — secciones alt */
 
   /* ── Texto ── */
-  --color-eco-text:        #16232F;   /* casi negro azulado */
-  --color-eco-text-muted:  #5C6B7A;   /* gris azulado */
+  --color-eco-text:        #1A2028;   /* casi negro cálido */
+  --color-eco-text-muted:  #5A6270;   /* gris cálido */
 
   /* ── Bordes ── */
-  --color-eco-border:      #E2E8F0;   /* borde sutil azulado */
+  --color-eco-border:      #E5E3DD;   /* borde cálido */
 
   /* ── Navy EcoFiver ── */
   --color-eco-green:       #0B2350;   /* principal */
@@ -36,7 +36,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #F6F8FB;
+  background: #F8F7F4;
   color: #16232F;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -116,6 +116,13 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid #E2E8F0;
   margin: 0;
 }
+
+/* Scroll horizontal sin scrollbar visible */
+.scroll-no-bar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-no-bar::-webkit-scrollbar { display: none; }
 
 /* Patrón de cuadrícula sutil (fondo de heroes) */
 .hero-grid-pattern {

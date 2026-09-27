@@ -55,7 +55,7 @@ export default async function HomePage() {
               'Líderes en módulos Wood Frame',
               'Cooperativa INAES',
               'Logística propia · Todo el país',
-              'Financiación directa · piscinas fijas, módulos por ICC',
+              'Pagás el día de la instalación, en el domicilio',
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 text-eco-text-muted text-sm py-1">
                 <div className="w-1 h-1 rounded-full bg-eco-green flex-shrink-0" />
@@ -69,6 +69,7 @@ export default async function HomePage() {
       {/* ═══════════════════════════════════════════
           TIENDA — MODELOS DESTACADOS
       ════════════════════════════════════════════ */}
+      {(piscinasDestacadas.length > 0 || modulosDestacados.length > 0) && (
       <section className="py-10 bg-eco-bg-card border-b border-eco-border">
         <div className="max-w-7xl mx-auto">
           <div className="px-4 flex items-baseline justify-between mb-6">
@@ -86,7 +87,7 @@ export default async function HomePage() {
               <p className="text-xs font-bold uppercase tracking-widest text-eco-text-muted">🏊 Piscinas de fibra</p>
               <Link href="/piscinas" className="text-xs font-semibold text-eco-green hover:underline">Ver todas →</Link>
             </div>
-            <div className="flex gap-4 overflow-x-auto pb-3 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="scroll-no-bar flex gap-4 overflow-x-auto pb-3 px-4">
               {piscinasDestacadas.map(p => (
                 <Link
                   key={p.id}
@@ -133,7 +134,7 @@ export default async function HomePage() {
               <p className="text-xs font-bold uppercase tracking-widest text-eco-text-muted">🏠 Módulos Wood Frame</p>
               <Link href="/modulos" className="text-xs font-semibold text-eco-green hover:underline">Ver todos →</Link>
             </div>
-            <div className="flex gap-4 overflow-x-auto pb-3 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="scroll-no-bar flex gap-4 overflow-x-auto pb-3 px-4">
               {modulosDestacados.map(m => (
                 <Link
                   key={m.id}
@@ -175,6 +176,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ═══════════════════════════════════════════
           CÓMO FUNCIONA
@@ -190,7 +192,7 @@ export default async function HomePage() {
               {
                 n: '01',
                 titulo: 'Selección del modelo',
-                desc: 'Explore nuestro catálogo de módulos y piscinas. Simule su cuota en segundos sin ningún compromiso.',
+                desc: 'Explore nuestro catálogo de módulos y piscinas. Elegí el modelo que mejor se adapta a tu espacio y presupuesto.',
               },
               {
                 n: '02',
