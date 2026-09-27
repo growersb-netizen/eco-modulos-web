@@ -30,7 +30,7 @@ const SLIDES: PageSlide[] = [
     badge: '🏊 TIENDA VIRTUAL · PISCINAS',
     titulo: 'COMPRÁ TU PISCINA Y LA INSTALAMOS EN EL DÍA',
     subtitulo: 'El stock se agota en temporada. Reservá tu fecha hoy — pagás cero hasta el día que la instalamos en tu domicilio. Sin anticipos, sin riesgos.',
-    imagen: '/hero-piscinas-flow.jpg',
+    imagen: '/piscinas/autoportante-6.jpg',
     acento: 'teal',
     btns: [
       { label: 'Reservar mi fecha ahora', href: '#catalogo',   primary: true, icon: 'cart' },
@@ -41,7 +41,7 @@ const SLIDES: PageSlide[] = [
     badge: '✅ SIN EXCAVACIÓN · SIN OBRA CIVIL',
     titulo: '¿QUERÉS LA PISCINA ESTA SEMANA? NOSOTROS LA INSTALAMOS.',
     subtitulo: 'Sin excavadora, sin obra, sin escombros. Tu patio queda listo el mismo día. Solo nivelás el suelo — el equipo hace el resto. Miniportante, Autoportante y MiniDeck.',
-    imagen: '/hero-piscinas-autoportante.jpg',
+    imagen: '/piscinas/autoportante-2.jpg',
     acento: 'green',
     btns: [
       { label: 'Ver modelos sin excavación', href: '#catalogo',   primary: true, icon: 'cart' },
@@ -52,7 +52,7 @@ const SLIDES: PageSlide[] = [
     badge: '🛡️ GARANTÍA 10 AÑOS · FIBRA DE VIDRIO',
     titulo: 'DISFRUTALA EN VERANO. OLVIDATE EN INVIERNO.',
     subtitulo: 'Sin fisuras, sin revoque, sin mantenimiento complejo. Fibra de vidrio que dura décadas. Garantía escrita de 10 años. Reservá tu fecha antes que se agote el stock.',
-    imagen: '/hero-piscinas-flow.jpg',
+    imagen: '/piscinas/autoportante-5.jpg',
     acento: 'blue',
     btns: [
       { label: 'Reservar mi fecha ahora', href: '#catalogo',   primary: true, icon: 'cart' },
