@@ -98,10 +98,14 @@ export default async function FinanciacionPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
         {/* Patrón de grilla */}
         <div className="absolute inset-0 hero-grid-pattern opacity-25" />
+        {/* Orbes de luz decorativos */}
+        <div className="light-orb orb-teal" style={{ width: '520px', height: '520px', top: '-120px', left: '-80px', animationDelay: '0s' }} />
+        <div className="light-orb orb-gold" style={{ width: '380px', height: '380px', bottom: '-80px', right: '-60px', animationDelay: '1.8s' }} />
+        <div className="light-orb orb-white" style={{ width: '280px', height: '280px', top: '30%', right: '15%', animationDelay: '3s' }} />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center pt-28 pb-16 w-full">
-          <span className="inline-flex items-center gap-2 bg-eco-green/20 border border-eco-green/40 text-eco-green text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-            Financiación directa de fábrica
+          <span className="badge-gold mb-6">
+            ✦ Financiación directa de fábrica
           </span>
           <h1
             className="text-5xl sm:text-7xl font-extrabold text-white uppercase leading-[0.9] mb-6 drop-shadow-2xl"
@@ -118,7 +122,7 @@ export default async function FinanciacionPage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
+              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all btn-glow-navy"
             >
               <MessageCircle className="w-5 h-5" />Quiero mi plan ahora
             </a>
@@ -128,7 +132,7 @@ export default async function FinanciacionPage() {
       </section>
 
       {/* Trust bar */}
-      <section className="bg-eco-bg-card border-y border-eco-border py-5">
+      <section className="trust-bar-glass border-y border-eco-border py-5">
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-6 lg:gap-12">
             {[
@@ -166,14 +170,14 @@ export default async function FinanciacionPage() {
       </section>
 
       {/* Planes */}
-      <section className="py-16 bg-eco-bg-surface border-y border-eco-border">
+      <section className="py-16 section-promo-bg border-y border-eco-border">
         <div className="max-w-5xl mx-auto px-4">
           <SectionTitle titulo="Elegís el plan. Nosotros lo hacemos posible." subtitulo="Sin banco ni garante. El plazo que necesitás, la cuota que te cierra." />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {PLANES.map((plan) => (
-              <div key={plan.nombre} className="relative card-premium p-6 flex flex-col gap-3">
+              <div key={plan.nombre} className={`relative card-premium p-6 flex flex-col gap-3${plan.badge === 'Más elegido' ? ' card-accent-gold' : ''}`}>
                 {plan.badge && (
-                  <span className="absolute top-4 right-4 bg-eco-teal/20 text-eco-teal text-xs font-bold px-2 py-1 rounded-full">{plan.badge}</span>
+                  <span className={plan.badge === 'Promo octubre' ? 'absolute top-4 right-4 badge-promo-oct badge-promo-oct-sm' : 'absolute top-4 right-4 badge-gold'}>{plan.badge}</span>
                 )}
                 <span className="text-3xl">{plan.icono}</span>
                 <p className="text-eco-text-muted text-xs uppercase tracking-widest">{plan.cuotas} cuotas</p>
@@ -249,7 +253,7 @@ export default async function FinanciacionPage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:shadow-[0_8px_36px_rgba(0,0,0,0.28)] hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" />Empezar por WhatsApp
             </a>

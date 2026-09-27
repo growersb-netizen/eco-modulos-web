@@ -66,7 +66,7 @@ export default async function HomePage() {
       {/* ═══════════════════════════════════════════
           TRUST BAR
       ════════════════════════════════════════════ */}
-      <section className="bg-eco-bg-card border-b border-eco-border py-4">
+      <section className="trust-bar-glass border-b border-eco-border py-4">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
             {[
@@ -77,7 +77,7 @@ export default async function HomePage() {
               'Pagás el día de la instalación, en el domicilio',
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 text-eco-text-muted text-sm py-1">
-                <div className="w-1 h-1 rounded-full bg-eco-green flex-shrink-0" />
+                <div className="trust-dot-gold flex-shrink-0" />
                 <span>{item}</span>
               </div>
             ))}
@@ -247,8 +247,11 @@ export default async function HomePage() {
       {/* ═══════════════════════════════════════════
           CTA FINAL
       ════════════════════════════════════════════ */}
-      <section className="py-28 bg-eco-green-dark">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      <section className="py-28 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-50" />
+        <div className="light-orb orb-teal absolute" style={{ width: '500px', height: '500px', top: '-100px', left: '-80px', animationDelay: '0s' }} />
+        <div className="light-orb orb-gold absolute" style={{ width: '320px', height: '320px', bottom: '-60px', right: '-40px', animationDelay: '2s' }} />
+        <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -263,14 +266,14 @@ export default async function HomePage() {
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold text-base px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold text-base px-8 py-4 rounded-xl hover:bg-green-50 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:shadow-[0_8px_36px_rgba(0,0,0,0.28)] hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" />
               Consultar por WhatsApp
             </a>
             <a
               href="/financiacion"
-              className="flex items-center justify-center gap-2 bg-white/8 border border-white/20 hover:bg-white/15 text-white font-bold text-base px-8 py-4 rounded-xl transition-all backdrop-blur-sm"
+              className="flex items-center justify-center gap-2 bg-white/8 border border-white/20 hover:bg-white/15 text-white font-bold text-base px-8 py-4 rounded-xl transition-all backdrop-blur-sm hover:-translate-y-0.5"
             >
               Ver financiación
             </a>

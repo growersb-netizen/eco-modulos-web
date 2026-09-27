@@ -65,7 +65,7 @@ export default function ComboPageClient() {
       {/* Hero */}
       <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-flex items-center gap-1.5 bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-5">
+          <span className="badge-promo-oct mb-5">
             Promo Octubre 2026
           </span>
           <h1
@@ -82,7 +82,7 @@ export default function ComboPageClient() {
             href={WA_BASE + encodeURIComponent('Hola! Quiero info sobre los combos vivienda + piscina de octubre.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all shadow-[0_4px_16px_rgba(11,35,80,0.25)]"
+            className="inline-flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-all btn-glow-navy"
           >
             <MessageCircle className="w-5 h-5" />Consultar combos por WhatsApp
           </a>
@@ -127,9 +127,9 @@ export default function ComboPageClient() {
           {COMBOS.map((combo) => {
             const msg = `Hola! Me interesa el combo ${combo.vivienda} + ${combo.piscina}. Precio promocional octubre ${formatPeso(combo.precioPromo)}. Quiero armar mi plan.`
             return (
-              <div key={combo.id} className="card-premium p-6 flex flex-col gap-4 relative">
+              <div key={combo.id} className="card-premium card-accent-gold p-6 flex flex-col gap-4 relative">
                 <div className="absolute top-4 right-4">
-                  <span className="bg-orange-500/10 text-orange-400 text-xs font-bold px-2 py-1 rounded-full border border-orange-500/20">
+                  <span className="badge-promo-oct badge-promo-oct-sm">
                     Promo oct.
                   </span>
                 </div>
@@ -190,7 +190,7 @@ export default function ComboPageClient() {
                   href={WA_BASE + encodeURIComponent(msg)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-4 py-3 rounded-xl transition-colors mt-auto"
+                  className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-4 py-3 rounded-xl transition-all btn-glow-navy mt-auto"
                 >
                   <MessageCircle className="w-4 h-4" />Consultar este combo
                 </a>
@@ -255,7 +255,7 @@ export default function ComboPageClient() {
             href={WA_BASE + encodeURIComponent('Hola! Quiero info sobre los combos vivienda + piscina de octubre con todo incluido.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+            className="inline-flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:shadow-[0_8px_36px_rgba(0,0,0,0.28)] hover:-translate-y-0.5"
           >
             <MessageCircle className="w-5 h-5" />Consultar mi combo por WhatsApp
           </a>
