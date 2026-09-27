@@ -1,3 +1,4 @@
+import React from 'react'
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import HeroCarousel from '@/components/shared/HeroCarousel'
@@ -69,14 +70,14 @@ export default async function HomePage() {
       <section className="trust-bar-glass border-b border-eco-border py-4">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            {[
-              'Más de 15 años de trayectoria',
-              'Líderes en módulos Wood Frame',
-              'Cooperativa INAES',
-              'Logística propia · Todo el país',
-              'Pagás el día de la instalación, en el domicilio',
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-eco-text-muted text-sm py-1">
+            {([
+              <><strong className="text-eco-text">+15 años</strong> de trayectoria</>,
+              <>Líderes en módulos <strong className="text-eco-text">Wood Frame</strong></>,
+              <>Cooperativa <strong className="text-eco-text">INAES</strong></>,
+              <>Logística propia · <strong className="text-eco-text">Todo el país</strong></>,
+              <>Pagás <strong className="text-eco-text">el día de la instalación</strong>, en el domicilio</>,
+            ] as React.ReactNode[]).map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-eco-text-muted text-sm py-1">
                 <div className="trust-dot-gold flex-shrink-0" />
                 <span>{item}</span>
               </div>
@@ -104,17 +105,17 @@ export default async function HomePage() {
               {
                 n: '01',
                 titulo: 'Selección del modelo',
-                desc: 'Explore nuestro catálogo de módulos y piscinas. Elegí el modelo que mejor se adapta a tu espacio y presupuesto.',
+                desc: <>Explore el catálogo de módulos y piscinas. Elegí el modelo que mejor se adapta a tu espacio y <strong>presupuesto</strong>.</>,
               },
               {
                 n: '02',
                 titulo: 'Asesoramiento personalizado',
-                desc: 'Un especialista del equipo le explica en detalle la financiación, los plazos, el transporte y la instalación. Sin costo.',
+                desc: <>Un especialista te explica la financiación, los plazos y la instalación. <strong>Sin costo, sin compromiso</strong>.</>,
               },
               {
                 n: '03',
                 titulo: 'Instalación en su terreno',
-                desc: 'Contado: coordinamos la entrega e instalación de forma inmediata. Financiado: el plazo de fabricación se acuerda al confirmar el pedido.',
+                desc: <><strong>Contado</strong>: entrega e instalación <strong>de forma inmediata</strong>. <strong>Financiado</strong>: el plazo se acuerda al confirmar el pedido.</>,
               },
             ].map((paso, i) => (
               <div key={paso.n} className="flex gap-5">
@@ -220,10 +221,10 @@ export default async function HomePage() {
           <SectionTitle titulo="Por qué elegirnos" />
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Wrench, titulo: 'Fabricación propia', desc: 'Planta de 7.000 m² en Zárate. Controlamos todo el proceso productivo.' },
-              { icon: Shield, titulo: 'Financiación directa', desc: 'Sin banco ni garante. Piscinas con cuota fija; módulos y combos hasta 120 cuotas ajustadas por ICC.' },
-              { icon: Truck, titulo: 'Instalación inmediata', desc: 'Stock disponible. Módulos y piscinas instalados en el día. Logística propia.' },
-              { icon: Award, titulo: 'Respaldo cooperativo', desc: 'Cooperativa INAES · CUIT 30-71807393-2 · Más de 15 años de trayectoria.' },
+              { icon: Wrench, titulo: 'Fabricación propia', desc: <>Planta de <strong>7.000 m²</strong> en Zárate. Controlamos <strong>todo el proceso productivo</strong>.</> },
+              { icon: Shield, titulo: 'Financiación directa', desc: <><strong>Sin banco ni garante</strong>. Piscinas con <strong>cuota fija</strong>; módulos y combos hasta <strong>120 cuotas</strong> ajustadas por ICC.</> },
+              { icon: Truck, titulo: 'Instalación inmediata', desc: <><strong>Stock disponible</strong>. Módulos y piscinas <strong>instalados en el día</strong>. Logística propia.</> },
+              { icon: Award, titulo: 'Respaldo cooperativo', desc: <>Cooperativa INAES · CUIT 30-71807393-2 · <strong>Más de 15 años</strong> de trayectoria.</> },
             ].map(({ icon: Icon, titulo, desc }) => (
               <div key={titulo} className="flex flex-col items-start gap-4">
                 <div className="w-11 h-11 rounded-xl bg-eco-green/10 flex items-center justify-center flex-shrink-0">
@@ -259,7 +260,7 @@ export default async function HomePage() {
             ¿Tiene un proyecto en mente?
           </h2>
           <p className="text-lg text-white/60 mb-10 leading-relaxed">
-            Contáctenos sin compromiso. Financiación directa sin banco: piscinas con cuota fija, módulos y combos hasta 120 cuotas ajustadas por ICC.
+            Contáctenos sin compromiso. Financiación directa <strong className="text-white">sin banco</strong>: piscinas con <strong className="text-white">cuota fija</strong>, módulos y combos hasta <strong className="text-white">120 cuotas</strong> ajustadas por ICC.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

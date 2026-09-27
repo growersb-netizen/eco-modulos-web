@@ -1,3 +1,4 @@
+import React from 'react'
 import { prisma } from '@/lib/db'
 import SectionTitle from '@/components/shared/SectionTitle'
 import ProductCard from '@/components/shared/ProductCard'
@@ -61,11 +62,11 @@ const SLIDES: PageSlide[] = [
   },
 ]
 
-const TRUST = [
-  'Instalación en el día',
-  '16 modelos disponibles en stock',
-  'Garantía total 10 años · certificado de calidad premium',
-  'Pagás el día de la instalación, en el domicilio',
+const TRUST: React.ReactNode[] = [
+  <>Instalación <strong>en el día</strong></>,
+  <><strong>16 modelos</strong> disponibles en stock</>,
+  <>Garantía total <strong>10 años</strong> · certificado de calidad premium</>,
+  <>Pagás <strong>el día de la instalación</strong>, en el domicilio</>,
 ]
 
 const COMPARATIVA = [
@@ -117,8 +118,8 @@ export default async function PiscinasPage() {
       <section className="trust-bar-glass border-b border-eco-border py-3">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-1.5">
-            {TRUST.map(item => (
-              <div key={item} className="flex items-center gap-1.5 text-eco-text-muted text-xs py-0.5">
+            {TRUST.map((item, i) => (
+              <div key={i} className="flex items-center gap-1.5 text-eco-text-muted text-xs py-0.5">
                 <div className="trust-dot-gold flex-shrink-0" />
                 <span>{item}</span>
               </div>
@@ -225,7 +226,7 @@ export default async function PiscinasPage() {
             ¿Querés reservar tu piscina?
           </h2>
           <p className="text-white/60 mb-8">
-            Elegí el modelo, pactamos la fecha de instalación y listo. Pagás el día de la instalación, en el domicilio.
+            Elegí el modelo, pactamos la fecha y listo. Pagás <strong className="text-white">el día de la instalación</strong>, en el domicilio. <strong className="text-white">Sin anticipos.</strong>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
