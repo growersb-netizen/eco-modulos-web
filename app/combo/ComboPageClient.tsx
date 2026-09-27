@@ -76,7 +76,7 @@ export default function ComboPageClient() {
             <span className="text-eco-teal">+ Piscina</span>
           </h1>
           <p className="text-eco-text-muted text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-            Cuatro combos cerrados con precio promocional de octubre. Un solo plan de financiación hasta 120 cuotas — más cuatro extras incluidos sin cargo.
+            Tu vivienda y tu piscina juntas, a precio promocional de octubre. Elegís el combo que más te cierra — nosotros lo financiamos hasta 120 cuotas, con instalación, baños, bordes y flete incluidos.
           </p>
           <a
             href={WA_BASE + encodeURIComponent('Hola! Quiero info sobre los combos vivienda + piscina de octubre.')}
@@ -121,7 +121,7 @@ export default function ComboPageClient() {
       <section className="py-16 max-w-5xl mx-auto px-4">
         <SectionTitle
           titulo="Los 4 combos de octubre"
-          subtitulo="Precio promocional válido durante todo el mes. Solo en financiación."
+          subtitulo="Elegís el que más te cierra, y lo financiamos. Precio fijo todo el mes — lo que ves es lo que pagás."
         />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {COMBOS.map((combo) => {
@@ -206,23 +206,23 @@ export default function ComboPageClient() {
       {/* Por qué el combo */}
       <section className="py-20 bg-eco-bg-surface border-y border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
-          <SectionTitle titulo="Un plan, dos productos, todo llave en mano" />
+          <SectionTitle titulo="Todo resuelto. Un solo plan." subtitulo="No hay que coordinar proveedores, pedir presupuestos ni armar combos — viene todo junto, calculado y listo." />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               {
                 icono: '🏠',
-                titulo: 'Combo cerrado y listo',
-                desc: 'Cada combo está calculado como precio promocional de octubre. No hay que armar ni combinar nada — elegís el que más te cierra y arrancamos.',
+                titulo: 'Precio cerrado, sin sorpresas',
+                desc: 'El valor del combo es el precio promocional de octubre. No hay extras ocultos ni actualizaciones de último momento — lo que ves es lo que firmás.',
               },
               {
                 icono: '📋',
-                titulo: 'Un solo plan de financiación',
-                desc: 'Un único plan hasta 120 cuotas, sin banco ni garante. La cuota ajusta por ICC — no por dólar, no por inflación general.',
+                titulo: 'Un solo plan hasta 120 cuotas',
+                desc: 'Vivienda y piscina juntas en una sola cuota mensual. Sin banco, sin garante. Ajuste por ICC — no por dólar, no por inflación general.',
               },
               {
                 icono: '🚚',
-                titulo: 'Todo incluido en octubre',
-                desc: 'Instalación eléctrica, baños, bordes atérmicos para la piscina y flete a todo el país: incluido en el precio del combo durante todo el mes.',
+                titulo: 'Cuatro extras sin cargo en octubre',
+                desc: 'Instalación eléctrica, baños, bordes atérmicos para la piscina y flete a todo el país — incluidos en el precio, sin negociar ni cotizar aparte.',
               },
             ].map(({ icono, titulo, desc }) => (
               <div key={titulo} className="card-premium p-6">

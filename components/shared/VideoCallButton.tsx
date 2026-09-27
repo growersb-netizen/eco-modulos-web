@@ -7,7 +7,7 @@ import VideoCallModal from './VideoCallModal'
 
 interface VideoCallButtonProps {
   className?: string
-  variant?: 'primary' | 'outline'
+  variant?: 'primary' | 'outline' | 'outline-white'
   label?: string
   productoDefault?: string
 }
@@ -28,7 +28,9 @@ export default function VideoCallButton({
           'flex items-center gap-2 font-semibold py-3 px-6 rounded-lg transition-colors',
           variant === 'primary'
             ? 'bg-eco-teal hover:bg-eco-teal-light text-white'
-            : 'border border-eco-green text-eco-green hover:bg-eco-green hover:text-white',
+            : variant === 'outline-white'
+              ? 'border border-white/40 text-white hover:bg-white/10'
+              : 'border border-eco-green text-eco-green hover:bg-eco-green hover:text-white',
           className
         )}
       >

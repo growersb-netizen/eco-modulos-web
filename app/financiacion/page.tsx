@@ -83,27 +83,46 @@ export default async function FinanciacionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Hero */}
-      <section className="pt-28 pb-16 bg-eco-bg border-b border-eco-border">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="badge-green mb-5 inline-flex">Financiación directa de fábrica</span>
-          <h1 className="text-5xl sm:text-7xl font-extrabold text-eco-text uppercase leading-[0.92] mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+      {/* Hero — imagen de fondo con overlay */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden border-b border-eco-border">
+        {/* Imagen de fondo */}
+        <Image
+          src="/hero-financiacion.jpg"
+          alt="Familia en su vivienda modular financiada — EcoFiver"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
+        {/* Overlay degradado */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
+        {/* Patrón de grilla */}
+        <div className="absolute inset-0 hero-grid-pattern opacity-25" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center pt-28 pb-16 w-full">
+          <span className="inline-flex items-center gap-2 bg-eco-green/20 border border-eco-green/40 text-eco-green text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            Financiación directa de fábrica
+          </span>
+          <h1
+            className="text-5xl sm:text-7xl font-extrabold text-white uppercase leading-[0.9] mb-6 drop-shadow-2xl"
+            style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 30px rgba(0,0,0,0.5)' }}
+          >
             Tu piscina o vivienda.<br />Sin banco.<br />
-            <span className="text-eco-green">Desde hoy.</span>
+            <span className="text-eco-green drop-shadow-lg">Desde hoy.</span>
           </h1>
-          <p className="text-eco-text-muted text-lg max-w-2xl mx-auto mb-8">
-            Financiación propia de fábrica, directa y sin intermediarios. Solo necesitás tu DNI. Sin recibo de sueldo, sin garante, sin historial crediticio.
+          <p className="text-white/75 text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow">
+            Financiación propia, directa desde la fábrica. Solo necesitás tu DNI — sin recibo de sueldo, sin garante, sin historial crediticio. Aprobación el mismo día.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors">
+            <a
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-[0_4px_24px_rgba(0,0,0,0.4)]"
+            >
               <MessageCircle className="w-5 h-5" />Quiero mi plan ahora
             </a>
-            <VideoCallButton variant="outline" label="Agendar videollamada" />
-          </div>
-        </div>
-        <div className="max-w-6xl mx-auto px-4 mt-12">
-          <div className="relative w-full h-[260px] sm:h-[380px] rounded-2xl overflow-hidden">
-            <Image src="/hero-financiacion.jpg" alt="Familia en su vivienda modular financiada" fill className="object-cover" sizes="(max-width: 1152px) 100vw, 1152px" />
+            <VideoCallButton variant="outline-white" label="Agendar videollamada" />
           </div>
         </div>
       </section>
@@ -129,13 +148,13 @@ export default async function FinanciacionPage() {
 
       {/* Qué podés financiar */}
       <section className="py-14 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="¿Qué podés financiar?" subtitulo="Todo llave en mano. Flete e instalación se pueden sumar al plan." />
+        <SectionTitle titulo="¿Qué se puede financiar?" subtitulo="Vivienda, piscina, quincho o el combo completo — todo con financiación directa, sin banco, en un solo plan." />
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icono: '🏡', titulo: 'Viviendas modulares', detalle: 'Desde 24 m². Llave en mano: estructura, instalaciones y terminaciones completas. Hasta 120 cuotas.' },
-            { icono: '🔥', titulo: 'Quinchos y espacios sociales', detalle: 'Desde 36 m², habitable y equipado desde el primer día. Hasta 120 cuotas ajustadas por ICC.' },
+            { icono: '🏡', titulo: 'Viviendas modulares', detalle: 'Desde 24 m². Estructura, instalaciones y terminaciones completas. Financiación hasta 120 cuotas ajustadas por ICC.' },
+            { icono: '🔥', titulo: 'Quinchos y espacios sociales', detalle: 'Habitable desde el primer día. Ideal para ampliar tu propiedad. Hasta 120 cuotas.' },
             { icono: '🏊', titulo: 'Piscinas de fibra', detalle: 'Instalada en tu terreno en menos de 72 horas. Cuota 100% fija en pesos, hasta 36 cuotas.' },
-            { icono: '🔗', titulo: 'Combo vivienda + piscina', detalle: 'Los dos productos en un solo plan. Una cuota, una entrega, todo llave en mano.' },
+            { icono: '🔗', titulo: 'Combo vivienda + piscina', detalle: 'Tu vivienda y tu piscina en una sola cuota. Un solo plan, una sola entrega, todo incluido.' },
           ].map(({ icono, titulo, detalle }) => (
             <div key={titulo} className="card-premium p-5 flex flex-col gap-2">
               <span className="text-2xl">{icono}</span>
@@ -149,7 +168,7 @@ export default async function FinanciacionPage() {
       {/* Planes */}
       <section className="py-16 bg-eco-bg-surface border-y border-eco-border">
         <div className="max-w-5xl mx-auto px-4">
-          <SectionTitle titulo="Un plan hecho para vos" subtitulo="Elegís el plazo que mejor se adapta a tu situación — nosotros te damos la herramienta para llegar." />
+          <SectionTitle titulo="Elegís el plan. Nosotros lo hacemos posible." subtitulo="Sin banco ni garante. El plazo que necesitás, la cuota que te cierra." />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {PLANES.map((plan) => (
               <div key={plan.nombre} className="relative card-premium p-6 flex flex-col gap-3">
@@ -177,14 +196,14 @@ export default async function FinanciacionPage() {
       {/* Simulador */}
       <section className="py-16 bg-eco-bg-card border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
-          <SectionTitle titulo="Calculá tu cuota ahora" subtitulo="Ingresá el modelo y el plazo — el simulador te muestra cuánto pagás por mes. Sin compromiso." />
+          <SectionTitle titulo="Calculá tu cuota" subtitulo="Ingresá el producto y el plazo. Al toque ves cuánto pagás por mes — sin compromiso ni datos personales." />
           <div className="mt-10"><LoanSimulator /></div>
         </div>
       </section>
 
       {/* Por qué nuestra financiación */}
       <section className="py-16 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="Por qué elegir nuestra financiación" subtitulo="Diseñada para que puedas acceder a lo que necesitás, con las condiciones que realmente importan." />
+        <SectionTitle titulo="Por qué nuestra financiación es diferente" subtitulo="No pasás por banco, no esperás semanas y no dependés de un score crediticio. La aprobación es directa, el mismo día." />
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { icono: '🏦', titulo: 'Sin banco ni garante', desc: 'La aprobación es directa con nosotros. No necesitás pasar por banco, tarjeta ni análisis de crédito externo.' },
@@ -234,7 +253,7 @@ export default async function FinanciacionPage() {
             >
               <MessageCircle className="w-5 h-5" />Empezar por WhatsApp
             </a>
-            <VideoCallButton variant="outline" />
+            <VideoCallButton variant="outline-white" />
           </div>
         </div>
       </section>

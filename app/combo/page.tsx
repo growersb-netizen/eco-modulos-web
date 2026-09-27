@@ -2,20 +2,19 @@ import type { Metadata } from 'next'
 import ComboPageClient from './ComboPageClient'
 
 export const metadata: Metadata = {
-  title: 'Combo Módulo + Piscina | Un Solo Plan de Financiación | EcoFiver',
-  description: 'Comprá tu módulo habitacional y tu piscina de fibra de vidrio juntos y financiá el valor total en un solo plan. Simulá el combo, elegí tu plazo y financialo hasta 120 cuotas ajustadas por ICC, sin banco ni garante.',
+  title: 'Combos Vivienda + Piscina | Promo Octubre 2026 | EcoFiver',
+  description: '4 combos cerrados de vivienda modular + piscina de fibra con precio promocional de octubre. Instalación eléctrica, baños, bordes atérmicos y flete incluidos. Financiación directa hasta 120 cuotas, sin banco ni garante.',
   keywords: [
-    'combo módulo piscina',
+    'combo vivienda piscina octubre',
     'vivienda modular con piscina argentina',
-    'módulo y piscina precio',
-    'casa modular piscina',
+    'casa modular y piscina precio',
     'combo módulo piscina financiación',
-    'financiación módulo piscina',
+    'piscina y vivienda en cuotas sin banco',
   ],
   alternates: { canonical: 'https://ecomodulosypiscinas.com.ar/combo' },
   openGraph: {
-    title: 'Combo Módulo + Piscina | Un Solo Plan de Financiación | EcoFiver',
-    description: 'Módulo habitacional + piscina de fibra de vidrio en un solo plan de financiación. Hasta 120 cuotas ajustadas por ICC, sin banco.',
+    title: 'Combos Vivienda + Piscina | Promo Octubre | EcoFiver',
+    description: '4 combos cerrados de vivienda modular + piscina. Instalación eléctrica, baños, bordes atérmicos y flete incluidos. Hasta 120 cuotas sin banco.',
     url: 'https://ecomodulosypiscinas.com.ar/combo',
   },
 }
