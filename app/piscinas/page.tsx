@@ -30,7 +30,7 @@ const SLIDES: PageSlide[] = [
     badge: '🏊 TIENDA VIRTUAL · PISCINAS',
     titulo: 'COMPRÁ TU PISCINA Y LA INSTALAMOS EN EL DÍA',
     subtitulo: 'El stock se agota en temporada. Reservá tu fecha hoy — pagás cero hasta el día que la instalamos en tu domicilio. Sin anticipos, sin riesgos.',
-    imagen: '/piscinas/autoportante-6.jpg',
+    imagen: '/hero-piscinas-instalada.jpg',
     acento: 'teal',
     btns: [
       { label: 'Reservar mi fecha ahora', href: '#catalogo',   primary: true, icon: 'cart' },
