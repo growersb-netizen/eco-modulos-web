@@ -3,7 +3,7 @@ import SectionTitle from '@/components/shared/SectionTitle'
 import LoanSimulator from '@/components/shared/LoanSimulator'
 import VideoCallButton from '@/components/shared/VideoCallButton'
 import FaqAccordion from '@/components/shared/FaqAccordion'
-import { MessageCircle, CheckCircle, Shield, Clock } from 'lucide-react'
+import { MessageCircle, CheckCircle, Shield, Clock, AlertCircle } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const revalidate = 0
@@ -42,25 +42,55 @@ const PLANES = [
   {
     nombre: 'Plan Piscinas',
     cuotas: 'hasta 36',
-    desc: 'Cuota 100% fija en pesos desde el día 1. El valor que firmás es el que pagás — sin sorpresas, sin ajustes, sin inflación.',
+    desc: (
+      <>
+        Cuota <strong>100% fija en pesos</strong> desde el día 1. El valor que firmás es el que pagás hasta el último mes — <strong>sin ajustes, sin sorpresas</strong>, sin inflación. Para los que quieren certeza total.
+      </>
+    ),
     icono: '🏊',
-    beneficios: ['Cuota fija — sin ajustes', 'Aprobación el mismo día', 'Entrega en 72 horas con stock disponible'],
+    beneficios: ['Cuota fija — sin ajustes de ningún tipo', 'Aprobación directa el mismo día', 'Entrega en 72 horas con stock disponible'],
   },
   {
     nombre: 'Plan Viviendas',
     cuotas: '24 a 120',
-    desc: 'El plan más flexible para viviendas modulares y quinchos. Cuotas accesibles con ajuste por índice de la construcción — tu inversión crece con el valor del metro cuadrado.',
+    desc: (
+      <>
+        Para quienes buscan su <strong>espacio propio</strong> sin depender del banco ni de un garante. <strong>Desde 24 hasta 120 cuotas</strong>, ajustadas por ICC — el índice que acompaña el valor real de la construcción.
+      </>
+    ),
     icono: '🏡',
-    beneficios: ['Desde 24 hasta 120 cuotas', 'Cuota ajustada por ICC, no por dólar', 'Entrega anticipada desde cuota 6'],
+    beneficios: ['Desde 24 hasta 120 cuotas', 'Cuota ajustada por ICC, no por dólar', 'Entrega anticipada disponible desde cuota 6'],
     badge: 'Más elegido',
   },
   {
     nombre: 'Plan Combo',
     cuotas: 'hasta 120',
-    desc: 'Cuatro combos cerrados de vivienda + piscina con precio promocional de octubre. Un solo plan de financiación, hasta 120 cuotas. Instalación eléctrica, baños, bordes atérmicos y flete incluidos durante todo el mes.',
+    desc: (
+      <>
+        <strong>Vivienda y piscina en una sola cuota.</strong> Sin coordinar proveedores, sin presupuestos separados. 4 opciones cerradas para octubre — instalación eléctrica, baños, bordes y flete <strong>incluidos</strong>.
+      </>
+    ),
     icono: '🔗',
     badge: 'Promo octubre',
     beneficios: ['4 combos cerrados para elegir', 'Hasta 120 cuotas por ICC', 'Instalación eléctrica y baños incluidos'],
+  },
+]
+
+const BARRERAS = [
+  {
+    icono: <AlertCircle className="w-5 h-5 text-orange-400" />,
+    objecion: 'Me rechazaron en el banco',
+    respuesta: 'El banco no participa. La aprobación es directamente nuestra — sin análisis crediticio externo, sin score, sin scoring.',
+  },
+  {
+    icono: <AlertCircle className="w-5 h-5 text-orange-400" />,
+    objecion: 'No tengo garante ni recibo de sueldo',
+    respuesta: 'No los pedimos. Solo DNI argentino y número de contacto. Si trabajás en negro, de manera independiente o informal — igual calificás.',
+  },
+  {
+    icono: <AlertCircle className="w-5 h-5 text-orange-400" />,
+    objecion: 'Tenía deudas o historial negativo',
+    respuesta: 'No consultamos bases de datos crediticias. Evaluamos tu voluntad de pago directamente con vos — en una conversación, no en un sistema.',
   },
 ]
 
@@ -83,9 +113,11 @@ export default async function FinanciacionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* Hero — imagen de fondo con overlay */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden border-b border-eco-border">
-        {/* Imagen de fondo */}
+
+      {/* ═══════════════════════════════════════════
+          HERO — imagen de fondo con overlay + 3D
+      ════════════════════════════════════════════ */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden border-b border-eco-border">
         <Image
           src="/hero-financiacion.jpg"
           alt="Familia en su vivienda modular financiada — EcoFiver"
@@ -94,29 +126,36 @@ export default async function FinanciacionPage() {
           priority
           sizes="100vw"
         />
-        {/* Overlay degradado */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
-        {/* Patrón de grilla */}
-        <div className="absolute inset-0 hero-grid-pattern opacity-25" />
-        {/* Orbes de luz decorativos */}
-        <div className="light-orb orb-teal" style={{ width: '520px', height: '520px', top: '-120px', left: '-80px', animationDelay: '0s' }} />
-        <div className="light-orb orb-gold" style={{ width: '380px', height: '380px', bottom: '-80px', right: '-60px', animationDelay: '1.8s' }} />
-        <div className="light-orb orb-white" style={{ width: '280px', height: '280px', top: '30%', right: '15%', animationDelay: '3s' }} />
+        {/* Overlay en capas para profundidad */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/58 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20" />
+        <div className="absolute inset-0 hero-grid-pattern opacity-20" />
+        {/* Orbes de luz */}
+        <div className="light-orb orb-teal absolute" style={{ width: '560px', height: '560px', top: '-120px', left: '-80px', animationDelay: '0s' }} />
+        <div className="light-orb orb-gold absolute" style={{ width: '400px', height: '400px', bottom: '-80px', right: '-60px', animationDelay: '1.8s' }} />
+        <div className="light-orb orb-white absolute" style={{ width: '300px', height: '300px', top: '30%', right: '12%', animationDelay: '3s' }} />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center pt-28 pb-16 w-full">
           <span className="badge-gold mb-6">
             ✦ Financiación directa de fábrica
           </span>
           <h1
-            className="text-5xl sm:text-7xl font-extrabold text-white uppercase leading-[0.9] mb-6 drop-shadow-2xl"
-            style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 30px rgba(0,0,0,0.5)' }}
+            className="text-5xl sm:text-7xl font-extrabold text-white uppercase leading-[0.9] mb-6 text-3d"
+            style={{ fontFamily: 'var(--font-display)' }}
           >
-            Tu piscina o vivienda.<br />Sin banco.<br />
-            <span className="text-eco-green drop-shadow-lg">Desde hoy.</span>
+            Tu piscina o vivienda.<br />
+            <span className="text-white/80">Sin banco.</span><br />
+            <span className="text-eco-green" style={{ textShadow: '0 0 40px rgba(78,195,181,0.60), 0 2px 20px rgba(0,0,0,0.50)' }}>Desde hoy.</span>
           </h1>
-          <p className="text-white/75 text-lg max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow">
-            Financiación propia, directa desde la fábrica. Solo necesitás tu DNI — sin recibo de sueldo, sin garante, sin historial crediticio. Aprobación el mismo día.
+
+          {/* Pain/solución — texto con énfasis */}
+          <p className="text-white/80 text-lg max-w-2xl mx-auto mb-3 leading-relaxed">
+            ¿El banco te rechazó? ¿No tenés garante o recibo de sueldo? <strong className="text-white">No importa.</strong>
           </p>
+          <p className="text-white/70 text-base max-w-xl mx-auto mb-10 leading-relaxed">
+            Financiamos nosotros — directo desde la fábrica. <strong className="text-white">Solo tu DNI.</strong> Aprobación <strong className="text-white">el mismo día</strong>, sin trámites ni esperas.
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={waLink}
@@ -131,7 +170,7 @@ export default async function FinanciacionPage() {
         </div>
       </section>
 
-      {/* Trust bar */}
+      {/* ─── Trust bar ─────────────────────────── */}
       <section className="trust-bar-glass border-y border-eco-border py-5">
         <div className="max-w-5xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-6 lg:gap-12">
@@ -150,54 +189,111 @@ export default async function FinanciacionPage() {
         </div>
       </section>
 
-      {/* Qué podés financiar */}
-      <section className="py-14 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="¿Qué se puede financiar?" subtitulo="Vivienda, piscina, quincho o el combo completo — todo con financiación directa, sin banco, en un solo plan." />
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { icono: '🏡', titulo: 'Viviendas modulares', detalle: 'Desde 24 m². Estructura, instalaciones y terminaciones completas. Financiación hasta 120 cuotas ajustadas por ICC.' },
-            { icono: '🔥', titulo: 'Quinchos y espacios sociales', detalle: 'Habitable desde el primer día. Ideal para ampliar tu propiedad. Hasta 120 cuotas.' },
-            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: 'Instalada en tu terreno en menos de 72 horas. Cuota 100% fija en pesos, hasta 36 cuotas.' },
-            { icono: '🔗', titulo: 'Combo vivienda + piscina', detalle: 'Tu vivienda y tu piscina en una sola cuota. Un solo plan, una sola entrega, todo incluido.' },
-          ].map(({ icono, titulo, detalle }) => (
-            <div key={titulo} className="card-premium p-5 flex flex-col gap-2">
-              <span className="text-2xl">{icono}</span>
-              <p className="font-bold text-eco-text text-sm" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</p>
-              <p className="text-eco-text-muted text-xs">{detalle}</p>
+      {/* ─── Las 3 barreras ────────────────────── */}
+      <section className="py-16 max-w-5xl mx-auto px-4">
+        <SectionTitle
+          titulo="Las barreras que creías tener"
+          subtitulo="Si alguna de estas frases te suena conocida, este es exactamente el plan que estabas buscando."
+        />
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+          {BARRERAS.map(({ icono, objecion, respuesta }) => (
+            <div key={objecion} className="card-emboss shadow-3d p-6 flex flex-col gap-4">
+              <div className="flex items-start gap-3">
+                {icono}
+                <p className="text-eco-text-muted text-sm italic leading-relaxed line-through decoration-orange-400/60">"{objecion}"</p>
+              </div>
+              <div className="border-t border-eco-border pt-4">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-eco-teal mt-0.5 flex-shrink-0" />
+                  <p className="text-eco-text text-sm font-medium leading-relaxed">{respuesta}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Planes */}
-      <section className="py-16 section-promo-bg border-y border-eco-border">
-        <div className="max-w-5xl mx-auto px-4">
-          <SectionTitle titulo="Elegís el plan. Nosotros lo hacemos posible." subtitulo="Sin banco ni garante. El plazo que necesitás, la cuota que te cierra." />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <hr className="hr-metallic mx-8" />
+
+      {/* ─── Qué se puede financiar ────────────── */}
+      <section className="py-14 max-w-5xl mx-auto px-4">
+        <SectionTitle titulo="¿Qué se puede financiar?" subtitulo="Vivienda, piscina, quincho o el combo completo — todo con financiación directa, sin banco, en un solo plan." />
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { icono: '🏡', titulo: 'Viviendas modulares', detalle: 'Desde 24 m². Estructura, instalaciones y terminaciones completas. Hasta 120 cuotas ajustadas por ICC.' },
+            { icono: '🔥', titulo: 'Quinchos y espacios sociales', detalle: 'Habitable desde el primer día. Ideal para ampliar tu propiedad. Hasta 120 cuotas.' },
+            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: 'Instalada en 72 horas. Cuota 100% fija en pesos, hasta 36 cuotas — sin ajustes.' },
+            { icono: '🔗', titulo: 'Combo vivienda + piscina', detalle: 'Todo en una sola cuota. Un solo plan, una sola entrega, llave en mano.' },
+          ].map(({ icono, titulo, detalle }) => (
+            <div key={titulo} className="card-emboss shadow-3d p-5 flex flex-col gap-3">
+              <span className="text-3xl">{icono}</span>
+              <p className="font-bold text-eco-text text-sm" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</p>
+              <p className="text-eco-text-muted text-xs leading-relaxed">{detalle}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── Planes — fondo oscuro premium ────── */}
+      <section className="py-20 bg-eco-green-dark border-y border-eco-border relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-15" />
+        <div className="light-orb orb-teal absolute" style={{ width: '480px', height: '480px', top: '-100px', right: '-80px', animationDelay: '0.5s' }} />
+        <div className="light-orb orb-gold absolute" style={{ width: '360px', height: '360px', bottom: '-80px', left: '-60px', animationDelay: '2.2s' }} />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="badge-gold mb-5">Planes disponibles</span>
+            <h2
+              className="text-4xl sm:text-5xl font-extrabold text-white uppercase leading-tight text-3d mt-4"
+              style={{ fontFamily: 'var(--font-display)' }}
+            >
+              Elegís el plan.<br />
+              <span className="text-eco-green">Nosotros lo hacemos posible.</span>
+            </h2>
+            <p className="text-white/60 mt-4 max-w-xl mx-auto">
+              Sin banco ni garante. El plazo que necesitás, la cuota que te cierra.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PLANES.map((plan) => (
-              <div key={plan.nombre} className={`relative card-premium p-6 flex flex-col gap-3${plan.badge === 'Más elegido' ? ' card-accent-gold' : ''}`}>
+              <div key={plan.nombre} className="plan-card p-7 flex flex-col gap-4 relative">
                 {plan.badge && (
-                  <span className={plan.badge === 'Promo octubre' ? 'absolute top-4 right-4 badge-promo-oct badge-promo-oct-sm' : 'absolute top-4 right-4 badge-gold'}>{plan.badge}</span>
+                  <span className={`absolute top-5 right-5 text-[10px] font-bold uppercase tracking-wider ${plan.badge === 'Promo octubre' ? 'badge-promo-oct badge-promo-oct-sm' : 'badge-gold'}`}>
+                    {plan.badge}
+                  </span>
                 )}
-                <span className="text-3xl">{plan.icono}</span>
-                <p className="text-eco-text-muted text-xs uppercase tracking-widest">{plan.cuotas} cuotas</p>
-                <h3 className="text-2xl font-extrabold text-eco-text" style={{ fontFamily: 'var(--font-display)' }}>{plan.nombre}</h3>
-                <p className="text-eco-text-muted text-sm flex-1">{plan.desc}</p>
-                <ul className="space-y-2 pt-2 border-t border-eco-border">
+                <span className="text-4xl">{plan.icono}</span>
+                <div>
+                  <p className="text-white/50 text-xs uppercase tracking-widest mb-1">{plan.cuotas} cuotas</p>
+                  <h3 className="text-2xl font-extrabold text-white" style={{ fontFamily: 'var(--font-display)' }}>{plan.nombre}</h3>
+                </div>
+                <p className="text-white/70 text-sm leading-relaxed flex-1">{plan.desc}</p>
+                <ul className="space-y-2.5 pt-3 border-t border-white/10">
                   {plan.beneficios.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-sm text-eco-text-muted">
-                      <CheckCircle className="w-4 h-4 text-eco-green flex-shrink-0" />
+                    <li key={b} className="flex items-center gap-2 text-sm text-white/80">
+                      <CheckCircle className="w-4 h-4 text-eco-teal flex-shrink-0" />
                       {b}
                     </li>
                   ))}
                 </ul>
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/18 border border-white/20 hover:border-eco-teal/50 text-white font-bold px-4 py-3 rounded-xl transition-all mt-auto hover:-translate-y-0.5"
+                >
+                  <MessageCircle className="w-4 h-4" />Consultar este plan
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Simulador */}
+      <hr className="hr-metallic mx-8" />
+
+      {/* ─── Simulador ─────────────────────────── */}
       <section className="py-16 bg-eco-bg-card border-b border-eco-border">
         <div className="max-w-4xl mx-auto px-4">
           <SectionTitle titulo="Calculá tu cuota" subtitulo="Ingresá el producto y el plazo. Al toque ves cuánto pagás por mes — sin compromiso ni datos personales." />
@@ -205,22 +301,46 @@ export default async function FinanciacionPage() {
         </div>
       </section>
 
-      {/* Por qué nuestra financiación */}
+      {/* ─── Por qué diferente ─────────────────── */}
       <section className="py-16 max-w-5xl mx-auto px-4">
-        <SectionTitle titulo="Por qué nuestra financiación es diferente" subtitulo="No pasás por banco, no esperás semanas y no dependés de un score crediticio. La aprobación es directa, el mismo día." />
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <SectionTitle titulo="Por qué nuestra financiación es diferente" subtitulo="No pasás por banco, no esperás semanas y no dependés de un score crediticio." />
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
-            { icono: '🏦', titulo: 'Sin banco ni garante', desc: 'La aprobación es directa con nosotros. No necesitás pasar por banco, tarjeta ni análisis de crédito externo.' },
-            { icono: '📄', titulo: 'Solo tu DNI', desc: 'Un documento, un contacto telefónico. Sin papelerío, sin turnos, sin demoras. Aprobación el mismo día.' },
-            { icono: '🔒', titulo: 'Cuota protegida', desc: 'Las piscinas tienen cuota fija. Las viviendas y combos ajustan por el índice de la construcción — nunca por el dólar ni por inflación general.' },
-            { icono: '🚀', titulo: 'Entrega anticipada disponible', desc: 'No hace falta esperar a terminar de pagar. Integrando capital podés adelantar la entrega desde la cuota 3 en piscinas o la cuota 6 en viviendas.' },
-            { icono: '🏭', titulo: 'Directo de fábrica', desc: 'Financiamos lo que fabricamos. No hay intermediarios, corredores ni gestores — el trato es directo con la cooperativa.' },
-            { icono: '🛡️', titulo: '10 años de garantía', desc: 'Todos los productos llevan garantía de fábrica de 10 años — el respaldo de una cooperativa con más de 15 años de trayectoria.' },
+            {
+              icono: '🏦',
+              titulo: 'Sin banco ni garante',
+              desc: 'No pasamos tu consulta por ningún banco. La aprobación es nuestra — directa, el mismo día que consultás. Sin garante, sin historial crediticio requerido.',
+            },
+            {
+              icono: '📄',
+              titulo: 'Solo tu DNI',
+              desc: 'Eso es todo lo que pedimos. Un documento. Sin recibo de sueldo, sin estado de cuenta, sin garantía real. Si sos argentino y tenés DNI, ya calificás.',
+            },
+            {
+              icono: '🔒',
+              titulo: 'Cuota protegida',
+              desc: 'Piscinas: cuota 100% fija desde que firmás hasta el último mes. Viviendas y combos: ajuste por índice de la construcción — nunca por dólar ni inflación general.',
+            },
+            {
+              icono: '🚀',
+              titulo: 'Entrega anticipada disponible',
+              desc: 'No hace falta esperar a terminar de pagar. Integrando capital podés adelantar la entrega desde la cuota 3 en piscinas o la cuota 6 en viviendas.',
+            },
+            {
+              icono: '🏭',
+              titulo: 'Directo de fábrica',
+              desc: 'Sin intermediarios, sin gestores, sin comisiones. Financiamos lo que fabricamos — el trato es directo con la cooperativa, sin terceros en el medio.',
+            },
+            {
+              icono: '🛡️',
+              titulo: '10 años de garantía',
+              desc: 'Garantía escrita de fábrica, 10 años. No la de un distribuidor — la nuestra. El respaldo de una cooperativa con más de 15 años de operación continua.',
+            },
           ].map(({ icono, titulo, desc }) => (
-            <div key={titulo} className="card-info p-5 flex gap-4">
+            <div key={titulo} className="card-emboss shadow-3d p-5 flex gap-4">
               <span className="text-2xl flex-shrink-0">{icono}</span>
               <div>
-                <p className="font-bold text-eco-text text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</p>
+                <p className="font-bold text-eco-text text-sm mb-1.5" style={{ fontFamily: 'var(--font-display)' }}>{titulo}</p>
                 <p className="text-eco-text-muted text-xs leading-relaxed">{desc}</p>
               </div>
             </div>
@@ -228,7 +348,7 @@ export default async function FinanciacionPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ─── FAQ ───────────────────────────────── */}
       <section className="py-20 bg-eco-bg-surface border-t border-eco-border">
         <div className="max-w-3xl mx-auto px-4">
           <SectionTitle titulo="Preguntas frecuentes" />
@@ -238,15 +358,20 @@ export default async function FinanciacionPage() {
         </div>
       </section>
 
-      {/* CTA final */}
+      {/* ─── CTA final ─────────────────────────── */}
       <section className="py-24 bg-eco-green-dark relative overflow-hidden">
         <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="light-orb orb-teal absolute" style={{ width: '500px', height: '500px', top: '-100px', left: '-80px', animationDelay: '0s' }} />
+        <div className="light-orb orb-gold absolute" style={{ width: '320px', height: '320px', bottom: '-60px', right: '-40px', animationDelay: '2s' }} />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase text-3d" style={{ fontFamily: 'var(--font-display)' }}>
             El único requisito<br />es querer empezar.
           </h2>
-          <p className="text-white/60 mb-10 text-lg">
-            Tu DNI alcanza. El banco no hace falta. Hablá con nuestro equipo y armamos tu plan hoy.
+          <p className="text-white/60 mb-3 text-lg">
+            Tu DNI alcanza. El banco no hace falta.
+          </p>
+          <p className="text-white/50 mb-10">
+            Hablá con nuestro equipo y armamos tu plan hoy mismo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
