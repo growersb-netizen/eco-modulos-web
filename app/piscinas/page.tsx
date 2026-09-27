@@ -114,12 +114,12 @@ export default async function PiscinasPage() {
       </div>
 
       {/* TRUST BAR */}
-      <section className="bg-eco-bg-card border-b border-eco-border py-3">
+      <section className="trust-bar-glass border-b border-eco-border py-3">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-1.5">
             {TRUST.map(item => (
               <div key={item} className="flex items-center gap-1.5 text-eco-text-muted text-xs py-0.5">
-                <CheckCircle className="w-3 h-3 text-eco-teal flex-shrink-0" />
+                <div className="trust-dot-gold flex-shrink-0" />
                 <span>{item}</span>
               </div>
             ))}
@@ -194,7 +194,7 @@ export default async function PiscinasPage() {
           <div className="mt-6 text-center">
             <a
               href="#catalogo"
-              className="inline-flex items-center gap-2 bg-eco-teal text-white font-bold px-8 py-3.5 rounded-xl hover:bg-eco-teal-light transition-colors shadow-[0_2px_12px_rgba(78,195,181,0.35)]"
+              className="inline-flex items-center gap-2 bg-eco-teal text-white font-bold px-8 py-3.5 rounded-xl hover:bg-eco-teal-light transition-all btn-glow-teal"
             >
               ↑ Volver al catálogo
             </a>
@@ -213,8 +213,11 @@ export default async function PiscinasPage() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-20 bg-eco-green-dark">
-        <div className="max-w-2xl mx-auto px-4 text-center">
+      <section className="py-20 bg-eco-green-dark relative overflow-hidden">
+        <div className="absolute inset-0 hero-grid-pattern opacity-50" />
+        <div className="light-orb orb-teal absolute" style={{ width: '420px', height: '420px', top: '-80px', left: '-60px', animationDelay: '0.5s' }} />
+        <div className="light-orb orb-gold absolute" style={{ width: '280px', height: '280px', bottom: '-50px', right: '-30px', animationDelay: '2.5s' }} />
+        <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
           <h2
             className="text-3xl sm:text-4xl font-extrabold text-white mb-3 uppercase"
             style={{ fontFamily: 'var(--font-display)' }}
@@ -229,13 +232,13 @@ export default async function PiscinasPage() {
               href={WA_PISCINAS}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:shadow-[0_8px_36px_rgba(0,0,0,0.28)] hover:-translate-y-0.5"
             >
               <MessageCircle className="w-5 h-5" />Reservar por WhatsApp
             </a>
             <a
               href="/financiacion"
-              className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 hover:bg-white/18 text-white font-bold px-8 py-4 rounded-xl transition-all backdrop-blur-sm"
+              className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 hover:bg-white/18 text-white font-bold px-8 py-4 rounded-xl transition-all backdrop-blur-sm hover:-translate-y-0.5"
             >
               Ver financiación
             </a>

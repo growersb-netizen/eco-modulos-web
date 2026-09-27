@@ -69,7 +69,7 @@ export default function ProductCard({
   const mensaje  = `Hola, me interesa el ${nombre} (${medida}). ¿Me puede dar más información?`
 
   return (
-    <div className={cn('card-premium flex flex-col group overflow-hidden', destacada && 'ring-1 ring-eco-teal/30')}>
+    <div className={cn('card-premium flex flex-col group overflow-hidden', destacada && 'card-accent-gold ring-1 ring-eco-teal/30')}>
       {/* Urgency strip */}
       <div className="bg-gradient-to-r from-orange-600 to-red-600 px-3 py-2 flex items-center justify-between gap-2">
         <span className="text-white text-[11px] font-bold uppercase tracking-wide truncate">
@@ -115,7 +115,7 @@ export default function ProductCard({
           </div>
         )}
         {destacada && (
-          <span className="absolute top-3 left-3 bg-eco-teal text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg z-10">Más popular</span>
+          <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-lg z-10 bg-gradient-to-r from-[#C8A84B] to-[#E8CC72] text-white" style={{ boxShadow: '0 2px 10px rgba(200,168,75,0.45)' }}>✦ Más popular</span>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
@@ -181,7 +181,7 @@ export default function ProductCard({
         <div className="flex flex-col gap-2">
           <Link
             href={`/${tipo === 'piscina' ? 'piscinas' : 'modulos'}/${id}`}
-            className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-200 text-sm shadow-[0_2px_8px_rgba(11,35,80,0.20)] hover:shadow-[0_4px_16px_rgba(11,35,80,0.30)]"
+            className="flex items-center justify-center gap-2 bg-eco-green hover:bg-eco-green-light text-white font-bold py-2.5 px-4 rounded-xl transition-all duration-200 text-sm btn-glow-navy"
           >
             <ShoppingCart className="w-4 h-4" />
             Reservar instalación

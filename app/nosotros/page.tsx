@@ -70,7 +70,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-eco-bg-card border-y border-eco-border py-10">
+      <section className="trust-bar-glass border-y border-eco-border py-10">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
@@ -79,7 +79,7 @@ export default function NosotrosPage() {
               { valor: '7.000 m²', label: 'Planta propia de fabricación en Zárate' },
               { valor: '23', label: 'Provincias con logística propia' },
             ].map((s) => (
-              <div key={s.label}>
+              <div key={s.label} className="stat-card py-5 px-3">
                 <p className="text-4xl font-extrabold text-eco-green mb-1" style={{ fontFamily: 'var(--font-display)' }}>{s.valor}</p>
                 <p className="text-eco-text-muted text-sm">{s.label}</p>
               </div>
@@ -229,7 +229,9 @@ export default function NosotrosPage() {
 
       {/* CTA final */}
       <section className="py-24 bg-eco-green-dark relative overflow-hidden">
-        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="absolute inset-0 hero-grid-pattern opacity-50" />
+        <div className="light-orb orb-teal absolute" style={{ width: '420px', height: '420px', top: '-80px', left: '-60px', animationDelay: '0s' }} />
+        <div className="light-orb orb-gold absolute" style={{ width: '280px', height: '280px', bottom: '-50px', right: '-30px', animationDelay: '2s' }} />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
             ¿Quiere conocernos?
@@ -240,11 +242,11 @@ export default function NosotrosPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contacto"
-              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:shadow-[0_8px_36px_rgba(0,0,0,0.28)] hover:-translate-y-0.5"
             >
               Ir a contacto
             </Link>
-            <VideoCallButton variant="outline" label="Agendar videollamada" />
+            <VideoCallButton variant="outline-white" label="Agendar videollamada" />
           </div>
         </div>
       </section>

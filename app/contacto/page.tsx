@@ -63,7 +63,7 @@ export default function ContactoPage() {
       </section>
 
       {/* Datos rápidos */}
-      <section className="bg-eco-bg-card border-b border-eco-border py-8">
+      <section className="trust-bar-glass border-b border-eco-border py-8">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-eco-green mt-0.5 flex-shrink-0" />
@@ -128,10 +128,10 @@ export default function ContactoPage() {
             </div>
 
             {/* Calendly */}
-            <div className="card-premium p-6">
+            <div className="card-premium card-accent-gold p-6">
               <h3 className="font-bold text-eco-text mb-2" style={{ fontFamily: 'var(--font-display)' }}>Videollamada gratuita</h3>
               <p className="text-eco-text-muted text-sm mb-4">Reserve 30 minutos con nuestro equipo para revisar el catálogo, realizar consultas y obtener una cotización personalizada.</p>
-              <VideoCallButton label="Agendar videollamada" />
+              <VideoCallButton variant="primary" label="Agendar videollamada" />
             </div>
 
             {/* Mapa embed */}

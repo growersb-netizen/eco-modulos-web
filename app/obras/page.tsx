@@ -72,7 +72,7 @@ export default async function ObrasPage({
       </section>
 
       {/* Filtros */}
-      <section className="py-6 bg-eco-bg-card border-b border-eco-border">
+      <section className="py-6 trust-bar-glass border-b border-eco-border">
         <div className="max-w-7xl mx-auto px-4 space-y-4">
           {/* Filtro por tipo */}
           <div className="flex flex-wrap gap-3 justify-center">
@@ -157,7 +157,9 @@ export default async function ObrasPage({
 
       {/* CTA final */}
       <section className="py-24 bg-eco-green-dark relative overflow-hidden">
-        <div className="absolute inset-0 hero-grid-pattern opacity-60" />
+        <div className="absolute inset-0 hero-grid-pattern opacity-50" />
+        <div className="light-orb orb-teal absolute" style={{ width: '420px', height: '420px', top: '-80px', left: '-60px', animationDelay: '1s' }} />
+        <div className="light-orb orb-gold absolute" style={{ width: '280px', height: '280px', bottom: '-50px', right: '-30px', animationDelay: '3s' }} />
         <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 uppercase" style={{ fontFamily: 'var(--font-display)' }}>
             ¿Desea ver su proyecto aquí?
@@ -166,13 +168,13 @@ export default async function ObrasPage({
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/modulos"
-              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+              className="flex items-center justify-center gap-2 bg-white text-eco-green-dark font-bold px-8 py-4 rounded-xl hover:bg-green-50 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:shadow-[0_8px_36px_rgba(0,0,0,0.28)] hover:-translate-y-0.5"
             >
               Ver módulos
             </Link>
             <Link
               href="/piscinas"
-              className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all"
+              className="flex items-center justify-center gap-2 bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl transition-all backdrop-blur-sm hover:-translate-y-0.5"
             >
               Ver piscinas
             </Link>

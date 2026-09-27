@@ -68,7 +68,7 @@ export default function PriceWithFlete({ precioContado, tipoProducto, incluidos 
       </div>
 
       {/* Price card */}
-      <div className="bg-eco-bg-card border border-eco-border rounded-2xl p-5">
+      <div className="card-glass-light rounded-2xl p-5">
         {ubicacion ? (
           <>
             <p className="text-[11px] font-bold text-eco-green uppercase tracking-wider mb-2 leading-tight">
@@ -109,7 +109,7 @@ export default function PriceWithFlete({ precioContado, tipoProducto, incluidos 
       </div>
 
       {/* Value stack */}
-      <div className="border border-eco-border rounded-2xl p-5">
+      <div className="card-accent-gold border border-eco-border rounded-2xl p-5 relative overflow-hidden">
         <p className="text-xs font-bold text-eco-text uppercase tracking-wider mb-3">¿Qué incluye tu compra?</p>
         <div className="space-y-2.5">
           {incluidos.map(item => (

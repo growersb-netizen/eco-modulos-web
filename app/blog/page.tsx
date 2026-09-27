@@ -57,13 +57,13 @@ export default async function BlogPage({
       </section>
 
       {/* Filtros */}
-      <section className="py-6 bg-eco-bg-card border-b border-eco-border">
+      <section className="py-6 trust-bar-glass border-b border-eco-border">
         <div className="max-w-5xl mx-auto px-4 flex flex-wrap gap-3 justify-center">
           {CATEGORIAS.map((c) => (
             <Link
               key={c}
               href={c === 'todos' ? '/blog' : `/blog?categoria=${c}`}
-              className={`px-5 py-2 rounded-full text-sm font-semibold capitalize transition-colors ${cat === c ? 'bg-eco-green text-white' : 'bg-eco-bg-surface border border-eco-border text-eco-text-muted hover:border-eco-green'}`}
+              className={`px-5 py-2 rounded-full text-sm font-semibold capitalize transition-all ${cat === c ? 'bg-eco-green text-white shadow-[0_2px_12px_rgba(11,35,80,0.22)]' : 'bg-eco-bg-surface border border-eco-border text-eco-text-muted hover:border-eco-green'}`}
             >
               {c === 'todos' ? 'Todos' : c === 'modulos' ? 'Módulos' : c === 'piscinas' ? 'Piscinas' : c === 'financiacion' ? 'Financiación' : 'Construcción'}
             </Link>
