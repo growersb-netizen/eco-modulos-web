@@ -32,8 +32,8 @@ const FAQ = [
   { q: '¿Qué se requiere para acceder a la financiación?', r: 'Solo DNI argentino y teléfono de contacto. No pedimos recibo de sueldo, garante ni historial crediticio. La aprobación es directa con nuestro equipo comercial — sin banco, sin trámites.' },
   { q: '¿Las cuotas son fijas o se ajustan?', r: 'Las piscinas tienen cuota 100% fija en pesos desde el primer día: el valor que firmás es el que pagás durante todo el plan. Las viviendas modulares y los combos módulo + piscina se ajustan por índice ICC (el índice oficial de la construcción), no por dólar ni inflación general — lo que protege el valor de tu inversión.' },
   { q: '¿Hay descuento por pago contado?', r: 'Sí. Cada modelo tiene su precio de contado, que refleja un descuento sobre el precio de lista. Lo ves en el catálogo junto a cada producto.' },
-  { q: '¿Puedo adelantar la entrega antes de terminar el plan?', r: 'Sí. Integrando capital podés adelantar la entrega: piscinas desde cuota 3, viviendas y combos desde cuota 6. Seguís pagando el saldo restante mensualmente — solo adelantás la entrega, no necesitás cancelar todo.' },
-  { q: '¿Cuándo se fabrica y entrega mi vivienda o piscina?', r: 'Para piscinas con stock disponible, la entrega es en 72 horas desde la confirmación del plan. Para viviendas modulares, los plazos se coordinan al confirmar el pedido — nuestro equipo te da la fecha exacta.' },
+  { q: '¿Puedo adelantar la entrega de mi piscina?', r: 'Sí. La entrega estándar de una piscina financiada es al completar el 50% del plan (cuota 18 en plan de 36). Podés adelantarla desde cuota 3 integrando ese 50% antes. Seguís pagando el saldo restante mensualmente.' },
+  { q: '¿Cuándo se entrega mi piscina o vivienda?', r: 'Piscinas financiadas: entrega al completar el 50% del plan (cuota 18 en plan 36); adelanto posible desde cuota 3 integrando ese 50%. Viviendas WoodFrame: fecha fija desde la firma — cuota 12 (PLAN12PASOS, 36–60 cuotas), cuota 18 (PLAN18PASOS, 60–108 cuotas), cuota 24 (PLAN24PASOS, 120 cuotas). Módulos habitacionales ECO y PREMIUM: contado, instalación en el día.' },
   { q: '¿El flete y la instalación están incluidos?', r: 'Se calculan aparte según la distancia desde nuestra fábrica en Zárate y se pueden sumar al plan financiado. Nuestro equipo arma el presupuesto completo antes de confirmar.' },
   { q: '¿Puedo financiar el combo módulo + piscina?', r: 'Sí. Se financia el total de los dos productos juntos hasta 120 cuotas ajustadas por ICC — una sola cuota, un solo plan, llave en mano.' },
 ]
@@ -48,7 +48,7 @@ const PLANES = [
       </>
     ),
     icono: '🏊',
-    beneficios: ['Cuota fija — sin ajustes de ningún tipo', 'Aprobación directa el mismo día', 'Entrega en 72 horas con stock disponible'],
+    beneficios: ['Cuota fija — sin ajustes de ningún tipo', 'Aprobación directa el mismo día', 'Entrega en cuota 18 · adelanto desde cuota 3'],
   },
   {
     nombre: 'Plan Viviendas',
@@ -59,7 +59,7 @@ const PLANES = [
       </>
     ),
     icono: '🏡',
-    beneficios: ['Desde 24 hasta 120 cuotas', 'Cuota ajustada por ICC, no por dólar', 'Entrega anticipada disponible desde cuota 6'],
+    beneficios: ['Desde 36 hasta 120 cuotas', 'Cuota ajustada por ICC, no por dólar', 'Entrega en cuota 12, 18 o 24 según el plan'],
     badge: 'Más elegido',
   },
   {
@@ -222,7 +222,7 @@ export default async function FinanciacionPage() {
           {[
             { icono: '🏡', titulo: 'Viviendas modulares', detalle: 'Desde 24 m². Estructura, instalaciones y terminaciones completas. Hasta 120 cuotas ajustadas por ICC.' },
             { icono: '🔥', titulo: 'Quinchos y espacios sociales', detalle: 'Habitable desde el primer día. Ideal para ampliar tu propiedad. Hasta 120 cuotas.' },
-            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: 'Instalada en 72 horas. Cuota 100% fija en pesos, hasta 36 cuotas — sin ajustes.' },
+            { icono: '🏊', titulo: 'Piscinas de fibra', detalle: 'Cuota 100% fija en pesos, hasta 36 cuotas. Entrega en cuota 18; adelanto desde cuota 3 completando el 50%.' },
             { icono: '🔗', titulo: 'Combo vivienda + piscina', detalle: 'Todo en una sola cuota. Un solo plan, una sola entrega, llave en mano.' },
           ].map(({ icono, titulo, detalle }) => (
             <div key={titulo} className="card-emboss shadow-3d p-5 flex flex-col gap-3">
@@ -324,7 +324,7 @@ export default async function FinanciacionPage() {
             {
               icono: '🚀',
               titulo: 'Entrega anticipada disponible',
-              desc: 'No hace falta esperar a terminar de pagar. Integrando capital podés adelantar la entrega desde la cuota 3 en piscinas o la cuota 6 en viviendas.',
+              desc: 'Piscinas: la entrega estándar es en cuota 18 (50% del plan). Podés adelantarla desde cuota 3 completando ese 50% antes. Viviendas WoodFrame: fecha fija en cuota 12, 18 o 24 según el plan elegido.',
             },
             {
               icono: '🏭',

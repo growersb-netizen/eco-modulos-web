@@ -61,7 +61,7 @@ const TRUST: React.ReactNode[] = [
 const FAQ = [
   {
     q: '¿Cuánto tarda la instalación?',
-    r: 'Módulos de hasta 18 m² se instalan en el día. Módulos de mayor metraje demoran entre 2 y 5 días. Para compras financiadas, el plazo de entrega se pacta según el plan solicitado.',
+    r: 'Todos los módulos habitacionales (líneas ECO y PREMIUM, en 6, 12 y 18 m²) se instalan en el día. Los módulos habitacionales se venden de contado.',
   },
   {
     q: '¿Cuándo y cómo pago?',
